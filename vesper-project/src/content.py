@@ -126,6 +126,7 @@ STRINGS = {
     "WORK_H2":   {"en": "Selected work", "fa": "نمونه‌کارها"},
     "WORK_HINT": {"en": "Hover to preview · click to open",
                   "fa": "اشاره برای پیش‌نمایش · کلیک برای باز کردن"},
+    "WORK_ALL":  {"en": "View all projects", "fa": "مشاهده‌ی همه‌ی پروژه‌ها"},
 
     "W1_T": {"en": "Restaurant Operations Platform", "fa": "پلتفرم مدیریت رستوران"},
     "W1_D": {

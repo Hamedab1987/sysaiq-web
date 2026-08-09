@@ -12,6 +12,104 @@ export function findProject(slug) {
   return db.prepare('SELECT * FROM projects WHERE slug=? AND published=1').get(slug);
 }
 
+export function allProjects() {
+  return db.prepare('SELECT * FROM projects WHERE published=1 ORDER BY sort, id').all();
+}
+
+// /:lang/work — the full portfolio grid, server-rendered from the DB.
+export function renderWorkIndex(lang) {
+  const fa = lang === 'fa';
+  const other = fa ? 'en' : 'fa';
+  const projects = allProjects();
+  const L = fa ? {
+    title: 'همه‌ی پروژه‌ها', sub: 'نمونه‌کارهای SysaiQ — سیستم‌ها و وب‌سایت‌هایی برای صنف‌ها و شرکت‌های مختلف',
+    home: '← صفحه‌ی اصلی', cta: 'شروع پروژه', open: 'مشاهده‌ی پروژه',
+  } : {
+    title: 'All work', sub: 'SysaiQ portfolio — systems and websites across industries and trades',
+    home: '← Home', cta: 'Start a project', open: 'View project',
+  };
+  const cards = projects.map(p => {
+    const title = fa ? p.title_fa : p.title_en;
+    const tag = fa ? (p.tagline_fa || p.desc_fa) : (p.tagline_en || p.desc_en);
+    return `<a class="card" href="/${lang}/work/${esc(p.slug)}">
+      <span class="thumb"><img src="${esc(p.image || p.cover_en)}" alt="${esc(title)}" loading="lazy"></span>
+      <span class="cbody"><b>${esc(title)}</b><p>${esc(tag)}</p>
+      <i dir="ltr">${esc(p.tags)}</i><em>${esc(L.open)} →</em></span>
+    </a>`;
+  }).join('');
+
+  return `<!DOCTYPE html>
+<html lang="${lang}"${fa ? ' dir="rtl"' : ''}>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>${esc(L.title)} — SysaiQ</title>
+<meta name="description" content="${esc(L.sub)}">
+<link rel="canonical" href="https://sysaiq.com/${lang}/work">
+<link rel="alternate" hreflang="en" href="https://sysaiq.com/en/work">
+<link rel="alternate" hreflang="fa" href="https://sysaiq.com/fa/work">
+<style>
+  :root{--mint:#7dffd9;--violet:#8b6bff;--ink:#eceaf6;--dim:rgba(236,234,246,.6);
+    --faint:rgba(236,234,246,.35);--line:rgba(236,234,246,.1);--bg:#070a12;--panel:#0e1422;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);line-height:1.6;
+    font-family:${fa ? "'Vazirmatn'," : ''}-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+    background-image:radial-gradient(120% 80% at 50% -10%, rgba(139,107,255,.10), transparent 55%);}
+  ${fa ? `@font-face{font-family:'Vazirmatn';src:url(/assets/vazirmatn-var.woff2) format('woff2-variations');font-weight:100 900;font-display:swap;}` : ''}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+  header{position:sticky;top:0;z-index:20;backdrop-filter:blur(16px);
+    background:rgba(7,10,18,.7);border-bottom:1px solid var(--line)}
+  header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:700}
+  .brand img{width:26px;height:26px}
+  .brand span{background:linear-gradient(135deg,var(--mint),var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .btn{display:inline-block;background:linear-gradient(135deg,var(--mint),var(--violet));
+    color:#06101f;font-weight:600;padding:8px 16px;border-radius:10px;font-size:13px}
+  .top-actions{display:flex;align-items:center;gap:16px;font-size:13px}
+  .top-actions a.lang{color:var(--faint)} .top-actions a.lang:hover{color:var(--ink)}
+  h1{font-size:clamp(30px,5vw,50px);font-weight:300;margin:44px 0 8px;letter-spacing:${fa ? '0' : '-.02em'}}
+  .sub{color:var(--dim);margin-bottom:40px;max-width:640px}
+  .back{display:inline-block;margin-top:28px;color:var(--dim);font-size:13px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px;margin-bottom:70px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;
+    display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.2,.6,.2,1),box-shadow .3s;}
+  .card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -28px rgba(139,107,255,.55);}
+  .thumb{display:block;aspect-ratio:16/9;overflow:hidden;background:#081428}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s;}
+  .card:hover .thumb img{transform:scale(1.05);}
+  .cbody{display:block;padding:18px 20px 20px}
+  .cbody b{display:block;font-size:16px;font-weight:500;margin-bottom:6px}
+  .cbody p{font-size:12.5px;color:var(--dim);line-height:1.7;min-height:42px}
+  .cbody i{display:block;font-style:normal;margin-top:10px;font-size:9.5px;letter-spacing:.14em;
+    color:var(--mint);font-family:"SF Mono",ui-monospace,Menlo,monospace;text-align:start;}
+  .cbody em{display:inline-block;font-style:normal;margin-top:12px;font-size:12px;color:var(--mint);opacity:.85}
+  footer{border-top:1px solid var(--line);padding:26px 0;color:var(--faint);font-size:12px}
+  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="/${lang}/"><img src="/assets/logo-mark-160.png" alt=""><span>SysaiQ</span></a>
+  <div class="top-actions">
+    <a class="lang" href="/${other}/work">${other.toUpperCase()}</a>
+    <a class="btn" href="/${lang}/#contact">${esc(L.cta)}</a>
+  </div>
+</div></header>
+<main class="wrap">
+  <a class="back" href="/${lang}/">${esc(L.home)}</a>
+  <h1>${esc(L.title)}</h1>
+  <p class="sub">${esc(L.sub)}</p>
+  <div class="grid">${cards}</div>
+</main>
+<footer><div class="wrap">
+  <span>© 2026 SysaiQ · Hamed Systems Lab</span>
+  <a href="/${lang}/" style="color:var(--dim)">sysaiq.com</a>
+</div></footer>
+</body>
+</html>`;
+}
+
 export function renderProjectPage(p, lang) {
   const fa = lang === 'fa';
   const t = (en, faStr) => (fa ? faStr || en : en);

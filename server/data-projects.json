@@ -691,5 +691,621 @@
         "desc_fa": "فروش real-time به تفکیک منطقه، ویزیتور و کالا؛ مقایسه هدف با عملکرد؛ و هشدارهایی که مشکل را همان لحظه شروع نشان می‌دهند."
       }
     ]
+  },
+  {
+    "key": "law-landing",
+    "tagline_en": "A website that argues your case before you do.",
+    "tagline_fa": "وب‌سایتی که پیش از شما، از اعتبارتان دفاع می‌کند.",
+    "overview_en": "An elegant dark-themed site built for firms where credibility is the product: practice areas, attorney profiles, documented case results, and consultation booking composed into one experience. Most legal websites are dated templates that quietly cost their owners high-value clients — this one is engineered to turn a visitor's first impression into a booked consultation.",
+    "overview_fa": "یک لندینگ تیره و شکیل برای دفاتری که اعتبار، سرمایه‌ی اصلی‌شان است: حوزه‌های وکالت، پروفایل وکلا، نتایج پرونده‌ها و رزرو مشاوره، همه در یک تجربه‌ی منسجم. بیشتر سایت‌های حقوقی قالب‌هایی قدیمی و کندند که بی‌سروصدا موکلان خوب را فراری می‌دهند؛ این سایت طراحی شده تا اولین نگاه بازدیدکننده به یک جلسه‌ی مشاوره‌ی رزروشده تبدیل شود.",
+    "industries_en": [
+      "Law firms and attorney offices",
+      "Notary and official-document offices",
+      "Independent legal consultants and solo attorneys",
+      "Immigration and corporate law practices"
+    ],
+    "industries_fa": [
+      "دفاتر وکالت و موسسات حقوقی",
+      "دفاتر اسناد رسمی",
+      "مشاوران حقوقی و وکلای مستقل",
+      "موسسات حقوق مهاجرت و امور شرکت‌ها"
+    ],
+    "features": [
+      {
+        "title_en": "Native bilingual, true RTL",
+        "title_fa": "دوزبانه‌ی واقعی با RTL درست",
+        "desc_en": "Persian and English as first-class languages: mirrored layouts, correct legal typography, and copy written for each audience — not run through a translator. No flipped templates, no broken RTL.",
+        "desc_fa": "فارسی و انگلیسی هر دو زبانِ اصلی سایت‌اند؛ با RTL واقعی، تایپوگرافی درست و متنی که برای هر مخاطب نوشته شده، نه ترجمه‌ی ماشینی. خبری از قالب‌های برعکس‌شده و چیدمان به‌هم‌ریخته نیست."
+      },
+      {
+        "title_en": "Booking that reaches your phone",
+        "title_fa": "رزروی که مستقیم به موبایل شما می‌رسد",
+        "desc_en": "A consultation request becomes an instant notification on the firm's phone, with the visitor's matter type and contact details already captured. No lead sits in an unchecked inbox.",
+        "desc_fa": "هر درخواست مشاوره در همان لحظه به موبایل دفتر می‌رسد؛ همراه با موضوع پرونده و اطلاعات تماس مراجع. هیچ سرنخی در یک اینباکس فراموش‌شده گم نمی‌شود."
+      },
+      {
+        "title_en": "AI intake assistant",
+        "title_fa": "دستیار AI برای پذیرش مراجعان",
+        "desc_en": "An on-site AI assistant answers questions from the firm's own practice areas, process, and consultation terms — then routes serious inquiries straight to booking. It works after hours, when most clients actually search.",
+        "desc_fa": "دستیار AI سایت از دل اطلاعات خودِ دفتر — حوزه‌های کاری، روند پرونده و شرایط مشاوره — به سوال‌ها پاسخ می‌دهد و مراجعان جدی را مستقیم به booking هدایت می‌کند؛ حتی نیمه‌شب، وقتی بیشترِ جست‌وجوها اتفاق می‌افتد."
+      },
+      {
+        "title_en": "Local SEO, engineered",
+        "title_fa": "SEO محلی، مهندسی‌شده",
+        "desc_en": "Structured data for legal services, dedicated sections per practice area, and sub-second load times — built so the firm surfaces for the searches that bring cases, not just searches for its own name.",
+        "desc_fa": "SEO محلی از پایه درست اجرا شده: structured data مخصوص خدمات حقوقی، بخش اختصاصی برای هر حوزه‌ی کاری و لود زیر یک ثانیه — تا دفتر در جست‌وجوهایی دیده شود که پرونده می‌آورند، نه فقط جست‌وجوی اسم خودش."
+      }
+    ],
+    "pages": [
+      {
+        "name_en": "Hero",
+        "name_fa": "Hero",
+        "desc_en": "A composed dark opening: the firm's positioning in one line, credentials at a glance, and a single clear path to booking a consultation.",
+        "desc_fa": "ورودی تیره و باوقار سایت؛ جایگاه دفتر در یک جمله، اعتبارها در یک نگاه و یک مسیر روشن به سمت رزرو مشاوره."
+      },
+      {
+        "name_en": "Practice Areas",
+        "name_fa": "حوزه‌های وکالت",
+        "desc_en": "Each specialty laid out in plain language — what the firm handles and how a matter proceeds from first call to resolution.",
+        "desc_fa": "هر حوزه‌ی کاری با زبان ساده معرفی می‌شود؛ دفتر چه پرونده‌هایی می‌پذیرد و مسیر کار از تماس اول تا نتیجه چگونه است."
+      },
+      {
+        "name_en": "Attorney Profiles",
+        "name_fa": "پروفایل وکلا",
+        "desc_en": "Individual profiles with credentials, specializations, and languages — the actual people a client hires, not stock photography.",
+        "desc_fa": "پروفایل اختصاصی هر وکیل با سوابق، تخصص و زبان‌ها؛ آدم‌های واقعی‌ای که موکل استخدام می‌کند، نه عکس‌های آرشیوی."
+      },
+      {
+        "name_en": "Case Results & Testimonials",
+        "name_fa": "نتایج پرونده‌ها و نظر موکلان",
+        "desc_en": "Selected outcomes and client words, presented with the restraint the profession demands.",
+        "desc_fa": "نتایج منتخب پرونده‌ها و تجربه‌ی موکلان، با همان وقار و سنجیدگی‌ای که این حرفه می‌طلبد."
+      },
+      {
+        "name_en": "Consultation Booking & Contact",
+        "name_fa": "رزرو مشاوره و تماس",
+        "desc_en": "Date-and-time booking with matter type, plus direct phone, map, and office hours — every request lands on the firm's phone in real-time.",
+        "desc_fa": "رزرو جلسه با انتخاب زمان و موضوع پرونده، در کنار تماس مستقیم، نقشه و ساعات کاری؛ هر درخواست به‌صورت real-time روی موبایل دفتر می‌نشیند."
+      }
+    ]
+  },
+  {
+    "key": "dental-landing",
+    "tagline_en": "A clinic website that fills chairs, not just screens.",
+    "tagline_fa": "سایتی که نوبت‌های خالی کلینیک را پر می‌کند، نه فقط ویترین.",
+    "overview_en": "A premium bilingual website concept for dental and beauty clinics: services, before-and-after galleries, doctor profiles, and online appointment booking in one fast, quietly confident design. Most clinic sites are digital brochures that leak patients to a phone line nobody answers; this one turns every visit into a booked appointment or a captured lead.",
+    "overview_fa": "کانسپت یک وب‌سایت پرمیوم و دوزبانه برای کلینیک‌های دندان‌پزشکی و زیبایی: معرفی خدمات، گالری قبل و بعد، پروفایل پزشکان و رزرو آنلاین نوبت، همه در یک طراحی سریع و شکیل. بیشتر سایت‌های کلینیکی فقط بروشور دیجیتال‌اند و بیمار را به تلفنی حواله می‌دهند که کسی جوابش را نمی‌دهد؛ این سایت هر بازدید را به یک نوبت رزروشده یا یک lead ثبت‌شده تبدیل می‌کند.",
+    "industries_en": [
+      "Dental clinics",
+      "Dermatology and skin-care clinics",
+      "Beauty and aesthetic clinics",
+      "Medical specialists in private practice"
+    ],
+    "industries_fa": [
+      "کلینیک‌های دندان‌پزشکی",
+      "کلینیک‌های پوست و مو",
+      "کلینیک‌های زیبایی",
+      "پزشکان متخصص و مطب‌های خصوصی"
+    ],
+    "features": [
+      {
+        "title_en": "True bilingual, true RTL",
+        "title_fa": "دوزبانهٔ واقعی با RTL درست",
+        "desc_en": "Persian and English are each written natively — no machine translation — and the RTL layout is designed, not mirrored. Each language gets its own typography, hreflang tags, and SEO, so both audiences get a first-class site.",
+        "desc_fa": "نسخهٔ فارسی و انگلیسی هر دو از اول نوشته شده‌اند، نه ترجمهٔ ماشینی؛ چیدمان RTL هم طراحی شده، نه صرفاً آینه‌شده. هر زبان تایپوگرافی، تگ‌های hreflang و SEO خودش را دارد تا هر دو مخاطب یک سایت درجه‌یک ببینند."
+      },
+      {
+        "title_en": "Booking wired to the owner's phone",
+        "title_fa": "رزروی که مستقیم به گوشی مدیر می‌رسد",
+        "desc_en": "Every appointment request lands on the clinic's phone within seconds and is stored in a simple lead panel at the same time. No missed calls, no leads buried in a contact-form inbox nobody reads.",
+        "desc_fa": "هر درخواست نوبت چند ثانیه بعد روی گوشی کلینیک است و همزمان در یک پنل سادهٔ مدیریت lead ذخیره می‌شود؛ نه تماسی از دست می‌رود، نه درخواستی لای فرم تماسی که کسی نمی‌خواند گم می‌شود."
+      },
+      {
+        "title_en": "An AI assistant that knows the clinic",
+        "title_fa": "دستیار AI که کلینیک را می‌شناسد",
+        "desc_en": "A chat assistant answers visitors from the clinic's own services, prices, and aftercare notes, then hands warm visitors straight into booking. It replies at 2 a.m., when the reception desk doesn't.",
+        "desc_fa": "یک دستیار چت که از روی اطلاعات خود کلینیک — خدمات، هزینه‌ها و مراقبت‌های بعد از درمان — جواب می‌دهد و بازدیدکنندهٔ آماده را مستقیم به booking می‌رساند؛ ساعت ۲ بامداد هم پاسخ‌گوست، وقتی منشی نیست."
+      },
+      {
+        "title_en": "Sub-second load, local SEO built in",
+        "title_fa": "لود زیر یک ثانیه و SEO محلی از روز اول",
+        "desc_en": "Pages render in under a second on mobile, and structured data (Dentist/LocalBusiness schema), per-language metadata, and map presence are configured from day one — so the clinic ranks for \"dentist near me,\" not just its own name.",
+        "desc_fa": "صفحه‌ها روی موبایل زیر یک ثانیه بالا می‌آیند و schema ساخت‌یافته، متادیتای جداگانهٔ هر زبان و حضور روی نقشه از همان ابتدا تنظیم شده؛ نتیجه اینکه کلینیک برای جست‌وجوهایی مثل «دندان‌پزشکی نزدیک من» دیده می‌شود، نه فقط با اسم خودش."
+      }
+    ],
+    "pages": [
+      {
+        "name_en": "Hero",
+        "name_fa": "هیرو (صفحهٔ اول)",
+        "desc_en": "A calm, premium opening: the clinic's signature promise, trust signals, and one unmissable \"Book an appointment\" action.",
+        "desc_fa": "شروعی آرام و پرمیوم: وعدهٔ اصلی کلینیک، نشانه‌های اعتماد و یک دکمهٔ واضح «رزرو نوبت» که از چشم نمی‌افتد."
+      },
+      {
+        "name_en": "Services",
+        "name_fa": "خدمات",
+        "desc_en": "Treatment cards grouped by category, each with a plain-language description, duration, and a direct booking shortcut.",
+        "desc_fa": "کارت‌های خدمات به تفکیک دسته، هرکدام با توضیح ساده و شفاف، مدت‌زمان درمان و میان‌بر مستقیم به booking."
+      },
+      {
+        "name_en": "Before & After Gallery",
+        "name_fa": "گالری قبل و بعد",
+        "desc_en": "Slider comparisons of real results, filterable by treatment — built to do the convincing that copy alone can't.",
+        "desc_fa": "مقایسه‌های اسلایدری از نتایج واقعی، قابل فیلتر بر اساس نوع درمان؛ جایی که تصویر، کارِ متن را تمام می‌کند."
+      },
+      {
+        "name_en": "Doctors",
+        "name_fa": "پزشکان",
+        "desc_en": "Profile cards with credentials, specialties, and per-doctor availability, so patients book a person, not a form.",
+        "desc_fa": "پروفایل پزشکان با تخصص، سوابق و زمان‌های خالی هر پزشک؛ بیمار برای یک آدم مشخص نوبت می‌گیرد، نه یک فرم."
+      },
+      {
+        "name_en": "Booking & Contact",
+        "name_fa": "رزرو نوبت و تماس",
+        "desc_en": "Pick a service, doctor, and time in three taps; the request hits the clinic's phone instantly, with map and contact details alongside.",
+        "desc_fa": "انتخاب خدمت، پزشک و زمان در سه لمس؛ درخواست همان لحظه روی گوشی کلینیک می‌نشیند و نقشه و راه‌های تماس هم کنارش است."
+      }
+    ]
+  },
+  {
+    "key": "fitness-landing",
+    "tagline_en": "The website that fills your gym floor.",
+    "tagline_fa": "وب‌سایتی که سالن باشگاه شما را پر می‌کند.",
+    "overview_en": "A high-energy landing site for gyms and studios, built to turn visitors into trial members. Class schedules, trainer profiles, and transparent pricing all funnel toward one goal: a trial booking that lands directly on the owner's phone. Bold design, sub-second loads, and proper local SEO make sure the club down the street doesn't get the lead first.",
+    "overview_fa": "یک سایت پرانرژی و مدرن برای باشگاه‌ها و استودیوهای ورزشی که بازدیدکننده را به عضو تبدیل می‌کند. برنامه کلاس‌ها، معرفی مربیان و تعرفه‌های شفاف همه به یک نقطه ختم می‌شوند: رزرو جلسه آزمایشی که مستقیم روی گوشی مدیر باشگاه می‌نشیند. طراحی جسورانه، لود زیر یک ثانیه و SEO محلی هم کاری می‌کنند که مشتری قبل از باشگاه رقیب، شما را پیدا کند.",
+    "industries_en": [
+      "Gyms & fitness clubs",
+      "CrossFit & functional training boxes",
+      "Yoga & pilates studios",
+      "Personal trainers & online coaches"
+    ],
+    "industries_fa": [
+      "باشگاه‌های بدنسازی و فیتنس",
+      "باکس‌های CrossFit و تمرین فانکشنال",
+      "استودیوهای یوگا و پیلاتس",
+      "مربیان خصوصی و کوچ‌های آنلاین"
+    ],
+    "features": [
+      {
+        "title_en": "Trial bookings, straight to your phone",
+        "title_fa": "رزرو جلسه آزمایشی، مستقیم روی گوشی شما",
+        "desc_en": "Every trial request hits the owner's phone in real time — not an inbox nobody checks. Follow up while the lead is still warm.",
+        "desc_fa": "هر درخواست جلسه آزمایشی همان لحظه و real-time روی گوشی مدیر باشگاه می‌رسد — نه توی inbox‌ای که کسی چک نمی‌کند. تا لید داغ است، تماس بگیرید."
+      },
+      {
+        "title_en": "True bilingual, true RTL",
+        "title_fa": "دوزبانه واقعی با RTL اصولی",
+        "desc_en": "Full Persian and English versions with proper RTL layout, mirrored components, and native copy on both sides — not a translate plugin bolted onto an English template.",
+        "desc_fa": "نسخه فارسی و انگلیسی کاملاً مستقل با چیدمان RTL درست، کامپوننت‌های آینه‌شده و متن بومی در هر دو زبان — نه افزونه ترجمه‌ای که روی یک قالب انگلیسی سوار شده باشد."
+      },
+      {
+        "title_en": "An AI front desk that never sleeps",
+        "title_fa": "پذیرش AI که هیچ‌وقت نمی‌خوابد",
+        "desc_en": "A chat assistant that answers from the gym's own schedule, pricing, and rules — and turns a midnight question into a booked trial by morning.",
+        "desc_fa": "دستیار چت که بر اساس برنامه، تعرفه و قوانین خودِ باشگاه جواب می‌دهد — و سؤال نیمه‌شب بازدیدکننده را تا صبح به یک رزرو ثبت‌شده تبدیل می‌کند."
+      },
+      {
+        "title_en": "Built to win \"gym near me\"",
+        "title_fa": "ساخته‌شده برای «باشگاه نزدیک من»",
+        "desc_en": "Sub-second load times, structured data, and local SEO done properly, so the club outranks directories and competitors in nearby searches.",
+        "desc_fa": "لود زیر یک ثانیه، schema markup و SEO محلی اصولی؛ تا در جستجوهای اطراف، باشگاه شما بالاتر از دایرکتوری‌ها و رقبا بنشیند."
+      }
+    ],
+    "pages": [
+      {
+        "name_en": "Hero",
+        "name_fa": "هیرو",
+        "desc_en": "A full-bleed action shot with the energy of a live class and a one-tap free-trial CTA.",
+        "desc_fa": "تصویر تمام‌صفحه با انرژی یک کلاس واقعی و دکمه رزرو جلسه آزمایشی با یک لمس."
+      },
+      {
+        "name_en": "Classes & Schedule",
+        "name_fa": "کلاس‌ها و برنامه هفتگی",
+        "desc_en": "A live weekly timetable, filterable by discipline, coach, and time of day.",
+        "desc_fa": "جدول زنده کلاس‌های هفته با فیلتر بر اساس رشته، مربی و ساعت."
+      },
+      {
+        "name_en": "Trainers",
+        "name_fa": "مربیان",
+        "desc_en": "Coach profiles with credentials, specialties, and direct session booking.",
+        "desc_fa": "پروفایل مربی‌ها با مدارک، تخصص‌ها و امکان booking مستقیم جلسه."
+      },
+      {
+        "name_en": "Membership & Pricing",
+        "name_fa": "عضویت و تعرفه‌ها",
+        "desc_en": "Transparent plans compared side by side, each ending in a signup CTA.",
+        "desc_fa": "مقایسه شفاف پلن‌ها کنار هم، هر کدام با دکمه ثبت‌نام."
+      },
+      {
+        "name_en": "Free Trial Booking",
+        "name_fa": "رزرو جلسه آزمایشی",
+        "desc_en": "A short form plus AI chat that sends every request straight to the owner's phone.",
+        "desc_fa": "فرم کوتاه به‌همراه چت AI که هر درخواست را مستقیم به گوشی مدیر باشگاه می‌فرستد."
+      }
+    ]
+  },
+  {
+    "key": "cafe-landing",
+    "tagline_en": "The website that makes them hungry before they arrive.",
+    "tagline_fa": "سایتی که قبل از ورود مهمان، اشتها را باز می‌کند.",
+    "overview_en": "A moody, photography-led website that turns late-night scrollers into booked tables. It replaces the PDF menu and the unanswered Instagram DM with a photo-rich digital menu, reservations that reach the owner's phone the moment they're made, and direct links to delivery apps — all loading in under a second on any connection.",
+    "overview_fa": "یک وب‌سایت خوش‌عکس و خاص برای کافه‌ها و رستوران‌ها که بازدیدکنندهٔ نیمه‌شب اینستاگرام را به میز رزروشده تبدیل می‌کند. به‌جای منوی PDF و دایرکت‌های بی‌جواب، یک منوی دیجیتال عکس‌دار دارید، رزروی که همان لحظه به گوشی خودتان می‌رسد و لینک مستقیم اپلیکیشن‌های دلیوری — همه با لود زیر یک ثانیه، حتی با اینترنت ضعیف.",
+    "industries_en": [
+      "Specialty coffee shops and cafés",
+      "Restaurants and bistros",
+      "Pastry shops and bakeries",
+      "Catering and private dining"
+    ],
+    "industries_fa": [
+      "کافه و کافی‌شاپ‌های تخصصی",
+      "رستوران و بیسترو",
+      "قنادی و شیرینی‌فروشی",
+      "کترینگ و مهمانی‌های خصوصی"
+    ],
+    "features": [
+      {
+        "title_en": "Genuinely bilingual, truly RTL",
+        "desc_en": "Persian and English are both first-class versions of the site, not a machine-translated bolt-on. Typography, menu layout, and page direction are designed RTL-first — the detail cheap templates never get right.",
+        "title_fa": "دوزبانهٔ واقعی، RTL واقعی",
+        "desc_fa": "فارسی و انگلیسی هر دو نسخهٔ اصلی سایت‌اند، نه ترجمهٔ ماشینیِ سرهم‌بندی‌شده. تایپوگرافی، چینش منو و جهت صفحه از پایه برای RTL طراحی شده — همان جزئیاتی که قالب‌های آماده هیچ‌وقت درست از آب درنمی‌آورند."
+      },
+      {
+        "title_en": "Reservations that ring your phone",
+        "desc_en": "Every booking request lands on the owner's phone in real time via SMS or Telegram, and is logged in a simple dashboard. No more customers lost in an unread DM.",
+        "title_fa": "رزروی که زنگ گوشی‌تان را به صدا درمی‌آورد",
+        "desc_fa": "هر درخواست رزرو همان لحظه با SMS یا تلگرام به گوشی صاحب کسب‌وکار می‌رسد و در یک dashboard ساده هم ثبت می‌شود. دیگر هیچ مشتری‌ای لای دایرکت‌های خوانده‌نشده گم نمی‌شود."
+      },
+      {
+        "title_en": "An AI host that knows your menu by heart",
+        "desc_en": "A built-in AI assistant answers visitors from the restaurant's own information only — hours, ingredients, vegan options, parking. It's still answering at 2 a.m., long after the staff has gone home.",
+        "title_fa": "میزبان AI که منوی شما را از حفظ است",
+        "desc_fa": "دستیار AI داخلی سایت فقط از اطلاعات خود کسب‌وکار جواب می‌دهد: ساعت کاری، مواد اولیه، گزینه‌های گیاهی، پارکینگ. ساعت ۲ نصفه‌شب هم که پرسنل رفته‌اند خانه، همچنان پاسخ‌گوی مشتری است."
+      },
+      {
+        "title_en": "Built to win the “near me” search",
+        "desc_en": "Local SEO done properly: structured menu data (schema), Google Maps integration, and sub-second load times. When someone nearby searches for a café, you show up first — with photos.",
+        "title_fa": "ساخته‌شده برای بردنِ جست‌وجوی «نزدیک من»",
+        "desc_fa": "SEO محلی به شکل اصولی: دادهٔ ساختاریافتهٔ منو (schema)، اتصال به Google Maps و لود زیر یک ثانیه. وقتی کسی همان حوالی دنبال کافه می‌گردد، شما بالای نتایج ظاهر می‌شوید — آن هم با عکس."
+      }
+    ],
+    "pages": [
+      {
+        "name_en": "Hero",
+        "desc_en": "A full-screen shot of the signature dish, tonight's availability, and a one-tap reserve button.",
+        "name_fa": "صفحهٔ آغازین (Hero)",
+        "desc_fa": "عکس تمام‌صفحه از غذای امضای رستوران، ظرفیت امشب و دکمهٔ رزرو یک‌لمسی."
+      },
+      {
+        "name_en": "Digital Menu",
+        "desc_en": "A photo-rich, filterable menu with prices updated from a simple dashboard — no reprints, ever.",
+        "name_fa": "منوی دیجیتال",
+        "desc_fa": "منوی عکس‌دار و قابل فیلتر که قیمت‌هایش از یک پنل ساده به‌روز می‌شود — بدون هزینهٔ چاپ دوباره."
+      },
+      {
+        "name_en": "Table Reservations",
+        "desc_en": "Date, time, and party size in three taps — confirmation for the guest, an instant alert for the owner.",
+        "name_fa": "رزرو میز",
+        "desc_fa": "انتخاب تاریخ، ساعت و تعداد نفرات با سه لمس — تأیید برای مهمان، اعلان real-time برای شما."
+      },
+      {
+        "name_en": "Gallery & Atmosphere",
+        "desc_en": "Moody interior and plating photography that sells the experience before the first bite.",
+        "name_fa": "گالری و فضا",
+        "desc_fa": "عکس‌های موودی از فضای داخلی و پلیتینگ که قبل از اولین لقمه، حس نشستن پشت میز را منتقل می‌کند."
+      },
+      {
+        "name_en": "Contact & Delivery",
+        "desc_en": "Map, opening hours, delivery-app links, and a one-tap call button.",
+        "name_fa": "تماس و سفارش",
+        "desc_fa": "نقشه، ساعت کاری، لینک اپلیکیشن‌های دلیوری و دکمهٔ تماس یک‌لمسی."
+      }
+    ]
+  },
+  {
+    "key": "architect-landing",
+    "tagline_en": "A digital presence as precise as your architecture.",
+    "tagline_fa": "حضور آنلاین شما، به‌دقتِ معماری‌تان.",
+    "overview_en": "A minimal, image-first website for architecture and interior design studios: full-screen project galleries, a clear statement of philosophy, and a short path from first impression to booked consultation. Most studios present million-dollar work on generic templates — this site carries the same design discipline as the work itself, and quietly converts visitors into clients.",
+    "overview_fa": "وب‌سایتی مینیمال و تصویرمحور برای استودیوهای معماری و طراحی داخلی: گالری تمام‌صفحه پروژه‌ها، روایت روشن فلسفه طراحی، و مسیری کوتاه از اولین بازدید تا رزرو جلسه مشاوره. خیلی از استودیوها کارهای چند میلیاردی‌شان را در قالب‌های تکراری نشان می‌دهند؛ این سایت همان نظم و سلیقه خودِ کار را دارد و بی‌سروصدا بازدیدکننده را به مشتری تبدیل می‌کند.",
+    "industries_en": [
+      "Architecture studios",
+      "Interior design firms",
+      "Design-build and construction companies",
+      "Real-estate developers"
+    ],
+    "industries_fa": [
+      "استودیوهای معماری",
+      "دفاتر طراحی داخلی",
+      "شرکت‌های ساختمانی و طراحی‌وساخت",
+      "توسعه‌دهندگان و سازندگان املاک"
+    ],
+    "features": [
+      {
+        "title_en": "True Persian-English, real RTL",
+        "title_fa": "دوزبانه واقعی فارسی و انگلیسی با RTL اصولی",
+        "desc_en": "Every layout, menu, and gallery mirrors correctly in Persian — proper RTL typography with copy written natively in both languages, not an English theme with machine translation bolted on.",
+        "desc_fa": "همه‌چیز — از منو تا گالری — در نسخه فارسی به‌درستی چیده می‌شود؛ تایپوگرافی RTL اصولی و متنی که از اول فارسی نوشته شده، نه ترجمه ماشینی روی یک قالب انگلیسی."
+      },
+      {
+        "title_en": "Sub-second galleries",
+        "title_fa": "گالری تمام‌صفحه با لود زیر یک ثانیه",
+        "desc_en": "Portfolio sites live or die by their images. Next-gen formats, lazy loading, and edge caching keep full-screen project galleries loading in under a second — even on mobile networks.",
+        "desc_fa": "سایت نمونه‌کار با تصویرهایش زنده است. با فرمت‌های مدرن تصویر، lazy loading و کش CDN، گالری‌های تمام‌صفحه حتی روی اینترنت موبایل زیر یک ثانیه بالا می‌آیند."
+      },
+      {
+        "title_en": "Booking that rings your phone",
+        "title_fa": "Booking متصل به گوشی شما",
+        "desc_en": "A visitor picks a consultation slot and the request hits the studio's phone the moment it's submitted, with every lead logged in a simple dashboard — no inquiry lost in DMs or unread email.",
+        "desc_fa": "بازدیدکننده وقت مشاوره را انتخاب می‌کند و درخواست همان لحظه روی گوشی استودیو می‌نشیند؛ همه سرنخ‌ها هم در یک dashboard ساده ثبت می‌شوند تا هیچ مشتری‌ای بین دایرکت و ایمیل گم نشود."
+      },
+      {
+        "title_en": "An AI assistant that knows your projects",
+        "title_fa": "دستیار AI که پروژه‌های شما را می‌شناسد",
+        "desc_en": "A built-in AI assistant answers visitor questions — services, process, timelines, past projects — from the studio's own content, in Persian or English, day and night, then steers serious visitors to the booking form.",
+        "desc_fa": "دستیار AI داخلی سایت به سؤال‌های بازدیدکننده‌ها — خدمات، روند کار، زمان‌بندی، پروژه‌های قبلی — از روی اطلاعات خود استودیو جواب می‌دهد؛ فارسی یا انگلیسی، شبانه‌روزی، و در نهایت بازدیدکننده جدی را به فرم booking می‌رساند."
+      }
+    ],
+    "pages": [
+      {
+        "name_en": "Hero — Signature Project",
+        "name_fa": "صفحه آغازین — پروژه شاخص",
+        "desc_en": "One full-bleed signature project and a single line of positioning — no sliders, no noise.",
+        "desc_fa": "یک پروژه شاخص تمام‌صفحه و یک جمله معرفی؛ بدون اسلایدر شلوغ و عناصر اضافه."
+      },
+      {
+        "name_en": "Selected Works",
+        "name_fa": "نمونه‌کارها",
+        "desc_en": "A filterable gallery — residential, commercial, interiors — where each project opens into a full visual case study.",
+        "desc_fa": "گالری قابل فیلتر — مسکونی، تجاری، طراحی داخلی — که هر پروژه به یک case study تصویری کامل باز می‌شود."
+      },
+      {
+        "name_en": "Philosophy & Team",
+        "name_fa": "فلسفه طراحی و تیم",
+        "desc_en": "The studio's design approach and the people behind it, told with confidence and restraint.",
+        "desc_fa": "نگاه طراحی استودیو و آدم‌های پشت آن؛ کوتاه، روشن و با اعتمادبه‌نفس."
+      },
+      {
+        "name_en": "Services & Process",
+        "name_fa": "خدمات و روند همکاری",
+        "desc_en": "What the studio offers and how a project unfolds, from first sketch to final handover.",
+        "desc_fa": "خدمات استودیو و مسیر پروژه از اولین اسکیس تا تحویل نهایی."
+      },
+      {
+        "name_en": "Consultation & Contact",
+        "name_fa": "رزرو مشاوره و تماس",
+        "desc_en": "An online booking calendar and a short project-brief form that reaches the studio's phone in real time.",
+        "desc_fa": "تقویم booking آنلاین و فرم کوتاه شرح پروژه که real-time به گوشی استودیو می‌رسد."
+      }
+    ]
+  },
+  {
+    "key": "hotel",
+    "tagline_en": "Every room, every guest, one clear picture.",
+    "tagline_fa": "همه‌ی اتاق‌ها و مهمان‌ها، در یک نگاه.",
+    "overview_en": "A complete management system for hotels and guesthouses that brings reservations — direct and channel — front desk, housekeeping, and revenue analytics into one platform. It replaces the paper ledger, the spreadsheet, and the morning guessing game: the live state of every room and every guest sits in front of your team in real time.",
+    "overview_fa": "یک سیستم کامل مدیریت هتل و اقامتگاه که رزروها (مستقیم و از channelها)، پذیرش، خانه‌داری و گزارش‌های درآمد را در یک پلتفرم جمع می‌کند. دیگر خبری از دفتر رزرو، فایل اکسل و رزرو تکراری نیست؛ وضعیت هر اتاق و هر مهمان به‌صورت real-time جلوی چشم تیم شماست.",
+    "industries_en": [
+      "Boutique hotels",
+      "Guesthouses & B&Bs",
+      "Apartment hotels",
+      "Eco-lodges & rural retreats"
+    ],
+    "industries_fa": [
+      "هتل‌های بوتیک",
+      "مهمان‌پذیرها و اقامتگاه‌های سنتی",
+      "هتل‌آپارتمان‌ها",
+      "اقامتگاه‌های بوم‌گردی"
+    ],
+    "features": [
+      {
+        "title_en": "Double-booking firewall",
+        "title_fa": "سد رزرو تکراری",
+        "desc_en": "Every reservation — direct or channel — writes against a single live inventory ledger. Conflicts are blocked the moment they are attempted, not discovered at check-in.",
+        "desc_fa": "هر رزرو، چه مستقیم و چه از channelها، روی یک موجودی واحد و زنده ثبت می‌شود. تداخل‌ها همان لحظه‌ی ثبت مسدود می‌شوند، نه اینکه موقع check-in غافلگیرتان کنند."
+      },
+      {
+        "title_en": "Arrival-aware housekeeping",
+        "title_fa": "خانه‌داری هماهنگ با ورود مهمان",
+        "desc_en": "The housekeeping board reorders itself around today's check-ins: rooms with the earliest arrivals jump the cleaning queue, and the front desk watches room readiness change live.",
+        "desc_fa": "برد خانه‌داری خودش را با ورودی‌های امروز تنظیم می‌کند: اتاق‌هایی که زودتر مهمان دارند در صف نظافت جلو می‌افتند و پذیرش، آماده‌شدن اتاق‌ها را به‌صورت real-time می‌بیند."
+      },
+      {
+        "title_en": "AI rate coach",
+        "title_fa": "مشاور قیمت با AI",
+        "desc_en": "Reads your occupancy pace, booking lead times, and weekday patterns, then suggests a nightly rate with the reasoning spelled out. Apply it with one tap or ignore it — you stay in charge.",
+        "desc_fa": "AI با توجه به روند اشغال اتاق‌ها، فاصله‌ی booking تا اقامت و الگوی روزهای هفته، قیمت پیشنهادی هر شب را همراه با دلیلش نشان می‌دهد. با یک کلیک اعمال می‌کنید یا نادیده می‌گیرید؛ تصمیم نهایی با شماست."
+      },
+      {
+        "title_en": "Guest memory",
+        "title_fa": "حافظه‌ی مهمان",
+        "desc_en": "Returning guests are recognized at booking time; their preferences, past stays, and notes surface automatically at check-in — so a second visit feels like coming back, not starting over.",
+        "desc_fa": "مهمان‌های قبلی همان لحظه‌ی booking شناسایی می‌شوند و سلیقه‌ها، اقامت‌های گذشته و یادداشت‌ها موقع check-in خودکار جلوی چشم پذیرش می‌آید؛ تا مهمان حس کند برگشته، نه اینکه از اول شروع کرده."
+      }
+    ],
+    "pages": [
+      {
+        "name_en": "Availability Calendar",
+        "name_fa": "تقویم اتاق‌ها",
+        "desc_en": "Rooms-by-dates grid with color-coded status and drag-to-book.",
+        "desc_fa": "نمای شبکه‌ای اتاق‌ها در طول تقویم با وضعیت رنگی و رزرو با کشیدن روی تاریخ‌ها."
+      },
+      {
+        "name_en": "Reservations Desk",
+        "name_fa": "میز رزرو",
+        "desc_en": "Every booking — direct and channel — in one searchable list with instant edits.",
+        "desc_fa": "همه‌ی رزروها، مستقیم و channel، در یک فهرست واحد با جست‌وجو و ویرایش فوری."
+      },
+      {
+        "name_en": "Front Desk",
+        "name_fa": "پذیرش",
+        "desc_en": "Today's arrivals and departures with one-screen check-in and check-out.",
+        "desc_fa": "ورود و خروج‌های امروز با check-in و check-out در یک صفحه."
+      },
+      {
+        "name_en": "Housekeeping Board",
+        "name_fa": "برد خانه‌داری",
+        "desc_en": "Live room-status board — clean, in progress, inspect — ordered by arrival priority.",
+        "desc_fa": "وضعیت لحظه‌ای اتاق‌ها (تمیز، در حال نظافت، بازرسی) مرتب‌شده بر اساس اولویت ورود مهمان."
+      },
+      {
+        "name_en": "Analytics",
+        "name_fa": "داشبورد تحلیل",
+        "desc_en": "Occupancy, average rate, and revenue trends by room type, channel, and season.",
+        "desc_fa": "نرخ اشغال، میانگین قیمت و روند درآمد به تفکیک نوع اتاق، channel و فصل."
+      }
+    ]
+  },
+  {
+    "key": "school",
+    "tagline_en": "Your entire institute — enrollment to tuition — one dashboard.",
+    "tagline_fa": "کل آموزشگاه، از ثبت‌نام تا شهریه، در یک dashboard",
+    "overview_en": "An end-to-end management system for schools and training institutes: scheduling, enrollment, attendance, grading, and tuition on one connected platform. It replaces the patchwork of spreadsheets, paper registers, and group chats most institutes run on, so staff spend less time on admin and nothing falls through the cracks. A dedicated portal keeps parents and students in the loop with real-time grades, schedules, and payments.",
+    "overview_fa": "یک سیستم یکپارچه برای مدیریت آموزشگاه: از ثبت‌نام و کلاس‌بندی تا حضور و غیاب، نمرات و شهریه، همه روی یک پلتفرم به‌هم‌متصل. این سیستم جایگزین اکسل‌های پراکنده، دفترهای کاغذی و گروه‌های پیام‌رسان می‌شود تا تیم اداری کمتر درگیر کارهای تکراری باشد و هیچ‌چیز از قلم نیفتد. Portal اختصاصی والدین و دانش‌آموز هم نمرات، برنامه کلاس‌ها و پرداخت‌ها را به‌صورت real-time در دسترس نگه می‌دارد.",
+    "industries_en": [
+      "Private schools",
+      "Language institutes",
+      "Konkur prep institutes",
+      "Online course academies"
+    ],
+    "industries_fa": [
+      "مدارس غیردولتی",
+      "آموزشگاه‌های زبان",
+      "موسسات کنکور",
+      "آکادمی‌های آموزش آنلاین"
+    ],
+    "features": [
+      {
+        "title_en": "At-Risk Student Radar",
+        "title_fa": "رادار دانش‌آموزان در معرض ریزش",
+        "desc_en": "AI watches attendance dips, grade slides, and overdue tuition together and flags students likely to drop out — weeks before it happens. Staff get a ranked follow-up list, not a hunch.",
+        "desc_fa": "AI افت حضور، روند نزولی نمرات و شهریه‌های عقب‌افتاده را کنار هم می‌بیند و دانش‌آموزانی را که احتمال انصراف‌شان بالاست، هفته‌ها زودتر علامت می‌زند. تیم آموزشگاه به‌جای حدس و گمان، یک لیست اولویت‌بندی‌شده برای پیگیری در دست دارد."
+      },
+      {
+        "title_en": "A Real Installment Engine",
+        "title_fa": "موتور واقعی قسط‌بندی شهریه",
+        "desc_en": "Define a different payment plan per family: split amounts, custom due dates, sibling discounts, cheque tracking. Reminders go out automatically and the overdue list keeps itself current.",
+        "desc_fa": "برای هر خانواده یک برنامه پرداخت جداگانه تعریف کنید: مبالغ متفاوت، سررسیدهای دلخواه، تخفیف خواهر و برادر و ثبت چک. یادآوری‌ها خودکار ارسال می‌شوند و لیست بدهکاران خودش به‌روز می‌ماند."
+      },
+      {
+        "title_en": "Clash-Proof Scheduling",
+        "title_fa": "برنامه‌ریزی بدون تداخل",
+        "desc_en": "The timetable builder knows every teacher's hours, every room's capacity, and every student's other classes. Try to double-book anything and it stops you — then suggests the nearest open slot.",
+        "desc_fa": "موقع چیدن برنامه، سیستم ساعت کاری هر مدرس، ظرفیت هر کلاس و بقیه کلاس‌های هر دانش‌آموز را می‌داند. هر تداخلی را همان لحظه جلوی‌تان می‌گیرد و نزدیک‌ترین زمان خالی را پیشنهاد می‌دهد."
+      },
+      {
+        "title_en": "Messaging That Knows the Student",
+        "title_fa": "پیام‌رسانی متصل به پرونده دانش‌آموز",
+        "desc_en": "Every parent conversation lives on the student's record: absences, grade notes, and payment reminders attach automatically, with read receipts per message. No more \"we never got that message.\"",
+        "desc_fa": "هر گفتگو با والدین روی پرونده همان دانش‌آموز ثبت می‌شود؛ غیبت‌ها، نمرات و یادآوری شهریه به‌صورت خودکار ضمیمه می‌شوند و read receipt هر پیام مشخص است. دیگر جمله «پیام به دست ما نرسید» جایی ندارد."
+      }
+    ],
+    "pages": [
+      {
+        "name_en": "Admin Dashboard",
+        "name_fa": "Dashboard مدیریت",
+        "desc_en": "Enrollment, attendance, and revenue for the whole institute — live, on one screen.",
+        "desc_fa": "ثبت‌نام، حضور و غیاب و درآمد کل آموزشگاه، به‌صورت زنده روی یک صفحه."
+      },
+      {
+        "name_en": "Classes & Timetable",
+        "name_fa": "کلاس‌ها و برنامه هفتگی",
+        "desc_en": "Build terms, assign teachers and rooms, and resolve schedule conflicts as you go.",
+        "desc_fa": "ترم‌ها را بسازید، مدرس و کلاس اختصاص دهید و تداخل‌های برنامه را همان لحظه رفع کنید."
+      },
+      {
+        "name_en": "Student Profile",
+        "name_fa": "پرونده دانش‌آموز",
+        "desc_en": "One complete record per student: grades, attendance, payments, and every parent conversation.",
+        "desc_fa": "برای هر دانش‌آموز یک پرونده کامل: نمرات، حضور و غیاب، پرداخت‌ها و تمام مکاتبات با والدین."
+      },
+      {
+        "name_en": "Parent & Student Portal",
+        "name_fa": "Portal والدین و دانش‌آموز",
+        "desc_en": "Real-time grades, schedules, messaging, and online tuition payment — on any phone.",
+        "desc_fa": "نمرات و برنامه کلاس‌ها به‌صورت real-time، پیام‌رسانی و پرداخت آنلاین شهریه، روی هر گوشی."
+      },
+      {
+        "name_en": "Tuition & Installments",
+        "name_fa": "شهریه و اقساط",
+        "desc_en": "Payment plans, automatic reminders, cheque tracking, and end-of-term financial reports.",
+        "desc_fa": "برنامه‌های پرداخت، یادآوری خودکار، ثبت چک و گزارش‌های مالی پایان ترم."
+      }
+    ]
+  },
+  {
+    "key": "hr",
+    "tagline_en": "Every shift counted, every payslip exact.",
+    "tagline_fa": "حضور و غیاب دقیق، حقوق و دستمزد بی‌خطا",
+    "overview_en": "A single HR platform for employee records, shift scheduling, attendance, leave, and payroll — built for organizations where hundreds of people work in shifts across multiple sites. It replaces the spreadsheet patchwork that turns month-end into a week of manual reconciliation, closing payroll in hours with insurance and tax calculated automatically.",
+    "overview_fa": "یک پلتفرم یکپارچه منابع انسانی برای پرونده پرسنلی، شیفت‌بندی، حضور و غیاب، مرخصی و حقوق و دستمزد؛ ساخته‌شده برای سازمان‌هایی که صدها نفر در چند سایت و شیفت‌های مختلف کار می‌کنند. به‌جای Excelهای پراکنده و یک هفته محاسبه دستی در پایان ماه، حقوق با بیمه و مالیات دقیق، در چند ساعت بسته می‌شود.",
+    "industries_en": [
+      "Manufacturing plants and factories",
+      "Retail and supermarket chains",
+      "Holding companies with multiple subsidiaries",
+      "Distribution and logistics operations"
+    ],
+    "industries_fa": [
+      "کارخانه‌ها و واحدهای تولیدی",
+      "فروشگاه‌های زنجیره‌ای و خرده‌فروشی",
+      "هلدینگ‌ها و گروه‌های چندشرکتی",
+      "شرکت‌های پخش و لجستیک"
+    ],
+    "features": [
+      {
+        "title_en": "Anti-fraud mobile clock-in",
+        "title_fa": "ثبت تردد ضدتقلب با موبایل",
+        "desc_en": "GPS geofencing plus a liveness face check stops buddy-punching at the gate. It keeps working offline on the factory floor and syncs the moment coverage returns.",
+        "desc_fa": "ترکیب Geofencing با GPS و تأیید زنده‌بودن چهره، «کارت‌زنی به‌جای همکار» را عملاً غیرممکن می‌کند. حتی بدون اینترنت در سالن تولید کار می‌کند و به‌محض وصل شدن، داده‌ها sync می‌شوند."
+      },
+      {
+        "title_en": "Payroll dry-run simulator",
+        "title_fa": "شبیه‌سازی حقوق قبل از پرداخت",
+        "desc_en": "Run the entire month as a simulation before committing a single payment. See exactly how an overtime policy, a raise, or a new insurance rate changes every payslip, line by line.",
+        "desc_fa": "قبل از قطعی‌شدن پرداخت، کل ماه را شبیه‌سازی کنید. تأثیر اضافه‌کاری، افزایش حقوق یا تغییر نرخ بیمه را روی تک‌تک فیش‌ها، سطر به سطر ببینید."
+      },
+      {
+        "title_en": "Ready-to-file insurance and tax exports",
+        "title_fa": "خروجی آماده بیمه و مالیات",
+        "desc_en": "Generates submission-ready social-security insurance lists and payroll-tax files in the official formats. No re-typing into government portals at month-end.",
+        "desc_fa": "لیست بیمه تأمین اجتماعی و فایل مالیات حقوق را دقیقاً در فرمت رسمی و آماده ارسال تولید می‌کند؛ دیگر خبری از ورود دستی اطلاعات در سامانه‌ها در پایان ماه نیست."
+      },
+      {
+        "title_en": "Holding-level consolidation",
+        "title_fa": "تجمیع در سطح هلدینگ",
+        "desc_en": "One live org chart and payroll view across all legal entities. Compare labor cost per site, allocate to cost centers, and close payroll for the whole group from a single dashboard.",
+        "desc_fa": "چارت سازمانی و حقوق و دستمزد چند شرکت را یکجا ببینید: مقایسه هزینه نیروی انسانی سایت‌ها، تخصیص به مراکز هزینه و بستن حقوق کل گروه از یک dashboard."
+      }
+    ],
+    "pages": [
+      {
+        "name_en": "Command Dashboard",
+        "name_fa": "Dashboard مدیریتی",
+        "desc_en": "Live headcount, attendance status, leave balances, and payroll progress at a glance.",
+        "desc_fa": "نمای real-time از پرسنل حاضر، وضعیت مرخصی‌ها و پیشرفت محاسبه حقوق در یک نگاه."
+      },
+      {
+        "name_en": "Employee Profile",
+        "name_fa": "پرونده پرسنلی",
+        "desc_en": "The complete record: contract, documents, attendance history, payslips, and performance notes in one place.",
+        "desc_fa": "همه‌چیز در یک صفحه: قرارداد، مدارک، سوابق حضور، فیش‌های حقوقی و یادداشت‌های عملکرد."
+      },
+      {
+        "name_en": "Shift Planner",
+        "name_fa": "برنامه‌ریزی شیفت",
+        "desc_en": "Drag-and-drop scheduling with instant flags for coverage gaps and overtime risk.",
+        "desc_fa": "چیدمان شیفت‌ها به‌صورت drag-and-drop با هشدار فوری برای کمبود نیرو و ریسک اضافه‌کاری."
+      },
+      {
+        "name_en": "Payroll Workbench",
+        "name_fa": "میز کار حقوق و دستمزد",
+        "desc_en": "Simulate, review, and approve the monthly run with a line-by-line breakdown of every payslip.",
+        "desc_fa": "شبیه‌سازی، بررسی و تأیید حقوق ماهانه با ریز محاسبات هر فیش."
+      },
+      {
+        "name_en": "Org Chart & Teams",
+        "name_fa": "چارت سازمانی و تیم‌ها",
+        "desc_en": "An interactive chart across all entities with drill-down to any team, role, or person.",
+        "desc_fa": "چارت تعاملی همه شرکت‌های گروه با امکان رفتن تا سطح تیم، سمت و فرد."
+      }
+    ]
   }
 ]

@@ -43,11 +43,35 @@ const META = {
     tags:'BOOKING · SERVICES · SMS', img:'salon', sort:8 },
   distribution:{ title_en:'Distribution & Field Sales', title_fa:'پخش مویرگی و فروش میدانی',
     tags:'DISTRIBUTION · ROUTES · B2B', img:'distribution', sort:9 },
+  'law-landing': { title_en:'Law Firm Website', title_fa:'وب‌سایت دفتر وکالت',
+    tags:'LANDING · LEGAL · BOOKING', img:'law-landing', sort:10 },
+  'dental-landing': { title_en:'Dental Clinic Website', title_fa:'وب‌سایت کلینیک دندان‌پزشکی',
+    tags:'LANDING · MEDICAL · BOOKING', img:'dental-landing', sort:11 },
+  'fitness-landing': { title_en:'Gym & Fitness Website', title_fa:'وب‌سایت باشگاه ورزشی',
+    tags:'LANDING · FITNESS · MEMBERSHIP', img:'fitness-landing', sort:12 },
+  'cafe-landing': { title_en:'Café & Restaurant Website', title_fa:'وب‌سایت کافه و رستوران',
+    tags:'LANDING · MENU · RESERVATION', img:'cafe-landing', sort:13 },
+  'architect-landing': { title_en:'Architecture Studio Website', title_fa:'وب‌سایت استودیو معماری',
+    tags:'LANDING · PORTFOLIO · LUXE', img:'architect-landing', sort:14 },
+  hotel:  { title_en:'Hotel Management System', title_fa:'سیستم مدیریت هتل',
+    tags:'HOTEL · RESERVATION · PMS', img:'hotel', sort:15 },
+  school: { title_en:'Institute Management System', title_fa:'سیستم مدیریت آموزشگاه',
+    tags:'EDUCATION · PORTAL · TUITION', img:'school', sort:16 },
+  hr:     { title_en:'HR & Payroll System', title_fa:'سیستم منابع انسانی و حقوق',
+    tags:'HR · PAYROLL · ATTENDANCE', img:'hr', sort:17 },
 };
+// projects that have a Persian UI image; all others fall back to the EN
+// image on the fa detail page until the user supplies a localized one
+const HAS_FA_IMG = new Set([
+  'restaurant', 'realestate', 'medical', 'ecommerce',
+  'accounting', 'pos', 'salon', 'distribution',
+]);
+
 const PROJECTS = RICH.map(p => {
   const m = META[p.key];
-  const faCover = p.key === 'trading' ? `/assets/projects/${m.img}-full.jpg`
-                                      : `/assets/projects/${m.img}-fa-full.jpg`;
+  const faCover = HAS_FA_IMG.has(p.key)
+    ? `/assets/projects/${m.img}-fa-full.jpg`
+    : `/assets/projects/${m.img}-full.jpg`;
   return {
     slug: p.key, title_en: m.title_en, title_fa: m.title_fa, tags: m.tags, sort: m.sort,
     image: `/assets/projects/${m.img}-cover.jpg`,

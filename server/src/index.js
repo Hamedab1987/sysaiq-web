@@ -16,7 +16,7 @@ import { db, getSetting, setSetting, allSettings } from './db.js';
 import { verifyLogin, issueCookie, clearCookie, requireAdmin, createAdmin } from './auth.js';
 import { chat } from './ai.js';
 import { sendLeadNotification } from './mail.js';
-import { findProject, renderProjectPage } from './projectPage.js';
+import { findProject, renderProjectPage, renderWorkIndex } from './projectPage.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -226,6 +226,14 @@ function defaultsKnowledge(b) {
     tags: b.tags || '', enabled: b.enabled ? 1 : 0,
   };
 }
+
+// ---- portfolio index: /en/work and /fa/work ----
+app.get('/:lang(en|fa)/work', (req, res) => {
+  res.type('html').send(renderWorkIndex(req.params.lang));
+});
+app.get('/:lang(en|fa)/work/', (req, res) => {
+  res.type('html').send(renderWorkIndex(req.params.lang));
+});
 
 // ---- project detail pages: /en/work/:slug and /fa/work/:slug ----
 app.get('/:lang(en|fa)/work/:slug', (req, res, next) => {
