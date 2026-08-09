@@ -124,8 +124,8 @@ STRINGS = {
 
     # ---------- work / selected projects (light, slider) ----------
     "WORK_H2":   {"en": "Selected work", "fa": "نمونه‌کارها"},
-    "WORK_HINT": {"en": "Drag · click a card to open", "fa": "بکشید · روی کارت بزنید"},
-    "W_MORE":    {"en": "View project →", "fa": "مشاهده‌ی پروژه →"},
+    "WORK_HINT": {"en": "Hover to preview · click to open",
+                  "fa": "اشاره برای پیش‌نمایش · کلیک برای باز کردن"},
 
     "W1_T": {"en": "Restaurant Operations Platform", "fa": "پلتفرم مدیریت رستوران"},
     "W1_D": {

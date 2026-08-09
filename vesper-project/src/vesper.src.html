@@ -165,41 +165,78 @@
   .portrait::after{content:"[ SYSAIQ — SYSTEMS LAB ]";position:absolute;left:20px;bottom:16px;
     font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:9.5px;letter-spacing:0.18em;color:rgba(236,234,246,0.6);}
 
-  /* ================= work slider ================= */
-  #work{padding:110px 0 96px;background:var(--paper);}
+  /* ================= work showcase (cinematic) ================= */
+  #work{padding:110px 0 110px;background:var(--paper);}
   .work-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:44px;}
   .work-hint{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(16,16,18,0.4);}
-  .work-track{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;
-    padding:6px 4px 26px;scrollbar-width:none;-webkit-overflow-scrolling:touch;cursor:grab;}
-  .work-track::-webkit-scrollbar{display:none;}
-  .work-track.dragging{cursor:grabbing;scroll-snap-type:none;}
-  .wcard{flex:0 0 340px;scroll-snap-align:start;background:#081428;border-radius:14px;
-    overflow:hidden;color:var(--ink);box-shadow:0 18px 40px -22px rgba(8,20,40,0.55);}
-  .wcard .shot{height:190px;display:flex;align-items:center;justify-content:center;
-    background:
-      radial-gradient(90% 90% at 20% 0%, rgba(125,255,217,0.10), transparent 55%),
-      radial-gradient(90% 90% at 90% 100%, rgba(139,107,255,0.14), transparent 55%),
-      #081428;border-bottom:1px solid rgba(236,234,246,0.07);}
-  .wcard .shot svg{width:80%;height:auto;display:block;}
-  .wcard .shot img{width:100%;height:100%;object-fit:cover;display:block;}
-  .wcard .winfo{padding:18px 20px 22px;}
-  .wcard h3{font-size:16.5px;font-weight:500;margin-bottom:8px;letter-spacing:0.01em;}
-  .wcard .winfo p{font-size:12.5px;line-height:1.75;color:rgba(236,234,246,0.62);}
-  .wcard .wtags{margin-top:14px;font-size:9.5px;letter-spacing:0.15em;color:var(--mint);
-    font-family:"SF Mono",ui-monospace,Menlo,monospace;}
-  a.wcard{text-decoration:none;color:inherit;transition:transform .3s cubic-bezier(.2,.6,.2,1),box-shadow .3s;}
-  a.wcard:hover{transform:translateY(-6px);box-shadow:0 26px 50px -24px rgba(139,107,255,.7);}
-  .wcard .wmore{display:inline-block;margin-top:14px;font-size:11.5px;color:var(--mint);opacity:.85;}
-  a.wcard:hover .wmore{opacity:1;}
-  a.wcard .shot img{transition:transform .5s cubic-bezier(.2,.6,.2,1);}
-  a.wcard:hover .shot img{transform:scale(1.04);}
-  .work-dots{display:flex;gap:7px;justify-content:center;margin-top:4px;}
-  .work-dots i{width:6px;height:6px;border-radius:4px;background:rgba(16,16,18,0.22);transition:all .35s;}
-  .work-dots i.on{background:var(--ink-d);width:20px;}
-  [dir="rtl"] .wcard h3{letter-spacing:0;}
+  .showcase{display:grid;grid-template-columns:1.45fr 1fr;gap:44px;align-items:center;}
+  .sc-stagewrap{perspective:1200px;}
+  .sc-stage{position:relative;aspect-ratio:16/10;border-radius:20px;overflow:hidden;
+    background:#081428;box-shadow:0 50px 110px -40px rgba(8,20,40,0.75);
+    transition:transform .35s ease;will-change:transform;transform-style:preserve-3d;}
+  .sc-slide{position:absolute;inset:0;display:block;opacity:0;transform:scale(1.07);
+    transition:opacity .9s cubic-bezier(.2,.6,.2,1),transform 1.2s cubic-bezier(.2,.6,.2,1);
+    pointer-events:none;}
+  .sc-slide.on{opacity:1;transform:scale(1);pointer-events:auto;animation:kenburns 9s ease-in-out infinite alternate;}
+  @keyframes kenburns{from{transform:scale(1);}to{transform:scale(1.045);}}
+  .sc-slide img{width:100%;height:100%;object-fit:cover;display:block;}
+  .sc-stage::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(120% 90% at 50% 110%, rgba(8,20,40,0.55), transparent 55%);}
+  .sc-bar{position:absolute;left:0;bottom:0;height:3px;width:0;z-index:3;
+    background:linear-gradient(90deg,var(--mint),var(--violet));border-radius:0 3px 3px 0;}
+  @keyframes scbar{from{width:0;}to{width:100%;}}
+  .sc-list{display:flex;flex-direction:column;}
+  .sc-row{display:flex;align-items:center;gap:18px;padding:20px 6px;text-decoration:none;
+    color:var(--ink-d);border-top:1px solid var(--line-d);position:relative;transition:padding .35s;}
+  .sc-row:last-child{border-bottom:1px solid var(--line-d);}
+  .sc-num{font-family:"SF Mono",ui-monospace,Menlo,monospace;font-size:11px;color:rgba(16,16,18,0.35);
+    transition:color .3s;min-width:26px;}
+  .sc-titles{flex:1;min-width:0;}
+  .sc-titles b{display:block;font-size:16.5px;font-weight:500;letter-spacing:-0.01em;transition:color .3s;}
+  .sc-desc{display:block;font-style:normal;font-size:12.5px;color:rgba(16,16,18,0.55);line-height:1.65;max-height:0;overflow:hidden;transition:max-height .5s cubic-bezier(.2,.6,.2,1),margin .5s;}.sc-row.on .sc-desc{max-height:70px;margin-top:6px;}
+  .sc-titles i{display:block;font-style:normal;margin-top:4px;font-size:9.5px;letter-spacing:0.14em;
+    font-family:"SF Mono",ui-monospace,Menlo,monospace;color:rgba(16,16,18,0.38);direction:ltr;text-align:start;}
+  .sc-arrow{font-size:16px;opacity:0;transform:translateX(-8px);transition:all .35s;color:var(--ink-d);}
+  [dir="rtl"] .sc-arrow{transform:translateX(8px) scaleX(-1);}
+  .sc-row::before{content:"";position:absolute;inset-inline-start:-14px;top:18%;bottom:18%;width:3px;
+    border-radius:3px;background:linear-gradient(180deg,var(--mint),var(--violet));
+    opacity:0;transform:scaleY(0.4);transition:all .35s;}
+  .sc-row.on{padding-inline-start:16px;}
+  .sc-row.on::before{opacity:1;transform:scaleY(1);}
+  .sc-row.on .sc-num{color:#0aa07c;}
+  .sc-row.on .sc-titles b{background:linear-gradient(90deg,#0aa07c,#6c48e8);
+    -webkit-background-clip:text;background-clip:text;color:transparent;}
+  .sc-row.on .sc-arrow,.sc-row:hover .sc-arrow{opacity:1;transform:translateX(0);}
+  [dir="rtl"] .sc-row.on .sc-arrow,[dir="rtl"] .sc-row:hover .sc-arrow{transform:translateX(0) scaleX(-1);}
+  [dir="rtl"] .sc-titles b{letter-spacing:0;}
   [dir="rtl"] .work-hint{letter-spacing:0;text-transform:none;font-family:inherit;}
-  [dir="rtl"] .work-dots{flex-direction:row-reverse;}
-  @media (max-width:900px){.wcard{flex-basis:290px;}.wcard .shot{height:165px;}}
+  @media (max-width:900px){
+    .showcase{grid-template-columns:1fr;gap:26px;}
+    .sc-row{padding:15px 4px;}
+    .sc-titles b{font-size:15px;}
+  }
+
+  /* ================= about living scene ================= */
+  .portrait{cursor:default;}
+  .portrait svg{width:100%;height:100%;display:block;}
+  #lab-svg .spin{animation:labspin 26s linear infinite;transform-box:fill-box;transform-origin:center;}
+  #lab-svg .spin-rev{animation:labspin 18s linear infinite reverse;transform-box:fill-box;transform-origin:center;}
+  @keyframes labspin{to{transform:rotate(360deg);}}
+  #lab-svg .node{animation:labpulse 2.6s ease-in-out infinite;transform-box:fill-box;transform-origin:center;}
+  @keyframes labpulse{0%,100%{opacity:.55;transform:scale(1);}50%{opacity:1;transform:scale(1.45);}}
+  #lab-svg .link{stroke-dasharray:6 10;animation:labflow 1.6s linear infinite;}
+  @keyframes labflow{to{stroke-dashoffset:-32;}}
+  #lab-svg .hexglow{filter:drop-shadow(0 0 14px rgba(125,255,217,0.35));}
+  #lab-svg .comet{stroke-dasharray:200 830;animation:labcomet 7s linear infinite;}
+  @keyframes labcomet{to{stroke-dashoffset:-1030;}}
+  #lab-svg .chartline{stroke-dasharray:170;stroke-dashoffset:170;animation:labdraw 4.5s ease-in-out infinite;}
+  @keyframes labdraw{0%{stroke-dashoffset:170;opacity:1;}55%{stroke-dashoffset:0;opacity:1;}80%{opacity:1;}100%{stroke-dashoffset:0;opacity:0;}}
+  #lab-svg .dust{animation:labdust 7s ease-in-out infinite;}
+  @keyframes labdust{0%{transform:translateY(0);opacity:0;}25%{opacity:.8;}75%{opacity:.25;}100%{transform:translateY(-46px);opacity:0;}}
+  #lab-svg .ping{animation:labping 3.2s ease-out infinite;transform-box:fill-box;transform-origin:center;}
+  @keyframes labping{0%{transform:scale(0.3);opacity:.8;}100%{transform:scale(4.2);opacity:0;}}
+  #lab-svg .braces{animation:labfloat 5s ease-in-out infinite;transform-box:fill-box;transform-origin:center;}
+  @keyframes labfloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
 
   /* FAQ */
   #faq{padding:110px 0 130px;background:var(--paper2);}
@@ -420,7 +457,90 @@
         <span class="idx mono" dir="ltr">[ 02 ]</span>
         <p>{{FEAT2}}</p>
       </div>
-      <div class="portrait rv d2"><img src="{{ABOUT_ART_URI}}" alt="SysaiQ" loading="lazy"></div>
+      <div class="portrait rv d2"><svg id="lab-svg" viewBox="0 0 480 480" xmlns="http://www.w3.org/2000/svg" aria-label="SysaiQ living systems scene">
+        <defs>
+          <linearGradient id="lg1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#7dffd9"/><stop offset="0.55" stop-color="#4fd4ff"/><stop offset="1" stop-color="#8b6bff"/>
+          </linearGradient>
+          <radialGradient id="lgbg" cx="0.5" cy="0.42" r="0.75">
+            <stop offset="0" stop-color="#0e1e3c"/><stop offset="1" stop-color="#081428"/>
+          </radialGradient>
+        </defs>
+        <rect width="480" height="480" fill="url(#lgbg)"/>
+        <!-- ambient dust -->
+        <g fill="#7dffd9">
+          <circle class="dust" cx="88" cy="360" r="2.2" style="animation-delay:0s"/>
+          <circle class="dust" cx="132" cy="420" r="1.6" style="animation-delay:1.4s"/>
+          <circle class="dust" cx="392" cy="380" r="2" style="animation-delay:2.6s" fill="#8b6bff"/>
+          <circle class="dust" cx="420" cy="300" r="1.5" style="animation-delay:3.4s"/>
+          <circle class="dust" cx="70" cy="200" r="1.6" style="animation-delay:4.2s" fill="#8b6bff"/>
+          <circle class="dust" cx="410" cy="150" r="1.8" style="animation-delay:5.2s"/>
+        </g>
+        <!-- hexagon: faint ring + orbiting comet -->
+        <g class="hexglow">
+          <path d="M240 62 L394 151 L394 329 L240 418 L86 329 L86 151 Z"
+                fill="none" stroke="rgba(125,255,217,0.22)" stroke-width="5" stroke-linejoin="round"/>
+          <path class="comet" d="M240 62 L394 151 L394 329 L240 418 L86 329 L86 151 Z"
+                fill="none" stroke="url(#lg1)" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+        </g>
+        <!-- radar ping -->
+        <circle class="ping" cx="240" cy="235" r="20" fill="none" stroke="#7dffd9" stroke-width="2"/>
+        <circle class="ping" cx="240" cy="235" r="20" fill="none" stroke="#8b6bff" stroke-width="2" style="animation-delay:1.6s"/>
+        <circle cx="240" cy="235" r="60" fill="rgba(125,255,217,0.05)"/>
+        <!-- neural network -->
+        <g stroke="rgba(125,255,217,0.6)" stroke-width="2.2" fill="none">
+          <path class="link" d="M240 150 L190 190" style="animation-delay:0s"/>
+          <path class="link" d="M240 150 L290 190" style="animation-delay:.2s"/>
+          <path class="link" d="M190 190 L240 235" style="animation-delay:.4s"/>
+          <path class="link" d="M290 190 L240 235" style="animation-delay:.6s"/>
+          <path class="link" d="M165 240 L190 190" style="animation-delay:.8s"/>
+          <path class="link" d="M315 240 L290 190" style="animation-delay:1s"/>
+          <path class="link" d="M165 240 L190 290" style="animation-delay:1.2s"/>
+          <path class="link" d="M315 240 L290 290" style="animation-delay:1.4s"/>
+          <path class="link" d="M190 290 L240 235" style="animation-delay:1.6s"/>
+          <path class="link" d="M290 290 L240 235" style="animation-delay:1.8s"/>
+          <path class="link" d="M190 290 L240 330" style="animation-delay:2s"/>
+          <path class="link" d="M290 290 L240 330" style="animation-delay:2.2s"/>
+        </g>
+        <g>
+          <circle class="node" cx="240" cy="150" r="6" fill="#7dffd9" style="animation-delay:0s"/>
+          <circle class="node" cx="190" cy="190" r="5" fill="#4fd4ff" style="animation-delay:.3s"/>
+          <circle class="node" cx="290" cy="190" r="5" fill="#4fd4ff" style="animation-delay:.6s"/>
+          <circle class="node" cx="165" cy="240" r="4.5" fill="#8b6bff" style="animation-delay:.9s"/>
+          <circle class="node" cx="240" cy="235" r="7" fill="#7dffd9" style="animation-delay:1.2s"/>
+          <circle class="node" cx="315" cy="240" r="4.5" fill="#8b6bff" style="animation-delay:1.5s"/>
+          <circle class="node" cx="190" cy="290" r="5" fill="#8b6bff" style="animation-delay:1.8s"/>
+          <circle class="node" cx="290" cy="290" r="5" fill="#4fd4ff" style="animation-delay:2.1s"/>
+          <circle class="node" cx="240" cy="330" r="6" fill="#8b6bff" style="animation-delay:2.4s"/>
+        </g>
+        <!-- gears -->
+        <g class="spin" fill="none" stroke="#7dffd9" stroke-width="4">
+          <circle cx="150" cy="345" r="17"/>
+          <g stroke-width="7" stroke-linecap="round">
+            <line x1="150" y1="319" x2="150" y2="326"/><line x1="150" y1="364" x2="150" y2="371"/>
+            <line x1="124" y1="345" x2="131" y2="345"/><line x1="169" y1="345" x2="176" y2="345"/>
+            <line x1="132" y1="327" x2="137" y2="332"/><line x1="163" y1="358" x2="168" y2="363"/>
+            <line x1="168" y1="327" x2="163" y2="332"/><line x1="137" y1="358" x2="132" y2="363"/>
+          </g>
+          <circle cx="150" cy="345" r="4" fill="#7dffd9" stroke="none"/>
+        </g>
+        <g class="spin-rev" fill="none" stroke="#8b6bff" stroke-width="3.2">
+          <circle cx="196" cy="376" r="11"/>
+          <g stroke-width="5.5" stroke-linecap="round">
+            <line x1="196" y1="358" x2="196" y2="363"/><line x1="196" y1="389" x2="196" y2="394"/>
+            <line x1="178" y1="376" x2="183" y2="376"/><line x1="209" y1="376" x2="214" y2="376"/>
+          </g>
+          <circle cx="196" cy="376" r="3" fill="#8b6bff" stroke="none"/>
+        </g>
+        <!-- self-drawing chart -->
+        <g stroke-linecap="round" stroke-linejoin="round">
+          <path class="chartline" d="M282 372 L310 344 L330 356 L368 312" fill="none" stroke="url(#lg1)" stroke-width="5"/>
+          <path class="chartline" d="M368 312 L349 316 M368 312 L364 331" fill="none" stroke="url(#lg1)" stroke-width="5" style="animation-delay:.2s"/>
+        </g>
+        <!-- code braces -->
+        <text class="braces" x="240" y="122" text-anchor="middle" font-family="SF Mono,ui-monospace,Menlo,monospace"
+              font-size="30" fill="rgba(236,234,246,0.55)">{ }</text>
+      </svg></div>
     </div>
   </div>
 </section>
@@ -434,35 +554,45 @@
     </div>
   </div>
   <div class="wrap">
-    <div class="work-track rv d1" id="work-track" dir="ltr">
-
-      <a class="wcard" href="/{{LANG}}/work/restaurant">
-        <div class="shot"><img src="../assets/projects/restaurant-cover.jpg" alt="{{W1_T}}" loading="lazy"></div>
-        <div class="winfo"><h3>{{W1_T}}</h3><p>{{W1_D}}</p><div class="wtags" dir="ltr">{{W1_G}}</div><span class="wmore">{{W_MORE}}</span></div>
-      </a>
-
-      <a class="wcard" href="/{{LANG}}/work/realestate">
-        <div class="shot"><img src="../assets/projects/realestate-cover.jpg" alt="{{W2_T}}" loading="lazy"></div>
-        <div class="winfo"><h3>{{W2_T}}</h3><p>{{W2_D}}</p><div class="wtags" dir="ltr">{{W2_G}}</div><span class="wmore">{{W_MORE}}</span></div>
-      </a>
-
-      <a class="wcard" href="/{{LANG}}/work/medical">
-        <div class="shot"><img src="../assets/projects/medical-cover.jpg" alt="{{W3_T}}" loading="lazy"></div>
-        <div class="winfo"><h3>{{W3_T}}</h3><p>{{W3_D}}</p><div class="wtags" dir="ltr">{{W3_G}}</div><span class="wmore">{{W_MORE}}</span></div>
-      </a>
-
-      <a class="wcard" href="/{{LANG}}/work/trading">
-        <div class="shot"><img src="../assets/projects/trading-cover.jpg" alt="{{W4_T}}" loading="lazy"></div>
-        <div class="winfo"><h3>{{W4_T}}</h3><p>{{W4_D}}</p><div class="wtags" dir="ltr">{{W4_G}}</div><span class="wmore">{{W_MORE}}</span></div>
-      </a>
-
-      <a class="wcard" href="/{{LANG}}/work/ecommerce">
-        <div class="shot"><img src="../assets/projects/ecommerce-cover.jpg" alt="{{W5_T}}" loading="lazy"></div>
-        <div class="winfo"><h3>{{W5_T}}</h3><p>{{W5_D}}</p><div class="wtags" dir="ltr">{{W5_G}}</div><span class="wmore">{{W_MORE}}</span></div>
-      </a>
-
+    <div class="showcase rv d1" id="showcase">
+      <div class="sc-stagewrap">
+        <div class="sc-stage" id="sc-stage">
+          <a class="sc-slide on" href="/{{LANG}}/work/restaurant"><img src="../assets/projects/restaurant-full.jpg" alt="{{W1_T}}"></a>
+          <a class="sc-slide" href="/{{LANG}}/work/realestate"><img src="../assets/projects/realestate-full.jpg" alt="{{W2_T}}" loading="lazy"></a>
+          <a class="sc-slide" href="/{{LANG}}/work/medical"><img src="../assets/projects/medical-full.jpg" alt="{{W3_T}}" loading="lazy"></a>
+          <a class="sc-slide" href="/{{LANG}}/work/trading"><img src="../assets/projects/trading-full.jpg" alt="{{W4_T}}" loading="lazy"></a>
+          <a class="sc-slide" href="/{{LANG}}/work/ecommerce"><img src="../assets/projects/ecommerce-full.jpg" alt="{{W5_T}}" loading="lazy"></a>
+          <span class="sc-bar" id="sc-bar"></span>
+        </div>
+      </div>
+      <nav class="sc-list" id="sc-list">
+        <a class="sc-row on" href="/{{LANG}}/work/restaurant">
+          <span class="sc-num">01</span>
+          <span class="sc-titles"><b>{{W1_T}}</b><em class="sc-desc">{{W1_D}}</em><i>{{W1_G}}</i></span>
+          <span class="sc-arrow">→</span>
+        </a>
+        <a class="sc-row" href="/{{LANG}}/work/realestate">
+          <span class="sc-num">02</span>
+          <span class="sc-titles"><b>{{W2_T}}</b><em class="sc-desc">{{W2_D}}</em><i>{{W2_G}}</i></span>
+          <span class="sc-arrow">→</span>
+        </a>
+        <a class="sc-row" href="/{{LANG}}/work/medical">
+          <span class="sc-num">03</span>
+          <span class="sc-titles"><b>{{W3_T}}</b><em class="sc-desc">{{W3_D}}</em><i>{{W3_G}}</i></span>
+          <span class="sc-arrow">→</span>
+        </a>
+        <a class="sc-row" href="/{{LANG}}/work/trading">
+          <span class="sc-num">04</span>
+          <span class="sc-titles"><b>{{W4_T}}</b><em class="sc-desc">{{W4_D}}</em><i>{{W4_G}}</i></span>
+          <span class="sc-arrow">→</span>
+        </a>
+        <a class="sc-row" href="/{{LANG}}/work/ecommerce">
+          <span class="sc-num">05</span>
+          <span class="sc-titles"><b>{{W5_T}}</b><em class="sc-desc">{{W5_D}}</em><i>{{W5_G}}</i></span>
+          <span class="sc-arrow">→</span>
+        </a>
+      </nav>
     </div>
-    <div class="work-dots" id="work-dots"></div>
   </div>
 </section>
 
@@ -1066,40 +1196,53 @@ document.querySelectorAll('.qa').forEach(qa=>{
 });
 
 /* ============================================================
-   WORK SLIDER — drag to scroll + active dot
+   WORK SHOWCASE — cinematic stage + project index
+   Hover a row to preview instantly; auto-cycles with a progress
+   bar; stage tilts in 3D toward the cursor; click opens detail.
    ============================================================ */
 (function(){
-  const track=document.getElementById('work-track');
-  if(!track)return;
-  const cards=[...track.querySelectorAll('.wcard')];
-  const dotsBox=document.getElementById('work-dots');
-  cards.forEach((_,i)=>{const d=document.createElement('i');if(i===0)d.classList.add('on');dotsBox.appendChild(d);});
-  const dots=[...dotsBox.children];
-  let raf=null;
-  track.addEventListener('scroll',()=>{
-    if(raf)return;
-    raf=requestAnimationFrame(()=>{
-      raf=null;
-      const mid=track.scrollLeft+track.clientWidth/2;
-      let best=0,bd=1e9;
-      cards.forEach((c,i)=>{const d=Math.abs(c.offsetLeft+c.offsetWidth/2-mid);if(d<bd){bd=d;best=i;}});
-      dots.forEach((d,i)=>d.classList.toggle('on',i===best));
-    });
-  },{passive:true});
-  /* mouse drag (touch scrolls natively) */
-  let down=false,sx=0,sl=0,moved=false;
-  track.addEventListener('pointerdown',e=>{
+  const wrap=document.getElementById('showcase');
+  if(!wrap)return;
+  const stage=document.getElementById('sc-stage');
+  const slides=[...stage.querySelectorAll('.sc-slide')];
+  const rows=[...document.querySelectorAll('.sc-row')];
+  const bar=document.getElementById('sc-bar');
+  const PERIOD=4800;
+  let cur=0,timer=null;
+
+  function go(i){
+    cur=i;
+    slides.forEach((s,k)=>s.classList.toggle('on',k===i));
+    rows.forEach((r,k)=>r.classList.toggle('on',k===i));
+    if(bar){bar.style.animation='none';void bar.offsetWidth;
+      bar.style.animation='scbar '+PERIOD+'ms linear';}
+  }
+  function start(){stop();timer=setInterval(()=>go((cur+1)%slides.length),PERIOD);}
+  function stop(){if(timer){clearInterval(timer);timer=null;}}
+
+  rows.forEach((r,i)=>{
+    r.addEventListener('mouseenter',()=>{go(i);start();});
+    r.addEventListener('focus',()=>{go(i);start();});
+  });
+  /* pause while the cursor reads the stage */
+  stage.addEventListener('mouseenter',stop);
+  stage.addEventListener('mouseleave',start);
+
+  /* 3D tilt toward the cursor */
+  stage.addEventListener('pointermove',e=>{
     if(e.pointerType!=='mouse')return;
-    down=true;moved=false;sx=e.clientX;sl=track.scrollLeft;track.classList.add('dragging');
+    const b=stage.getBoundingClientRect();
+    const x=(e.clientX-b.left)/b.width-.5, y=(e.clientY-b.top)/b.height-.5;
+    stage.style.transform='rotateY('+(x*5)+'deg) rotateX('+(-y*4)+'deg)';
   });
-  addEventListener('pointermove',e=>{
-    if(!down)return;
-    const dx=e.clientX-sx;
-    if(Math.abs(dx)>4)moved=true;
-    track.scrollLeft=sl-dx;
-  });
-  addEventListener('pointerup',()=>{down=false;track.classList.remove('dragging');});
-  track.addEventListener('click',e=>{if(moved){e.preventDefault();e.stopPropagation();}},true);
+  stage.addEventListener('pointerleave',()=>{stage.style.transform='';});
+
+  /* only cycle while visible */
+  const io2=new IntersectionObserver(es=>{
+    es.forEach(e=>{e.isIntersecting?start():stop();});
+  },{threshold:0.25});
+  io2.observe(wrap);
+  go(0);
 })();
 
 /* ============================================================
