@@ -27,7 +27,7 @@ STRINGS = {
     "NAV_CAP":     {"en": "Capabilities", "fa": "توانمندی‌ها"},
     "NAV_ABOUT":   {"en": "About",        "fa": "درباره"},
     "NAV_FAQ":     {"en": "FAQ",          "fa": "سؤالات"},
-    "NAV_CTA":     {"en": "Start a Project", "fa": "شروع یک پروژه"},
+    "NAV_CTA":     {"en": "Start a Project", "fa": "شروع پروژه"},
     "NAV_CONTACT": {"en": "Contact",      "fa": "تماس"},
 
     # ---------- hero (orb) ----------
@@ -52,7 +52,7 @@ STRINGS = {
     "TAG1": {"en": "[ AI Agents ]",  "fa": "[ AI Agent ]"},
     "TAG2": {"en": "[ Automation ]", "fa": "[ اتوماسیون ]"},
     "TAG3": {"en": "[ Custom Apps ]","fa": "[ اپ اختصاصی ]"},
-    "CTA_PRIMARY": {"en": "Start a Project", "fa": "شروع یک پروژه"},
+    "CTA_PRIMARY": {"en": "Start a Project", "fa": "شروع پروژه"},
 
     # ---------- capabilities (galaxy) ----------
     "PRESENCE_H2": {
@@ -142,9 +142,9 @@ STRINGS = {
               "and databases — through clean integrations, so nothing has to "
               "be replaced to get smarter.",
         "fa": "بله. AI Agent و اتوماسیون‌ها به سیستم‌هایی که همین حالا دارید "
-              "وصل می‌شوند — اکسل و شیت‌ها، CRM، نرم‌افزار حسابداری، API و "
-              "دیتابیس — با اتصال‌های تمیز؛ لازم نیست چیزی را دور بیندازید تا "
-              "هوشمند شوید.",
+              "وصل می‌شوند — اکسل و Google Sheets، CRM، نرم‌افزار حسابداری، "
+              "API و دیتابیس — با اتصال‌های تمیز؛ لازم نیست چیزی را کنار "
+              "بگذارید تا سیستم‌تان هوشمندتر شود.",
     },
     "Q3": {"en": "DO YOU BUILD TRADING AND ACCOUNTING SYSTEMS?",
            "fa": "سیستم معاملاتی و حسابداری هم می‌سازید؟"},
@@ -153,8 +153,8 @@ STRINGS = {
               "traders, and accounting systems that reconcile, report and "
               "automate the numbers your business runs on.",
         "fa": "بله — تخصص اصلی من است. ابزارهای Backtesting و اجرای معاملات "
-              "برای تریدرها، و سیستم‌های حسابداری که اعداد کسب‌وکار شما را "
-              "مغایرت‌گیری، گزارش‌گیری و خودکار می‌کنند.",
+              "برای تریدرها، و سیستم‌های حسابداری که مغایرت‌گیری، گزارش‌گیری "
+              "و به‌روز نگه‌داشتن اعداد کسب‌وکارتان را خودکار می‌کنند.",
     },
     "Q4": {"en": "HOW DO WE START?", "fa": "از کجا شروع کنیم؟"},
     "A4": {

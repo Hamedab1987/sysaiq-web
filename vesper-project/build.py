@@ -84,7 +84,6 @@ REDIRECT = """<!DOCTYPE html>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SysAIQ</title>
-<meta name="robots" content="noindex">
 <link rel="alternate" hreflang="fa" href="https://sysaiq.com/fa/">
 <link rel="alternate" hreflang="en" href="https://sysaiq.com/en/">
 <script>

@@ -63,7 +63,7 @@
   /* ================= header ================= */
   header{position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:50;
     display:flex;align-items:center;gap:26px;
-    padding:9px 10px 9px 18px;border-radius:100px;
+    padding-block:9px;padding-inline:18px 10px;border-radius:100px;
     background:rgba(10,10,14,0.55);border:1px solid rgba(236,234,246,0.1);
     backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);}
   .logo{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;letter-spacing:0.02em;color:var(--ink);text-decoration:none;}
@@ -130,8 +130,8 @@
     text-transform:uppercase;color:var(--dim);}
   .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);
     background:linear-gradient(90deg,transparent 40%,rgba(94,234,195,0.10) 100%);}
-  .stat{padding:22px 26px 26px;border-left:1px solid var(--line);}
-  .stat:first-child{border-left:none;}
+  .stat{padding:22px 26px 26px;border-inline-start:1px solid var(--line);}
+  .stat:first-child{border-inline-start:none;}
   .stat b{display:block;font-size:26px;font-weight:400;color:#fff;margin-bottom:8px;}
   .stat span{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--dim);}
 
@@ -214,9 +214,15 @@
      dir=rtl flips flex/grid automatically; these rules fix physical
      text-align values and kill letter-spacing (it breaks Persian
      letter joining). Technical LTR runs keep dir="ltr" inline. */
-  [dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] .light h2{letter-spacing:0;}
+  [dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] .light h2,
+  [dir="rtl"] #contact h2,[dir="rtl"] nav a{letter-spacing:0;}
   [dir="rtl"] .hero-note-l,[dir="rtl"] .presence-cap,[dir="rtl"] .tag,
   [dir="rtl"] .stat span,[dir="rtl"] .foot-base span{letter-spacing:0;text-transform:none;}
+  /* Persian copy inside .mono elements must use the Persian face
+     (SF Mono has no Arabic glyphs); dir="ltr" technical islands keep mono */
+  [dir="rtl"] .hero-note-l,[dir="rtl"] .presence-cap,[dir="rtl"] .rail-tags .tag,
+  [dir="rtl"] .foot-base span{font-family:Vazirmatn,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;}
+  [dir="rtl"] .foot-base span[dir="ltr"]{font-family:"SF Mono",ui-monospace,"Cascadia Mono",Menlo,Consolas,monospace;}
   [dir="rtl"] .hero-note-r{text-align:left;}
   [dir="rtl"] .cortex-r{text-align:left;}
   [dir="rtl"] .cortex-grid.flip .cortex-l{text-align:left;}
@@ -238,6 +244,9 @@
     .stat{border-top:1px solid var(--line);}
     .cortex-grid{flex-direction:column;align-items:flex-start;}
     .cortex-r{text-align:left;}
+    /* stacked rtl mobile: Persian paragraphs align right like everything else */
+    [dir="rtl"] .hero-note-r,[dir="rtl"] .cortex-r,
+    [dir="rtl"] .cortex-grid.flip .cortex-l{text-align:right;}
   }
 </style>
 </head>
@@ -258,7 +267,7 @@
   <div class="lang-sw" dir="ltr">
     <a href="../fa/" data-lang="fa" class="on">FA</a><span class="sep">|</span><a href="../en/" data-lang="en" >EN</a>
   </div>
-  <a class="cta-pill" href="#contact">شروع یک پروژه <span class="dot"></span></a>
+  <a class="cta-pill" href="#contact">شروع پروژه <span class="dot"></span></a>
 </header>
 
 <div class="hud mono" id="hud-bl"><span id="status-label">INITIALIZING ENVIRONMENT</span></div>
@@ -284,7 +293,7 @@
         <span class="tag">[ اپ اختصاصی ]</span>
       </div>
       <div class="btn-row">
-        <a class="btn btn-solid" href="#contact">شروع یک پروژه</a>
+        <a class="btn btn-solid" href="#contact">شروع پروژه</a>
         <a class="btn btn-star" href="#presence">✳</a>
       </div>
     </div>
@@ -370,11 +379,11 @@
       </div>
       <div class="qa">
         <button class="qa-q">آیا AI با ابزارهای فعلی من کار می‌کند؟ <span class="sign">+</span></button>
-        <div class="qa-a"><p>بله. AI Agent و اتوماسیون‌ها به سیستم‌هایی که همین حالا دارید وصل می‌شوند — اکسل و شیت‌ها، CRM، نرم‌افزار حسابداری، API و دیتابیس — با اتصال‌های تمیز؛ لازم نیست چیزی را دور بیندازید تا هوشمند شوید.</p></div>
+        <div class="qa-a"><p>بله. AI Agent و اتوماسیون‌ها به سیستم‌هایی که همین حالا دارید وصل می‌شوند — اکسل و Google Sheets، CRM، نرم‌افزار حسابداری، API و دیتابیس — با اتصال‌های تمیز؛ لازم نیست چیزی را کنار بگذارید تا سیستم‌تان هوشمندتر شود.</p></div>
       </div>
       <div class="qa">
         <button class="qa-q">سیستم معاملاتی و حسابداری هم می‌سازید؟ <span class="sign">+</span></button>
-        <div class="qa-a"><p>بله — تخصص اصلی من است. ابزارهای Backtesting و اجرای معاملات برای تریدرها، و سیستم‌های حسابداری که اعداد کسب‌وکار شما را مغایرت‌گیری، گزارش‌گیری و خودکار می‌کنند.</p></div>
+        <div class="qa-a"><p>بله — تخصص اصلی من است. ابزارهای Backtesting و اجرای معاملات برای تریدرها، و سیستم‌های حسابداری که مغایرت‌گیری، گزارش‌گیری و به‌روز نگه‌داشتن اعداد کسب‌وکارتان را خودکار می‌کنند.</p></div>
       </div>
       <div class="qa">
         <button class="qa-q">از کجا شروع کنیم؟ <span class="sign">+</span></button>
