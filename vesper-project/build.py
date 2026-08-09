@@ -35,6 +35,16 @@ mask = (ROOT / "assets" / "landmask.b64").read_text().strip()
 vazir_b64 = base64.b64encode(
     (ROOT / "assets" / "vazirmatn-var.woff2").read_bytes()).decode()
 
+
+def data_uri(path, mime):
+    return f"data:{mime};base64," + base64.b64encode(
+        (ROOT / path).read_bytes()).decode()
+
+
+LOGO_MARK = data_uri("assets/logo-mark-160.png", "image/png")
+FAVICON = data_uri("assets/favicon-64.png", "image/png")
+ABOUT_ART = data_uri("assets/about-art.jpg", "image/jpeg")
+
 assert "__LANDMASK_B64__" in src, "land-mask placeholder missing from source"
 assert CDN_TAG in src, "three.js CDN tag missing from source"
 
@@ -64,6 +74,9 @@ for lang, cfg in LANGS.items():
     out = out.replace("{{SW_FA_ON}}", 'class="on"' if lang == "fa" else "")
     out = out.replace("{{SW_EN_ON}}", 'class="on"' if lang == "en" else "")
     out = out.replace("{{FONT_CSS}}", FA_FONT_CSS if lang == "fa" else "")
+    out = out.replace("{{LOGO_MARK_URI}}", LOGO_MARK)
+    out = out.replace("{{FAVICON_URI}}", FAVICON)
+    out = out.replace("{{ABOUT_ART_URI}}", ABOUT_ART)
 
     leftovers = re.findall(r"\{\{[A-Z0-9_]+\}\}", out)
     assert not leftovers, f"unresolved tokens: {leftovers}"

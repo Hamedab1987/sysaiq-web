@@ -1,4 +1,14 @@
-# SysAIQ — bilingual living-interface landing page
+# SysaiQ — bilingual living-interface landing page
+
+Brand casing is **SysaiQ** (matches the hexagon logo). Uppercase contexts
+(eyebrows, HUD) use SYSAIQ. Logo source: `assets/logo-src.png`; derived
+assets (`logo-mark-160.png` keyed-transparent header mark, `favicon-64.png`,
+`about-art.jpg`, root `og.jpg` 1200×630) are canvas crops of it — regenerate
+from logo-src.png if the logo ever changes. `{{LOGO_MARK_URI}}`,
+`{{FAVICON_URI}}`, `{{ABOUT_ART_URI}}` are inlined by build.py; og.jpg stays
+a real file (crawlers need a URL). `CNAME` pins the custom domain; deploys
+run via `.github/workflows/deploy.yml` (build.py + GitHub Pages) on every
+push to main.
 
 The SysAIQ.com landing: a single-page WebGL experience where one
 91,000-particle field morphs through four states as the visitor scrolls:
@@ -77,6 +87,14 @@ template. Everything is deterministic (seeded mulberry32, SEED=20260808).
 - Don't call Date.now()/Math.random() for anything that affects geometry —
   keep it seeded and reproducible.
 - Contact email is `hello@sysaiq.com` (in the template, not content.py).
+
+## Work slider
+
+`#work` (light) holds five `.wcard` project cards in a scroll-snap track:
+drag/scroll horizontally, dots sync via scroll handler. Card art is inline
+SVG (static in the template); copy comes from `W1..W5_{T,D,G}` tokens.
+The track carries `dir="ltr"` so card order matches dot order; RTL pages
+reverse the dots row instead.
 
 ## Verify
 

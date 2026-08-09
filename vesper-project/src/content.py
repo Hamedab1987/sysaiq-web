@@ -10,8 +10,8 @@
 STRINGS = {
     # ---------- <head> ----------
     "TITLE": {
-        "en": "SysAIQ — Intelligent Digital Systems",
-        "fa": "SysAIQ — سیستم‌های دیجیتال هوشمند",
+        "en": "SysaiQ — Intelligent Digital Systems",
+        "fa": "SysaiQ — سیستم‌های دیجیتال هوشمند",
     },
     "META_DESC": {
         "en": "AI & software lab building intelligent digital systems — "
@@ -24,6 +24,7 @@ STRINGS = {
 
     # ---------- header nav ----------
     "NAV_HOME":    {"en": "Home",         "fa": "خانه"},
+    "NAV_WORK":    {"en": "Work",         "fa": "پروژه‌ها"},
     "NAV_CAP":     {"en": "Capabilities", "fa": "توانمندی‌ها"},
     "NAV_ABOUT":   {"en": "About",        "fa": "درباره"},
     "NAV_FAQ":     {"en": "FAQ",          "fa": "سؤالات"},
@@ -101,11 +102,11 @@ STRINGS = {
     # ---------- about (light) ----------
     "LIVING_H2": {"en": "What I build", "fa": "چه می‌سازم"},
     "FEAT1": {
-        "en": "SysAIQ is a one-person systems lab. I design and build "
+        "en": "SysaiQ is a one-person systems lab. I design and build "
               "intelligent digital systems that combine software, AI, "
               "automation, data and modern interfaces — from custom websites "
               "and apps to AI agents and automated workflows.",
-        "fa": "SysAIQ یک لابراتوار سیستم‌سازیِ تک‌نفره است. سیستم‌های دیجیتال "
+        "fa": "SysaiQ یک لابراتوار سیستم‌سازیِ تک‌نفره است. سیستم‌های دیجیتال "
               "هوشمند طراحی و پیاده‌سازی می‌کنم؛ ترکیبی از نرم‌افزار، AI، "
               "اتوماسیون، داده و رابط‌های مدرن — از وب‌سایت و اپ اختصاصی تا "
               "AI Agent و فرایندهای خودکار.",
@@ -121,9 +122,67 @@ STRINGS = {
               "تا انتها.",
     },
 
+    # ---------- work / selected projects (light, slider) ----------
+    "WORK_H2":   {"en": "Selected work", "fa": "نمونه‌کارها"},
+    "WORK_HINT": {"en": "Drag to explore", "fa": "برای دیدن، بکشید"},
+
+    "W1_T": {"en": "AI Trading Assistant", "fa": "دستیار معاملاتی AI"},
+    "W1_D": {
+        "en": "Signal engine and backtesting stack for a futures trader — "
+              "strategy research, execution alerts and risk guards in one "
+              "pipeline.",
+        "fa": "موتور سیگنال و Backtesting برای معامله‌گر فیوچرز — تحقیق "
+              "استراتژی، هشدار اجرا و کنترل ریسک در یک پایپ‌لاین.",
+    },
+    "W1_G": {"en": "QUANT · PYTHON · BACKTESTING",
+             "fa": "QUANT · PYTHON · BACKTESTING"},
+
+    "W2_T": {"en": "Business Automation Suite", "fa": "اتوماسیون کسب‌وکار"},
+    "W2_D": {
+        "en": "Order-to-books automation for a retail business — orders, "
+              "invoices and inventory flow into accounting without a single "
+              "manual entry.",
+        "fa": "اتوماسیون «از سفارش تا دفاتر» برای خرده‌فروشی — سفارش، فاکتور "
+              "و موجودی بدون حتی یک ثبت دستی به حسابداری می‌رسند.",
+    },
+    "W2_G": {"en": "AUTOMATION · API · ACCOUNTING",
+             "fa": "AUTOMATION · API · ACCOUNTING"},
+
+    "W3_T": {"en": "AI Customer Agent", "fa": "ایجنت هوشمند مشتری"},
+    "W3_D": {
+        "en": "RAG-powered assistant trained on the business's own documents "
+              "— answers customers in Persian and English, and hands off to "
+              "a human exactly when it should.",
+        "fa": "دستیار مبتنی بر RAG، آموزش‌دیده روی اسناد خود کسب‌وکار — به "
+              "فارسی و انگلیسی پاسخ می‌دهد و درست به‌موقع به انسان واگذار "
+              "می‌کند.",
+    },
+    "W3_G": {"en": "AI AGENT · RAG · LLM", "fa": "AI AGENT · RAG · LLM"},
+
+    "W4_T": {"en": "Accounting Dashboard", "fa": "داشبورد حسابداری"},
+    "W4_D": {
+        "en": "Live reconciliation and reporting — every account tied out "
+              "daily, anomalies flagged before they become month-end "
+              "surprises.",
+        "fa": "مغایرت‌گیری و گزارش زنده — همه‌ی حساب‌ها هر روز تراز می‌شوند و "
+              "موارد مشکوک قبل از اینکه سورپرایز پایان ماه شوند پرچم "
+              "می‌خورند.",
+    },
+    "W4_G": {"en": "DASHBOARD · DATA · FINANCE",
+             "fa": "DASHBOARD · DATA · FINANCE"},
+
+    "W5_T": {"en": "Custom Web Platform", "fa": "پلتفرم وب اختصاصی"},
+    "W5_D": {
+        "en": "A fast, bilingual web platform designed from the actual "
+              "workflow of the business — not a template bent out of shape.",
+        "fa": "پلتفرم وب سریع و دوزبانه که از دل فرایند واقعی کسب‌وکار طراحی "
+              "شده — نه قالب آماده‌ای که به‌زور تغییر شکل داده باشد.",
+    },
+    "W5_G": {"en": "WEB · UX · BILINGUAL", "fa": "WEB · UX · BILINGUAL"},
+
     # ---------- FAQ (light) ----------
     "FAQ_H2": {"en": "Frequently asked", "fa": "سؤالات پرتکرار"},
-    "Q1": {"en": "WHAT EXACTLY IS SYSAIQ?", "fa": "SysAIQ دقیقاً چیست؟"},
+    "Q1": {"en": "WHAT EXACTLY IS SYSAIQ?", "fa": "SysaiQ دقیقاً چیست؟"},
     "A1": {
         "en": "A systems lab run by one engineer. I build intelligent digital "
               "systems — websites, custom apps, AI agents, automation and "
@@ -174,8 +233,8 @@ STRINGS = {
     "CONTACT_BTN": {"en": "Contact Me", "fa": "تماس با من"},
 
     # ---------- footer ----------
-    "FOOT_C":   {"en": "© 2026 SysAIQ · Hamed Systems Lab",
-                 "fa": "© ۲۰۲۶ SysAIQ · Hamed Systems Lab"},
+    "FOOT_C":   {"en": "© 2026 SysaiQ · Hamed Systems Lab",
+                 "fa": "© ۲۰۲۶ SysaiQ · Hamed Systems Lab"},
     "FOOT_MID": {"en": "Software · AI · Automation · Quant",
                  "fa": "نرم‌افزار · AI · اتوماسیون · Quant"},
 }
