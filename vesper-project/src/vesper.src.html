@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html {{HTML_ATTRS}}>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vesper — Motion instead of chrome</title>
+<title>{{TITLE}}</title>
+<meta name="description" content="{{META_DESC}}">
+<link rel="canonical" href="{{CANONICAL}}">
+<link rel="alternate" hreflang="fa" href="{{ALT_FA}}">
+<link rel="alternate" hreflang="en" href="{{ALT_EN}}">
+<link rel="alternate" hreflang="x-default" href="https://sysaiq.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="SysAIQ">
+<meta property="og:title" content="{{TITLE}}">
+<meta property="og:description" content="{{META_DESC}}">
+<meta property="og:url" content="{{CANONICAL}}">
+<meta property="og:locale" content="{{OG_LOCALE}}">
 <style>
+{{FONT_CSS}}
   :root{
     --mint:#7dffd9;
     --violet:#8b6bff;
@@ -185,8 +197,33 @@
     border-top:1px solid var(--line);padding:20px 0 26px;}
   .foot-base span{font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--faint);}
 
+  /* ================= language switcher ================= */
+  .lang-sw{display:flex;align-items:center;gap:7px;font-size:11px;letter-spacing:0.08em;}
+  .lang-sw a{color:var(--faint);text-decoration:none;transition:color .25s;font-family:"SF Mono",ui-monospace,Menlo,monospace;}
+  .lang-sw a:hover{color:var(--ink);}
+  .lang-sw a.on{color:var(--mint);}
+  .lang-sw .sep{color:var(--faint);opacity:.5;}
+
+  /* ================= rtl (Persian) overrides =================
+     dir=rtl flips flex/grid automatically; these rules fix physical
+     text-align values and kill letter-spacing (it breaks Persian
+     letter joining). Technical LTR runs keep dir="ltr" inline. */
+  [dir="rtl"] h1,[dir="rtl"] h2,[dir="rtl"] .light h2{letter-spacing:0;}
+  [dir="rtl"] .hero-note-l,[dir="rtl"] .presence-cap,[dir="rtl"] .tag,
+  [dir="rtl"] .stat span,[dir="rtl"] .foot-base span{letter-spacing:0;text-transform:none;}
+  [dir="rtl"] .hero-note-r{text-align:left;}
+  [dir="rtl"] .cortex-r{text-align:left;}
+  [dir="rtl"] .cortex-grid.flip .cortex-l{text-align:left;}
+  [dir="rtl"] .cortex-grid.flip .cortex-r{text-align:right;}
+  [dir="rtl"] .qa-q{text-align:right;letter-spacing:0;font-size:14px;font-family:inherit;}
+  [dir="rtl"] .hud,[dir="rtl"] .eyebrow{direction:ltr;}
+  [dir="rtl"] #hud-bl{left:auto;right:26px;text-align:right;}
+  [dir="rtl"] #hud-br{right:auto;left:26px;text-align:left;}
+  [dir="rtl"] .hero-note-l,[dir="rtl"] .presence-cap,[dir="rtl"] .stat span{line-height:2;}
+
   @media (max-width:900px){
     nav{display:none;}
+    .presence-cap{display:none;}
     .living-grid{grid-template-columns:1fr;gap:34px;}
     .portrait{height:340px;}
     .hero-grid{flex-direction:column;align-items:flex-start;}
@@ -205,14 +242,17 @@
 <div id="veil"></div>
 
 <header>
-  <a class="logo" href="#hero"><span class="star">✳</span> Vesper</a>
+  <a class="logo" href="#hero"><span class="star">✳</span> SysAIQ</a>
   <nav>
-    <a href="#hero">Home</a>
-    <a href="#presence">Services</a>
-    <a href="#living">Works</a>
-    <a href="#faq">About</a>
+    <a href="#hero">{{NAV_HOME}}</a>
+    <a href="#presence">{{NAV_CAP}}</a>
+    <a href="#living">{{NAV_ABOUT}}</a>
+    <a href="#faq">{{NAV_FAQ}}</a>
   </nav>
-  <a class="cta-pill" href="#contact">Contact Us <span class="dot"></span></a>
+  <div class="lang-sw" dir="ltr">
+    <a href="../fa/" data-lang="fa" {{SW_FA_ON}}>FA</a><span class="sep">|</span><a href="../en/" data-lang="en" {{SW_EN_ON}}>EN</a>
+  </div>
+  <a class="cta-pill" href="#contact">{{NAV_CTA}} <span class="dot"></span></a>
 </header>
 
 <div class="hud mono" id="hud-bl"><span id="status-label">INITIALIZING ENVIRONMENT</span></div>
@@ -222,90 +262,91 @@
 <!-- ============ HERO — the breathing orb ============ -->
 <section id="hero" class="dark-sec" data-phase="0">
   <div class="hero-top wrap">
-    <h1 class="rv on">Motion instead<br>of chrome</h1>
+    <h1 class="rv on">{{HERO_H1}}</h1>
   </div>
   <div class="hero-bottom wrap">
     <div class="hero-grid">
-      <div class="hero-note-l mono">It reads your presence — pointer, scroll, dwell — and it answers in motion.</div>
-      <div class="hero-note-r">A rendering and interaction layer that turns your presence into motion, tuned to feel alive under every pointer.</div>
+      <div class="hero-note-l mono">{{HERO_NOTE_L}}</div>
+      <div class="hero-note-r">{{HERO_NOTE_R}}</div>
     </div>
     <div class="hero-rail">
       <div class="rail-tags mono">
-        <span class="tag">[ Living interface ]</span>
+        <span class="tag">{{TAG1}}</span>
         <span class="tag">·</span>
-        <span class="tag">[ Motion layer ]</span>
+        <span class="tag">{{TAG2}}</span>
         <span class="tag">·</span>
-        <span class="tag">[ Point engine ]</span>
+        <span class="tag">{{TAG3}}</span>
       </div>
       <div class="btn-row">
-        <a class="btn btn-solid" href="#contact">Send Request</a>
+        <a class="btn btn-solid" href="#contact">{{CTA_PRIMARY}}</a>
         <a class="btn btn-star" href="#presence">✳</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ PRESENCE — the spiral galaxy ============ -->
+<!-- ============ CAPABILITIES — the spiral galaxy ============ -->
 <section id="presence" class="dark-sec" data-phase="1">
   <div class="presence-sticky">
     <div class="presence-head wrap">
-      <div class="eyebrow mono rv" style="margin-bottom:20px">[ V—GALAXY / SYS.04 ]</div>
-      <h2 class="big rv d1">Reads presence,<br>in motion</h2>
+      <div class="eyebrow mono rv" style="margin-bottom:20px" dir="ltr">[ SYSAIQ—CAPABILITIES / SYS.01 ]</div>
+      <h2 class="big rv d1">{{PRESENCE_H2}}</h2>
     </div>
-    <div class="presence-cap mono rv d2">Every particle here is a reply to you — pointer, scroll and dwell, read live and answered as pure, drawn motion.</div>
+    <div class="presence-cap mono rv d2">{{PRESENCE_CAP}}</div>
     <div class="stats rv d1">
-      <div class="stat"><b>91k</b><span>Live particles</span></div>
-      <div class="stat"><b>8.3</b><span>Frame budget ms</span></div>
-      <div class="stat"><b>0.9</b><span>Cold start secs</span></div>
-      <div class="stat"><b>60</b><span>Frames per sec</span></div>
+      <div class="stat"><b dir="ltr">AI</b><span>{{STAT1_S}}</span></div>
+      <div class="stat"><b dir="ltr">WEB</b><span>{{STAT2_S}}</span></div>
+      <div class="stat"><b dir="ltr">AUTO</b><span>{{STAT3_S}}</span></div>
+      <div class="stat"><b dir="ltr">QUANT</b><span>{{STAT4_S}}</span></div>
     </div>
   </div>
 </section>
 
-<!-- ============ TERRA — the earth ============ -->
+<!-- ============ REACH — the earth ============ -->
 <section id="terra" class="dark-sec" data-phase="2">
   <div class="cortex-sticky">
     <div class="cortex-grid flip wrap">
       <div class="cortex-l">
-        <span class="eyebrow mono rv">[ V—TERRA / SYS.04 ]</span>
-        <h2 class="rv d1">Then it remembers the whole world</h2>
+        <span class="eyebrow mono rv" dir="ltr">[ SYSAIQ—REACH / SYS.02 ]</span>
+        <h2 class="rv d1">{{TERRA_H2}}</h2>
       </div>
       <div class="cortex-r rv d2">
-        The field widens into orbit — continents drawn in living light, oceans kept dark and breathing.
-        The planet turns because you are watching it.
-        <span class="mono">Real coastlines. One particle field.</span>
+        {{TERRA_TEXT}}
+        <span class="mono" dir="ltr">SYSAIQ.COM · REMOTE / WORLDWIDE</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ MIND — AI ============ -->
+<!-- ============ MIND — SysAIQ ============ -->
 <section id="mind" class="dark-sec" data-phase="3">
   <div class="presence-sticky">
     <div class="presence-head wrap">
-      <div class="eyebrow mono rv" style="margin-bottom:20px">[ V—MIND / SYS.04 ]</div>
-      <h2 class="big rv d1">From a world,<br>a mind</h2>
+      <div class="eyebrow mono rv" style="margin-bottom:20px" dir="ltr">[ SYSAIQ—MIND / SYS.03 ]</div>
+      <h2 class="big rv d1">{{MIND_H2}}</h2>
     </div>
-    <div class="presence-cap mono rv d2">The same ninety-one thousand particles align into two letters — the field admits what it has been all along.</div>
+    <div class="presence-cap mono rv d2">{{MIND_CAP}}</div>
   </div>
 </section>
 
-<!-- ============ A LIVING INTERFACE (light) ============ -->
+<!-- ============ ABOUT / WHAT I BUILD (light) ============ -->
 <section id="living" class="light" data-phase="3">
   <div class="wrap">
     <div class="living-head">
-      <h2 class="rv">A living interface</h2>
-      <span class="eyebrow mono rv d1">[ SYS.04 — OVERVIEW ]</span>
+      <h2 class="rv">{{LIVING_H2}}</h2>
+      <span class="eyebrow mono rv d1" dir="ltr">[ SYSAIQ — OVERVIEW ]</span>
     </div>
     <div class="living-grid">
       <div class="feature rv">
-        <span class="idx mono">[ 01 ]</span>
-        <p>Vesper is a rendering and interaction layer that reads presence — pointer, scroll and dwell — and answers in motion rather than chrome. The interface never waits; it listens.</p>
+        <span class="idx mono" dir="ltr">[ 01 ]</span>
+        <p>{{FEAT1}}</p>
       </div>
       <div class="feature rv d1">
-        <span class="idx mono">[ 02 ]</span>
-        <p>Point counts, tessellation and device pixel ratio all step down by viewport and thermal headroom, so the same scene feels native from a workstation to a phone.</p>
+        <span class="idx mono" dir="ltr">[ 02 ]</span>
+        <p>{{FEAT2}}</p>
       </div>
+      <!-- logo slot: replace the CSS-drawn .portrait with the SysAIQ
+           logo art once the final logo file arrives -->
       <div class="portrait rv d2"></div>
     </div>
   </div>
@@ -315,23 +356,23 @@
 <section id="faq" class="light" data-phase="3">
   <div class="wrap">
     <span class="faq-star rv">✳</span>
-    <h2 class="rv d1">Frequently asked</h2>
+    <h2 class="rv d1">{{FAQ_H2}}</h2>
     <div class="faq-list rv d2">
       <div class="qa open">
-        <button class="qa-q">WHAT EXACTLY IS VESPER? <span class="sign">+</span></button>
-        <div class="qa-a"><p>A rendering and interaction layer. It reads presence — pointer, scroll, dwell — and answers in motion rather than chrome. The particles never pause; your position simply re-weights the field, so every session is drawn live and never played back.</p></div>
+        <button class="qa-q">{{Q1}} <span class="sign">+</span></button>
+        <div class="qa-a"><p>{{A1}}</p></div>
       </div>
       <div class="qa">
-        <button class="qa-q">DOES IT RUN ON LOW-END HARDWARE? <span class="sign">+</span></button>
-        <div class="qa-a"><p>Yes. Point counts, tessellation and device pixel ratio step down together until the frame budget holds. The choreography stays identical — only the density adapts.</p></div>
+        <button class="qa-q">{{Q2}} <span class="sign">+</span></button>
+        <div class="qa-a"><p>{{A2}}</p></div>
       </div>
       <div class="qa">
-        <button class="qa-q">CAN IT LIVE INSIDE MY EXISTING SITE? <span class="sign">+</span></button>
-        <div class="qa-a"><p>Vesper mounts as a single canvas behind your DOM. Sections declare which state they want — orb, galaxy, cortex — and the field morphs as visitors scroll between them.</p></div>
+        <button class="qa-q">{{Q3}} <span class="sign">+</span></button>
+        <div class="qa-a"><p>{{A3}}</p></div>
       </div>
       <div class="qa">
-        <button class="qa-q">IS EVERY VISIT THE SAME? <span class="sign">+</span></button>
-        <div class="qa-a"><p>The organism is seeded and deterministic, so it is reproducible — yet it answers every move you make, so no two visits ever look alike.</p></div>
+        <button class="qa-q">{{Q4}} <span class="sign">+</span></button>
+        <div class="qa-a"><p>{{A4}}</p></div>
       </div>
     </div>
   </div>
@@ -340,10 +381,10 @@
 <!-- ============ CONTACT ============ -->
 <section id="contact" class="dark-sec" data-phase="3">
   <div class="wrap">
-    <span class="eyebrow mono rv">[ START A PROJECT ]</span>
-    <h2 class="rv d1">Let's build something<br><em>alive</em></h2>
+    <span class="eyebrow mono rv" dir="ltr">[ START A PROJECT ]</span>
+    <h2 class="rv d1">{{CONTACT_H2}}</h2>
     <div class="btn-row rv d2" style="justify-content:center">
-      <a class="btn btn-solid" href="mailto:hello@vesper.studio">Contact Us</a>
+      <a class="btn btn-solid" href="mailto:hello@sysaiq.com">{{CONTACT_BTN}}</a>
       <a class="btn btn-star" href="#hero">✳</a>
     </div>
   </div>
@@ -353,16 +394,16 @@
 <footer>
   <div class="wrap">
     <div class="foot-main">
-      <a class="logo" href="#hero"><span class="star">✳</span> Vesper</a>
+      <a class="logo" href="#hero"><span class="star">✳</span> SysAIQ</a>
       <div class="foot-nav">
-        <a href="#hero">Home</a><a href="#presence">Services</a><a href="#living">Works</a><a href="#faq">About</a><a href="#contact">Contact</a>
+        <a href="#hero">{{NAV_HOME}}</a><a href="#presence">{{NAV_CAP}}</a><a href="#living">{{NAV_ABOUT}}</a><a href="#faq">{{NAV_FAQ}}</a><a href="#contact">{{NAV_CONTACT}}</a>
       </div>
-      <span class="tag mono">V—SYS.04 · LIVE</span>
+      <span class="tag mono" dir="ltr">SYSAIQ · SYS.01 · LIVE</span>
     </div>
     <div class="foot-base">
-      <span class="mono">© 2026 Vesper Studio</span>
-      <span class="mono">Every particle is a reply to you</span>
-      <span class="mono">60 FPS · 8.3 MS · SEEDED</span>
+      <span class="mono">{{FOOT_C}}</span>
+      <span class="mono">{{FOOT_MID}}</span>
+      <span class="mono" dir="ltr">SYSAIQ.COM</span>
     </div>
   </div>
 </footer>
@@ -508,33 +549,39 @@ const earthPos=new Float32Array(COUNT*4);   /* xyz + land flag */
   }
 })();
 
-/* ---- 5. THE MIND — "AI" letterforms sampled from an offscreen canvas ---- */
+/* ---- 5. THE MIND — "SysAIQ" letterforms sampled from an offscreen canvas ---- */
 const aiPos=new Float32Array(COUNT*4);      /* xyz + letter flag */
 (function buildAI(){
+  const W=1280,H=320,WORD='SysAIQ';
   const cv=document.createElement('canvas');
-  cv.width=640; cv.height=320;
+  cv.width=W; cv.height=H;
   const cx=cv.getContext('2d');
-  cx.fillStyle='#000'; cx.fillRect(0,0,640,320);
+  cx.fillStyle='#000'; cx.fillRect(0,0,W,H);
   cx.fillStyle='#fff';
-  cx.font='700 240px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif';
+  const FAM='-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif';
+  /* auto-fit: shrink from 240px until the word fits the canvas width */
+  let fs=240;
+  cx.font='700 '+fs+'px '+FAM;
+  const w0=cx.measureText(WORD).width;
+  if(w0>W*0.92){fs=Math.floor(fs*W*0.92/w0);cx.font='700 '+fs+'px '+FAM;}
   cx.textAlign='center'; cx.textBaseline='middle';
-  cx.fillText('AI',320,175);
-  const px=cx.getImageData(0,0,640,320).data;
-  const lit=(xx,yy)=>px[((yy|0)*640+(xx|0))*4]>128;
+  cx.fillText(WORD,W/2,H*0.55);
+  const px=cx.getImageData(0,0,W,H).data;
+  const lit=(xx,yy)=>px[((yy|0)*W+(xx|0))*4]>128;
   let i=0;
   while(i<COUNT){
     if(rand()<0.13){                             /* ambient halo behind the letters */
       const u=rand()*2-1,a=rand()*Math.PI*2,rr2=Math.sqrt(Math.max(0,1-u*u));
       const rad=1.9+rand()*1.5;
-      aiPos[i*4]  =rr2*Math.cos(a)*rad;
+      aiPos[i*4]  =rr2*Math.cos(a)*rad*1.7;
       aiPos[i*4+1]=u*rad*0.55;
       aiPos[i*4+2]=rr2*Math.sin(a)*rad*0.5-0.5;
       aiPos[i*4+3]=0; i++; continue;
     }
-    const xx=rand()*640, yy=rand()*320;
+    const xx=rand()*W, yy=rand()*H;
     if(!lit(xx,yy))continue;
-    aiPos[i*4]  =(xx/640-0.5)*3.6;
-    aiPos[i*4+1]=(0.5-yy/320)*1.8;
+    aiPos[i*4]  =(xx/W-0.5)*6.6;
+    aiPos[i*4+1]=(0.5-yy/H)*1.65;
     aiPos[i*4+2]=(rand()-0.5)*0.24;
     aiPos[i*4+3]=1; i++;
   }
@@ -765,8 +812,8 @@ scene.add(points);
    sections carry data-phase: 0 orb / 1 galaxy / 2 brain
    ============================================================ */
 const phaseSecs=[...document.querySelectorAll('[data-phase]')];
-const PHASE_LABEL=['V—ORB / SYS.04','V—GALAXY / SYS.04','V—TERRA / SYS.04','V—MIND / SYS.04'];
-const PHASE_CAMZ =[5.1,6.35,5.7,5.9];
+const PHASE_LABEL=['SYSAIQ—ORB / SYS.01','SYSAIQ—CAPABILITIES / SYS.01','SYSAIQ—REACH / SYS.02','SYSAIQ—MIND / SYS.03'];
+const PHASE_CAMZ =[5.1,6.35,5.7,7.0];
 const PHASE_YOFF =[0.02,-0.30,0.0,-0.28];
 const curW=[1,0,0,0];
 let curCamZ=5.1,curYOff=0.02,labelIdx=0;
@@ -902,6 +949,16 @@ document.querySelectorAll('.qa').forEach(qa=>{
     qa.classList.toggle('open');sync();
   });
   sync();
+});
+
+/* ============================================================
+   LANGUAGE SWITCHER — remember the choice, keep the position
+   ============================================================ */
+document.querySelectorAll('.lang-sw a').forEach(a=>{
+  a.addEventListener('click',()=>{
+    try{localStorage.setItem('sysaiq-lang',a.dataset.lang);}catch(_){}
+    a.href=a.getAttribute('href').split('#')[0]+location.hash;
+  });
 });
 
 /* ============================================================
