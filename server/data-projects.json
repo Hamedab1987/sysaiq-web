@@ -1,0 +1,387 @@
+[
+  {
+    "key": "restaurant",
+    "tagline_en": "Every branch, every order, on one live screen.",
+    "tagline_fa": "همه شعبه‌ها، همه سفارش‌ها، روی یک صفحه real-time.",
+    "overview_en": "A multi-branch operations platform that puts live orders on a map, the kitchen ticket queue, sales-by-branch analytics, and staff and inventory into a single control room. It closes the gap between what's happening on the floor and what management sees, so a delayed order, a thinning stock item, or an underperforming branch surfaces in seconds instead of at the end-of-day report.",
+    "overview_fa": "یک پلتفرم operations چندشعبه‌ای که سفارش‌های زنده روی نقشه، صف تیکت آشپزخانه، آنالیز فروش به تفکیک شعبه، و مدیریت پرسنل و انبار را در یک اتاق کنترل واحد جمع می‌کند. این پلتفرم فاصله‌ی بین آنچه در سالن و آشپزخانه می‌گذرد و آنچه مدیریت می‌بیند را از بین می‌برد؛ طوری که یک سفارش عقب‌افتاده، موجودی رو به اتمام، یا شعبه‌ی کم‌فروش در چند ثانیه دیده می‌شود، نه در گزارش پایان روز.",
+    "industries_en": [
+      "Multi-branch restaurant chains and franchises",
+      "Cloud and ghost kitchens running multiple virtual brands",
+      "Cafe and quick-service (QSR) groups",
+      "Central-kitchen catering and food production operations"
+    ],
+    "industries_fa": [
+      "زنجیره‌ها و فرنچایزهای رستورانی چندشعبه",
+      "آشپزخانه‌های ابری (ghost kitchen) با چند برند مجازی",
+      "مجموعه‌های کافه و فست‌فود (QSR)",
+      "کترینگ و تولید غذای مبتنی بر آشپزخانه مرکزی"
+    ],
+    "features": [
+      {
+        "title_en": "Predicted prep time per ticket",
+        "desc_en": "An AI model estimates the real cook time of each incoming ticket from its item mix and current kitchen load, then flags orders likely to breach their SLA before the kitchen even starts them. Most systems only show a timer counting up after the fact.",
+        "title_fa": "پیش‌بینی زمان آماده‌سازی هر تیکت",
+        "desc_fa": "یک مدل AI بر اساس ترکیب آیتم‌ها و بار فعلی آشپزخانه، زمان واقعی پخت هر تیکت ورودی را تخمین می‌زند و سفارش‌هایی که احتمالاً از SLA عبور می‌کنند را قبل از شروع کار علامت‌گذاری می‌کند. بیشتر سیستم‌ها فقط یک تایمر رو به بالا نشان می‌دهند، آن هم بعد از وقوع تأخیر."
+      },
+      {
+        "title_en": "Cross-branch demand balancing",
+        "desc_en": "When one branch runs low on a key ingredient, the platform sees stock across every location in real-time and suggests the nearest branch to transfer from — or reroutes new orders before you sell something you can't make. Typical inventory tools track each branch in isolation.",
+        "title_fa": "توازن تقاضا بین شعبه‌ها",
+        "desc_fa": "وقتی موجودی یک ماده‌ی کلیدی در یک شعبه رو به اتمام می‌رود، پلتفرم موجودی همه‌ی شعبه‌ها را به‌صورت real-time می‌بیند و نزدیک‌ترین شعبه برای انتقال را پیشنهاد می‌دهد — یا سفارش‌های جدید را قبل از فروش چیزی که قابل تهیه نیست، بازمسیردهی می‌کند. ابزارهای معمول انبار، هر شعبه را جدا از بقیه رصد می‌کنند."
+      },
+      {
+        "title_en": "Ask-your-data assistant",
+        "desc_en": "A built-in AI assistant answers plain-language questions like \"which branch lost the most on refunds this week?\" and returns the chart and the underlying rows, grounded in your live data via RAG. No dashboard-building or report tickets required.",
+        "title_fa": "دستیار «با داده‌ات حرف بزن»",
+        "desc_fa": "یک دستیار AI داخلی به سؤال‌های زبان طبیعی مثل «این هفته کدام شعبه بیشترین ضرر را از بابت مرجوعی داشت؟» پاسخ می‌دهد و نمودار به‌همراه ردیف‌های داده‌ی پشت آن را برمی‌گرداند؛ همه بر پایه‌ی داده‌ی زنده‌ی شما با RAG. دیگر نیازی به ساختن dashboard دستی یا ثبت تیکت گزارش نیست."
+      },
+      {
+        "title_en": "Live map as an operational control, not a status view",
+        "desc_en": "The order map isn't just a display — you can hold, reassign, or re-route a driver and rebalance kitchen load directly from it, and every change is reflected across branches instantly. Most fleet maps are read-only tracking.",
+        "title_fa": "نقشه‌ی زنده به‌عنوان ابزار کنترل، نه فقط نمایش وضعیت",
+        "desc_fa": "نقشه‌ی سفارش‌ها صرفاً یک نمایشگر نیست — می‌توانید مستقیماً از روی آن یک سفارش را نگه دارید، پیک را جابه‌جا یا بازمسیردهی کنید و بار آشپزخانه را متوازن کنید، و هر تغییر بلافاصله در همه‌ی شعبه‌ها اعمال می‌شود. بیشتر نقشه‌های ناوگان فقط حالت read-only و ردیابی دارند."
+      }
+    ],
+    "pages": [
+      {
+        "name_en": "Live Orders Map",
+        "desc_en": "A real-time map of every active order and driver across all branches, with drag-to-reroute and hold controls.",
+        "name_fa": "نقشه‌ی سفارش‌های زنده",
+        "desc_fa": "نقشه‌ای real-time از تمام سفارش‌ها و پیک‌های فعال در همه‌ی شعبه‌ها، با قابلیت بازمسیردهی کششی و نگه‌داشتن سفارش."
+      },
+      {
+        "name_en": "Kitchen Ticket Queue",
+        "desc_en": "A station-by-station kitchen display showing each ticket with its predicted prep time and SLA-breach warnings.",
+        "name_fa": "صف تیکت آشپزخانه",
+        "desc_fa": "نمایشگر آشپزخانه به تفکیک ایستگاه که هر تیکت را با زمان آماده‌سازی پیش‌بینی‌شده و هشدار عبور از SLA نشان می‌دهد."
+      },
+      {
+        "name_en": "Sales-by-Branch Analytics",
+        "desc_en": "Side-by-side branch performance on revenue, average ticket, refunds, and peak hours, with drill-down to any order.",
+        "name_fa": "آنالیز فروش به تفکیک شعبه",
+        "desc_fa": "مقایسه‌ی کنار‌به‌کنار عملکرد شعبه‌ها روی درآمد، میانگین سفارش، مرجوعی و ساعت‌های اوج، با امکان drill-down تا سطح هر سفارش."
+      },
+      {
+        "name_en": "Inventory & Central Kitchen",
+        "desc_en": "Live stock levels per branch with low-stock alerts and one-click transfer suggestions between locations.",
+        "name_fa": "انبار و آشپزخانه‌ی مرکزی",
+        "desc_fa": "سطح موجودی زنده‌ی هر شعبه با هشدار اتمام موجودی و پیشنهاد انتقال یک‌کلیکی بین شعبه‌ها."
+      },
+      {
+        "name_en": "Staff & Shifts",
+        "desc_en": "Roster, clock-in status, and per-shift labor cost mapped against live order volume for each branch.",
+        "name_fa": "پرسنل و شیفت‌ها",
+        "desc_fa": "برنامه‌ی کاری، وضعیت حضور، و هزینه‌ی نیروی کار هر شیفت در برابر حجم سفارش زنده‌ی هر شعبه."
+      }
+    ]
+  },
+  {
+    "key": "realestate",
+    "tagline_en": "Every listing, buyer, and deal in one intelligent workspace.",
+    "tagline_fa": "همه املاک، خریدارها و معامله‌ها در یک workspace هوشمند.",
+    "overview_en": "A purpose-built CRM for real-estate agencies that unifies property listings, buyer pipelines, and deal analytics in a single system. It replaces scattered spreadsheets and messaging threads with a shared source of truth, so agents always know which client fits which property and where every deal stands. The result is faster matching, fewer dropped leads, and a clear view of pipeline value at any moment.",
+    "overview_fa": "یک CRM اختصاصی برای آژانس‌های املاک که لیستینگ املاک، pipeline خریداران و آنالیز معامله‌ها را در یک سیستم واحد کنار هم می‌آورد. به‌جای فایل‌های اکسل پراکنده و چت‌های جدا، یک منبع مشترک و قابل‌اعتماد می‌سازد تا مشاورها همیشه بدانند کدام مشتری به کدام ملک می‌خورد و هر معامله در چه مرحله‌ای است. نتیجه‌اش matching سریع‌تر، از دست‌نرفتن lead‌ها و دید شفاف از ارزش pipeline در هر لحظه است.",
+    "industries_en": [
+      "Residential real-estate brokerages",
+      "Commercial property agencies",
+      "Luxury and high-end estate firms",
+      "Property developers with in-house sales teams"
+    ],
+    "industries_fa": [
+      "آژانس‌های املاک مسکونی",
+      "آژانس‌های املاک تجاری و اداری",
+      "دفاتر املاک لوکس و های‌اند",
+      "سازنده‌ها و انبوه‌سازان با تیم فروش داخلی"
+    ],
+    "features": [
+      {
+        "title_en": "AI buyer-to-property matching",
+        "desc_en": "The engine scores each new listing against your active buyers by budget, location, and stated preferences, then surfaces the top matches the moment a property goes live. Most CRMs make agents search manually; here the right introductions come to you.",
+        "title_fa": "matching هوشمند خریدار به ملک با AI",
+        "desc_fa": "موتور AI هر لیستینگ جدید را بر اساس بودجه، موقعیت و ترجیحات هر خریدار امتیازدهی می‌کند و لحظه‌ای که ملکی ثبت می‌شود، بهترین گزینه‌ها را جلوی چشم مشاور می‌آورد. در بیشتر CRMها مشاور باید دستی جست‌وجو کند؛ اینجا معرفی درست خودش به سراغتان می‌آید."
+      },
+      {
+        "title_en": "Live deal-value forecasting",
+        "desc_en": "Pipeline analytics weight each deal by stage and historical close rates to project expected commission for the month and quarter in real-time. You see not just how many deals are open, but how much revenue is genuinely likely to land.",
+        "title_fa": "پیش‌بینی زنده ارزش معامله‌ها",
+        "desc_fa": "آنالیز pipeline هر معامله را بر اساس مرحله و نرخ close تاریخی وزن‌دهی می‌کند و کمیسیون مورد انتظار ماه و فصل را به‌صورت real-time تخمین می‌زند. فقط تعداد معامله‌های باز را نمی‌بینید، بلکه می‌فهمید واقعاً چه میزان درآمد احتمال بسته‌شدن دارد."
+      },
+      {
+        "title_en": "Map-first listing intelligence",
+        "desc_en": "Every property lives on an interactive map layered with neighborhood price trends, so agents pitch with data, not guesswork. Buyers can be shown comparable sales and area movement in the same view as the listing.",
+        "title_fa": "هوش لیستینگ مبتنی بر نقشه",
+        "desc_fa": "هر ملک روی یک نقشه تعاملی قرار می‌گیرد که روند قیمت محله را هم نشان می‌دهد، پس مشاور با داده صحبت می‌کند نه حدس. می‌شود فروش‌های مشابه و حرکت قیمت منطقه را در همان نمای ملک به خریدار نشان داد."
+      },
+      {
+        "title_en": "Integrated viewing scheduler",
+        "desc_en": "Bookings, agent availability, and automated client reminders live inside the CRM, so a viewing scheduled from a listing instantly updates the buyer's timeline and the deal record. No separate calendar tool, no double-booked afternoons.",
+        "title_fa": "scheduler یکپارچه بازدید",
+        "desc_fa": "رزرو بازدید، در دسترس بودن مشاور و یادآوری خودکار به مشتری همه داخل خود CRM هستند؛ بازدیدی که از روی یک لیستینگ ثبت می‌شود، فوراً timeline خریدار و پرونده معامله را به‌روز می‌کند. نه ابزار تقویم جدا، نه بازدیدهای تداخلی."
+      }
+    ],
+    "pages": [
+      {
+        "name_en": "Listings Gallery",
+        "desc_en": "Browse and filter every property with photos, price, and status, viewable as a grid or on the interactive map.",
+        "name_fa": "گالری لیستینگ‌ها",
+        "desc_fa": "مرور و فیلتر همه املاک با عکس، قیمت و وضعیت، به‌صورت گرید یا روی نقشه تعاملی."
+      },
+      {
+        "name_en": "Buyer Pipeline (Kanban)",
+        "desc_en": "A drag-and-drop board that moves each buyer through stages from lead to closed, with deal value on every card.",
+        "name_fa": "pipeline خریداران (Kanban)",
+        "desc_fa": "برد drag-and-drop که هر خریدار را از lead تا close بین مراحل جابه‌جا می‌کند و ارزش معامله روی هر کارت دیده می‌شود."
+      },
+      {
+        "name_en": "Property Detail",
+        "desc_en": "Full listing page with photo gallery, map location, area price trends, and matched buyers side by side.",
+        "name_fa": "جزئیات ملک",
+        "desc_fa": "صفحه کامل ملک با گالری عکس، موقعیت روی نقشه، روند قیمت منطقه و خریدارهای matched در کنار هم."
+      },
+      {
+        "name_en": "Analytics Dashboard",
+        "desc_en": "Deal-value forecasts, conversion rates, and agent performance charted for the month and quarter at a glance.",
+        "name_fa": "dashboard آنالیز",
+        "desc_fa": "پیش‌بینی ارزش معامله‌ها، نرخ conversion و عملکرد مشاورها به‌صورت نمودار برای ماه و فصل در یک نگاه."
+      },
+      {
+        "name_en": "Viewing Scheduler",
+        "desc_en": "A calendar of booked viewings tied to listings and agents, with automated reminders sent to clients.",
+        "name_fa": "scheduler بازدید",
+        "desc_fa": "تقویم بازدیدهای رزروشده که به لیستینگ‌ها و مشاورها متصل است و یادآوری خودکار برای مشتری‌ها می‌فرستد."
+      }
+    ]
+  },
+  {
+    "key": "medical",
+    "tagline_en": "Every patient, every visit, one clear record.",
+    "tagline_fa": "هر بیمار، هر ویزیت، یک پرونده شفاف.",
+    "overview_en": "A unified patient-management platform that connects the calendar, clinical records, telemedicine, prescriptions, and billing into a single flow. It replaces the tangle of separate booking apps, paper charts, and disconnected billing tools with one system where a patient's whole story stays in one place. Clinicians spend less time hunting for information and more time with the people in front of them.",
+    "overview_fa": "یک پلتفرم یکپارچه مدیریت بیمار که تقویم نوبت‌دهی، پرونده بالینی، telemedicine، نسخه و صورتحساب را در یک جریان واحد به هم وصل می‌کند. به‌جای مجموعه پراکنده‌ای از اپ‌های رزرو، پرونده کاغذی و ابزارهای مالی جدا از هم، همه‌چیز در یک سیستم جمع می‌شود و کل تاریخچه بیمار یک‌جا می‌ماند. پزشک وقت کمتری صرف جست‌وجوی اطلاعات می‌کند و زمان بیشتری برای خودِ بیمار دارد.",
+    "industries_en": [
+      "Private outpatient clinics and polyclinics",
+      "Specialist practices (dermatology, cardiology, endocrinology)",
+      "Telehealth and virtual-care providers",
+      "Dental and physiotherapy centers"
+    ],
+    "industries_fa": [
+      "کلینیک‌ها و پلی‌کلینیک‌های سرپایی خصوصی",
+      "مطب‌های تخصصی (پوست، قلب، غدد)",
+      "ارائه‌دهندگان telehealth و ویزیت آنلاین",
+      "مراکز دندان‌پزشکی و فیزیوتراپی"
+    ],
+    "features": [
+      {
+        "title_en": "Ambient visit-to-note AI",
+        "desc_en": "During a visit or telemedicine call, the system listens and drafts a structured clinical note, pulling out symptoms, diagnoses, and follow-up actions for the clinician to review. The chart is nearly written by the time the patient leaves.",
+        "title_fa": "تبدیل خودکار ویزیت به یادداشت با AI",
+        "desc_fa": "در طول ویزیت حضوری یا تماس telemedicine، سیستم گفت‌وگو را می‌شنود و یک یادداشت بالینی ساختاریافته می‌نویسد؛ علائم، تشخیص و اقدامات پیگیری را جدا می‌کند تا پزشک فقط بازبینی کند. پرونده تقریباً پیش از رفتن بیمار آماده است."
+      },
+      {
+        "title_en": "Prescription safety guardrails",
+        "desc_en": "Before a prescription is finalized, a real-time engine cross-checks it against the patient's active medications, allergies, and dosing limits, and flags interactions inline. It catches the conflicts a busy clinic usually only discovers later.",
+        "title_fa": "سدهای ایمنی نسخه‌نویسی",
+        "desc_fa": "پیش از نهایی‌شدن نسخه، یک موتور real-time آن را با داروهای فعال، حساسیت‌ها و سقف دوز بیمار مقایسه می‌کند و تداخل‌ها را همان‌جا هشدار می‌دهد. تعارض‌هایی را می‌گیرد که معمولاً یک کلینیک شلوغ فقط بعداً متوجهشان می‌شود."
+      },
+      {
+        "title_en": "Vitals trends that surface risk",
+        "desc_en": "Beyond plotting charts, the system watches trajectories across visits and quietly flags when blood pressure, weight, or lab values are drifting toward a threshold. Deterioration gets noticed as a pattern, not just a single bad reading.",
+        "title_fa": "نمودار vitals که ریسک را بیرون می‌کشد",
+        "desc_fa": "سیستم فقط نمودار نمی‌کشد؛ روند مقادیر را در طول ویزیت‌ها دنبال می‌کند و وقتی فشار خون، وزن یا نتایج آزمایش به‌سمت یک آستانه خطر حرکت می‌کنند، آرام هشدار می‌دهد. وخامت حال به‌صورت یک الگو دیده می‌شود، نه فقط یک عدد بد."
+      },
+      {
+        "title_en": "No-show prediction and smart rebooking",
+        "desc_en": "The scheduler scores each appointment for no-show risk from history and context, then nudges high-risk patients and offers freed slots to a waitlist automatically. Empty chairs get filled before they cost the clinic a day.",
+        "title_fa": "پیش‌بینی غیبت و رزرو مجدد هوشمند",
+        "desc_fa": "تقویم برای هر نوبت، ریسک غیبت را بر اساس سابقه و شرایط امتیازدهی می‌کند، به بیماران پرریسک یادآوری می‌فرستد و جای خالی را به‌طور خودکار به لیست انتظار پیشنهاد می‌دهد. صندلی خالی پیش از آنکه یک روز کاری را هدر بدهد، پر می‌شود."
+      }
+    ],
+    "pages": [
+      {
+        "name_en": "Appointment Calendar",
+        "desc_en": "A drag-and-drop schedule across clinicians and rooms, with color-coded visit types, no-show risk flags, and a live waitlist.",
+        "name_fa": "تقویم نوبت‌دهی",
+        "desc_fa": "برنامه drag-and-drop برای همه پزشکان و اتاق‌ها، با رنگ‌بندی نوع ویزیت، نشان ریسک غیبت و لیست انتظار زنده."
+      },
+      {
+        "name_en": "Patient Record",
+        "desc_en": "A single timeline of every visit, note, prescription, and result, with allergies and active medications always in view.",
+        "name_fa": "پرونده بیمار",
+        "desc_fa": "یک timeline واحد از تمام ویزیت‌ها، یادداشت‌ها، نسخه‌ها و نتایج، که حساسیت‌ها و داروهای فعال همیشه جلوی چشم است."
+      },
+      {
+        "name_en": "Telemedicine Room",
+        "desc_en": "A secure in-browser video visit with the patient chart, notes, and prescribing panel side by side on one screen.",
+        "name_fa": "اتاق ویزیت آنلاین",
+        "desc_fa": "ویزیت ویدیویی امن داخل مرورگر، با پرونده بیمار، یادداشت‌ها و پنل نسخه‌نویسی کنار هم روی یک صفحه."
+      },
+      {
+        "name_en": "Vitals & Labs Dashboard",
+        "desc_en": "Interactive charts of vitals and lab trends over time, with threshold bands and alerts on values drifting out of range.",
+        "name_fa": "داشبورد vitals و آزمایش‌ها",
+        "desc_fa": "نمودارهای تعاملی از روند vitals و نتایج آزمایش در طول زمان، با محدوده آستانه و هشدار روی مقادیر خارج از دامنه."
+      },
+      {
+        "name_en": "Billing & Invoices",
+        "desc_en": "Per-visit charges, insurance status, and payment tracking, with invoices generated straight from the visit record.",
+        "name_fa": "صورتحساب و فاکتور",
+        "desc_fa": "هزینه هر ویزیت، وضعیت بیمه و پیگیری پرداخت، با فاکتورهایی که مستقیم از روی پرونده ویزیت ساخته می‌شوند."
+      }
+    ]
+  },
+  {
+    "key": "trading",
+    "tagline_en": "One terminal where AI reads the market with you.",
+    "tagline_fa": "یک ترمینال، جایی که AI بازار را کنار تو می‌خواند.",
+    "overview_en": "A unified crypto and forex trading terminal that fuses institutional-grade charting with an AI signal engine, so you stop juggling five tabs to make one decision. Live candlesticks, order book depth, open positions, and portfolio analytics sit beside AI-generated signals that explain their own reasoning — and every idea can be backtested before real capital touches it.",
+    "overview_fa": "یک ترمینال یکپارچه برای معاملات crypto و forex که chartهای حرفه‌ای را با یک AI signal engine ترکیب می‌کند تا برای یک تصمیم مجبور نباشی بین پنج tab جابه‌جا شوی. candlestickهای real-time، عمق order book، positionهای باز و portfolio analytics کنار signalهای AI قرار می‌گیرند که منطق خودشان را توضیح می‌دهند — و هر ایده را می‌شود قبل از ورود سرمایه واقعی backtest کرد.",
+    "industries_en": [
+      "Proprietary trading firms and quant desks",
+      "Crypto hedge funds and digital-asset managers",
+      "Independent professional day traders and forex scalpers",
+      "Brokerages and exchanges offering a white-label pro terminal"
+    ],
+    "industries_fa": [
+      "شرکت‌های proprietary trading و quant deskها",
+      "hedge fundهای crypto و مدیران دارایی دیجیتال",
+      "تریدرهای حرفه‌ای مستقل و scalperهای forex",
+      "بروکرها و صرافی‌ها برای ارائه ترمینال حرفه‌ای white-label"
+    ],
+    "features": [
+      {
+        "title_en": "Signals that show their work",
+        "desc_en": "Every AI signal ships with a plain-language rationale, the exact indicators and price action it weighed, and a confidence score — so you act on reasoning, not a black-box arrow on the chart.",
+        "title_fa": "signalهایی که استدلال‌شان را نشان می‌دهند",
+        "desc_fa": "هر AI signal همراه با یک توضیح ساده، دقیقاً همان indicatorها و price action‌ای که وزن‌دهی شده، و یک confidence score ارائه می‌شود — پس بر اساس منطق تصمیم می‌گیری، نه یک فلش black-box روی chart."
+      },
+      {
+        "title_en": "Backtest a signal before you trust it",
+        "desc_en": "Every AI signal carries a live, auto-updating track record — hit rate, average R multiple, and drawdown across past setups — so you weight it by proven performance instead of taking it on faith.",
+        "title_fa": "قبل از اعتماد، هر signal را backtest کن",
+        "desc_fa": "هر AI signal یک track record زنده و خودبه‌روزرسان دارد — نرخ برد، میانگین R multiple و drawdown روی setupهای گذشته — تا آن را بر اساس عملکرد اثبات‌شده وزن بدهی، نه با اعتماد کورکورانه."
+      },
+      {
+        "title_en": "One book across every venue",
+        "desc_en": "Positions, balances, and risk are aggregated across crypto exchanges and forex brokers into a single normalized view, with unified P&L and exposure — no more mentally stitching accounts together.",
+        "title_fa": "یک book روی همه venueها",
+        "desc_fa": "positionها، balanceها و risk از صرافی‌های crypto و بروکرهای forex در یک view نرمال‌شده تجمیع می‌شوند، با P&L و exposure یکپارچه — دیگر لازم نیست حساب‌ها را ذهنی کنار هم بچینی."
+      },
+      {
+        "title_en": "Pre-trade risk guardrails",
+        "desc_en": "Set per-strategy limits on leverage, position size, and daily drawdown, and the terminal blocks or warns before an order breaches them — risk control lives in the order ticket, not in a spreadsheet you check afterward.",
+        "title_fa": "guardrailهای risk پیش از معامله",
+        "desc_fa": "برای هر strategy سقف leverage، حجم position و drawdown روزانه را تعیین کن؛ ترمینال پیش از اینکه یک order از آن‌ها عبور کند هشدار می‌دهد یا جلوی آن را می‌گیرد — کنترل risk داخل order ticket زندگی می‌کند، نه در یک spreadsheet که بعداً چک می‌کنی."
+      }
+    ],
+    "pages": [
+      {
+        "name_en": "Live Chart Workspace",
+        "desc_en": "Multi-pane candlestick charts with drawing tools, layered indicators, and AI signal overlays synced to price in real time.",
+        "name_fa": "میز کار Chart زنده",
+        "desc_fa": "chartهای candlestick چندبخشی با ابزار ترسیم، indicatorهای لایه‌ای و overlay‌های AI signal که real-time با قیمت هم‌گام می‌شوند."
+      },
+      {
+        "name_en": "Order Book & Execution",
+        "desc_en": "Depth-of-market ladder with an order ticket wired to built-in risk checks for fast, controlled entries and exits.",
+        "name_fa": "Order Book و اجرا",
+        "desc_fa": "نردبان depth-of-market همراه با order ticket که به risk checkهای داخلی متصل است، برای ورود و خروج سریع و کنترل‌شده."
+      },
+      {
+        "name_en": "AI Signal Panel",
+        "desc_en": "A ranked feed of AI signals per instrument, each with its rationale, confidence score, and historical hit rate.",
+        "name_fa": "پنل AI Signal",
+        "desc_fa": "یک feed رتبه‌بندی‌شده از AI signalها برای هر instrument، هر کدام با استدلال، confidence score و نرخ برد تاریخی."
+      },
+      {
+        "name_en": "Portfolio Analytics",
+        "desc_en": "Unified P&L, exposure, and risk metrics across all connected venues, with performance broken down by strategy and asset.",
+        "name_fa": "Portfolio Analytics",
+        "desc_fa": "P&L، exposure و متریک‌های risk یکپارچه روی همه venueهای متصل، با تفکیک عملکرد بر اساس strategy و دارایی."
+      },
+      {
+        "name_en": "Backtesting Studio",
+        "desc_en": "Replay any strategy or AI signal over historical data and read the equity curve, drawdown, and hit rate before going live.",
+        "name_fa": "استودیوی Backtesting",
+        "desc_fa": "هر strategy یا AI signal را روی داده‌های تاریخی replay کن و equity curve، drawdown و نرخ برد را پیش از اجرای زنده ببین."
+      }
+    ]
+  },
+  {
+    "key": "ecommerce",
+    "tagline_en": "Run the whole store from one screen.",
+    "tagline_fa": "کل فروشگاه را از یک صفحه بگردانید.",
+    "overview_en": "A command center for a fashion e-commerce store — catalog, orders, inventory, campaigns and customers, unified in a single admin. Instead of jumping between a storefront backend, a spreadsheet and three marketing tabs, every decision lives in one place, with live numbers and AI that surfaces what actually needs your attention.",
+    "overview_fa": "یک مرکز فرماندهی برای فروشگاه فشن — کاتالوگ، سفارش، موجودی، کمپین و مشتری، همه در یک admin واحد. به‌جای پریدن بین backend فروشگاه، یک فایل اکسل و سه تب مارکتینگ، هر تصمیم در یک جا می‌نشیند؛ با اعداد real-time و AI که همان چیزی را جلو می‌آورد که واقعاً به توجه شما نیاز دارد.",
+    "industries_en": [
+      "Fashion and apparel brands (DTC)",
+      "Multi-store retail with online and physical inventory",
+      "Beauty and lifestyle e-commerce",
+      "Boutique and marketplace sellers scaling past spreadsheets"
+    ],
+    "industries_fa": [
+      "برندهای فشن و پوشاک (فروش مستقیم / DTC)",
+      "خرده‌فروشی چندشعبه‌ای با موجودی آنلاین و فیزیکی",
+      "e-commerce حوزه‌ی زیبایی و لایف‌استایل",
+      "فروشندگان بوتیک و marketplace که از اکسل جلوتر رفته‌اند"
+    ],
+    "features": [
+      {
+        "title_en": "Size-curve inventory heatmap",
+        "desc_en": "Most admins track a single stock number per product. This one reads inventory by size and color, so a shirt that is technically in stock but sold out in every size people actually buy gets flagged before it silently kills sales.",
+        "title_fa": "هیت‌مپ موجودی بر اساس منحنی سایز",
+        "desc_fa": "بیشتر adminها فقط یک عدد موجودی برای هر محصول نگه می‌دارند. این یکی موجودی را به تفکیک سایز و رنگ می‌خواند؛ پس محصولی که روی کاغذ موجود است اما در همان سایزهایی که واقعاً خریده می‌شوند تمام شده، قبل از اینکه بی‌سروصدا فروش را از بین ببرد، پرچم می‌خورد."
+      },
+      {
+        "title_en": "Margin-true revenue analytics",
+        "desc_en": "Dashboards love gross revenue. This one nets out discounts, returns and shipping per order, so the campaign that looked like your best week is shown for what it really was — busy, but barely profitable.",
+        "title_fa": "آنالیتیکس درآمد بر پایه‌ی سود واقعی",
+        "desc_fa": "داشبوردها عاشق درآمد ناخالص‌اند. این یکی تخفیف، مرجوعی و هزینه‌ی ارسال را برای هر سفارش کسر می‌کند؛ پس کمپینی که به نظر بهترین هفته‌ی شما می‌آمد، همان چیزی که واقعاً بوده نشان داده می‌شود — پرترافیک، اما به‌زور سودده."
+      },
+      {
+        "title_en": "AI segment builder in plain language",
+        "desc_en": "Type \"customers who bought two dresses but never came back\" and get a live segment you can push straight into a campaign — no filter-stacking, no SQL, no export dance.",
+        "title_fa": "ساخت segment مشتری با زبان ساده و AI",
+        "desc_fa": "بنویسید «مشتری‌هایی که دو تا پیراهن خریدند اما دیگر برنگشتند» و یک segment زنده بگیرید که مستقیم به یک کمپین وصل می‌شود — بدون روی‌هم‌چیدن فیلتر، بدون SQL، بدون رقص export گرفتن."
+      },
+      {
+        "title_en": "Fulfilment with fraud and delay radar",
+        "desc_en": "The order queue does not just list what to ship — it scores each order for fraud risk and stock-delay risk as it arrives, so the problem orders rise to the top instead of surfacing as a chargeback three weeks later.",
+        "title_fa": "فولفیلمنت با رادار تقلب و تأخیر",
+        "desc_fa": "صف سفارش فقط فهرست نمی‌کند چه چیزی باید ارسال شود — هر سفارش را همان لحظه‌ی ورود از نظر ریسک تقلب و ریسک تأخیر موجودی امتیاز می‌دهد؛ پس سفارش‌های دردسرساز بالا می‌آیند، نه اینکه سه هفته بعد به شکل chargeback خودشان را نشان بدهند."
+      }
+    ],
+    "pages": [
+      {
+        "name_en": "Revenue Dashboard",
+        "desc_en": "The daily pulse — net revenue, orders, top movers and margin trend, with AI notes on what changed and why.",
+        "name_fa": "داشبورد درآمد",
+        "desc_fa": "نبض روزانه — درآمد خالص، سفارش‌ها، پرفروش‌ترین‌ها و روند سود، همراه با نکته‌های AI درباره‌ی اینکه چه چیزی و چرا تغییر کرده."
+      },
+      {
+        "name_en": "Product Catalog",
+        "desc_en": "Every SKU with variants, pricing and media — bulk-edit collections and push changes to the storefront in one pass.",
+        "name_fa": "کاتالوگ محصولات",
+        "desc_fa": "هر SKU با variantها، قیمت و رسانه — ویرایش گروهی کالکشن‌ها و اعمال تغییرات روی فروشگاه در یک حرکت."
+      },
+      {
+        "name_en": "Inventory Heatmap",
+        "desc_en": "Stock by size and color across locations, with low-and-selling combinations lit up before they run out.",
+        "name_fa": "هیت‌مپ موجودی",
+        "desc_fa": "موجودی به تفکیک سایز و رنگ در همه‌ی انبارها، با روشن‌شدن ترکیب‌های «کم‌مانده و پرفروش» پیش از اتمام."
+      },
+      {
+        "name_en": "Order Fulfilment",
+        "desc_en": "A live queue from paid to shipped, risk-scored, with labels, refunds and status handled inline.",
+        "name_fa": "فولفیلمنت سفارش",
+        "desc_fa": "یک صف زنده از «پرداخت‌شده» تا «ارسال‌شده»، امتیازدهی‌شده بر اساس ریسک، با لِیبل، بازپرداخت و تغییر وضعیت همان‌جا."
+      },
+      {
+        "name_en": "Campaigns & Segments",
+        "desc_en": "Build customer segments, launch campaigns, and read revenue-per-campaign net of discounts and returns.",
+        "name_fa": "کمپین‌ها و segmentها",
+        "desc_fa": "ساخت segment مشتری، اجرای کمپین، و خواندن درآمدِ هر کمپین پس از کسر تخفیف و مرجوعی."
+      }
+    ]
+  }
+]

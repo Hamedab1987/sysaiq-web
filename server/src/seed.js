@@ -2,6 +2,11 @@
 // so the dynamic site starts identical to what's live, then the admin can
 // edit from there. Idempotent: only seeds when tables are empty.
 import { db, setSetting } from './db.js';
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const SETTINGS = {
   hero_h1:      { en: "I don't just build websites", fa: 'من فقط وب‌سایت نمی‌سازم' },
@@ -16,28 +21,38 @@ const SETTINGS = {
                   fa: 'هر پروژه از مسئله‌ی واقعی کسب‌وکار شروع می‌شود، نه از قالب آماده: سیستم حسابداری و معاملاتی، اتوماسیون فرایندها، و اتصال ابزارهایی که همین حالا استفاده می‌کنید — مهندسی‌شده از ابتدا تا انتها.' },
 };
 
-const PROJECTS = [
-  { slug:'ai-trading', title_en:'AI Trading Assistant', title_fa:'دستیار معاملاتی AI',
-    desc_en:'Signal engine and backtesting stack for a futures trader — strategy research, execution alerts and risk guards in one pipeline.',
-    desc_fa:'موتور سیگنال و Backtesting برای معامله‌گر فیوچرز — تحقیق استراتژی، هشدار اجرا و کنترل ریسک در یک پایپ‌لاین.',
-    tags:'QUANT · PYTHON · BACKTESTING', image:'/assets/projects/p1.jpg', sort:1 },
-  { slug:'automation', title_en:'Business Automation Suite', title_fa:'اتوماسیون کسب‌وکار',
-    desc_en:'Order-to-books automation for a retail business — orders, invoices and inventory flow into accounting without a single manual entry.',
-    desc_fa:'اتوماسیون «از سفارش تا دفاتر» برای خرده‌فروشی — سفارش، فاکتور و موجودی بدون حتی یک ثبت دستی به حسابداری می‌رسند.',
-    tags:'AUTOMATION · API · ACCOUNTING', image:'/assets/projects/p2.jpg', sort:2 },
-  { slug:'ai-agent', title_en:'AI Customer Agent', title_fa:'ایجنت هوشمند مشتری',
-    desc_en:"RAG-powered assistant trained on the business's own documents — answers customers in Persian and English, and hands off to a human exactly when it should.",
-    desc_fa:'دستیار مبتنی بر RAG، آموزش‌دیده روی اسناد خود کسب‌وکار — به فارسی و انگلیسی پاسخ می‌دهد و درست به‌موقع به انسان واگذار می‌کند.',
-    tags:'AI AGENT · RAG · LLM', image:'/assets/projects/p3.jpg', sort:3 },
-  { slug:'accounting', title_en:'Accounting Dashboard', title_fa:'داشبورد حسابداری',
-    desc_en:'Live reconciliation and reporting — every account tied out daily, anomalies flagged before they become month-end surprises.',
-    desc_fa:'مغایرت‌گیری و گزارش زنده — همه‌ی حساب‌ها هر روز تراز می‌شوند و موارد مشکوک قبل از اینکه سورپرایز پایان ماه شوند پرچم می‌خورند.',
-    tags:'DASHBOARD · DATA · FINANCE', image:'/assets/projects/p4.jpg', sort:4 },
-  { slug:'web-platform', title_en:'Custom Web Platform', title_fa:'پلتفرم وب اختصاصی',
-    desc_en:'A fast, bilingual web platform designed from the actual workflow of the business — not a template bent out of shape.',
-    desc_fa:'پلتفرم وب سریع و دوزبانه که از دل فرایند واقعی کسب‌وکار طراحی شده — نه قالب آماده‌ای که به‌زور تغییر شکل داده باشد.',
-    tags:'WEB · UX · BILINGUAL', image:'/assets/projects/p5.jpg', sort:5 },
-];
+// Rich demo projects loaded from data-projects.json (bilingual detail copy),
+// mapped to their generated UI cover images (EN + FA, trading is EN-only).
+const RICH = JSON.parse(readFileSync(join(__dirname, '..', 'data-projects.json'), 'utf8'));
+const META = {
+  restaurant: { title_en:'Restaurant Operations Platform', title_fa:'پلتفرم مدیریت رستوران',
+    tags:'OPERATIONS · REAL-TIME · MULTI-BRANCH', img:'restaurant', sort:1 },
+  realestate: { title_en:'Real-Estate Agency CRM', title_fa:'CRM آژانس املاک',
+    tags:'CRM · AI MATCHING · MAP', img:'realestate', sort:2 },
+  medical:    { title_en:'Clinic Patient Management', title_fa:'مدیریت بیماران کلینیک',
+    tags:'HEALTHCARE · TELEMEDICINE · AI', img:'medical', sort:3 },
+  trading:    { title_en:'AI Trading Terminal', title_fa:'ترمینال معاملاتی AI',
+    tags:'QUANT · AI SIGNALS · BACKTESTING', img:'trading', sort:4 },
+  ecommerce:  { title_en:'E-commerce Store Admin', title_fa:'پنل فروشگاه اینترنتی',
+    tags:'E-COMMERCE · ANALYTICS · AI', img:'ecommerce', sort:5 },
+};
+const PROJECTS = RICH.map(p => {
+  const m = META[p.key];
+  const faCover = p.key === 'trading' ? `/assets/projects/${m.img}-full.jpg`
+                                      : `/assets/projects/${m.img}-fa-full.jpg`;
+  return {
+    slug: p.key, title_en: m.title_en, title_fa: m.title_fa, tags: m.tags, sort: m.sort,
+    image: `/assets/projects/${m.img}-cover.jpg`,
+    cover_en: `/assets/projects/${m.img}-full.jpg`,
+    cover_fa: faCover,
+    desc_en: p.tagline_en, desc_fa: p.tagline_fa,
+    tagline_en: p.tagline_en, tagline_fa: p.tagline_fa,
+    overview_en: p.overview_en, overview_fa: p.overview_fa,
+    industries: JSON.stringify((p.industries_en || []).map((en, i) => ({ en, fa: (p.industries_fa || [])[i] || en }))),
+    features: JSON.stringify(p.features || []),
+    pages: JSON.stringify(p.pages || []),
+  };
+});
 
 const FAQS = [
   { q_en:'WHAT EXACTLY IS SYSAIQ?', q_fa:'SysaiQ دقیقاً چیست؟',
@@ -71,10 +86,13 @@ if (db.prepare('SELECT COUNT(*) c FROM settings').get().c === 0) {
   console.log(`[seed] ${Object.keys(SETTINGS).length} settings`);
 }
 if (db.prepare('SELECT COUNT(*) c FROM projects').get().c === 0) {
-  const stmt = db.prepare(`INSERT INTO projects (slug,title_en,title_fa,desc_en,desc_fa,tags,image,sort,published)
-    VALUES (@slug,@title_en,@title_fa,@desc_en,@desc_fa,@tags,@image,@sort,1)`);
+  const stmt = db.prepare(`INSERT INTO projects
+    (slug,title_en,title_fa,desc_en,desc_fa,tags,image,cover_en,cover_fa,
+     tagline_en,tagline_fa,overview_en,overview_fa,industries,features,pages,sort,published)
+    VALUES (@slug,@title_en,@title_fa,@desc_en,@desc_fa,@tags,@image,@cover_en,@cover_fa,
+     @tagline_en,@tagline_fa,@overview_en,@overview_fa,@industries,@features,@pages,@sort,1)`);
   for (const p of PROJECTS) stmt.run(p);
-  console.log(`[seed] ${PROJECTS.length} projects`);
+  console.log(`[seed] ${PROJECTS.length} rich projects`);
 }
 if (db.prepare('SELECT COUNT(*) c FROM faqs').get().c === 0) {
   const stmt = db.prepare(`INSERT INTO faqs (q_en,q_fa,a_en,a_fa,sort,published) VALUES (@q_en,@q_fa,@a_en,@a_fa,@sort,1)`);

@@ -187,6 +187,12 @@
   .wcard .winfo p{font-size:12.5px;line-height:1.75;color:rgba(236,234,246,0.62);}
   .wcard .wtags{margin-top:14px;font-size:9.5px;letter-spacing:0.15em;color:var(--mint);
     font-family:"SF Mono",ui-monospace,Menlo,monospace;}
+  a.wcard{text-decoration:none;color:inherit;transition:transform .3s cubic-bezier(.2,.6,.2,1),box-shadow .3s;}
+  a.wcard:hover{transform:translateY(-6px);box-shadow:0 26px 50px -24px rgba(139,107,255,.7);}
+  .wcard .wmore{display:inline-block;margin-top:14px;font-size:11.5px;color:var(--mint);opacity:.85;}
+  a.wcard:hover .wmore{opacity:1;}
+  a.wcard .shot img{transition:transform .5s cubic-bezier(.2,.6,.2,1);}
+  a.wcard:hover .shot img{transform:scale(1.04);}
   .work-dots{display:flex;gap:7px;justify-content:center;margin-top:4px;}
   .work-dots i{width:6px;height:6px;border-radius:4px;background:rgba(16,16,18,0.22);transition:all .35s;}
   .work-dots i.on{background:var(--ink-d);width:20px;}
@@ -430,30 +436,30 @@
   <div class="wrap">
     <div class="work-track rv d1" id="work-track" dir="ltr">
 
-      <article class="wcard">
-        <div class="shot"><img src="../assets/projects/p1.jpg" alt="" loading="lazy"></div>
-        <div class="winfo"><h3>{{W1_T}}</h3><p>{{W1_D}}</p><div class="wtags" dir="ltr">{{W1_G}}</div></div>
-      </article>
+      <a class="wcard" href="/{{LANG}}/work/restaurant">
+        <div class="shot"><img src="../assets/projects/restaurant-cover.jpg" alt="{{W1_T}}" loading="lazy"></div>
+        <div class="winfo"><h3>{{W1_T}}</h3><p>{{W1_D}}</p><div class="wtags" dir="ltr">{{W1_G}}</div><span class="wmore">{{W_MORE}}</span></div>
+      </a>
 
-      <article class="wcard">
-        <div class="shot"><img src="../assets/projects/p2.jpg" alt="" loading="lazy"></div>
-        <div class="winfo"><h3>{{W2_T}}</h3><p>{{W2_D}}</p><div class="wtags" dir="ltr">{{W2_G}}</div></div>
-      </article>
+      <a class="wcard" href="/{{LANG}}/work/realestate">
+        <div class="shot"><img src="../assets/projects/realestate-cover.jpg" alt="{{W2_T}}" loading="lazy"></div>
+        <div class="winfo"><h3>{{W2_T}}</h3><p>{{W2_D}}</p><div class="wtags" dir="ltr">{{W2_G}}</div><span class="wmore">{{W_MORE}}</span></div>
+      </a>
 
-      <article class="wcard">
-        <div class="shot"><img src="../assets/projects/p3.jpg" alt="" loading="lazy"></div>
-        <div class="winfo"><h3>{{W3_T}}</h3><p>{{W3_D}}</p><div class="wtags" dir="ltr">{{W3_G}}</div></div>
-      </article>
+      <a class="wcard" href="/{{LANG}}/work/medical">
+        <div class="shot"><img src="../assets/projects/medical-cover.jpg" alt="{{W3_T}}" loading="lazy"></div>
+        <div class="winfo"><h3>{{W3_T}}</h3><p>{{W3_D}}</p><div class="wtags" dir="ltr">{{W3_G}}</div><span class="wmore">{{W_MORE}}</span></div>
+      </a>
 
-      <article class="wcard">
-        <div class="shot"><img src="../assets/projects/p4.jpg" alt="" loading="lazy"></div>
-        <div class="winfo"><h3>{{W4_T}}</h3><p>{{W4_D}}</p><div class="wtags" dir="ltr">{{W4_G}}</div></div>
-      </article>
+      <a class="wcard" href="/{{LANG}}/work/trading">
+        <div class="shot"><img src="../assets/projects/trading-cover.jpg" alt="{{W4_T}}" loading="lazy"></div>
+        <div class="winfo"><h3>{{W4_T}}</h3><p>{{W4_D}}</p><div class="wtags" dir="ltr">{{W4_G}}</div><span class="wmore">{{W_MORE}}</span></div>
+      </a>
 
-      <article class="wcard">
-        <div class="shot"><img src="../assets/projects/p5.jpg" alt="" loading="lazy"></div>
-        <div class="winfo"><h3>{{W5_T}}</h3><p>{{W5_D}}</p><div class="wtags" dir="ltr">{{W5_G}}</div></div>
-      </article>
+      <a class="wcard" href="/{{LANG}}/work/ecommerce">
+        <div class="shot"><img src="../assets/projects/ecommerce-cover.jpg" alt="{{W5_T}}" loading="lazy"></div>
+        <div class="winfo"><h3>{{W5_T}}</h3><p>{{W5_D}}</p><div class="wtags" dir="ltr">{{W5_G}}</div><span class="wmore">{{W_MORE}}</span></div>
+      </a>
 
     </div>
     <div class="work-dots" id="work-dots"></div>

@@ -16,6 +16,7 @@ import { db, getSetting, setSetting, allSettings } from './db.js';
 import { verifyLogin, issueCookie, clearCookie, requireAdmin, createAdmin } from './auth.js';
 import { chat } from './ai.js';
 import { sendLeadNotification } from './mail.js';
+import { findProject, renderProjectPage } from './projectPage.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -108,16 +109,21 @@ A.put('/settings/:key', (req, res) => { setSetting(req.params.key, req.body.valu
 // projects CRUD
 A.get('/projects', (_req, res) => res.json(db.prepare('SELECT * FROM projects ORDER BY sort, id').all()));
 A.post('/projects', (req, res) => {
-  const b = req.body || {};
-  const info = db.prepare(`INSERT INTO projects (slug,title_en,title_fa,desc_en,desc_fa,tags,image,sort,published)
-    VALUES (@slug,@title_en,@title_fa,@desc_en,@desc_fa,@tags,@image,@sort,@published)`).run(defaultsProject(b));
+  const info = db.prepare(`INSERT INTO projects
+    (slug,title_en,title_fa,desc_en,desc_fa,tags,image,cover_en,cover_fa,
+     tagline_en,tagline_fa,overview_en,overview_fa,industries,features,pages,sort,published)
+    VALUES (@slug,@title_en,@title_fa,@desc_en,@desc_fa,@tags,@image,@cover_en,@cover_fa,
+     @tagline_en,@tagline_fa,@overview_en,@overview_fa,@industries,@features,@pages,@sort,@published)`)
+    .run(defaultsProject(req.body || {}));
   res.json({ ok: true, id: info.lastInsertRowid });
 });
 A.put('/projects/:id', (req, res) => {
   const b = defaultsProject(req.body || {});
   db.prepare(`UPDATE projects SET slug=@slug,title_en=@title_en,title_fa=@title_fa,desc_en=@desc_en,
-    desc_fa=@desc_fa,tags=@tags,image=@image,sort=@sort,published=@published,updated_at=datetime('now')
-    WHERE id=@id`).run({ ...b, id: Number(req.params.id) });
+    desc_fa=@desc_fa,tags=@tags,image=@image,cover_en=@cover_en,cover_fa=@cover_fa,
+    tagline_en=@tagline_en,tagline_fa=@tagline_fa,overview_en=@overview_en,overview_fa=@overview_fa,
+    industries=@industries,features=@features,pages=@pages,sort=@sort,published=@published,
+    updated_at=datetime('now') WHERE id=@id`).run({ ...b, id: Number(req.params.id) });
   res.json({ ok: true });
 });
 A.delete('/projects/:id', (req, res) => {
@@ -197,10 +203,15 @@ A.post('/upload', upload.single('file'), (req, res) => {
 app.use('/api/admin', A);
 
 function defaultsProject(b) {
+  const asJson = v => (typeof v === 'string' ? v : JSON.stringify(v || []));
   return {
     slug: b.slug || '', title_en: b.title_en || '', title_fa: b.title_fa || '',
     desc_en: b.desc_en || '', desc_fa: b.desc_fa || '', tags: b.tags || '',
-    image: b.image || '', sort: Number(b.sort) || 0, published: b.published ? 1 : 0,
+    image: b.image || '', cover_en: b.cover_en || '', cover_fa: b.cover_fa || '',
+    tagline_en: b.tagline_en || '', tagline_fa: b.tagline_fa || '',
+    overview_en: b.overview_en || '', overview_fa: b.overview_fa || '',
+    industries: asJson(b.industries), features: asJson(b.features), pages: asJson(b.pages),
+    sort: Number(b.sort) || 0, published: b.published ? 1 : 0,
   };
 }
 function defaultsFaq(b) {
@@ -215,6 +226,13 @@ function defaultsKnowledge(b) {
     tags: b.tags || '', enabled: b.enabled ? 1 : 0,
   };
 }
+
+// ---- project detail pages: /en/work/:slug and /fa/work/:slug ----
+app.get('/:lang(en|fa)/work/:slug', (req, res, next) => {
+  const p = findProject(req.params.slug);
+  if (!p) return next();
+  res.type('html').send(renderProjectPage(p, req.params.lang));
+});
 
 // ---- static: admin panel + built site ----
 app.use('/admin', express.static(join(ROOT, 'admin')));

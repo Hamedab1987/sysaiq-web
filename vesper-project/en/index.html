@@ -187,6 +187,12 @@
   .wcard .winfo p{font-size:12.5px;line-height:1.75;color:rgba(236,234,246,0.62);}
   .wcard .wtags{margin-top:14px;font-size:9.5px;letter-spacing:0.15em;color:var(--mint);
     font-family:"SF Mono",ui-monospace,Menlo,monospace;}
+  a.wcard{text-decoration:none;color:inherit;transition:transform .3s cubic-bezier(.2,.6,.2,1),box-shadow .3s;}
+  a.wcard:hover{transform:translateY(-6px);box-shadow:0 26px 50px -24px rgba(139,107,255,.7);}
+  .wcard .wmore{display:inline-block;margin-top:14px;font-size:11.5px;color:var(--mint);opacity:.85;}
+  a.wcard:hover .wmore{opacity:1;}
+  a.wcard .shot img{transition:transform .5s cubic-bezier(.2,.6,.2,1);}
+  a.wcard:hover .shot img{transform:scale(1.04);}
   .work-dots{display:flex;gap:7px;justify-content:center;margin-top:4px;}
   .work-dots i{width:6px;height:6px;border-radius:4px;background:rgba(16,16,18,0.22);transition:all .35s;}
   .work-dots i.on{background:var(--ink-d);width:20px;}
@@ -424,36 +430,36 @@
   <div class="wrap">
     <div class="work-head">
       <h2 class="rv">Selected work</h2>
-      <span class="work-hint mono rv d1">Drag to explore</span>
+      <span class="work-hint mono rv d1">Drag · click a card to open</span>
     </div>
   </div>
   <div class="wrap">
     <div class="work-track rv d1" id="work-track" dir="ltr">
 
-      <article class="wcard">
-        <div class="shot"><img src="../assets/projects/p1.jpg" alt="" loading="lazy"></div>
-        <div class="winfo"><h3>AI Trading Assistant</h3><p>Signal engine and backtesting stack for a futures trader — strategy research, execution alerts and risk guards in one pipeline.</p><div class="wtags" dir="ltr">QUANT · PYTHON · BACKTESTING</div></div>
-      </article>
+      <a class="wcard" href="/en/work/restaurant">
+        <div class="shot"><img src="../assets/projects/restaurant-cover.jpg" alt="Restaurant Operations Platform" loading="lazy"></div>
+        <div class="winfo"><h3>Restaurant Operations Platform</h3><p>Live orders on a map, kitchen queue, and sales-by-branch analytics — one control room for a multi-branch chain.</p><div class="wtags" dir="ltr">OPERATIONS · REAL-TIME · MULTI-BRANCH</div><span class="wmore">View project →</span></div>
+      </a>
 
-      <article class="wcard">
-        <div class="shot"><img src="../assets/projects/p2.jpg" alt="" loading="lazy"></div>
-        <div class="winfo"><h3>Business Automation Suite</h3><p>Order-to-books automation for a retail business — orders, invoices and inventory flow into accounting without a single manual entry.</p><div class="wtags" dir="ltr">AUTOMATION · API · ACCOUNTING</div></div>
-      </article>
+      <a class="wcard" href="/en/work/realestate">
+        <div class="shot"><img src="../assets/projects/realestate-cover.jpg" alt="Real-Estate Agency CRM" loading="lazy"></div>
+        <div class="winfo"><h3>Real-Estate Agency CRM</h3><p>AI matches buyers to listings, a map-first pipeline, and live deal-value forecasting for real-estate teams.</p><div class="wtags" dir="ltr">CRM · AI MATCHING · MAP</div><span class="wmore">View project →</span></div>
+      </a>
 
-      <article class="wcard">
-        <div class="shot"><img src="../assets/projects/p3.jpg" alt="" loading="lazy"></div>
-        <div class="winfo"><h3>AI Customer Agent</h3><p>RAG-powered assistant trained on the business's own documents — answers customers in Persian and English, and hands off to a human exactly when it should.</p><div class="wtags" dir="ltr">AI AGENT · RAG · LLM</div></div>
-      </article>
+      <a class="wcard" href="/en/work/medical">
+        <div class="shot"><img src="../assets/projects/medical-cover.jpg" alt="Clinic Patient Management" loading="lazy"></div>
+        <div class="winfo"><h3>Clinic Patient Management</h3><p>Appointments, records, telemedicine and prescriptions in one flow — with AI notes and prescription safety checks.</p><div class="wtags" dir="ltr">HEALTHCARE · TELEMEDICINE · AI</div><span class="wmore">View project →</span></div>
+      </a>
 
-      <article class="wcard">
-        <div class="shot"><img src="../assets/projects/p4.jpg" alt="" loading="lazy"></div>
-        <div class="winfo"><h3>Accounting Dashboard</h3><p>Live reconciliation and reporting — every account tied out daily, anomalies flagged before they become month-end surprises.</p><div class="wtags" dir="ltr">DASHBOARD · DATA · FINANCE</div></div>
-      </article>
+      <a class="wcard" href="/en/work/trading">
+        <div class="shot"><img src="../assets/projects/trading-cover.jpg" alt="AI Trading Terminal" loading="lazy"></div>
+        <div class="winfo"><h3>AI Trading Terminal</h3><p>Live charts, order book and an AI signal engine that shows its reasoning — with backtesting before real capital.</p><div class="wtags" dir="ltr">QUANT · AI SIGNALS · BACKTESTING</div><span class="wmore">View project →</span></div>
+      </a>
 
-      <article class="wcard">
-        <div class="shot"><img src="../assets/projects/p5.jpg" alt="" loading="lazy"></div>
-        <div class="winfo"><h3>Custom Web Platform</h3><p>A fast, bilingual web platform designed from the actual workflow of the business — not a template bent out of shape.</p><div class="wtags" dir="ltr">WEB · UX · BILINGUAL</div></div>
-      </article>
+      <a class="wcard" href="/en/work/ecommerce">
+        <div class="shot"><img src="../assets/projects/ecommerce-cover.jpg" alt="E-commerce Store Admin" loading="lazy"></div>
+        <div class="winfo"><h3>E-commerce Store Admin</h3><p>Catalog, orders, inventory and campaigns in one admin — with size-curve stock and margin-true analytics.</p><div class="wtags" dir="ltr">E-COMMERCE · ANALYTICS · AI</div><span class="wmore">View project →</span></div>
+      </a>
 
     </div>
     <div class="work-dots" id="work-dots"></div>

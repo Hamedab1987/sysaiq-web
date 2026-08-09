@@ -124,61 +124,58 @@ STRINGS = {
 
     # ---------- work / selected projects (light, slider) ----------
     "WORK_H2":   {"en": "Selected work", "fa": "نمونه‌کارها"},
-    "WORK_HINT": {"en": "Drag to explore", "fa": "برای دیدن، بکشید"},
+    "WORK_HINT": {"en": "Drag · click a card to open", "fa": "بکشید · روی کارت بزنید"},
+    "W_MORE":    {"en": "View project →", "fa": "مشاهده‌ی پروژه →"},
 
-    "W1_T": {"en": "AI Trading Assistant", "fa": "دستیار معاملاتی AI"},
+    "W1_T": {"en": "Restaurant Operations Platform", "fa": "پلتفرم مدیریت رستوران"},
     "W1_D": {
-        "en": "Signal engine and backtesting stack for a futures trader — "
-              "strategy research, execution alerts and risk guards in one "
-              "pipeline.",
-        "fa": "موتور سیگنال و Backtesting برای معامله‌گر فیوچرز — تحقیق "
-              "استراتژی، هشدار اجرا و کنترل ریسک در یک پایپ‌لاین.",
+        "en": "Live orders on a map, kitchen queue, and sales-by-branch "
+              "analytics — one control room for a multi-branch chain.",
+        "fa": "سفارش زنده روی نقشه، صف آشپزخانه و آنالیز فروش هر شعبه — یک "
+              "اتاق کنترل برای زنجیره‌ی چندشعبه‌ای.",
     },
-    "W1_G": {"en": "QUANT · PYTHON · BACKTESTING",
-             "fa": "QUANT · PYTHON · BACKTESTING"},
+    "W1_G": {"en": "OPERATIONS · REAL-TIME · MULTI-BRANCH",
+             "fa": "OPERATIONS · REAL-TIME · MULTI-BRANCH"},
 
-    "W2_T": {"en": "Business Automation Suite", "fa": "اتوماسیون کسب‌وکار"},
+    "W2_T": {"en": "Real-Estate Agency CRM", "fa": "CRM آژانس املاک"},
     "W2_D": {
-        "en": "Order-to-books automation for a retail business — orders, "
-              "invoices and inventory flow into accounting without a single "
-              "manual entry.",
-        "fa": "اتوماسیون «از سفارش تا دفاتر» برای خرده‌فروشی — سفارش، فاکتور "
-              "و موجودی بدون حتی یک ثبت دستی به حسابداری می‌رسند.",
+        "en": "AI matches buyers to listings, a map-first pipeline, and live "
+              "deal-value forecasting for real-estate teams.",
+        "fa": "matching هوشمند خریدار به ملک، pipeline مبتنی بر نقشه و "
+              "پیش‌بینی زنده‌ی ارزش معامله برای تیم‌های املاک.",
     },
-    "W2_G": {"en": "AUTOMATION · API · ACCOUNTING",
-             "fa": "AUTOMATION · API · ACCOUNTING"},
+    "W2_G": {"en": "CRM · AI MATCHING · MAP",
+             "fa": "CRM · AI MATCHING · MAP"},
 
-    "W3_T": {"en": "AI Customer Agent", "fa": "ایجنت هوشمند مشتری"},
+    "W3_T": {"en": "Clinic Patient Management", "fa": "مدیریت بیماران کلینیک"},
     "W3_D": {
-        "en": "RAG-powered assistant trained on the business's own documents "
-              "— answers customers in Persian and English, and hands off to "
-              "a human exactly when it should.",
-        "fa": "دستیار مبتنی بر RAG، آموزش‌دیده روی اسناد خود کسب‌وکار — به "
-              "فارسی و انگلیسی پاسخ می‌دهد و درست به‌موقع به انسان واگذار "
-              "می‌کند.",
+        "en": "Appointments, records, telemedicine and prescriptions in one "
+              "flow — with AI notes and prescription safety checks.",
+        "fa": "نوبت، پرونده، telemedicine و نسخه در یک جریان — با یادداشت AI "
+              "و کنترل ایمنی نسخه.",
     },
-    "W3_G": {"en": "AI AGENT · RAG · LLM", "fa": "AI AGENT · RAG · LLM"},
+    "W3_G": {"en": "HEALTHCARE · TELEMEDICINE · AI",
+             "fa": "HEALTHCARE · TELEMEDICINE · AI"},
 
-    "W4_T": {"en": "Accounting Dashboard", "fa": "داشبورد حسابداری"},
+    "W4_T": {"en": "AI Trading Terminal", "fa": "ترمینال معاملاتی AI"},
     "W4_D": {
-        "en": "Live reconciliation and reporting — every account tied out "
-              "daily, anomalies flagged before they become month-end "
-              "surprises.",
-        "fa": "مغایرت‌گیری و گزارش زنده — همه‌ی حساب‌ها هر روز تراز می‌شوند و "
-              "موارد مشکوک قبل از اینکه سورپرایز پایان ماه شوند پرچم "
-              "می‌خورند.",
+        "en": "Live charts, order book and an AI signal engine that shows "
+              "its reasoning — with backtesting before real capital.",
+        "fa": "chart زنده، order book و AI signal engine که استدلالش را نشان "
+              "می‌دهد — با backtesting پیش از سرمایه‌ی واقعی.",
     },
-    "W4_G": {"en": "DASHBOARD · DATA · FINANCE",
-             "fa": "DASHBOARD · DATA · FINANCE"},
+    "W4_G": {"en": "QUANT · AI SIGNALS · BACKTESTING",
+             "fa": "QUANT · AI SIGNALS · BACKTESTING"},
 
-    "W5_T": {"en": "Custom Web Platform", "fa": "پلتفرم وب اختصاصی"},
+    "W5_T": {"en": "E-commerce Store Admin", "fa": "پنل فروشگاه اینترنتی"},
     "W5_D": {
-        "en": "A fast, bilingual web platform designed from the actual "
-              "workflow of the business — not a template bent out of shape.",
-        "fa": "پلتفرم وب سریع و دوزبانه که از دل فرایند واقعی کسب‌وکار طراحی "
-              "شده — نه قالب آماده‌ای که به‌زور تغییر شکل داده باشد.",
+        "en": "Catalog, orders, inventory and campaigns in one admin — with "
+              "size-curve stock and margin-true analytics.",
+        "fa": "کاتالوگ، سفارش، موجودی و کمپین در یک پنل — با موجودی مبتنی بر "
+              "سایز و آنالیتیکس سود واقعی.",
     },
-    "W5_G": {"en": "WEB · UX · BILINGUAL", "fa": "WEB · UX · BILINGUAL"},
+    "W5_G": {"en": "E-COMMERCE · ANALYTICS · AI",
+             "fa": "E-COMMERCE · ANALYTICS · AI"},
 
     # ---------- FAQ (light) ----------
     "FAQ_H2": {"en": "Frequently asked", "fa": "سؤالات پرتکرار"},

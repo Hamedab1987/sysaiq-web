@@ -193,6 +193,12 @@
   .wcard .winfo p{font-size:12.5px;line-height:1.75;color:rgba(236,234,246,0.62);}
   .wcard .wtags{margin-top:14px;font-size:9.5px;letter-spacing:0.15em;color:var(--mint);
     font-family:"SF Mono",ui-monospace,Menlo,monospace;}
+  a.wcard{text-decoration:none;color:inherit;transition:transform .3s cubic-bezier(.2,.6,.2,1),box-shadow .3s;}
+  a.wcard:hover{transform:translateY(-6px);box-shadow:0 26px 50px -24px rgba(139,107,255,.7);}
+  .wcard .wmore{display:inline-block;margin-top:14px;font-size:11.5px;color:var(--mint);opacity:.85;}
+  a.wcard:hover .wmore{opacity:1;}
+  a.wcard .shot img{transition:transform .5s cubic-bezier(.2,.6,.2,1);}
+  a.wcard:hover .shot img{transform:scale(1.04);}
   .work-dots{display:flex;gap:7px;justify-content:center;margin-top:4px;}
   .work-dots i{width:6px;height:6px;border-radius:4px;background:rgba(16,16,18,0.22);transition:all .35s;}
   .work-dots i.on{background:var(--ink-d);width:20px;}
@@ -430,36 +436,36 @@
   <div class="wrap">
     <div class="work-head">
       <h2 class="rv">نمونه‌کارها</h2>
-      <span class="work-hint mono rv d1">برای دیدن، بکشید</span>
+      <span class="work-hint mono rv d1">بکشید · روی کارت بزنید</span>
     </div>
   </div>
   <div class="wrap">
     <div class="work-track rv d1" id="work-track" dir="ltr">
 
-      <article class="wcard">
-        <div class="shot"><img src="../assets/projects/p1.jpg" alt="" loading="lazy"></div>
-        <div class="winfo"><h3>دستیار معاملاتی AI</h3><p>موتور سیگنال و Backtesting برای معامله‌گر فیوچرز — تحقیق استراتژی، هشدار اجرا و کنترل ریسک در یک پایپ‌لاین.</p><div class="wtags" dir="ltr">QUANT · PYTHON · BACKTESTING</div></div>
-      </article>
+      <a class="wcard" href="/fa/work/restaurant">
+        <div class="shot"><img src="../assets/projects/restaurant-cover.jpg" alt="پلتفرم مدیریت رستوران" loading="lazy"></div>
+        <div class="winfo"><h3>پلتفرم مدیریت رستوران</h3><p>سفارش زنده روی نقشه، صف آشپزخانه و آنالیز فروش هر شعبه — یک اتاق کنترل برای زنجیره‌ی چندشعبه‌ای.</p><div class="wtags" dir="ltr">OPERATIONS · REAL-TIME · MULTI-BRANCH</div><span class="wmore">مشاهده‌ی پروژه →</span></div>
+      </a>
 
-      <article class="wcard">
-        <div class="shot"><img src="../assets/projects/p2.jpg" alt="" loading="lazy"></div>
-        <div class="winfo"><h3>اتوماسیون کسب‌وکار</h3><p>اتوماسیون «از سفارش تا دفاتر» برای خرده‌فروشی — سفارش، فاکتور و موجودی بدون حتی یک ثبت دستی به حسابداری می‌رسند.</p><div class="wtags" dir="ltr">AUTOMATION · API · ACCOUNTING</div></div>
-      </article>
+      <a class="wcard" href="/fa/work/realestate">
+        <div class="shot"><img src="../assets/projects/realestate-cover.jpg" alt="CRM آژانس املاک" loading="lazy"></div>
+        <div class="winfo"><h3>CRM آژانس املاک</h3><p>matching هوشمند خریدار به ملک، pipeline مبتنی بر نقشه و پیش‌بینی زنده‌ی ارزش معامله برای تیم‌های املاک.</p><div class="wtags" dir="ltr">CRM · AI MATCHING · MAP</div><span class="wmore">مشاهده‌ی پروژه →</span></div>
+      </a>
 
-      <article class="wcard">
-        <div class="shot"><img src="../assets/projects/p3.jpg" alt="" loading="lazy"></div>
-        <div class="winfo"><h3>ایجنت هوشمند مشتری</h3><p>دستیار مبتنی بر RAG، آموزش‌دیده روی اسناد خود کسب‌وکار — به فارسی و انگلیسی پاسخ می‌دهد و درست به‌موقع به انسان واگذار می‌کند.</p><div class="wtags" dir="ltr">AI AGENT · RAG · LLM</div></div>
-      </article>
+      <a class="wcard" href="/fa/work/medical">
+        <div class="shot"><img src="../assets/projects/medical-cover.jpg" alt="مدیریت بیماران کلینیک" loading="lazy"></div>
+        <div class="winfo"><h3>مدیریت بیماران کلینیک</h3><p>نوبت، پرونده، telemedicine و نسخه در یک جریان — با یادداشت AI و کنترل ایمنی نسخه.</p><div class="wtags" dir="ltr">HEALTHCARE · TELEMEDICINE · AI</div><span class="wmore">مشاهده‌ی پروژه →</span></div>
+      </a>
 
-      <article class="wcard">
-        <div class="shot"><img src="../assets/projects/p4.jpg" alt="" loading="lazy"></div>
-        <div class="winfo"><h3>داشبورد حسابداری</h3><p>مغایرت‌گیری و گزارش زنده — همه‌ی حساب‌ها هر روز تراز می‌شوند و موارد مشکوک قبل از اینکه سورپرایز پایان ماه شوند پرچم می‌خورند.</p><div class="wtags" dir="ltr">DASHBOARD · DATA · FINANCE</div></div>
-      </article>
+      <a class="wcard" href="/fa/work/trading">
+        <div class="shot"><img src="../assets/projects/trading-cover.jpg" alt="ترمینال معاملاتی AI" loading="lazy"></div>
+        <div class="winfo"><h3>ترمینال معاملاتی AI</h3><p>chart زنده، order book و AI signal engine که استدلالش را نشان می‌دهد — با backtesting پیش از سرمایه‌ی واقعی.</p><div class="wtags" dir="ltr">QUANT · AI SIGNALS · BACKTESTING</div><span class="wmore">مشاهده‌ی پروژه →</span></div>
+      </a>
 
-      <article class="wcard">
-        <div class="shot"><img src="../assets/projects/p5.jpg" alt="" loading="lazy"></div>
-        <div class="winfo"><h3>پلتفرم وب اختصاصی</h3><p>پلتفرم وب سریع و دوزبانه که از دل فرایند واقعی کسب‌وکار طراحی شده — نه قالب آماده‌ای که به‌زور تغییر شکل داده باشد.</p><div class="wtags" dir="ltr">WEB · UX · BILINGUAL</div></div>
-      </article>
+      <a class="wcard" href="/fa/work/ecommerce">
+        <div class="shot"><img src="../assets/projects/ecommerce-cover.jpg" alt="پنل فروشگاه اینترنتی" loading="lazy"></div>
+        <div class="winfo"><h3>پنل فروشگاه اینترنتی</h3><p>کاتالوگ، سفارش، موجودی و کمپین در یک پنل — با موجودی مبتنی بر سایز و آنالیتیکس سود واقعی.</p><div class="wtags" dir="ltr">E-COMMERCE · ANALYTICS · AI</div><span class="wmore">مشاهده‌ی پروژه →</span></div>
+      </a>
 
     </div>
     <div class="work-dots" id="work-dots"></div>

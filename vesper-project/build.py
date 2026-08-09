@@ -77,6 +77,7 @@ for lang, cfg in LANGS.items():
     out = out.replace("{{LOGO_MARK_URI}}", LOGO_MARK)
     out = out.replace("{{FAVICON_URI}}", FAVICON)
     out = out.replace("{{ABOUT_ART_URI}}", ABOUT_ART)
+    out = out.replace("{{LANG}}", lang)
 
     leftovers = re.findall(r"\{\{[A-Z0-9_]+\}\}", out)
     assert not leftovers, f"unresolved tokens: {leftovers}"

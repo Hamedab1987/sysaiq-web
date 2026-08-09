@@ -32,11 +32,31 @@ db.exec(`
     desc_en     TEXT NOT NULL DEFAULT '',
     desc_fa     TEXT NOT NULL DEFAULT '',
     tags        TEXT NOT NULL DEFAULT '',  -- "QUANT · PYTHON"
-    image       TEXT NOT NULL DEFAULT '',  -- /uploads/xyz.jpg
+    image       TEXT NOT NULL DEFAULT '',  -- card cover
+    cover_en    TEXT NOT NULL DEFAULT '',  -- detail hero image (English UI)
+    cover_fa    TEXT NOT NULL DEFAULT '',  -- detail hero image (Persian UI)
+    tagline_en  TEXT NOT NULL DEFAULT '',
+    tagline_fa  TEXT NOT NULL DEFAULT '',
+    overview_en TEXT NOT NULL DEFAULT '',
+    overview_fa TEXT NOT NULL DEFAULT '',
+    industries  TEXT NOT NULL DEFAULT '[]',  -- JSON [{en,fa}]
+    features    TEXT NOT NULL DEFAULT '[]',  -- JSON [{title_en,title_fa,desc_en,desc_fa}]
+    pages       TEXT NOT NULL DEFAULT '[]',  -- JSON [{name_en,name_fa,desc_en,desc_fa}]
     sort        INTEGER NOT NULL DEFAULT 0,
     published   INTEGER NOT NULL DEFAULT 1,
     updated_at  TEXT NOT NULL DEFAULT (datetime('now'))
   );
+  -- (detail columns are part of CREATE above; ALTER migration runs in JS below)
+`);
+// migration for pre-existing DBs: add any missing columns
+for (const [col, def] of [
+  ['cover_en', "''"], ['cover_fa', "''"], ['tagline_en', "''"], ['tagline_fa', "''"],
+  ['overview_en', "''"], ['overview_fa', "''"],
+  ['industries', "'[]'"], ['features', "'[]'"], ['pages', "'[]'"],
+]) {
+  try { db.exec(`ALTER TABLE projects ADD COLUMN ${col} TEXT NOT NULL DEFAULT ${def}`); } catch {}
+}
+db.exec(`
 
   -- FAQ items
   CREATE TABLE IF NOT EXISTS faqs (
