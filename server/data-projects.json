@@ -386,10 +386,10 @@
   },
   {
     "key": "accounting",
-    "tagline_en": "Accounting that balances itself — and flags what doesn't.",
-    "tagline_fa": "حسابداری که خودش تراز می‌شود؛ خطاها را AI می‌گیرد.",
-    "overview_en": "A complete accounting suite for companies and small businesses — double-entry general ledger, invoicing, payroll, VAT reporting, and bank reconciliation in one system. Instead of surfacing errors at audit time, an AI layer reviews every transaction as it's posted, flagging duplicates, misclassifications, and unusual patterns before they ever reach your financial statements. Month-end close becomes a review, not a project.",
-    "overview_fa": "مجموعه‌ای کامل برای حسابداری شرکت‌ها و اصناف: دفتر کل دوطرفه، صدور فاکتور، حقوق و دستمزد، گزارش ارزش افزوده و مغایرت‌گیری بانکی، همه در یک سیستم. به‌جای اینکه خطاها موقع حسابرسی پیدا شوند، لایه AI هر تراکنش را همان لحظه ثبت بررسی می‌کند و سند تکراری، سرفصل اشتباه و الگوهای غیرعادی را پیش از رسیدن به صورت‌های مالی علامت می‌زند. بستن حساب‌های ماه دیگر یک پروژه نیست؛ یک بازبینی سریع است.",
+    "tagline_en": "Snap the invoice — the entry is already posted.",
+    "tagline_fa": "عکس فاکتور را بده؛ سندش خورده است.",
+    "overview_en": "Accounting with no manual data entry: upload a photo or scan of your invoices and the system's master agent hands each document to a specialist AI agent that reads it, classifies it and posts the entry — while an independent reviewer agent double-checks every posting. Errors that auditors can take months to uncover surface in minutes, and your reports are always print-ready, without a single mistake.",
+    "overview_fa": "حسابداری بدون تایپ و ثبت دستی: فقط عکس یا اسکن فاکتورها را بارگذاری کنید؛ Master Agent سیستم هر مدرک را به یک ایجنت متخصص می‌سپارد تا بخواند، سرفصل بزند و سند را ثبت کند — و ایجنت ناظر، هر ثبت را مستقل دوباره کنترل می‌کند. خطاهایی که پیدا کردنشان برای حسابرس‌ها ماه‌ها زمان می‌برد، در چند دقیقه بیرون می‌آیند و گزارش‌هایی که همیشه آماده‌ی چاپ‌اند — بدون کوچک‌ترین خطا — در اختیار شماست.",
     "industries_en": [
       "SMEs and family-owned businesses",
       "Trade guilds and retail businesses",
@@ -404,16 +404,28 @@
     ],
     "features": [
       {
-        "title_en": "Anomaly Radar on Every Entry",
-        "title_fa": "رادار خطا روی هر سند",
-        "desc_en": "An AI layer learns each company's own posting patterns and scores every transaction the moment it's recorded. Duplicates, unusual amounts, and misclassified accounts get flagged with a plain-language explanation — before close, not at audit.",
-        "desc_fa": "لایه AI الگوی ثبت اسناد هر مجموعه را یاد می‌گیرد و هر تراکنش را همان لحظه ثبت امتیازدهی می‌کند. سند تکراری، مبلغ غیرعادی یا سرفصل اشتباه با یک توضیح ساده و شفاف علامت می‌خورد — قبل از بستن حساب‌ها، نه موقع حسابرسی."
+        "title_en": "Zero typing: from photo to posted entry",
+        "title_fa": "ثبت بدون تایپ: از عکس تا سند",
+        "desc_en": "Photograph or scan any paper invoice; the system reads the date, amount, counterparty and description, picks the right account, and posts the entry. Manual data entry effectively disappears.",
+        "desc_fa": "فاکتور کاغذی را عکس بگیرید یا اسکن کنید؛ سیستم تاریخ، مبلغ، طرف حساب و شرح را می‌خواند، سرفصل درست را انتخاب می‌کند و سند را می‌زند. ورود اطلاعات دستی عملاً حذف می‌شود."
       },
       {
-        "title_en": "Continuous Close",
-        "title_fa": "بستن پیوسته حساب‌ها",
-        "desc_en": "Bank feeds, invoices, and payroll reconcile in the background all month long. Month-end stops being a two-week scramble and becomes a checklist you clear in an afternoon.",
-        "desc_fa": "تراکنش‌های بانکی، فاکتورها و حقوق و دستمزد در طول ماه به‌صورت خودکار در پس‌زمینه مغایرت‌گیری می‌شوند. بستن ماه دیگر یک پروژه دوهفته‌ای نیست؛ چک‌لیستی است که در یک بعدازظهر تمام می‌شود."
+        "title_en": "Master-agent architecture: one agent per entry",
+        "title_fa": "معماری Master Agent: هر سند، یک ایجنت",
+        "desc_en": "A master agent routes each incoming document to a specialist agent for that entry type — purchase, sales, bank, expense — and an independent reviewer agent re-checks the posting. Nothing passes without a second look.",
+        "desc_fa": "Master Agent هر مدرک ورودی را به ایجنت متخصصِ همان نوع سند — خرید، فروش، بانک، هزینه — می‌سپارد و ایجنت ناظر، ثبت را مستقل بازبینی می‌کند. هیچ سندی بدون نگاه دوم عبور نمی‌کند."
+      },
+      {
+        "title_en": "Months of audit work, in minutes",
+        "title_fa": "کارِ ماه‌ها حسابرسی، در چند دقیقه",
+        "desc_en": "Errors and discrepancies that traditional audits need months to uncover — duplicates, misclassifications, abnormal amounts — are found in minutes and flagged with a plain-language explanation.",
+        "desc_fa": "خطاها و مغایرت‌هایی که کشفشان در حسابرسی سنتی ماه‌ها طول می‌کشد — سند تکراری، سرفصل اشتباه، مبلغ غیرعادی — در کوتاه‌ترین زمان پیدا و با توضیح شفاف علامت‌گذاری می‌شوند."
+      },
+      {
+        "title_en": "Reports that are always print-ready",
+        "title_fa": "گزارش‌های همیشه آماده‌ی چاپ",
+        "desc_en": "Balance sheet, P&L, ledgers and tax reports are always current and error-free; hit print whenever you need them — no month-end scramble.",
+        "desc_fa": "ترازنامه، سود و زیان، دفاتر و گزارش‌های مالیاتی همیشه به‌روز و بدون کوچک‌ترین خطا آماده‌اند؛ هر لحظه فقط دکمه‌ی پرینت را بزنید — نه پایان ماه و شبِ تحویل گزارش."
       },
       {
         "title_en": "One-Click Group Consolidation",
@@ -429,6 +441,12 @@
       }
     ],
     "pages": [
+      {
+        "name_en": "Document Inbox",
+        "name_fa": "صندوق اسناد",
+        "desc_en": "Drag in photos and scans of invoices; watch agents read, classify and post them live.",
+        "desc_fa": "عکس و اسکن فاکتورها را رها کنید و زنده ببینید ایجنت‌ها می‌خوانند، سرفصل می‌زنند و سند می‌کنند."
+      },
       {
         "name_en": "Financial Dashboard",
         "name_fa": "Dashboard مالی",

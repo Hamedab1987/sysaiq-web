@@ -180,10 +180,12 @@ STRINGS = {
 
     "W6_T": {"en": "Business Accounting Suite", "fa": "سیستم حسابداری کسب‌وکار"},
     "W6_D": {
-        "en": "Ledger, invoices, payroll and tax reports in one suite — "
-              "with AI watching every transaction for anomalies.",
-        "fa": "دفتر کل، فاکتور، حقوق‌ودستمزد و گزارش مالیاتی در یک سیستم — "
-              "با AI که مراقب تراکنش‌های غیرعادی است.",
+        "en": "Upload an invoice photo — a master agent routes every entry "
+              "to a specialist AI agent. No typing, months of audit work "
+              "in minutes, reports always print-ready.",
+        "fa": "عکس فاکتور را آپلود کنید — Master Agent هر ثبت را به یک "
+              "ایجنت متخصص می‌سپارد. بدون تایپ، کار ماه‌ها حسابرسی در چند "
+              "دقیقه، گزارش‌ها همیشه آماده‌ی چاپ.",
     },
     "W6_G": {"en": "ACCOUNTING · LEDGER · PAYROLL",
              "fa": "ACCOUNTING · LEDGER · PAYROLL"},
