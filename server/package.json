@@ -1,0 +1,24 @@
+{
+  "name": "sysaiq-server",
+  "version": "1.0.0",
+  "description": "SysaiQ dynamic backend — content CMS, admin panel, AI assistant with knowledge base, lead capture",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "seed": "node src/seed.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "better-sqlite3": "^11.8.1",
+    "bcryptjs": "^2.4.3",
+    "jsonwebtoken": "^9.0.2",
+    "cookie-parser": "^1.4.7",
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "multer": "^1.4.5-lts.1",
+    "openai": "^4.77.0",
+    "nodemailer": "^6.9.16",
+    "dotenv": "^16.4.7"
+  }
+}

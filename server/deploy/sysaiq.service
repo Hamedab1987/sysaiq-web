@@ -1,0 +1,20 @@
+[Unit]
+Description=SysaiQ Node backend (CMS + admin + AI assistant)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/var/www/sysaiq/app
+EnvironmentFile=/var/www/sysaiq/app/.env
+ExecStart=/usr/bin/node src/index.js
+Restart=always
+RestartSec=3
+User=www-data
+Group=www-data
+# writable data dir for the SQLite db + uploads
+ReadWritePaths=/var/www/sysaiq/app/data
+NoNewPrivileges=true
+ProtectSystem=full
+
+[Install]
+WantedBy=multi-user.target
