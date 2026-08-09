@@ -140,9 +140,30 @@ function projectCard(p){
     </div>
     <div class="row">
       <div><label>Tags</label><input data-f="tags" value="${esc(p.tags)}"></div>
-      <div><label>Image URL</label><input data-f="image" value="${esc(p.image)}"></div>
+      <div><label>Card image URL</label><input data-f="image" value="${esc(p.image)}"></div>
       <div style="flex:0;min-width:90px"><label>Sort</label><input data-f="sort" type="number" value="${p.sort}"></div>
     </div>
+    <details style="margin-top:12px">
+      <summary style="cursor:pointer;color:var(--dim);font-size:12.5px">Detail page (overview, industries, features, screens)</summary>
+      <div class="grid2" style="margin-top:10px">
+        <div><label>Tagline (EN)</label><input data-f="tagline_en" value="${esc(p.tagline_en)}"></div>
+        <div class="fa-field"><label>شعار (FA)</label><input data-f="tagline_fa" value="${esc(p.tagline_fa)}"></div>
+      </div>
+      <div class="grid2">
+        <div><label>Overview (EN)</label><textarea data-f="overview_en">${esc(p.overview_en)}</textarea></div>
+        <div class="fa-field"><label>معرفی (FA)</label><textarea data-f="overview_fa">${esc(p.overview_fa)}</textarea></div>
+      </div>
+      <div class="row">
+        <div><label>Detail cover — EN image URL</label><input data-f="cover_en" value="${esc(p.cover_en)}"></div>
+        <div><label>Detail cover — FA image URL</label><input data-f="cover_fa" value="${esc(p.cover_fa)}"></div>
+      </div>
+      <label>Industries — JSON [{"en":"…","fa":"…"}]</label>
+      <textarea data-f="industries" dir="ltr" style="font-family:monospace;font-size:12px">${esc(p.industries||'[]')}</textarea>
+      <label>Features — JSON [{"title_en","title_fa","desc_en","desc_fa"}]</label>
+      <textarea data-f="features" dir="ltr" style="font-family:monospace;font-size:12px;min-height:120px">${esc(p.features||'[]')}</textarea>
+      <label>Screens — JSON [{"name_en","name_fa","desc_en","desc_fa"}]</label>
+      <textarea data-f="pages" dir="ltr" style="font-family:monospace;font-size:12px;min-height:120px">${esc(p.pages||'[]')}</textarea>
+    </details>
     <div class="actions">
       <label style="display:inline-flex;align-items:center;gap:6px;text-transform:none;margin:0">
         <input type="checkbox" data-f="published" ${p.published?'checked':''} style="width:auto"> Published</label>
