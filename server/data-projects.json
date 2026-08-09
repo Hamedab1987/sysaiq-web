@@ -383,5 +383,313 @@
         "desc_fa": "ساخت segment مشتری، اجرای کمپین، و خواندن درآمدِ هر کمپین پس از کسر تخفیف و مرجوعی."
       }
     ]
+  },
+  {
+    "key": "accounting",
+    "tagline_en": "Accounting that balances itself — and flags what doesn't.",
+    "tagline_fa": "حسابداری که خودش تراز می‌شود؛ خطاها را AI می‌گیرد.",
+    "overview_en": "A complete accounting suite for companies and small businesses — double-entry general ledger, invoicing, payroll, VAT reporting, and bank reconciliation in one system. Instead of surfacing errors at audit time, an AI layer reviews every transaction as it's posted, flagging duplicates, misclassifications, and unusual patterns before they ever reach your financial statements. Month-end close becomes a review, not a project.",
+    "overview_fa": "مجموعه‌ای کامل برای حسابداری شرکت‌ها و اصناف: دفتر کل دوطرفه، صدور فاکتور، حقوق و دستمزد، گزارش ارزش افزوده و مغایرت‌گیری بانکی، همه در یک سیستم. به‌جای اینکه خطاها موقع حسابرسی پیدا شوند، لایه AI هر تراکنش را همان لحظه ثبت بررسی می‌کند و سند تکراری، سرفصل اشتباه و الگوهای غیرعادی را پیش از رسیدن به صورت‌های مالی علامت می‌زند. بستن حساب‌های ماه دیگر یک پروژه نیست؛ یک بازبینی سریع است.",
+    "industries_en": [
+      "SMEs and family-owned businesses",
+      "Trade guilds and retail businesses",
+      "Accounting and bookkeeping firms",
+      "Holding companies and multi-entity groups"
+    ],
+    "industries_fa": [
+      "شرکت‌های کوچک و متوسط و کسب‌وکارهای خانوادگی",
+      "اصناف و واحدهای صنفی",
+      "مؤسسات حسابداری و خدمات مالی",
+      "هلدینگ‌ها و گروه‌های چندشرکتی"
+    ],
+    "features": [
+      {
+        "title_en": "Anomaly Radar on Every Entry",
+        "title_fa": "رادار خطا روی هر سند",
+        "desc_en": "An AI layer learns each company's own posting patterns and scores every transaction the moment it's recorded. Duplicates, unusual amounts, and misclassified accounts get flagged with a plain-language explanation — before close, not at audit.",
+        "desc_fa": "لایه AI الگوی ثبت اسناد هر مجموعه را یاد می‌گیرد و هر تراکنش را همان لحظه ثبت امتیازدهی می‌کند. سند تکراری، مبلغ غیرعادی یا سرفصل اشتباه با یک توضیح ساده و شفاف علامت می‌خورد — قبل از بستن حساب‌ها، نه موقع حسابرسی."
+      },
+      {
+        "title_en": "Continuous Close",
+        "title_fa": "بستن پیوسته حساب‌ها",
+        "desc_en": "Bank feeds, invoices, and payroll reconcile in the background all month long. Month-end stops being a two-week scramble and becomes a checklist you clear in an afternoon.",
+        "desc_fa": "تراکنش‌های بانکی، فاکتورها و حقوق و دستمزد در طول ماه به‌صورت خودکار در پس‌زمینه مغایرت‌گیری می‌شوند. بستن ماه دیگر یک پروژه دوهفته‌ای نیست؛ چک‌لیستی است که در یک بعدازظهر تمام می‌شود."
+      },
+      {
+        "title_en": "One-Click Group Consolidation",
+        "title_fa": "تلفیق گروهی با یک کلیک",
+        "desc_en": "Holdings and multi-entity groups get consolidated statements with automatic intercompany eliminations — a capability usually reserved for enterprise ERP, built in here from day one.",
+        "desc_fa": "هلدینگ‌ها و گروه‌های چندشرکتی صورت‌های مالی تلفیقی را با حذف خودکار تراکنش‌های بین‌شرکتی دریافت می‌کنند — قابلیتی که معمولاً فقط در ERPهای سازمانی پیدا می‌شود و اینجا از روز اول داخل محصول است."
+      },
+      {
+        "title_en": "Ask Your Ledger",
+        "title_fa": "از دفتر کل سؤال بپرسید",
+        "desc_en": "Type a question — \"why did logistics costs jump 40% this month?\" — and get an answer grounded in your own general ledger, with drill-down links to the exact source documents.",
+        "desc_fa": "کافی است بپرسید «چرا هزینه حمل این ماه ۴۰٪ بالا رفت؟» و پاسخ را بر اساس داده‌های واقعی دفتر کل خودتان بگیرید، همراه با لینک مستقیم به اسناد مبنا."
+      }
+    ],
+    "pages": [
+      {
+        "name_en": "Financial Dashboard",
+        "name_fa": "Dashboard مالی",
+        "desc_en": "Real-time cash position, P&L, receivables aging, and open AI alerts in a single view.",
+        "desc_fa": "موجودی نقد، سود و زیان، سررسید مطالبات و هشدارهای AI به‌صورت real-time در یک نما."
+      },
+      {
+        "name_en": "General Ledger & Journals",
+        "name_fa": "دفتر کل و اسناد حسابداری",
+        "desc_en": "Double-entry workspace with inline anomaly flags and drill-down to source documents.",
+        "desc_fa": "محیط ثبت دوطرفه با نمایش هشدار خطا روی خود سند و دسترسی مستقیم به مدارک مبنا."
+      },
+      {
+        "name_en": "Invoicing & Receivables",
+        "name_fa": "فاکتور و مطالبات",
+        "desc_en": "Create and send invoices, track collection status, and trigger automated payment reminders.",
+        "desc_fa": "صدور و ارسال فاکتور، پیگیری وضعیت وصول و یادآوری خودکار پرداخت برای مشتریان."
+      },
+      {
+        "name_en": "Bank Reconciliation",
+        "name_fa": "مغایرت‌گیری بانکی",
+        "desc_en": "Side-by-side statement matching with AI-suggested pairs, confidence scores, and one-click accept.",
+        "desc_fa": "تطبیق صورتحساب بانک با اسناد، همراه با پیشنهادهای هوشمند AI، امتیاز اطمینان و تأیید با یک کلیک."
+      },
+      {
+        "name_en": "Payroll & Tax Center",
+        "name_fa": "حقوق و دستمزد و مرکز مالیات",
+        "desc_en": "Run payroll and generate VAT and filing-ready tax reports from the same ledger data.",
+        "desc_fa": "محاسبه حقوق و دستمزد و تهیه گزارش‌های ارزش افزوده و مالیاتیِ آماده ارائه، از همان داده‌های دفتر کل."
+      }
+    ]
+  },
+  {
+    "key": "pos",
+    "tagline_en": "Sell fast, track every shelf, close in minutes.",
+    "tagline_fa": "فروش سریع، موجودی دقیق، بستنِ روز در چند دقیقه.",
+    "overview_en": "A touch-first POS and inventory platform built for real retail — from supermarkets to mobile shops and trade-guild businesses. It keeps selling when the internet doesn't, tracks stock across every branch in real time, and turns the end-of-day close from an hour of paperwork into one tap that posts straight into your accounting.",
+    "overview_fa": "یک پلتفرم POS و مدیریت موجودی که برای خرده‌فروشی واقعی ساخته شده؛ از سوپرمارکت تا موبایل‌فروشی و کسب‌وکارهای صنفی. حتی وقتی اینترنت قطع است فروش متوقف نمی‌شود، موجودی همه شعبه‌ها به‌صورت real-time به‌روز می‌ماند و بستن حساب پایان روز به‌جای یک ساعت کاغذبازی، با یک لمس مستقیم در حسابداری سند می‌خورد.",
+    "industries_en": [
+      "Supermarkets and grocery chains",
+      "Clothing and fashion boutiques",
+      "Mobile and consumer electronics stores",
+      "Health and beauty retail"
+    ],
+    "industries_fa": [
+      "سوپرمارکت‌ها و فروشگاه‌های زنجیره‌ای مواد غذایی",
+      "پوشاک و بوتیک",
+      "فروشگاه‌های موبایل و لوازم الکترونیکی",
+      "خرده‌فروشی بهداشتی و آرایشی"
+    ],
+    "features": [
+      {
+        "title_en": "Offline-first checkout",
+        "title_fa": "فروش بدون وابستگی به اینترنت",
+        "desc_en": "The POS keeps scanning, selling, and printing receipts through internet outages, then syncs every transaction conflict-free the moment the connection returns. No frozen queues, no lost sales.",
+        "desc_fa": "POS در قطعی اینترنت هم اسکن می‌کند، می‌فروشد و فاکتور چاپ می‌کند؛ به محض وصل شدن، همه تراکنش‌ها بدون تداخل sync می‌شوند. نه صف معطل می‌ماند، نه فروشی از دست می‌رود."
+      },
+      {
+        "title_en": "AI-driven reorder suggestions",
+        "title_fa": "پیشنهاد خرید با AI",
+        "desc_en": "Per-branch demand forecasting learns each store's sales rhythm — including seasonal spikes like Nowruz — and drafts purchase orders before shelves go empty.",
+        "desc_fa": "موتور پیش‌بینی تقاضا الگوی فروش هر شعبه را یاد می‌گیرد — حتی پیک‌های فصلی مثل شب عید — و قبل از خالی شدن قفسه، پیش‌فاکتور خرید آماده می‌کند."
+      },
+      {
+        "title_en": "Native installment sales",
+        "title_fa": "فروش اقساطی داخل خود سیستم",
+        "desc_en": "Installment contracts live inside the POS: payment schedules, a credit history built from each customer's loyalty profile, and automated SMS reminders — no side spreadsheets, no third-party apps.",
+        "desc_fa": "قرارداد اقساط همان‌جا در POS ثبت می‌شود: جدول اقساط، سابقه خوش‌حسابی مشتری از پروفایل باشگاه، و یادآوری خودکار با SMS — بدون اکسل جداگانه یا نرم‌افزار جانبی."
+      },
+      {
+        "title_en": "Z reports that post themselves",
+        "title_fa": "گزارش Z که خودش سند می‌زند",
+        "desc_en": "The end-of-day Z report reconciles cash, card, and installment takings, then posts as journal entries straight into the SysaiQ accounting suite. Closing the day takes minutes, not evenings.",
+        "desc_fa": "گزارش پایان روز، فروش نقدی و کارتخوان و اقساط را مغایرت‌گیری می‌کند و مستقیم به‌صورت سند حسابداری در سیستم مالی SysaiQ ثبت می‌شود. بستن روز چند دقیقه طول می‌کشد، نه چند ساعت."
+      }
+    ],
+    "pages": [
+      {
+        "name_en": "Touch POS",
+        "name_fa": "صفحه فروش لمسی",
+        "desc_en": "Barcode-fast checkout with split payments, discounts, and customer lookup in two taps.",
+        "desc_fa": "فروش سریع با بارکد، تقسیم پرداخت، تخفیف و پیدا کردن مشتری در دو لمس."
+      },
+      {
+        "name_en": "Inventory Hub",
+        "name_fa": "مرکز موجودی",
+        "desc_en": "Live multi-branch stock levels, inter-branch transfers, and low-stock alerts on one board.",
+        "desc_fa": "موجودی real-time همه شعبه‌ها، حواله بین‌شعبه‌ای و هشدار کسری کالا در یک صفحه."
+      },
+      {
+        "name_en": "Loyalty Club",
+        "name_fa": "باشگاه مشتریان",
+        "desc_en": "Customer profiles, points and tiers, and targeted SMS campaigns based on purchase history.",
+        "desc_fa": "پروفایل مشتری، امتیاز و سطح‌بندی، و کمپین‌های SMS هدفمند بر اساس سابقه خرید."
+      },
+      {
+        "name_en": "Installments Desk",
+        "name_fa": "میز اقساط",
+        "desc_en": "Active contracts, payment calendars, overdue tracking, and one-tap reminder messages.",
+        "desc_fa": "قراردادهای فعال، تقویم اقساط، پیگیری معوقات و ارسال یادآوری با یک لمس."
+      },
+      {
+        "name_en": "Day-Close Dashboard",
+        "name_fa": "داشبورد بستن روز",
+        "desc_en": "Z reports, cash-drawer reconciliation, branch comparison, and direct posting to accounting.",
+        "desc_fa": "گزارش Z، مغایرت‌گیری صندوق، مقایسه شعبه‌ها و ثبت مستقیم سند در حسابداری."
+      }
+    ]
+  },
+  {
+    "key": "salon",
+    "tagline_en": "The front desk that runs itself.",
+    "tagline_fa": "سالنِ همیشه‌پر، بدون تلفن و دفترچه نوبت",
+    "overview_en": "A booking and operations platform for appointment-based businesses that replaces the phone-and-notebook front desk. Clients book online in seconds, staff schedules and commissions calculate themselves, and automated SMS keeps every chair full. It doesn't just take appointments — it cuts no-shows and brings clients back.",
+    "overview_fa": "پلتفرم نوبت‌دهی و مدیریت برای کسب‌وکارهای خدماتی که جای تلفن و دفترچه نوبت را می‌گیرد. مشتری در چند ثانیه آنلاین نوبت می‌گیرد، شیفت و پورسانت پرسنل خودکار محاسبه می‌شود و یادآوری پیامکی نمی‌گذارد صندلی‌ها خالی بماند. این فقط یک سیستم رزرو نیست؛ کنسلی را کم می‌کند و مشتری را دوباره برمی‌گرداند.",
+    "industries_en": [
+      "Beauty salons & barbershops",
+      "Spas & massage centers",
+      "Fitness & yoga studios",
+      "Skin, nail & personal-care clinics"
+    ],
+    "industries_fa": [
+      "سالن‌های زیبایی و آرایشگاه‌های مردانه",
+      "اسپا و مراکز ماساژ",
+      "باشگاه‌ها و استودیوهای فیتنس و یوگا",
+      "کلینیک‌های پوست، ناخن و خدمات شخصی"
+    ],
+    "features": [
+      {
+        "title_en": "No-show prediction with smart deposits",
+        "title_fa": "پیش‌بینی کنسلی با AI",
+        "desc_en": "An AI model scores each booking's no-show risk from the client's actual history. Only high-risk bookings are asked for a small deposit at reservation time — everyone else books friction-free.",
+        "desc_fa": "یک مدل AI با نگاه به سابقه واقعی هر مشتری، ریسک نیامدنش را می‌سنجد. فقط از نوبت‌های پرریسک موقع رزرو بیعانه گرفته می‌شود و بقیه مشتری‌ها بدون هیچ دردسری نوبت می‌گیرند."
+      },
+      {
+        "title_en": "Self-filling cancellation slots",
+        "title_fa": "پر شدن خودکار نوبت‌های کنسل‌شده",
+        "desc_en": "When someone cancels, the slot is offered by SMS to matching waitlist clients in real-time — first to confirm takes it. Empty chairs refill without anyone touching the phone.",
+        "desc_fa": "به محض کنسل شدن یک نوبت، سیستم به‌صورت real-time به مشتریان لیست انتظار پیامک می‌دهد و نوبت به اولین نفری می‌رسد که تأیید کند. صندلی خالی بدون حتی یک تماس تلفنی دوباره پر می‌شود."
+      },
+      {
+        "title_en": "A commission engine, not a spreadsheet",
+        "title_fa": "موتور محاسبه پورسانت، نه فایل اکسل",
+        "desc_en": "Per-staff, per-service, and tiered commission rules run automatically on every sale — services, products, and packages alike. Each stylist sees a transparent payout statement, and end-of-month arguments disappear.",
+        "desc_fa": "پورسانت هر پرسنل بر اساس قوانین دلخواه شما — به تفکیک خدمت، نفر و پله فروش — روی هر تراکنش خودکار محاسبه می‌شود؛ چه خدمات، چه محصول، چه پکیج. هر آرایشگر صورتحساب شفاف خودش را می‌بیند و بحث‌های آخر ماه تمام می‌شود."
+      },
+      {
+        "title_en": "Cadence-based rebooking nudges",
+        "title_fa": "یادآوری برگشت بر اساس ریتم هر مشتری",
+        "desc_en": "The platform learns each client's natural visit rhythm — every four weeks, every 45 days — and sends a personal SMS exactly when they're due back. Retention becomes automatic instead of hopeful.",
+        "desc_fa": "سیستم فاصله طبیعی مراجعه‌های هر مشتری را یاد می‌گیرد — هر چهار هفته، هر ۴۵ روز — و درست سر موعد برگشت، پیامک شخصی‌سازی‌شده می‌فرستد. نگه داشتن مشتری به‌جای حدس و امید، یک فرآیند خودکار می‌شود."
+      }
+    ],
+    "pages": [
+      {
+        "name_en": "Online Booking",
+        "name_fa": "صفحه رزرو آنلاین",
+        "desc_en": "Client-facing flow: pick a service, a stylist, and a live open slot — booked in under a minute.",
+        "desc_fa": "مشتری در کمتر از یک دقیقه خدمت، آرایشگر و ساعت خالی را انتخاب می‌کند و نوبتش قطعی می‌شود."
+      },
+      {
+        "name_en": "Front-Desk Calendar",
+        "name_fa": "تقویم نوبت‌ها",
+        "desc_en": "Drag-and-drop day view across all staff columns, with walk-ins, cancellations, and gaps visible at a glance.",
+        "desc_fa": "نمای روزانه همه پرسنل با جابه‌جایی drag-and-drop نوبت‌ها و دید لحظه‌ای به کنسلی‌ها و جاهای خالی."
+      },
+      {
+        "name_en": "Client Profile",
+        "name_fa": "پروفایل مشتری",
+        "desc_en": "Full visit history, notes and color formulas, active packages, and lifetime spend on one card.",
+        "desc_fa": "سابقه کامل مراجعه‌ها، یادداشت‌ها و فرمول‌های رنگ، پکیج‌های فعال و مجموع خرید هر مشتری در یک صفحه."
+      },
+      {
+        "name_en": "Staff & Commissions",
+        "name_fa": "پرسنل و پورسانت",
+        "desc_en": "Shift schedules, commission rules, and per-person payout statements — no spreadsheets involved.",
+        "desc_fa": "شیفت‌ها، قوانین پورسانت و صورتحساب تسویه هر نفر؛ بدون هیچ فایل اکسلی."
+      },
+      {
+        "name_en": "Insights Dashboard",
+        "name_fa": "Dashboard گزارش‌ها",
+        "desc_en": "Revenue, chair occupancy, no-show rate, and retention trends, filterable by staff and service.",
+        "desc_fa": "درآمد، نرخ پر بودن صندلی‌ها، آمار کنسلی و نرخ بازگشت مشتری، با فیلتر بر اساس پرسنل و نوع خدمت."
+      }
+    ]
+  },
+  {
+    "key": "distribution",
+    "tagline_en": "Your entire distribution network, live on one screen.",
+    "tagline_fa": "کل شبکه پخش مویرگی، زنده روی یک صفحه.",
+    "overview_en": "A complete platform for distribution and van-sales operations: reps take orders on mobile right at the shelf, delivery routes optimize themselves throughout the day, and van inventory, customer credit limits, and cheques are tracked in one place. Managers stop waiting for end-of-week reports — the live dashboard shows what is happening in the market right now.",
+    "overview_fa": "یک پلتفرم کامل برای مدیریت پخش مویرگی؛ از ثبت سفارش ویزیتور در محل فروشگاه تا بهینه‌سازی مسیر توزیع، موجودی ماشین پخش، سقف اعتبار مشتری و پیگیری چک‌ها — همه در یک سیستم یکپارچه. مدیر فروش به‌جای انتظار برای گزارش‌های آخر هفته، روی یک dashboard زنده می‌بیند همین لحظه در بازار چه می‌گذرد.",
+    "industries_en": [
+      "FMCG distribution companies",
+      "Food & beverage wholesalers",
+      "Pharmaceutical distribution",
+      "Cosmetics & personal-care van sales"
+    ],
+    "industries_fa": [
+      "شرکت‌های پخش مویرگی FMCG",
+      "عمده‌فروشان مواد غذایی و نوشیدنی",
+      "شرکت‌های پخش دارو",
+      "پخش لوازم آرایشی و بهداشتی"
+    ],
+    "features": [
+      {
+        "title_en": "Offline-First Field Operations",
+        "title_fa": "کارکرد کامل به‌صورت Offline",
+        "desc_en": "Reps keep taking orders, checking stock, and issuing invoices with zero connectivity; conflict-safe sync reconciles everything with the server the moment a signal returns. No order is ever lost in a basement stockroom or a dead zone.",
+        "desc_fa": "ویزیتور حتی بدون اینترنت سفارش ثبت می‌کند، موجودی می‌بیند و فاکتور صادر می‌کند؛ به محض وصل شدن آنتن، sync هوشمند همه‌چیز را بدون تداخل با سرور هماهنگ می‌کند. هیچ سفارشی در انبار زیرزمینی یا نقطه بدون آنتن از دست نمی‌رود."
+      },
+      {
+        "title_en": "AI Credit & Cheque Risk Scoring",
+        "title_fa": "امتیازدهی ریسک اعتبار و چک با AI",
+        "desc_en": "Before a rep extends credit, the platform scores each customer's risk from payment history, cheque behavior, and order patterns — flagging likely bounced cheques before they happen, not after.",
+        "desc_fa": "قبل از اینکه ویزیتور فروش اعتباری ثبت کند، سیستم بر اساس سابقه پرداخت، رفتار چک‌ها و الگوی خرید هر مشتری ریسک او را امتیازدهی می‌کند و احتمال برگشت چک را از قبل هشدار می‌دهد — نه بعد از اتفاق."
+      },
+      {
+        "title_en": "Live Mid-Route Re-Optimization",
+        "title_fa": "بهینه‌سازی زنده مسیر در طول روز",
+        "desc_en": "Routes are not frozen at 7 a.m. When a van breaks down, an order is cancelled, or traffic shifts, the remaining stops re-sequence across the whole fleet in real time — no dispatcher phone calls required.",
+        "desc_fa": "مسیرها ساعت ۷ صبح قفل نمی‌شوند؛ اگر ماشینی خراب شود، سفارشی لغو شود یا ترافیک تغییر کند، توقف‌های باقی‌مانده به‌صورت real-time بین کل ناوگان بازچینی می‌شوند — بدون تماس تلفنی و هماهنگی دستی."
+      },
+      {
+        "title_en": "Predictive Suggested Baskets",
+        "title_fa": "سبد پیشنهادی هوشمند برای هر فروشگاه",
+        "desc_en": "AI learns each shop's purchase cycle and suggests the right basket before the rep walks in — quantities, SKUs likely running out, and products this shop has never tried but similar shops sell well.",
+        "desc_fa": "AI چرخه خرید هر فروشگاه را یاد می‌گیرد و قبل از ورود ویزیتور، سبد مناسب را پیشنهاد می‌دهد: تعداد دقیق، کالاهایی که احتمالاً رو به اتمام‌اند و محصولاتی که فروشگاه‌های مشابه خوب می‌فروشند اما این مشتری هنوز امتحان نکرده."
+      }
+    ],
+    "pages": [
+      {
+        "name_en": "Rep Order Screen",
+        "name_fa": "صفحه ثبت سفارش ویزیتور",
+        "desc_en": "Mobile catalog with live stock, customer-specific pricing, and one-tap ordering — built for speed in the aisle.",
+        "desc_fa": "کاتالوگ موبایلی با موجودی لحظه‌ای، قیمت اختصاصی هر مشتری و ثبت سفارش با چند لمس — ساخته‌شده برای سرعت در محل فروش."
+      },
+      {
+        "name_en": "Live Route Map",
+        "name_fa": "نقشه زنده مسیرها",
+        "desc_en": "Every van on one map: live positions, optimized stop sequences, delivery status, and ETAs.",
+        "desc_fa": "همه ماشین‌های پخش روی یک نقشه: موقعیت لحظه‌ای، ترتیب بهینه توقف‌ها، وضعیت تحویل و زمان تقریبی رسیدن."
+      },
+      {
+        "name_en": "Customer Credit Profile",
+        "name_fa": "پروفایل اعتباری مشتری",
+        "desc_en": "Credit limit, open invoices, cheque timeline, and the AI risk score — everything a rep needs before extending credit.",
+        "desc_fa": "سقف اعتبار، فاکتورهای باز، وضعیت چک‌ها و امتیاز ریسک AI — هر چیزی که قبل از فروش اعتباری لازم است."
+      },
+      {
+        "name_en": "Van Inventory",
+        "name_fa": "موجودی ماشین پخش",
+        "desc_en": "Load-out, live in-van stock, returns, and end-of-day reconciliation for every vehicle.",
+        "desc_fa": "بارگیری صبح، موجودی لحظه‌ای داخل ماشین، مرجوعی‌ها و تسویه پایان روز برای هر خودرو."
+      },
+      {
+        "name_en": "Sales Command Dashboard",
+        "name_fa": "Dashboard فرماندهی فروش",
+        "desc_en": "Real-time sales by region, rep, and SKU; targets vs. actuals; and alerts that surface problems the moment they start.",
+        "desc_fa": "فروش real-time به تفکیک منطقه، ویزیتور و کالا؛ مقایسه هدف با عملکرد؛ و هشدارهایی که مشکل را همان لحظه شروع نشان می‌دهند."
+      }
+    ]
   }
 ]

@@ -35,6 +35,14 @@ const META = {
     tags:'QUANT · AI SIGNALS · BACKTESTING', img:'trading', sort:4 },
   ecommerce:  { title_en:'E-commerce Store Admin', title_fa:'پنل فروشگاه اینترنتی',
     tags:'E-COMMERCE · ANALYTICS · AI', img:'ecommerce', sort:5 },
+  accounting: { title_en:'Business Accounting Suite', title_fa:'سیستم حسابداری کسب‌وکار',
+    tags:'ACCOUNTING · LEDGER · PAYROLL', img:'accounting', sort:6 },
+  pos:        { title_en:'Retail POS & Inventory', title_fa:'پوز فروشگاهی و انبار',
+    tags:'POS · INVENTORY · RETAIL', img:'pos', sort:7 },
+  salon:      { title_en:'Salon & Booking Platform', title_fa:'رزرو و مدیریت سالن',
+    tags:'BOOKING · SERVICES · SMS', img:'salon', sort:8 },
+  distribution:{ title_en:'Distribution & Field Sales', title_fa:'پخش مویرگی و فروش میدانی',
+    tags:'DISTRIBUTION · ROUTES · B2B', img:'distribution', sort:9 },
 };
 const PROJECTS = RICH.map(p => {
   const m = META[p.key];

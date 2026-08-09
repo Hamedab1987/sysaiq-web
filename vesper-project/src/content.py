@@ -177,6 +177,46 @@ STRINGS = {
     "W5_G": {"en": "E-COMMERCE · ANALYTICS · AI",
              "fa": "E-COMMERCE · ANALYTICS · AI"},
 
+    "W6_T": {"en": "Business Accounting Suite", "fa": "سیستم حسابداری کسب‌وکار"},
+    "W6_D": {
+        "en": "Ledger, invoices, payroll and tax reports in one suite — "
+              "with AI watching every transaction for anomalies.",
+        "fa": "دفتر کل، فاکتور، حقوق‌ودستمزد و گزارش مالیاتی در یک سیستم — "
+              "با AI که مراقب تراکنش‌های غیرعادی است.",
+    },
+    "W6_G": {"en": "ACCOUNTING · LEDGER · PAYROLL",
+             "fa": "ACCOUNTING · LEDGER · PAYROLL"},
+
+    "W7_T": {"en": "Retail POS & Inventory", "fa": "پوز فروشگاهی و انبار"},
+    "W7_D": {
+        "en": "Touch POS with barcode, multi-branch inventory and a customer "
+              "club — built for real shops and trade businesses.",
+        "fa": "صندوق لمسی با بارکد، انبار چندشعبه و باشگاه مشتری — "
+              "ساخته‌شده برای مغازه‌ها و اصناف واقعی.",
+    },
+    "W7_G": {"en": "POS · INVENTORY · RETAIL",
+             "fa": "POS · INVENTORY · RETAIL"},
+
+    "W8_T": {"en": "Salon & Booking Platform", "fa": "رزرو و مدیریت سالن"},
+    "W8_D": {
+        "en": "Online booking, staff commissions and SMS reminders for "
+              "appointment-based businesses.",
+        "fa": "رزرو آنلاین، کمیسیون پرسنل و یادآور پیامکی برای "
+              "کسب‌وکارهای نوبتی.",
+    },
+    "W8_G": {"en": "BOOKING · SERVICES · SMS",
+             "fa": "BOOKING · SERVICES · SMS"},
+
+    "W9_T": {"en": "Distribution & Field Sales", "fa": "پخش مویرگی و فروش میدانی"},
+    "W9_D": {
+        "en": "Mobile order-taking, smart delivery routes and credit control "
+              "for distribution teams.",
+        "fa": "سفارش‌گیری موبایل، مسیر توزیع هوشمند و کنترل اعتبار برای "
+              "تیم‌های پخش.",
+    },
+    "W9_G": {"en": "DISTRIBUTION · ROUTES · B2B",
+             "fa": "DISTRIBUTION · ROUTES · B2B"},
+
     # ---------- FAQ (light) ----------
     "FAQ_H2": {"en": "Frequently asked", "fa": "سؤالات پرتکرار"},
     "Q1": {"en": "WHAT EXACTLY IS SYSAIQ?", "fa": "SysaiQ دقیقاً چیست؟"},
