@@ -132,9 +132,15 @@ if (db.prepare('SELECT COUNT(*) c FROM faqs').get().c === 0) {
   console.log(`[seed] ${FAQS.length} faqs`);
 }
 if (db.prepare('SELECT COUNT(*) c FROM knowledge').get().c === 0) {
+  // Prefer the rich generated knowledge base when present; fall back to
+  // the minimal built-in trio.
+  let entries = KNOWLEDGE;
+  try {
+    entries = JSON.parse(readFileSync(join(__dirname, '..', 'data-knowledge.json'), 'utf8'));
+  } catch { /* file optional */ }
   const stmt = db.prepare(`INSERT INTO knowledge (title,body_en,body_fa,tags,enabled) VALUES (@title,@body_en,@body_fa,@tags,1)`);
-  for (const k of KNOWLEDGE) stmt.run(k);
-  console.log(`[seed] ${KNOWLEDGE.length} knowledge entries`);
+  for (const k of entries) stmt.run({ title: k.title, body_en: k.body_en, body_fa: k.body_fa, tags: k.tags || '' });
+  console.log(`[seed] ${entries.length} knowledge entries`);
 }
 console.log('[seed] done');
 process.exit(0);
