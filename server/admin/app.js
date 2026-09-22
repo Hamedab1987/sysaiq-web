@@ -1,8 +1,10 @@
 // SysaiQ admin panel — vanilla JS SPA. Talks to /api/admin/*.
 const $ = s => document.querySelector(s);
+// every write to /api/admin must carry this header (CSRF guard, middleware/csrf.js)
+const CSRF = {'X-Requested-With':'sysaiq-admin'};
 const api = {
-  async get(p){ const r = await fetch('/api/admin'+p); if(r.status===401) throw 'auth'; return r.json(); },
-  async send(m,p,body){ const r = await fetch('/api/admin'+p,{method:m,headers:{'Content-Type':'application/json'},
+  async get(p){ const r = await fetch('/api/admin'+p,{headers:CSRF}); if(r.status===401) throw 'auth'; return r.json(); },
+  async send(m,p,body){ const r = await fetch('/api/admin'+p,{method:m,headers:{'Content-Type':'application/json',...CSRF},
     body:body?JSON.stringify(body):undefined}); if(r.status===401) throw 'auth'; return r.json(); },
   post:(p,b)=>api.send('POST',p,b), put:(p,b)=>api.send('PUT',p,b), del:p=>api.send('DELETE',p),
 };
@@ -11,11 +13,11 @@ function esc(s){ return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>
 
 // ---- auth ----
 async function doLogin(){
-  const r = await fetch('/api/admin/login',{method:'POST',headers:{'Content-Type':'application/json'},
+  const r = await fetch('/api/admin/login',{method:'POST',headers:{'Content-Type':'application/json',...CSRF},
     body:JSON.stringify({username:$('#lg-user').value,password:$('#lg-pass').value})});
   if(r.ok){ boot(); } else { $('#lg-err').textContent='Invalid username or password.'; }
 }
-async function doLogout(){ await fetch('/api/admin/logout',{method:'POST'}); location.reload(); }
+async function doLogout(){ await fetch('/api/admin/logout',{method:'POST',headers:CSRF}); location.reload(); }
 
 const TABS = [
   ['content','Content'], ['projects','Projects'], ['faqs','FAQ'],
@@ -272,8 +274,9 @@ async function delLead(id){ if(confirm('Delete this lead?')){ await api.del('/le
 async function uploadFor(input,sel){
   if(!input.files[0]) return;
   const fd=new FormData(); fd.append('file',input.files[0]);
-  const r=await fetch('/api/admin/upload',{method:'POST',body:fd}); const j=await r.json();
+  const r=await fetch('/api/admin/upload',{method:'POST',headers:CSRF,body:fd}); const j=await r.json();
   if(j.url){ document.querySelector(sel).value=j.url; toast('Uploaded — remember to Save'); }
+  else { toast(j.error==='unsupported_image'?'Only JPEG, PNG, WebP or GIF images':'Upload failed'); }
 }
 
 // ---- boot ----

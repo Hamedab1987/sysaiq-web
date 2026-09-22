@@ -3,26 +3,41 @@
 // the visitor's language (fa/en) and replies in kind, and can quietly
 // capture a qualified lead. Uses OpenAI's chat completions.
 import OpenAI from 'openai';
-import { db } from './db.js';
+import { db, getSetting } from './db/index.js';
+import { registerSecret, getSecret } from './lib/secrets.js';
 
-import { getSetting } from './db.js';
+// The OpenAI key lives in the encrypted secrets table (set from the admin
+// panel) with OPENAI_API_KEY in .env as the fallback; only the model name
+// stays in settings.ai_config. Nothing here ever logs or returns the key.
+export const OPENAI_KEY_SECRET = 'openai.api_key';
+registerSecret({
+  name: OPENAI_KEY_SECRET,
+  label_fa: 'کلید API اوپن‌ای‌آی (دستیار هوشمند)',
+  label_en: 'OpenAI API key (AI assistant)',
+  group: 'ai',
+  envFallback: 'OPENAI_API_KEY',
+  // keys are 'sk-…' but the exact shape changes; only rule out obvious paste errors
+  validate: v => (/\s/.test(v) || v.length < 12 ? 'does not look like an OpenAI API key' : null),
+});
 
-// The OpenAI key + model can be set two ways: in .env, or (preferred, so
-// the admin can manage it without SSH) via the admin panel, which stores
-// them in the settings table. The DB value wins when present.
-function aiConfig() {
+export function aiModel() {
   const s = getSetting('ai_config', {}) || {};
-  return {
-    key: s.openai_key || process.env.OPENAI_API_KEY || '',
-    model: s.model || process.env.OPENAI_MODEL || 'gpt-4o-mini',
-  };
+  return s.model || process.env.OPENAI_MODEL || 'gpt-4o-mini';
+}
+const aiKey = () => getSecret(OPENAI_KEY_SECRET) || '';
+
+// tests inject a fake client so no request ever leaves the process
+let makeClient = opts => new OpenAI(opts);
+export function setClientFactory(fn) {
+  makeClient = fn || (opts => new OpenAI(opts));
+  client = null; clientKey = null;
 }
 
 let client = null, clientKey = null;
 function openai() {
-  const { key } = aiConfig();
+  const key = aiKey();
   if (!key) return null;
-  if (!client || clientKey !== key) { client = new OpenAI({ apiKey: key }); clientKey = key; }
+  if (!client || clientKey !== key) { client = makeClient({ apiKey: key }); clientKey = key; }
   return client;
 }
 
@@ -90,14 +105,15 @@ export async function chat({ sessionId, message, history = [] }) {
   let reply;
   try {
     const res = await api.chat.completions.create({
-      model: aiConfig().model,
+      model: aiModel(),
       messages,
       temperature: 0.4,
       max_tokens: 500,
     });
     reply = res.choices[0]?.message?.content?.trim() || FALLBACK[lang];
   } catch (err) {
-    console.error('AI error:', err.message);
+    // never err.message: the SDK embeds a (masked) copy of the key in 401 texts
+    console.error('[ai] request failed', err?.status || err?.code || err?.name || 'error');
     reply = FALLBACK[lang];
   }
 

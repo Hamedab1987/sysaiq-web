@@ -63,8 +63,14 @@ export function up(db, ctx) { db.exec(`CREATE TABLE …`); }   // runs inside a 
 ```
 Runner applies every unapplied version in ascending order and records it in
 `schema_migrations(version PK, name, applied_at)`. Guard ALTERs with
-`ctx.hasColumn(table, col)`. **Number ranges:** core 001–099 · SMS 100–199 ·
+`ctx.hasColumn(table, col)` / `ctx.hasTable(name)`. **Number ranges:** core 001–099 · SMS 100–199 ·
 payments 200–299 · admin-only 300–399 · news 400–499. Never reuse a number.
+**Import rule for migration files:** `db/index.js` top-level-awaits the runner, so a
+migration must NEVER import `db/index.js` or anything that imports it (`lib/secrets.js`,
+`lib/audit.js`, `lib/leads.js`, `middleware/auth.js`, …) — that deadlocks the ESM graph at
+boot. Use the `db` argument and import only `config.js` and pure helpers
+(`lib/secrets-crypto.js`, `lib/normalize.js`, `lib/html.js`). Read the existing
+`002_secrets.js` as the model.
 
 ### Auto-mounted routes
 A file `routes/public/x.routes.js` or `routes/admin/x.routes.js` default-exports:
@@ -83,7 +89,7 @@ export default { basePath: '/pages', order: 50, router };   // express.Router()
 |---|---|
 | `lib/errors.js` | `HttpError`, `asyncHandler(fn)`, `errorMiddleware` |
 | `lib/validate.js` | `v.str({min,max,trim})`, `v.int({min,max})`, `v.bool()`, `v.oneOf([...])`, `v.slug()`, `v.url({https})`, `v.email()`, `v.json(schema)`, `v.optional(x)`, `validate(schema, body)` → value or throws HttpError 422 with `fields` |
-| `lib/secrets.js` | `registerSecret({name,label_fa,label_en,group,envFallback?,validate?})`, `getSecret(name)` → string\|null, `setSecret(name,value,adminId?)`, `deleteSecret(name)`, `hasSecret(name)`, `listSecrets()` → `[{name,labels,group,configured,hint,source,updated_at}]`, `maskSecret(v)` → `'••••1a2b'` |
+| `lib/secrets.js` | `registerSecret({name,label_fa,label_en,group,envFallback?,validate?})`, `getSecret(name)` → string\|null, `setSecret(name,value,adminId?)`, `deleteSecret(name)`, `hasSecret(name)` (same answer as `getSecret`), `listSecrets()` → `[{name,labels,group,configured,hint,source,updated_at}]` with `source` ∈ `db\|env\|unreadable\|none` (`unreadable` = row no longer decrypts, owner must re-enter), `maskSecret(v)` → `'••••1a2b'` |
 | `lib/registry.js` | `registerSetting({key,schema,public})`, `isRegisteredSetting(key)`, `publicSettings()`, `registerCspSource(directive, src)`, `cspSources()`, `reserveSlug(...slugs)`, `isReservedSlug(s)` |
 | `lib/cache.js` | `cached(key, fn)`, `invalidate(prefix?)`, `cacheVersion()` |
 | `lib/events.js` | `on(evt, fn)`, `emit(evt, payload)` — listeners run in `queueMicrotask` inside try/catch; events: `lead.created`, `content.changed`, `invoice.sent`, `payment.succeeded`, `payment.failed`, `payment.orphaned`, `news.drafted` |
@@ -91,9 +97,9 @@ export default { basePath: '/pages', order: 50, router };   // express.Router()
 | `lib/csp.js` | `buildCsp(kind)` kinds: `home`,`page`,`admin`,`api`,`upload`; `cspMiddleware(kind)` |
 | `lib/html.js` | `esc(s)`, `attr(s)`, `jsonForScript(obj)`, `J(str, dflt)` |
 | `lib/inline.js` | `renderInline(text)` (escape → `\n`→`<br>`, `*x*`→`<em>`, `**x**`→`<strong>`) |
-| `lib/markdown.js` | `renderMarkdown(md, {tokens})` escape-first subset (h2–h4, p, ul/ol, strong/em/code, blockquote, hr, tables, links https/http/mailto/tel/relative) |
+| `lib/markdown.js` | `renderMarkdown(md, {tokens})` escape-first subset (h2–h4, p, ul/ol, strong/em/code, blockquote, hr, tables, links https/http/mailto/tel/relative), `LIMITS` `{input, line, depth}` |
 | `lib/normalize.js` | `toLatinDigits(s)`, `toFaDigits(s)`, `normalizeMobile(s)` → `'09xxxxxxxxx'`\|null, `toE164(m)`, `parseTomanInput(s)` |
-| `lib/http.js` | `httpJson({url,method,headers,body,timeoutMs,redactUrl})`, `httpForm(...)` — relay-aware, logs `{provider,op,status,ms}` only |
+| `lib/http.js` | `httpJson({url,method,headers,body,timeoutMs,redactUrl,allowHosts?})`, `httpForm(...)`, `isPrivateAddress(ip)` — relay-aware, DNS-checked SSRF guard, logs `{provider,op,status,ms}` only |
 | `middleware/auth.js` | `requireAdmin`, `issueCookie`, `clearCookie`, `verifyLogin`, `createAdmin` |
 | `middleware/csrf.js` | `csrfGuard` (non-GET: Origin/Referer allowlist + `X-Requested-With: sysaiq-admin`) |
 
@@ -131,10 +137,23 @@ Dates: `ui.formatJalali()`. Money: `ui.formatToman()`.
   (block private/loopback/link-local IPs), timeout, size cap.
 - Any URL you render: validated scheme; external links get `rel="noopener noreferrer"`.
 - Redirects never use user input or the `Host` header — use `config.publicBaseUrl`.
-- Log redaction: never log request bodies, secrets, or URLs containing API keys.
+- Log redaction: never log request bodies, secrets, URLs containing API keys, or a
+  visitor's personal data (email, phone, name) — log the lead/record id instead.
+- Markdown/inline renderers (`lib/markdown.js`, `lib/inline.js`) are the only way
+  external text reaches HTML; `renderMarkdown` caps input at `LIMITS.input`
+  (256 KB), lines at `LIMITS.line` (8 KB) and nesting at `LIMITS.depth` (8) —
+  validate upstream if you need to refuse rather than truncate.
+- `registerCspSource(directive, src)` accepts only img/font/style/connect/frame-src
+  and form-action, and only `https://host[:port]`, `https://*.host`, `data:` or
+  `blob:` — it throws on anything else, so never feed it raw admin input.
+- `lib/http.js` refuses any host (or relay base) that resolves to a private,
+  loopback, link-local or CGNAT address; pass `allowHosts: [...]` to pin a provider.
 
 ## Tests
-`cd server && npm test` → `node --test test/`. Each test file is its own process:
+`cd server && npm test` → `node --test test/**/*.test.js`. Test files MUST live exactly
+one level down, `server/test/<area>/*.test.js` (the shell expands the glob one level;
+a file directly in `test/` or two levels deep is silently skipped). Each test file is
+its own process:
 ```js
 import { startTestApp } from './helpers.js';
 const t = await startTestApp();           // temp DATA_DIR, NODE_ENV=test, listens on :0

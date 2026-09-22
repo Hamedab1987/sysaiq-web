@@ -18,7 +18,8 @@ function tx() {
 export async function sendLeadNotification(lead) {
   const t = tx();
   const to = process.env.LEAD_NOTIFY_TO || 'hello@sysaiq.com';
-  if (!t) { console.log('[lead]', lead.email || '(no email)', '— SMTP not configured, skipping notify'); return; }
+  // log the id only — the address is personal data and stdout goes to journald
+  if (!t) { console.log(`[lead] #${lead.id} — SMTP not configured, skipping notify`); return; }
   const from = process.env.MAIL_FROM || 'SysaiQ <hello@sysaiq.com>';
   const lines = [
     `New lead #${lead.id}`,
