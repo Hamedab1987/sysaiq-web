@@ -49,10 +49,21 @@ const formLimiter = rateLimit({ windowMs: 60 * 60 * 1000, max: 15 });
 //  PUBLIC API
 // ========================================================================
 
+// Settings keys that hold public site copy. Everything else in the settings
+// table (ai_config, future gateway/SMS config…) is private: it must never be
+// served by a public route, nor read/written through the generic settings API.
+const PUBLIC_SETTINGS = ['hero_h1', 'hero_note_l', 'hero_note_r', 'about_1', 'about_2', 'contact_email'];
+function publicSettings() {
+  const all = allSettings();
+  const out = {};
+  for (const k of PUBLIC_SETTINGS) if (k in all) out[k] = all[k];
+  return out;
+}
+
 // full site content (settings + published projects + faqs) — one call
 app.get('/api/content', (_req, res) => {
   res.json({
-    settings: allSettings(),
+    settings: publicSettings(),
     projects: db.prepare('SELECT * FROM projects WHERE published=1 ORDER BY sort, id').all(),
     faqs: db.prepare('SELECT * FROM faqs WHERE published=1 ORDER BY sort, id').all(),
   });
@@ -103,8 +114,13 @@ const A = express.Router();
 A.use(requireAdmin);
 
 // settings (site copy: hero, about, contact, nav…)
-A.get('/settings', (_req, res) => res.json(allSettings()));
-A.put('/settings/:key', (req, res) => { setSetting(req.params.key, req.body.value); res.json({ ok: true }); });
+A.get('/settings', (_req, res) => res.json(publicSettings()));
+A.put('/settings/:key', (req, res) => {
+  if (!PUBLIC_SETTINGS.includes(req.params.key)) return res.status(400).json({ error: 'unknown setting' });
+  const v = req.body?.value || {};
+  setSetting(req.params.key, { en: String(v.en ?? '').slice(0, 5000), fa: String(v.fa ?? '').slice(0, 5000) });
+  res.json({ ok: true });
+});
 
 // projects CRUD
 A.get('/projects', (_req, res) => res.json(db.prepare('SELECT * FROM projects ORDER BY sort, id').all()));
@@ -114,11 +130,14 @@ A.post('/projects', (req, res) => {
      tagline_en,tagline_fa,overview_en,overview_fa,industries,features,pages,sort,published)
     VALUES (@slug,@title_en,@title_fa,@desc_en,@desc_fa,@tags,@image,@cover_en,@cover_fa,
      @tagline_en,@tagline_fa,@overview_en,@overview_fa,@industries,@features,@pages,@sort,@published)`)
-    .run(defaultsProject(req.body || {}));
+    .run(withSlug(defaultsProject(req.body || {})));
   res.json({ ok: true, id: info.lastInsertRowid });
 });
 A.put('/projects/:id', (req, res) => {
   const b = defaultsProject(req.body || {});
+  // the slug is the page's URL — a save that doesn't send one keeps the current one
+  if (!b.slug) b.slug = db.prepare('SELECT slug FROM projects WHERE id=?').get(Number(req.params.id))?.slug || '';
+  withSlug(b, Number(req.params.id));
   db.prepare(`UPDATE projects SET slug=@slug,title_en=@title_en,title_fa=@title_fa,desc_en=@desc_en,
     desc_fa=@desc_fa,tags=@tags,image=@image,cover_en=@cover_en,cover_fa=@cover_fa,
     tagline_en=@tagline_en,tagline_fa=@tagline_fa,overview_en=@overview_en,overview_fa=@overview_fa,
@@ -202,6 +221,16 @@ A.post('/upload', upload.single('file'), (req, res) => {
 
 app.use('/api/admin', A);
 
+const slugify = s => String(s || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 64);
+// guarantee a non-empty, unique slug (slug is UNIQUE and is the detail page URL)
+function withSlug(b, selfId = 0) {
+  const base = slugify(b.slug) || slugify(b.title_en) || 'project';
+  const taken = s => db.prepare('SELECT 1 FROM projects WHERE slug=? AND id<>?').get(s, selfId);
+  let slug = base;
+  for (let n = 2; taken(slug); n++) slug = `${base}-${n}`;
+  b.slug = slug;
+  return b;
+}
 function defaultsProject(b) {
   const asJson = v => (typeof v === 'string' ? v : JSON.stringify(v || []));
   return {

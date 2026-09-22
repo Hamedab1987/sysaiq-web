@@ -78,7 +78,12 @@ export async function chat({ sessionId, message, history = [] }) {
 
   const messages = [
     { role: 'system', content: systemPrompt(lang) },
-    ...history.slice(-8).map(m => ({ role: m.role, content: m.content })),
+    // history comes from the browser: only user/assistant turns are accepted,
+    // so a visitor can't smuggle in their own "system" instructions
+    ...(Array.isArray(history) ? history : [])
+      .filter(m => m && (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string')
+      .slice(-8)
+      .map(m => ({ role: m.role, content: m.content.slice(0, 2000) })),
     { role: 'user', content: message },
   ];
 

@@ -139,6 +139,7 @@ function projectCard(p){
       <div class="fa-field"><label>توضیح (FA)</label><textarea data-f="desc_fa">${esc(p.desc_fa)}</textarea></div>
     </div>
     <div class="row">
+      <div><label>Slug (page URL: /en/work/…)</label><input data-f="slug" dir="ltr" value="${esc(p.slug)}"></div>
       <div><label>Tags</label><input data-f="tags" value="${esc(p.tags)}"></div>
       <div><label>Card image URL</label><input data-f="image" value="${esc(p.image)}"></div>
       <div style="flex:0;min-width:90px"><label>Sort</label><input data-f="sort" type="number" value="${p.sort}"></div>
