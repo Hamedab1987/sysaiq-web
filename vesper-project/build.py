@@ -91,9 +91,10 @@ for lang, cfg in LANGS.items():
     dest.write_text(out)
     print(f"built {lang}/index.html ({len(out):,} bytes)")
 
-# ---- root redirector: saved choice > browser language > English ----
+# ---- root redirector: saved choice > Persian (the site's primary language) ----
+# Visitors land on /fa/ unless they explicitly picked EN with the switcher before.
 REDIRECT = """<!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -104,13 +105,11 @@ REDIRECT = """<!DOCTYPE html>
 (function(){
   var lang;
   try{lang=localStorage.getItem('sysaiq-lang');}catch(e){}
-  if(lang!=='fa'&&lang!=='en'){
-    lang=(navigator.language||'').toLowerCase().indexOf('fa')===0?'fa':'en';
-  }
+  if(lang!=='fa'&&lang!=='en'){lang='fa';}
   location.replace('./'+lang+'/'+location.hash);
 })();
 </script>
-<noscript><meta http-equiv="refresh" content="0;url=./en/"></noscript>
+<noscript><meta http-equiv="refresh" content="0;url=./fa/"></noscript>
 <style>body{background:#050507;color:#eceaf6;font-family:sans-serif;
 display:flex;align-items:center;justify-content:center;height:100vh;margin:0;}
 a{color:#7dffd9;text-decoration:none;margin:0 12px;}</style>
