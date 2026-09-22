@@ -32,7 +32,7 @@ test('no kind allows inline scripts; each kind has its distinguishing directives
   const page = csp.buildCsp('page');
   assert.equal(directive(page, 'script-src'), "script-src 'self'");
   assert.equal(directive(page, 'style-src'), "style-src 'self' 'unsafe-inline'");
-  assert.equal(directive(page, 'img-src'), "img-src 'self' data:");
+  assert.equal(directive(page, 'img-src'), "img-src 'self' data: https:");
   assert.equal(directive(page, 'object-src'), "object-src 'none'");
   assert.equal(directive(page, 'base-uri'), "base-uri 'self'");
   assert.equal(directive(page, 'form-action'), "form-action 'self'");
@@ -41,7 +41,7 @@ test('no kind allows inline scripts; each kind has its distinguishing directives
 
   const admin = csp.buildCsp('admin');
   assert.equal(directive(admin, 'frame-ancestors'), "frame-ancestors 'none'");
-  assert.equal(directive(admin, 'img-src'), "img-src 'self' data: blob:");
+  assert.equal(directive(admin, 'img-src'), "img-src 'self' data: https: blob:");
   assert.equal(directive(admin, 'script-src'), "script-src 'self'");
   assert.equal(directive(admin, 'script-src-attr'), "script-src-attr 'unsafe-inline'"); // TODO: legacy admin only
   assert.throws(() => csp.buildCsp('nope'), /unknown kind/);
@@ -53,11 +53,11 @@ test('registered sources are merged into page/admin/home, never into api/upload'
   // directives outside the allowlist are refused at registration, so they can never reach a policy
   assert.throws(() => registry.registerCspSource('report-uri', 'https://nope.example'), /not allowed/);
   assert.throws(() => registry.registerCspSource('script-src', 'https://cdn.example'), /not allowed/);
-  assert.equal(directive(csp.buildCsp('page'), 'img-src'), "img-src 'self' data: https://trustseal.enamad.ir");
+  assert.equal(directive(csp.buildCsp('page'), 'img-src'), "img-src 'self' data: https: https://trustseal.enamad.ir");
   assert.ok(!csp.buildCsp('page').includes('report-uri'));
   assert.equal(directive(csp.buildCsp('page'), 'script-src'), "script-src 'self'");
   assert.equal(directive(csp.buildCsp('page'), 'form-action'), "form-action 'self' https://gateway.example");
-  assert.equal(directive(csp.buildCsp('admin'), 'img-src'), "img-src 'self' data: blob: https://trustseal.enamad.ir");
+  assert.equal(directive(csp.buildCsp('admin'), 'img-src'), "img-src 'self' data: https: blob: https://trustseal.enamad.ir");
   assert.equal(csp.buildCsp('api'), "default-src 'none'; frame-ancestors 'none'");
   assert.equal(csp.buildCsp('upload'), "default-src 'none'; img-src 'self'; sandbox");
 });
@@ -83,7 +83,7 @@ test('home: no header until templates/manifest.json exists, then sha256 hashes a
     assert.equal(directive(home, 'script-src'), "script-src 'self' 'sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=' 'sha256-BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB='");
     assert.ok(!home.includes('unsafe-inline') || directive(home, 'style-src').includes('unsafe-inline'));
     assert.ok(!directive(home, 'script-src').includes('unsafe-inline'));
-    assert.equal(directive(home, 'img-src'), "img-src 'self' data: https://trustseal.enamad.ir");
+    assert.equal(directive(home, 'img-src'), "img-src 'self' data: https: https://trustseal.enamad.ir");
     const r1 = await header('/fa/');
     assert.equal(directive(r1.csp, 'script-src'), directive(home, 'script-src'));
   } finally {
