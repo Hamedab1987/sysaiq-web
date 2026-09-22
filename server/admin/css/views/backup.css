@@ -1,0 +1,13 @@
+/* «پشتیبان‌گیری» — loaded by views/backup.view.js. `views` layer; logical
+   properties only; prefix bk-. */
+@layer views {
+  .bk-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--sp-5); align-items: start; }
+  .bk-cmd { position: relative; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.7; margin: 0; padding: 10px 44px 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-3); white-space: pre-wrap; word-break: break-all; color: var(--ink); }
+  .bk-step { display: grid; gap: 8px; }
+  .bk-step__title { display: flex; align-items: center; gap: 8px; font-weight: 500; }
+  .bk-step__num { inline-size: 26px; block-size: 26px; border-radius: 50%; display: grid; place-items: center; font-size: 12.5px; background: var(--grad); color: var(--on-grad); flex: none; }
+  .bk-copy { position: absolute; inset-block-start: 6px; inset-inline-end: 6px; }
+  @media (max-width: 960px) {
+    .bk-grid { grid-template-columns: minmax(0, 1fr); }
+  }
+}

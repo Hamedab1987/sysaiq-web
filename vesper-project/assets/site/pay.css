@@ -1,0 +1,77 @@
+/* SysaiQ — pay-link pages (/:lang/pay/:token, /result, /receipt)
+   One centred card in the site's visual language; logical properties only;
+   Persian never gets letter-spacing or uppercase. Printable receipt. */
+.pay-wrap{max-width:760px}
+.pay-card{background:var(--panel,#0e1422);border:1px solid var(--line,rgba(236,234,246,.12));border-radius:18px;padding:30px 28px 24px;display:flex;flex-direction:column;gap:20px;position:relative;overflow:hidden}
+.pay-card::before{content:"";position:absolute;inset-inline:0;top:0;height:2px;background:var(--grad,linear-gradient(135deg,#7dffd9,#8b6bff));opacity:.85}
+.pay-eyebrow{font-size:11.5px;color:var(--faint,rgba(236,234,246,.35));letter-spacing:.14em;text-transform:uppercase}
+.pay-title{font-size:26px;font-weight:400;line-height:1.35;letter-spacing:0;text-transform:none}
+.pay-sub-title{font-size:17px;font-weight:500;letter-spacing:0;text-transform:none;margin-top:6px}
+.pay-meta{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;margin:0;font-size:14px}
+.pay-meta dt{color:var(--dim,rgba(236,234,246,.6))}
+.pay-meta dd{margin:0;color:var(--ink,#eceaf6);text-align:start}
+[dir="rtl"] .pay-meta dd[dir="ltr"]{text-align:right}
+.pay-desc h2,.pay-offline h2{font-size:14px;font-weight:500;color:var(--dim,rgba(236,234,246,.6));margin-bottom:6px;letter-spacing:0;text-transform:none}
+.pay-desc p,.pay-offline p{margin:0;font-size:14px;color:var(--body,rgba(236,234,246,.72));line-height:1.9}
+.pay-items{width:100%;border-collapse:collapse;font-size:14px}
+.pay-items th,.pay-items td{padding:10px 8px;border-bottom:1px solid var(--line,rgba(236,234,246,.12));text-align:start;vertical-align:top}
+.pay-items thead th{font-weight:500;color:var(--dim,rgba(236,234,246,.6));font-size:12.5px}
+.pay-items .num{text-align:end;white-space:nowrap;font-variant-numeric:tabular-nums}
+.pay-items tfoot th{font-weight:400;color:var(--dim,rgba(236,234,246,.6));text-align:end}
+.pay-items tfoot tr.pay-total th,.pay-items tfoot tr.pay-total td{border-bottom:0;padding-top:16px;font-size:18px;color:var(--ink,#eceaf6)}
+.pay-items tfoot tr.pay-total td{background:var(--grad,linear-gradient(135deg,#7dffd9,#8b6bff));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
+.pay-form{display:flex;flex-direction:column;gap:14px}
+.pay-form fieldset{border:0;padding:0;margin:0}
+.pay-form legend{font-size:14px;color:var(--dim,rgba(236,234,246,.6));margin-bottom:10px;padding:0}
+.pay-gws{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+.pay-gw{display:flex;align-items:center;gap:10px;border:1px solid var(--line,rgba(236,234,246,.12));border-radius:12px;padding:12px 14px;cursor:pointer;background:rgba(236,234,246,.03);transition:border-color .2s,background .2s}
+.pay-gw:hover{border-color:rgba(236,234,246,.3)}
+.pay-gw:has(input:checked){border-color:var(--mint,#7dffd9);background:rgba(125,255,217,.06)}
+.pay-gw input{accent-color:var(--mint,#7dffd9);margin:0}
+.pay-gw__name{font-size:14.5px;color:var(--ink,#eceaf6)}
+.pay-gw__unit{margin-inline-start:auto;font-size:11px;color:var(--faint,rgba(236,234,246,.35));letter-spacing:.08em}
+.pay-submit{width:100%;font-size:15.5px;min-height:50px}
+.pay-submit[disabled]{opacity:.6;cursor:progress;transform:none}
+.pay-error{margin:0;font-size:13.5px;color:var(--danger,#ff6b7d);line-height:1.7}
+.pay-cue{margin:0;font-size:12.5px;color:var(--dim,rgba(236,234,246,.6));line-height:1.8;padding-inline-start:18px;position:relative}
+.pay-cue::before{content:"";position:absolute;inset-inline-start:2px;top:.72em;width:6px;height:6px;border-radius:50%;background:var(--mint,#7dffd9);opacity:.8}
+.pay-notice{border-radius:14px;padding:16px 18px;border:1px solid var(--line,rgba(236,234,246,.12));background:rgba(236,234,246,.03);font-size:14.5px;line-height:1.8}
+.pay-notice strong{display:block;font-weight:600;font-size:16px;margin-bottom:4px}
+.pay-notice p{margin:0;color:var(--body,rgba(236,234,246,.72))}
+.pay-notice p+p{margin-top:10px}
+.pay-notice--ok{border-color:rgba(125,255,217,.45);background:rgba(125,255,217,.07)}
+.pay-notice--ok strong{color:var(--ok,#7dffd9)}
+.pay-notice--warn{border-color:rgba(255,196,107,.45);background:rgba(255,196,107,.07)}
+.pay-notice--warn strong{color:var(--warn,#ffc46b)}
+.pay-notice--danger{border-color:rgba(255,107,125,.45);background:rgba(255,107,125,.07)}
+.pay-notice--danger strong{color:var(--danger,#ff6b7d)}
+.pay-notice--info{border-color:rgba(125,184,255,.45);background:rgba(125,184,255,.07)}
+.pay-notice--info strong{color:var(--info,#7db8ff)}
+.pay-actions{display:flex;flex-wrap:wrap;gap:10px}
+.pay-foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;border-top:1px solid var(--line,rgba(236,234,246,.12));padding-top:16px}
+.pay-seller{display:flex;flex-direction:column;gap:2px;font-size:13px;color:var(--dim,rgba(236,234,246,.6))}
+.pay-seller a{color:var(--dim,rgba(236,234,246,.6))}
+.pay-seller a:hover{color:var(--mint,#7dffd9)}
+.pay-seller__name{color:var(--ink,#eceaf6);font-size:14px}
+.pay-label{font-size:11.5px;color:var(--faint,rgba(236,234,246,.35))}
+.pay-enamad img{max-height:72px;width:auto}
+.pay-paid-amount{margin:0;font-size:16px}
+.pay-paid-amount strong{font-size:20px;font-weight:600}
+@media (max-width:640px){
+  .pay-card{padding:22px 16px 18px}
+  .pay-title{font-size:21px}
+  .pay-items thead{display:none}
+  .pay-items tbody tr{display:grid;grid-template-columns:1fr auto;gap:2px 12px;padding:10px 0;border-bottom:1px solid var(--line,rgba(236,234,246,.12))}
+  .pay-items tbody td{border:0;padding:0}
+  .pay-items tbody td:first-child{grid-column:1/-1;font-weight:500}
+  .pay-items tbody td.num:nth-child(2)::before{content:"× "}
+  .pay-items tfoot th,.pay-items tfoot td{padding:8px 4px}
+}
+@media print{
+  body.site{background:#fff;color:#000}
+  .site-header,.site-footer,.pay-noprint,.skip{display:none!important}
+  .pay-card{border:1px solid #999;color:#000;background:#fff}
+  .pay-card::before{display:none}
+  .pay-meta dt,.pay-meta dd,.pay-items th,.pay-items td,.pay-seller,.pay-seller a,.pay-seller__name,.pay-cue,.pay-title{color:#000}
+  .pay-items tfoot tr.pay-total td{background:none;-webkit-background-clip:initial;background-clip:initial;color:#000}
+}

@@ -1,0 +1,12 @@
+/* «سئو و تگ‌های تأیید» — loaded by views/seo.view.js. `views` layer; logical
+   properties only; prefix se-. */
+@layer views {
+  .se-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--sp-5); align-items: start; margin-block-start: var(--sp-5); }
+  .se-code { font-family: var(--font-mono); font-size: 12.5px; padding: 2px 8px; border-radius: 6px; background: rgba(236, 234, 246, .07); max-inline-size: 320px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: inline-block; vertical-align: middle; }
+  .se-pre { font-family: var(--font-mono); font-size: 12.5px; line-height: 1.7; margin: 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-3); white-space: pre-wrap; word-break: break-all; color: var(--body); }
+  .se-pre:empty { display: none; }
+  @media (max-width: 960px) {
+    .se-grid { grid-template-columns: minmax(0, 1fr); }
+    .se-code { max-inline-size: 100%; }
+  }
+}

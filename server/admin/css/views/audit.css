@@ -1,0 +1,10 @@
+/* «گزارش تغییرات» — loaded by views/audit.view.js. `views` layer; logical
+   properties only; prefix au-. */
+@layer views {
+  .au-summary { display: inline-block; max-inline-size: 420px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; vertical-align: middle; }
+  .au-text { padding: 10px 12px; border-radius: 10px; background: var(--surface-3); border: 1px solid var(--line); line-height: 1.9; }
+  .au-meta { font-family: var(--font-mono); font-size: 12.5px; line-height: 1.6; margin: 0; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--surface-3); white-space: pre-wrap; word-break: break-all; color: var(--body); max-block-size: 40vh; overflow: auto; }
+  @media (max-width: 720px) {
+    .au-summary { max-inline-size: 100%; white-space: normal; }
+  }
+}

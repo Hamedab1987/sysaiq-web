@@ -1,0 +1,20 @@
+/* «خدمات» — loaded by views/services.view.js. `views` layer; logical
+   properties only; prefix sv-. */
+@layer views {
+  .sv-order { display: inline-flex; align-items: center; gap: 2px; white-space: nowrap; }
+  .sv-order > span { min-inline-size: 22px; text-align: center; color: var(--dim); }
+
+  /* related-project picker */
+  .sv-pick { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 8px; }
+  .sv-pick__item { display: flex; align-items: center; gap: 10px; min-block-size: 52px; padding: 6px 10px; border: 1px solid var(--line); border-radius: var(--r-input); background: var(--panel); cursor: pointer; transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease); }
+  .sv-pick__item:hover { border-color: var(--line-strong); }
+  .sv-pick__item.is-on { border-color: var(--violet); background: var(--violet-soft); }
+  .sv-pick__item input { inline-size: 18px; block-size: 18px; accent-color: var(--violet); flex: none; }
+  .sv-pick__thumb { inline-size: 44px; block-size: 28px; border-radius: 6px; object-fit: cover; background: var(--surface-3); flex: none; display: block; }
+  .sv-pick__text { display: grid; gap: 2px; min-inline-size: 0; }
+  .sv-pick__text > span:first-child { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  @media (max-width: 720px) {
+    .sv-pick { grid-template-columns: minmax(0, 1fr); }
+  }
+}

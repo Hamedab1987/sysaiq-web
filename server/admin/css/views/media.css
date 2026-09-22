@@ -1,0 +1,18 @@
+/* «رسانه‌ها» — loaded by views/media.view.js. `views` layer; logical
+   properties only; prefix md-. */
+@layer views {
+  .md-drop { position: relative; display: grid; justify-items: center; gap: 10px; padding: 32px 16px; border: 1.5px dashed var(--line-strong); border-radius: var(--r-card); text-align: center; color: var(--body); transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease); }
+  .md-drop > div:first-of-type { display: inline-flex; align-items: center; gap: 8px; flex-wrap: wrap; justify-content: center; }
+  .md-drop.is-over { border-color: var(--mint); background: rgba(125, 255, 217, .06); }
+  .md-drop.is-busy { opacity: .7; pointer-events: none; }
+  .md-drop input[type="file"] { position: absolute; inline-size: 1px; block-size: 1px; opacity: 0; pointer-events: none; }
+  .md-status { min-block-size: 1.2em; font-size: 13px; color: var(--mint); }
+
+  .md-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .md-item { margin: 0; display: grid; gap: 8px; border: 1px solid var(--line); border-radius: var(--r-card); background: var(--panel); overflow: hidden; }
+  .md-item__img { display: block; aspect-ratio: 16 / 10; background: var(--surface-3); }
+  .md-item__img img { inline-size: 100%; block-size: 100%; object-fit: cover; display: block; }
+  .md-item__cap { display: grid; gap: 6px; padding: 0 12px 12px; min-inline-size: 0; }
+  .md-item__name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 13.5px; }
+  .md-item__url { font-family: var(--font-mono); font-size: 11.5px; color: var(--dim); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; display: block; }
+}

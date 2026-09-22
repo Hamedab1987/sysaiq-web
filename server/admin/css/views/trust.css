@@ -1,0 +1,27 @@
+/* «اینماد و نمادها» — loaded by views/trust.view.js. `views` layer; logical
+   properties only; prefix tr-. */
+@layer views {
+  .tr-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(280px, 360px); gap: var(--sp-6); align-items: start; }
+  .tr-ready-card { position: sticky; inset-block-start: calc(var(--topbar-h) + 12px); }
+  .tr-ready { display: grid; gap: var(--sp-4); justify-items: center; }
+  .tr-ready .a-check { inline-size: 100%; }
+
+  .tr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 12px; }
+  .tr-card { display: grid; gap: 10px; padding: 12px; border: 1px solid var(--line); border-radius: var(--r-card); background: var(--panel); }
+  .tr-card.is-off { opacity: .72; }
+  .tr-card__preview, .tr-parsed__preview { display: grid; place-items: center; min-block-size: 96px; padding: 10px; border-radius: 10px; background: #fff; }
+  .tr-card__preview img, .tr-parsed__preview img { max-inline-size: 100%; max-block-size: 120px; block-size: auto; }
+  .tr-card__body { display: grid; gap: 6px; min-inline-size: 0; }
+  .tr-card__title { font-weight: 500; }
+  .tr-card__tools { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; border-block-start: 1px solid var(--line); padding-block-start: 8px; }
+
+  .tr-check { display: inline-flex; align-items: center; gap: 8px; min-block-size: 40px; padding-inline: 4px; cursor: pointer; }
+  .tr-check input { inline-size: 18px; block-size: 18px; accent-color: var(--violet); }
+  .tr-parsed { display: grid; gap: 8px; padding: 10px 12px; border: 1px solid rgba(125, 255, 217, .35); border-radius: 10px; background: rgba(125, 255, 217, .05); }
+  .tr-parsed code { font-size: 12.5px; }
+
+  @media (max-width: 960px) {
+    .tr-layout { grid-template-columns: minmax(0, 1fr); }
+    .tr-ready-card { position: static; }
+  }
+}

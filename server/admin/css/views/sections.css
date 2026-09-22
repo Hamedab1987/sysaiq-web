@@ -1,0 +1,35 @@
+/* «بخش‌های صفحهٔ اصلی» — loaded by views/sections.view.js. `views` layer;
+   logical properties only; prefix sc-. */
+@layer views {
+  .sc-groups { display: grid; gap: var(--sp-5); }
+  .sc-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .sc-item { display: grid; grid-template-columns: auto auto minmax(0, 1fr) auto auto; align-items: center; gap: 12px; padding: 8px 10px; border: 1px solid var(--line); border-radius: var(--r-input); background: var(--panel); transition: border-color var(--dur) var(--ease), background var(--dur) var(--ease); }
+  .sc-item:hover { border-color: var(--line-strong); }
+  .sc-item.is-dragging { opacity: .5; }
+  .sc-item.is-over { border-color: var(--violet); background: var(--violet-soft); }
+  .sc-item__grip { color: var(--dim); cursor: grab; display: grid; place-items: center; inline-size: 28px; block-size: 40px; }
+  .sc-item__idx { color: var(--dim); font-size: 12px; min-inline-size: 18px; text-align: center; }
+  .sc-item__main { display: grid; gap: 2px; min-inline-size: 0; color: var(--ink); text-decoration: none; min-block-size: 40px; align-content: center; }
+  .sc-item__main:hover .sc-item__title { color: var(--mint); }
+  .sc-item__title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .sc-item__sub { display: flex; flex-wrap: wrap; gap: 10px; font-size: 12.5px; }
+  .sc-item__meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; justify-content: end; }
+  .sc-item__tools { display: inline-flex; gap: 2px; }
+
+  .sc-preview { color: var(--ink); line-height: 1.9; }
+  .sc-preview h2, .sc-preview h3 { font-weight: 500; margin-block: 0 10px; }
+  .sc-preview p, .sc-preview ul, .sc-preview ol { margin-block: 0 12px; }
+  .sc-preview ul, .sc-preview ol { padding-inline-start: 22px; }
+  .sc-preview a { color: var(--mint); }
+  .sc-preview img { max-inline-size: 100%; block-size: auto; }
+  .sc-preview section, .sc-preview article { padding: 16px; border: 1px solid var(--line); border-radius: var(--r-card); background: var(--surface-3); }
+
+  @media (max-width: 720px) {
+    .sc-item { grid-template-columns: auto minmax(0, 1fr) auto; grid-template-areas: "grip main tools" "idx meta meta"; }
+    .sc-item__grip { grid-area: grip; }
+    .sc-item__idx { grid-area: idx; }
+    .sc-item__main { grid-area: main; }
+    .sc-item__meta { grid-area: meta; justify-content: start; }
+    .sc-item__tools { grid-area: tools; }
+  }
+}

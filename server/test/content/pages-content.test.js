@@ -1,12 +1,15 @@
 // Authored content for the 9 system pages (server/content/pages/*.json):
 // shape, fa/en parity, Persian orthography, facts only via {{site.*}}
-// tokens, no fabricated figures, the legal framework notice, and a clean
-// render through lib/markdown.js. Pure — no app boot.
-import test from 'node:test';
+// tokens, no fabricated figures, no duplicated legal framework notice (the
+// renderer injects it), and a clean render through lib/markdown.js. The
+// content checks are pure; the last test boots one app to prove the notice
+// shows exactly once on every legal page.
+import test, { before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync, readdirSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { startTestApp } from '../helpers.js';
 import { renderMarkdown } from '../../src/lib/markdown.js';
 import { SYSTEM_PAGES } from '../../src/db/migrations/008_pages.js';
 
@@ -113,12 +116,14 @@ test('never fabricate: no prices, percentages, counts, client names or guarantee
   }
 });
 
-test('legal pages start with the framework notice (en adds the authoritative line)', () => {
+// Regression: render/page.js injects the framework notice as <aside class="notice">
+// on every kind=legal page, so the bodies must not repeat it (it showed twice).
+test('no body carries the framework notice or a leading blockquote — the renderer adds it', () => {
   for (const p of pages) {
-    const legal = kindOf[p.slug] === 'legal';
-    assert.equal(p.body_fa.startsWith(`> ${NOTICE_FA}`), legal, `${p.slug} fa notice`);
-    assert.equal(p.body_en.startsWith(`> ${NOTICE_EN}`), legal, `${p.slug} en notice`);
-    assert.equal(p.body_en.includes(AUTHORITATIVE), legal, `${p.slug} en authoritative`);
+    assert.ok(!p.body_fa.includes(NOTICE_FA), `${p.slug} fa: notice duplicated in body`);
+    assert.ok(!p.body_en.includes(NOTICE_EN), `${p.slug} en: notice duplicated in body`);
+    assert.ok(!p.body_en.includes(AUTHORITATIVE), `${p.slug} en: authoritative line duplicated in body`);
+    for (const k of ['body_fa', 'body_en']) assert.ok(!p[k].startsWith('>'), `${p.slug}.${k}: starts with a blockquote`);
   }
   assert.deepEqual(pages.filter(p => kindOf[p.slug] === 'legal').map(p => p.slug).sort(), ['charter', 'contract', 'privacy', 'refund', 'terms']);
 });
@@ -135,10 +140,33 @@ test('renderMarkdown: no script, every heading and table survives, tokens resolv
       assert.equal(count(html, /<table>/g), count(p[k], /^\|[-\s|:]+\|\s*$/gm), `${p.slug}.${k}: tables kept`);
       assert.equal(count(html, /<a /g), count(p[k], LINK), `${p.slug}.${k}: links kept`);
       assert.ok(!html.includes('{{'), `${p.slug}.${k}: unresolved token`);
-      if (kindOf[p.slug] === 'legal') assert.ok(html.includes('<blockquote>'), `${p.slug}.${k}: notice rendered as blockquote`);
       for (const m of p[k].matchAll(/\]\(([^)]*)\)/g)) assert.match(m[1], /^\/(fa|en)\/[a-z-]+$/, `${p.slug}.${k}: only relative /lang/slug links (${m[1]})`);
       const lang = k.endsWith('fa') ? 'fa' : 'en';
       for (const m of p[k].matchAll(/\]\(\/(fa|en)\//g)) assert.equal(m[1], lang, `${p.slug}.${k}: link language`);
+    }
+  }
+});
+
+// ---- rendered legal pages: the notice appears exactly once ----------------
+let t, applyKind, db;
+before(async () => {
+  t = await startTestApp();
+  ({ db } = await import('../../src/db/index.js'));
+  ({ applyKind } = await import('../../scripts/content-apply.mjs'));
+});
+after(async () => { await t.close(); });
+
+test('applied legal pages render the framework notice exactly once (aside only, no blockquote)', async () => {
+  applyKind(db, 'pages', { publish: true });
+  for (const slug of ['charter', 'contract', 'privacy', 'refund', 'terms']) {
+    for (const [lang, notice] of [['fa', NOTICE_FA], ['en', NOTICE_EN]]) {
+      const r = await fetch(`${t.base}/${lang}/${slug}`);
+      assert.equal(r.status, 200, `${lang}/${slug}`);
+      const html = await r.text();
+      assert.equal(count(html, new RegExp(notice.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g')), 1, `${lang}/${slug}: notice count`);
+      assert.equal(count(html, /<aside class="notice"/g), 1, `${lang}/${slug}: one aside`);
+      assert.ok(!html.includes('<blockquote>'), `${lang}/${slug}: no blockquote`);
+      if (lang === 'en') assert.equal(count(html, new RegExp(AUTHORITATIVE.replace(/\./g, '\\.'), 'g')), 1, `${slug}: authoritative once`);
     }
   }
 });
