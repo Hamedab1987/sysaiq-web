@@ -78,7 +78,10 @@ function excerpt(html, max = 160) {
 export function renderPageBody(page, lang, { tokens } = {}) {
   const fa = lang === 'fa';
   const t = STR[lang];
-  const raw = fa ? page.body_fa : page.body_en;
+  // ⟦…⟧ marks a policy value the owner has not decided yet (deposit %, warranty
+  // length…); visitors see the neutral phrase instead of the placeholder
+  const raw = String(fa ? page.body_fa : page.body_en)
+    .replace(/⟦[^⟧]*⟧/g, fa ? 'در پیشنهاد کتبی اعلام می‌شود' : 'stated in the written proposal');
   const { html, toc } = addHeadingIds(renderMarkdown(raw, { tokens: tokens || {} }));
   const legal = page.kind === 'legal';
 
