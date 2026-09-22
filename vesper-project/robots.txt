@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/
+Disallow: /fa/pay/
+Disallow: /en/pay/
+Disallow: /p/
+
+Sitemap: https://sysaiq.com/sitemap.xml

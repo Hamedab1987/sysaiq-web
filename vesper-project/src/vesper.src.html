@@ -20,7 +20,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://sysaiq.com/og.jpg">
-<link rel="icon" type="image/png" href="{{FAVICON_URI}}">
+<link rel="icon" type="image/png" href="{{FAVICON_URI}}">{{FONT_PRELOAD}}
 <style>
 {{FONT_CSS}}
   :root{
@@ -153,6 +153,9 @@
 
   /* ================= light sections ================= */
   .light{background:var(--paper);color:var(--ink-d);}
+  /* opaque deep-navy surface for custom sections (process, commitments, news…):
+     hides the particle canvas like .light does; listed in the HUD occluders */
+  .solid{background:#070a12;color:var(--ink);}
   #living{padding:120px 0 110px;}
   .living-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:80px;}
   .light h2{font-size:clamp(40px,5.4vw,72px);font-weight:300;letter-spacing:-0.025em;color:var(--ink-d);line-height:1.02;}
@@ -282,6 +285,21 @@
   .lang-sw a.on{color:var(--mint);}
   .lang-sw .sep{color:var(--faint);opacity:.5;}
 
+  /* ================= mobile navigation (≤900px only) =================
+     A 44×44 hamburger at the end of the header pill toggles <nav> into a
+     full-width glass dropdown under the pill. Hidden on desktop, so the
+     desktop header is untouched. */
+  .nav-toggle{display:none;width:44px;height:44px;flex:none;margin-inline-start:-10px;border:0;border-radius:50%;
+    background:none;color:var(--ink);cursor:pointer;align-items:center;justify-content:center;}
+  .nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{display:block;width:18px;height:1.5px;
+    background:currentColor;border-radius:2px;transition:transform .25s,top .25s,background .25s;}
+  .nav-toggle span{position:relative;}
+  .nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;inset-inline-start:0;}
+  .nav-toggle span::before{top:-6px;} .nav-toggle span::after{top:6px;}
+  .nav-toggle[aria-expanded="true"] span{background:transparent;}
+  .nav-toggle[aria-expanded="true"] span::before{top:0;transform:rotate(45deg);}
+  .nav-toggle[aria-expanded="true"] span::after{top:0;transform:rotate(-45deg);}
+
   /* ================= rtl (Persian) overrides =================
      dir=rtl flips flex/grid automatically; these rules fix physical
      text-align values and kill letter-spacing (it breaks Persian
@@ -351,7 +369,20 @@
   .ai-typing{align-self:flex-start;color:var(--dim);font-size:12px;padding:4px 6px;}
 
   @media (max-width:900px){
-    nav{display:none;}
+    header{gap:12px;padding-inline:12px 6px;}
+    .cta-pill{padding:8px 12px;}
+    .nav-toggle{display:flex;}
+    /* centred under the pill in both directions: start edge = pill centre − half the
+       dropdown (the dropdown is wider than the pill, so inset-inline:0 + auto margins
+       would pin it to the start edge instead of centring it) */
+    nav{display:none;position:absolute;top:calc(100% + 10px);--nav-w:calc(100vw - 32px);
+      inset-inline-start:calc(50% - var(--nav-w) / 2);width:var(--nav-w);
+      flex-direction:column;gap:2px;padding:10px;border-radius:18px;
+      background:rgba(10,10,14,0.92);border:1px solid rgba(236,234,246,0.1);
+      backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);}
+    nav.open{display:flex;}
+    nav a{font-size:14px;padding:12px 14px;border-radius:10px;}
+    nav a:hover{background:rgba(236,234,246,0.06);}
     .presence-cap{display:none;}
     .living-grid{grid-template-columns:1fr;gap:34px;}
     .portrait{height:340px;}
@@ -366,6 +397,8 @@
     [dir="rtl"] .cortex-grid.flip .cortex-l{text-align:right;}
   }
 </style>
+<!--SLOT:HEAD_META--><!--/SLOT:HEAD_META-->
+<!--SLOT:JSONLD--><!--/SLOT:JSONLD-->
 </head>
 <body>
 
@@ -375,17 +408,19 @@
 
 <header>
   <a class="logo" href="#hero"><img class="mark" src="{{LOGO_MARK_URI}}" alt="SysaiQ"> SysaiQ</a>
-  <nav>
+  <nav id="site-nav">
     <a href="#hero">{{NAV_HOME}}</a>
     <a href="#presence">{{NAV_CAP}}</a>
     <a href="#work">{{NAV_WORK}}</a>
     <a href="#living">{{NAV_ABOUT}}</a>
     <a href="#faq">{{NAV_FAQ}}</a>
+<!--SLOT:NAV_EXTRA--><!--/SLOT:NAV_EXTRA-->
   </nav>
   <div class="lang-sw" dir="ltr">
     <a href="../fa/" data-lang="fa" {{SW_FA_ON}}>FA</a><span class="sep">|</span><a href="../en/" data-lang="en" {{SW_EN_ON}}>EN</a>
   </div>
   <a class="cta-pill" href="#contact">{{NAV_CTA}} <span class="dot"></span></a>
+  <button class="nav-toggle" id="nav-toggle" type="button" aria-label="{{NAV_MENU}}" aria-expanded="false" aria-controls="site-nav"><span></span></button>
 </header>
 
 <div class="hud mono" id="hud-bl"><span id="status-label">INITIALIZING ENVIRONMENT</span></div>
@@ -565,8 +600,10 @@
     </div>
   </div>
 </section>
+<!--SLOT:SECTIONS_AFTER_ABOUT--><!--/SLOT:SECTIONS_AFTER_ABOUT-->
 
 <!-- ============ WORK — selected projects (light, slider) ============ -->
+<!--SLOT:WORK-->
 <section id="work" class="light" data-phase="3">
   <div class="wrap">
     <div class="work-head">
@@ -641,8 +678,11 @@
     <div class="work-all rv d2"><a class="work-all-btn" href="/{{LANG}}/work">{{WORK_ALL}}</a></div>
   </div>
 </section>
+<!--/SLOT:WORK-->
+<!--SLOT:SECTIONS_AFTER_WORK--><!--/SLOT:SECTIONS_AFTER_WORK-->
 
 <!-- ============ FAQ (light) ============ -->
+<!--SLOT:FAQ-->
 <section id="faq" class="light" data-phase="3">
   <div class="wrap">
     <span class="faq-star rv">✳</span>
@@ -667,16 +707,20 @@
     </div>
   </div>
 </section>
+<!--/SLOT:FAQ-->
+<!--SLOT:SECTIONS_AFTER_FAQ--><!--/SLOT:SECTIONS_AFTER_FAQ-->
 
 <!-- ============ CONTACT ============ -->
 <section id="contact" class="dark-sec" data-phase="3">
   <div class="wrap">
     <span class="eyebrow mono rv" dir="ltr">[ START A PROJECT ]</span>
     <h2 class="rv d1">{{CONTACT_H2}}</h2>
+<!--SLOT:CONTACT-->
     <div class="btn-row rv d2" style="justify-content:center">
       <a class="btn btn-solid" href="mailto:hello@sysaiq.com">{{CONTACT_BTN}}</a>
       <a class="btn btn-star" href="#hero">✳</a>
     </div>
+<!--/SLOT:CONTACT-->
   </div>
 </section>
 
@@ -690,6 +734,8 @@
       </div>
       <span class="tag mono" dir="ltr">SYSAIQ · SYS.01 · LIVE</span>
     </div>
+<!--SLOT:FOOTER_LINKS--><!--/SLOT:FOOTER_LINKS-->
+<!--SLOT:FOOTER_TRUST--><!--/SLOT:FOOTER_TRUST-->
     <div class="foot-base">
       <span class="mono">{{FOOT_C}}</span>
       <span class="mono">{{FOOT_MID}}</span>
@@ -698,6 +744,9 @@
   </div>
 </footer>
 
+<!--SLOT:SITE_DATA-->
+<script type="application/json" id="site-data">{"ai":{"title":"{{AI_TITLE}}","ready":"{{AI_READY}}","ph":"{{AI_PH}}","hi":"{{AI_HI}}","teaser":"{{AI_TEASER}}","err":"{{AI_ERR}}"}}</script>
+<!--/SLOT:SITE_DATA-->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 /* ============================================================
@@ -1211,9 +1260,9 @@ function updateScrollPct(){
 }
 addEventListener('scroll',updateScrollPct,{passive:true});
 
-/* fade the fixed HUD when opaque UI (stats bar, light sections, footer) sits under it */
+/* fade the fixed HUD when opaque UI (stats bar, light/solid sections, footer) sits under it */
 const hudEls=[document.getElementById('hud-bl'),document.getElementById('hud-br')];
-const occluders=[document.querySelector('.stats'),...document.querySelectorAll('.light'),document.querySelector('footer')];
+const occluders=[document.querySelector('.stats'),...document.querySelectorAll('.light,.solid'),document.querySelector('footer')];
 function updateHud(){
   const yTop=innerHeight-48;
   const covered=occluders.some(el=>{
@@ -1302,6 +1351,18 @@ document.querySelectorAll('.lang-sw a').forEach(a=>{
 });
 
 /* ============================================================
+   MOBILE NAV — hamburger toggles the header nav (≤900px, CSS-gated)
+   ============================================================ */
+(function(){
+  const btn=document.getElementById('nav-toggle'),nav=document.getElementById('site-nav');
+  if(!btn||!nav)return;
+  const set=open=>{nav.classList.toggle('open',open);btn.setAttribute('aria-expanded',open?'true':'false');};
+  btn.addEventListener('click',()=>set(!nav.classList.contains('open')));
+  nav.addEventListener('click',e=>{if(e.target.closest('a'))set(false);});
+  addEventListener('keydown',e=>{if(e.key==='Escape')set(false);});
+})();
+
+/* ============================================================
    MAIN LOOP
    ============================================================ */
 const clock=new THREE.Clock();
@@ -1345,31 +1406,29 @@ tick();
    Degrades silently when there is no backend (static GitHub Pages).
    ============================================================ */
 (function(){
-  const IS_FA = document.documentElement.getAttribute('dir')==='rtl';
-  const T = IS_FA ? {
-    title:'دستیار SysaiQ', ready:'آنلاین', ph:'سؤالتان را بنویسید…',
-    hi:'سلام! من دستیار هوشمند SysaiQ هستم. بگویید چه کسب‌وکاری دارید تا بگویم دقیقاً چه کاری برای رشدش از دستمان برمی‌آید 👋',
-    teaser:'شغل یا صنف‌تان را بگویید تا بگویم چه سیستمی کسب‌وکارتان را متحول می‌کند 👋',
-    err:'اتصال برقرار نشد. لطفاً بعداً دوباره امتحان کنید یا به hello@sysaiq.com ایمیل بزنید.'
-  } : {
-    title:'SysaiQ Assistant', ready:'online', ph:'Ask me anything…',
-    hi:"Hi! I'm the SysaiQ AI assistant. Tell me what business you run and I'll show you exactly how we can grow it 👋",
-    teaser:"Tell me your business — I'll show you the system that transforms it 👋",
-    err:'Could not connect. Please try again later or email hello@sysaiq.com.'
-  };
+  /* strings come from the #site-data JSON block (per language, editable in
+     the admin), so this script is identical on every page and can be CSP-hashed */
+  let SD={};
+  try{SD=JSON.parse(document.getElementById('site-data').textContent)||{};}catch(_){}
+  const T=Object.assign({title:'SysaiQ',ready:'',ph:'',hi:'',teaser:'',err:''},SD.ai);
+  const el=(tag,props)=>Object.assign(document.createElement(tag),props);
   const LOGO = document.querySelector('.logo img.mark')?.src || '';
   const fab = document.createElement('button');
   fab.id='ai-fab'; fab.setAttribute('aria-label',T.title);
   fab.innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="#06101f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>';
+  /* the panel is built with DOM calls: the strings are data, never markup */
   const panel = document.createElement('div');
   panel.id='ai-panel';
-  panel.innerHTML =
-    '<div class="ai-head">'+(LOGO?`<img src="${LOGO}" alt="">`:'')+`<b>${T.title}</b><span class="st">● ${T.ready}</span></div>`+
-    '<div class="ai-body" id="ai-body"></div>'+
-    `<div class="ai-foot"><input id="ai-input" placeholder="${T.ph}"><button id="ai-send">➤</button></div>`;
+  const head=el('div',{className:'ai-head'});
+  if(LOGO) head.append(el('img',{src:LOGO,alt:''}));
+  head.append(el('b',{textContent:T.title}), el('span',{className:'st',textContent:'● '+T.ready}));
+  const body=el('div',{className:'ai-body',id:'ai-body'});
+  const input=el('input',{id:'ai-input',placeholder:T.ph});
+  const sendBtn=el('button',{id:'ai-send',textContent:'➤'});
+  const foot=el('div',{className:'ai-foot'}); foot.append(input,sendBtn);
+  panel.append(head,body,foot);
   document.body.append(fab, panel);
 
-  const body=panel.querySelector('#ai-body'), input=panel.querySelector('#ai-input');
   let sessionId=null, history=[], greeted=false, busy=false;
   function add(role,text){
     const d=document.createElement('div'); d.className='ai-msg '+(role==='user'?'u':'a'); d.textContent=text;
@@ -1378,7 +1437,9 @@ tick();
   /* teaser bubble + pulsing ring — the assistant stays in sight */
   const teaser=document.createElement('div');
   teaser.id='ai-teaser';
-  teaser.innerHTML='<span class="tx" aria-label="close">×</span>'+T.teaser;
+  teaser.textContent=T.teaser;
+  const tx=el('span',{className:'tx',textContent:'×'}); tx.setAttribute('aria-label','close');
+  teaser.prepend(tx);
   document.body.append(teaser);
   const seen=()=>{ try{localStorage.setItem('sysaiq-chat-seen','1');}catch(_){} };
   const wasSeen=()=>{ try{return localStorage.getItem('sysaiq-chat-seen')==='1';}catch(_){ return false; } };
@@ -1415,7 +1476,7 @@ tick();
     }catch(e){ typing.remove(); add('assistant',T.err); }
     busy=false; input.focus();
   }
-  panel.querySelector('#ai-send').addEventListener('click',send);
+  sendBtn.addEventListener('click',send);
   input.addEventListener('keydown',e=>{ if(e.key==='Enter') send(); });
 })();
 </script>

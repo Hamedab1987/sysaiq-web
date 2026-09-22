@@ -124,6 +124,9 @@ if (db.prepare('SELECT COUNT(*) c FROM projects').get().c === 0) {
     VALUES (@slug,@title_en,@title_fa,@desc_en,@desc_fa,@tags,@image,@cover_en,@cover_fa,
      @tagline_en,@tagline_fa,@overview_en,@overview_fa,@industries,@features,@pages,@sort,1)`);
   for (const p of PROJECTS) stmt.run(p);
+  // fresh installs run migration 006 before this seed, so flag the home showcase here too
+  db.prepare(`UPDATE projects SET show_on_home=1 WHERE slug IN
+    ('restaurant','realestate','medical','trading','ecommerce','accounting','pos','salon','distribution')`).run();
   console.log(`[seed] ${PROJECTS.length} rich projects`);
 }
 if (db.prepare('SELECT COUNT(*) c FROM faqs').get().c === 0) {

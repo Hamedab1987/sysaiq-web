@@ -76,8 +76,12 @@ test('a database created by the OLD db.js upgrades cleanly and keeps its rows', 
   const applied = await runMigrations(db, quiet);
   assert.ok(applied.length >= 2);
 
-  // baseline changed nothing on a fully-ALTERed production schema
-  assert.deepEqual(cols(db, 'projects'), projectColsBefore);
+  // baseline changed nothing on a fully-ALTERed production schema: every
+  // column is still there, in the same order. Later migrations are additive
+  // (006 adds projects.show_on_home, more may follow), so the old columns are
+  // a prefix of the new list — never compared for equality.
+  assert.deepEqual(cols(db, 'projects').slice(0, projectColsBefore.length), projectColsBefore);
+  assert.ok(projectColsBefore.every(c => cols(db, 'projects').includes(c)));
   // rows survived untouched
   for (const [t, rows] of Object.entries(before)) {
     const now = db.prepare(`SELECT * FROM ${t}`).all();

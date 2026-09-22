@@ -1,10 +1,23 @@
 // lib/csp.js policies and where app.js applies them.
 import test, { before, after } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdir, writeFile, rm } from 'node:fs/promises';
+import { mkdir, readFile, writeFile, rm } from 'node:fs/promises';
 import { startTestApp } from '../helpers.js';
 
 let t, csp, registry;
+// The home tests plant their own templates/manifest.json at csp.MANIFEST_PATH
+// (lib/csp.js reads a fixed path). The real one — build.py output that the
+// deployed home page's CSP depends on — is moved aside first and put back
+// afterwards, byte for byte, so a test run never ships a server without it.
+let savedManifest = null; // Buffer while a real manifest existed, else null
+async function restoreManifest() {
+  if (savedManifest === null) { await rm(csp.MANIFEST_PATH, { force: true }); }
+  else {
+    await mkdir(csp.MANIFEST_PATH.replace(/[\\/]manifest\.json$/, ''), { recursive: true });
+    await writeFile(csp.MANIFEST_PATH, savedManifest);
+  }
+  csp.resetCspCache();
+}
 before(async () => {
   t = await startTestApp();
   csp = await import('../../src/lib/csp.js');
@@ -12,8 +25,11 @@ before(async () => {
   const { db } = await import('../../src/db/index.js');
   db.prepare("INSERT INTO projects (slug, title_en, title_fa, published) VALUES ('p1', 'P', 'پ', 1)").run();
   await t.loginAsAdmin();
+  savedManifest = await readFile(csp.MANIFEST_PATH).catch(() => null);
+  await rm(csp.MANIFEST_PATH, { force: true });
+  csp.resetCspCache();
 });
-after(async () => { await t.close(); });
+after(async () => { await restoreManifest(); await t.close(); });
 
 const directive = (policy, name) => policy.split(';').map(s => s.trim()).find(s => s === name || s.startsWith(`${name} `)) || '';
 const header = async (path, opts) => { const r = await fetch(t.base + path, opts); return { r, csp: r.headers.get('content-security-policy') }; };
@@ -146,8 +162,11 @@ test('headers on /api, /admin, /fa/work, /uploads; Referrer-Policy; no HSTS outs
   assert.equal(directive(admin.csp, 'script-src'), "script-src 'self'");
   assert.equal((await header('/admin/app.js')).csp, admin.csp);
 
-  // express' own 404 page (until the SSR not-found page lands) locks itself down completely
-  assert.equal((await header('/fa/work/missing')).csp, "default-src 'none'");
+  // an unclaimed site URL is the SSR not-found page (routes/public/notfound.routes.js) under the page policy
+  const missing = await header('/fa/work/missing');
+  assert.equal(missing.r.status, 404);
+  assert.equal(directive(missing.csp, 'script-src'), "script-src 'self'");
+  assert.equal(directive(missing.csp, 'frame-ancestors'), "frame-ancestors 'self'");
 
   for (const p of ['/fa/work', '/en/work', '/fa/work/p1', '/en/work/p1']) {
     const { r, csp: policy } = await header(p);
@@ -158,7 +177,9 @@ test('headers on /api, /admin, /fa/work, /uploads; Referrer-Policy; no HSTS outs
     assert.equal(r.headers.get('strict-transport-security'), null, p);
     if (r.status === 200) {
       const html = await r.text();
-      assert.ok(!/<script/i.test(html), `${p} has an inline script the page policy would block`);
+      // external /assets/site/pages.js and JSON(-LD) data blocks are fine; any other <script> is inline and would be blocked
+      const inline = (html.match(/<script\b[^>]*>/gi) || []).filter(s => !/\ssrc=/i.test(s) && !/type="application\/(ld\+)?json"/i.test(s));
+      assert.deepEqual(inline, [], `${p} has an inline script the page policy would block`);
       assert.ok(!/\son[a-z]+=/i.test(html), `${p} has an inline event handler`);
     }
   }
@@ -171,4 +192,24 @@ test('headers on /api, /admin, /fa/work, /uploads; Referrer-Policy; no HSTS outs
   assert.equal(img.csp, "default-src 'none'; img-src 'self'; sandbox");
   assert.equal(img.r.headers.get('x-content-type-options'), 'nosniff');
   assert.equal((await header('/uploads/missing.png')).csp, "default-src 'none'"); // express 404 page
+});
+
+// Regression (supervisor, round 2): this file used to assert null over the real
+// build.py manifest and delete it in `finally`, so every `npm test` left the
+// home page without a CSP header until the next build.py. The real file must
+// come back exactly as it was and drive the home policy again.
+test('the real templates/manifest.json is restored after the home tests and drives the home policy again', async t => {
+  await restoreManifest();
+  if (savedManifest === null) {
+    t.diagnostic('no build.py manifest existed before this run (run python3 build.py) — only checking nothing was left behind');
+    await assert.rejects(readFile(csp.MANIFEST_PATH), { code: 'ENOENT' });
+    assert.equal(csp.buildCsp('home'), null);
+    return;
+  }
+  assert.ok(Buffer.from(await readFile(csp.MANIFEST_PATH)).equals(savedManifest), 'manifest.json bytes changed');
+  const home = csp.buildCsp('home');
+  assert.equal(typeof home, 'string', 'buildCsp("home") must be a policy while a real manifest is present');
+  assert.match(directive(home, 'script-src'), /^script-src 'self'( 'sha(256|384|512)-[A-Za-z0-9+/=_-]+')+$/);
+  assert.equal(directive((await header('/fa/')).csp, 'script-src'), directive(home, 'script-src'));
+  assert.equal(directive((await header('/en/')).csp, 'script-src'), directive(home, 'script-src'));
 });

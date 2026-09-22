@@ -1,0 +1,82 @@
+{
+  "template_sha": "2126e81eed9ab5d81c74f3e2e9000d851c793794b612bf94e4607934e4e6a8eb",
+  "generated_from": "build.py",
+  "tokens": [
+    "TITLE",
+    "META_DESC",
+    "NAV_HOME",
+    "NAV_CAP",
+    "NAV_WORK",
+    "NAV_ABOUT",
+    "NAV_FAQ",
+    "NAV_CTA",
+    "NAV_CONTACT",
+    "NAV_MENU",
+    "HERO_H1",
+    "HERO_NOTE_L",
+    "HERO_NOTE_R",
+    "TAG1",
+    "TAG2",
+    "TAG3",
+    "CTA_PRIMARY",
+    "PRESENCE_H2",
+    "PRESENCE_CAP",
+    "STAT1_S",
+    "STAT2_S",
+    "STAT3_S",
+    "STAT4_S",
+    "TERRA_H2",
+    "TERRA_TEXT",
+    "MIND_H2",
+    "MIND_CAP",
+    "LIVING_H2",
+    "FEAT1",
+    "FEAT2",
+    "CONTACT_H2",
+    "FOOT_C",
+    "FOOT_MID"
+  ],
+  "slots": [
+    "HEAD_META",
+    "JSONLD",
+    "NAV_EXTRA",
+    "SECTIONS_AFTER_ABOUT",
+    "WORK",
+    "SECTIONS_AFTER_WORK",
+    "FAQ",
+    "SECTIONS_AFTER_FAQ",
+    "CONTACT",
+    "FOOTER_LINKS",
+    "FOOTER_TRUST",
+    "SITE_DATA"
+  ],
+  "assets": {
+    "three": "/assets/three.min.js?v=9274bbce"
+  },
+  "scripts": [
+    "sha256-ZMiz3qoKBsLFUzTTLd8xixX5bBzBv6QImpKfEgpN55k="
+  ],
+  "csp": {
+    "home": {
+      "en": [
+        "sha256-ZMiz3qoKBsLFUzTTLd8xixX5bBzBv6QImpKfEgpN55k="
+      ],
+      "fa": [
+        "sha256-ZMiz3qoKBsLFUzTTLd8xixX5bBzBv6QImpKfEgpN55k="
+      ]
+    },
+    "baked": {
+      "en": [
+        "sha256-ugxstSlRfX4oba3NaNN/9SIKpjjkrCzX/LMWquWAkk0=",
+        "sha256-ZMiz3qoKBsLFUzTTLd8xixX5bBzBv6QImpKfEgpN55k="
+      ],
+      "fa": [
+        "sha256-ugxstSlRfX4oba3NaNN/9SIKpjjkrCzX/LMWquWAkk0=",
+        "sha256-ZMiz3qoKBsLFUzTTLd8xixX5bBzBv6QImpKfEgpN55k="
+      ],
+      "root": [
+        "sha256-Tqyb/1ZBLQztcmqcYLEMEQ57kGja/opAQgNLp1fivfU="
+      ]
+    }
+  }
+}
