@@ -1,0 +1,10 @@
+{
+  "slug": "hotel-management-system",
+  "title": "Hotel Management System",
+  "group": "projects",
+  "tags": "project,hotel",
+  "body_en": "Hotel management on one live room-night inventory: conflicting bookings are blocked when attempted, the housekeeping board reorders around today's arrivals, and a rate coach suggests each night's rate with its reasoning while staff decide. /{lang}/work/hotel",
+  "body_fa": "سیستم مدیریت هتل روی یک موجودی زندهٔ اتاق: رزرو متداخل همان لحظه مسدود می‌شود، برد خانه‌داری بر اساس ورودی‌های امروز مرتب می‌شود و راهنمای نرخ، نرخ هر شب را با دلیلش پیشنهاد می‌دهد و تصمیم با کارکنان است. /{lang}/work/hotel",
+  "enabled": true,
+  "sort": 114
+}

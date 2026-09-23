@@ -1,0 +1,10 @@
+{
+  "slug": "service-custom-website",
+  "title": "Service: Custom website",
+  "group": "services",
+  "tags": "service,custom-website",
+  "body_en": "For brands that want a bilingual site built around their identity and editable by themselves. Delivered: agreed pages with correct RTL, admin panel, contact form with lead storage, SEO basics, HTTPS deployment. Cost: pages, languages, editable parts, extras; figure only in the written proposal. Example: /{lang}/work/hotel. /{lang}/services/custom-website",
+  "body_fa": "برای برندی که سایت دوزبانه و قابل‌ویرایش متناسب با هویت خودش می‌خواهد. تحویل: صفحه‌های توافق‌شده با RTL درست، پنل مدیریت، فرم تماس با ثبت سرنخ، SEO پایه و استقرار با HTTPS. هزینه بر اساس صفحه‌ها، زبان‌ها و امکانات؛ رقم فقط در پیشنهاد کتبی. نمونه: /{lang}/work/hotel. /{lang}/services/custom-website",
+  "enabled": true,
+  "sort": 21
+}

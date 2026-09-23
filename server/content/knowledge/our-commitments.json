@@ -1,0 +1,10 @@
+{
+  "slug": "our-commitments",
+  "title": "Our commitments (service charter)",
+  "group": "legal",
+  "tags": "legal,charter,commitments",
+  "body_en": "The service charter in short (/{lang}/charter): each deliverable has verifiable acceptance criteria; work runs in milestones, each with a visible output and a status report; revisions inside scope and within the agreed rounds cost nothing extra; every delivery meets security basics (HTTPS, input validation, rate limiting, safe key storage); bilingual content is native, not machine translation; client data and access stay confidential. The signed contract governs.",
+  "body_fa": "خلاصهٔ شیوه‌نامه (/{lang}/charter): هر تحویل معیار پذیرش قابل بررسی دارد؛ کار مرحله‌ای است و هر مرحله خروجی قابل دیدن و گزارش وضعیت دارد؛ اصلاح داخل محدوده و در سقف دورهای توافق‌شده رایگان است؛ حداقل‌های امنیتی (HTTPS، اعتبارسنجی ورودی، محدودسازی درخواست، نگهداری امن کلیدها) رعایت می‌شود؛ متن دوزبانه بومی است؛ داده و دسترسی‌های مشتری محرمانه می‌ماند. ملاک، قرارداد امضاشده است.",
+  "enabled": true,
+  "sort": 60
+}

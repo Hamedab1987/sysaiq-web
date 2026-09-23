@@ -1,0 +1,10 @@
+{
+  "slug": "restaurant-operations-platform",
+  "title": "Restaurant Operations Platform",
+  "group": "projects",
+  "tags": "project,restaurant",
+  "body_en": "Multi-branch restaurant control room: live order map, kitchen ticket queue, sales by branch and stock. Late tickets are flagged early, low stock in one branch suggests a transfer from a nearby branch, and an assistant answers questions about live data. /{lang}/work/restaurant",
+  "body_fa": "اتاق کنترل چندشعبه‌ای رستوران: نقشهٔ زندهٔ سفارش‌ها، صف تیکت آشپزخانه، فروش هر شعبه و انبار. تیکت دیرکرده زود علامت می‌خورد، کمبود یک شعبه انتقال از شعبهٔ نزدیک را پیشنهاد می‌دهد و دستیار به پرسش دربارهٔ دادهٔ زنده پاسخ می‌دهد. /{lang}/work/restaurant",
+  "enabled": true,
+  "sort": 100
+}

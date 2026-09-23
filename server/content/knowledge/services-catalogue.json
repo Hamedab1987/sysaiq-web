@@ -1,0 +1,10 @@
+{
+  "slug": "services-catalogue",
+  "title": "Services catalogue",
+  "group": "services",
+  "tags": "services,catalogue",
+  "body_en": "The ten services (/{lang}/services):\nCustom website (/{lang}/services/custom-website)\nProfession landing page (/{lang}/services/profession-landing)\nWeb app & SaaS (/{lang}/services/web-app)\nE-commerce (/{lang}/services/ecommerce)\nMobile app as a PWA (/{lang}/services/mobile-app)\nAI agents & chatbots (/{lang}/services/ai-agent)\nBusiness process automation (/{lang}/services/automation)\nAccounting systems (/{lang}/services/accounting-systems)\nTrading analysis & backtesting, no signals (/{lang}/services/trading-systems)\nSupport & maintenance (/{lang}/services/support-maintenance)",
+  "body_fa": "ده خدمت (/{lang}/services):\nوب‌سایت اختصاصی (/{lang}/services/custom-website)\nلندینگ مشاغل (/{lang}/services/profession-landing)\nوب‌اپلیکیشن و SaaS (/{lang}/services/web-app)\nفروشگاه اینترنتی (/{lang}/services/ecommerce)\nاپلیکیشن موبایل به‌صورت PWA (/{lang}/services/mobile-app)\nAI Agent و چت‌بات (/{lang}/services/ai-agent)\nاتوماسیون فرایندها (/{lang}/services/automation)\nسیستم حسابداری (/{lang}/services/accounting-systems)\nتحلیل و Backtesting معاملات، بدون سیگنال (/{lang}/services/trading-systems)\nپشتیبانی و نگهداری (/{lang}/services/support-maintenance)",
+  "enabled": true,
+  "sort": 20
+}

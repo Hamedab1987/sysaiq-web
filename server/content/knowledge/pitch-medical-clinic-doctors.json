@@ -1,0 +1,10 @@
+{
+  "slug": "pitch-medical-clinic-doctors",
+  "title": "Pitch: Medical Clinic & Doctors",
+  "group": "pitch",
+  "tags": "pitch,medical-clinic",
+  "body_en": "Clinics and private practices share three daily pains: the patient's history is split between paper charts, a booking app and a separate billing tool; the front desk lives on the phone while no-shows leave gaps; and the doctor types instead of looking at the patient. SysaiQ built a patient-management platform with one record per patient: appointments, notes, online visits, prescriptions and billing in one flow, with note drafts for the doctor to review, prescription safety checks and reminders that refill freed slots from a waitlist (/{lang}/work/medical). Services: /{lang}/services/web-app, /{lang}/services/ai-agent. Leave your name and phone number for a free consultation.",
+  "body_fa": "کلینیک و مطب سه درد روزانه دارند: سابقهٔ بیمار بین پروندهٔ کاغذی، اپ نوبت‌دهی و نرم‌افزار مالی جدا پخش است؛ منشی تمام روز پای تلفن است و نوبت‌های سوخته در تقویم جای خالی می‌گذارند؛ و پزشک به‌جای بیمار به صفحه‌کلید نگاه می‌کند. SysaiQ پلتفرم مدیریت بیمار با یک پرونده برای هر بیمار ساخته: نوبت، یادداشت بالینی، ویزیت آنلاین، نسخه و صورتحساب در یک جریان؛ با پیش‌نویس یادداشت برای بازبینی پزشک، کنترل ایمنی نسخه و یادآوری‌ای که نوبت خالی را از لیست انتظار پر می‌کند (/{lang}/work/medical). خدمات: /{lang}/services/web-app و /{lang}/services/ai-agent. نام و شماره‌تان را بگذارید تا مشاورهٔ رایگان هماهنگ شود.",
+  "enabled": true,
+  "sort": 204
+}

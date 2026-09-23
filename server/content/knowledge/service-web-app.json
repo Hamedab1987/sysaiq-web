@@ -1,0 +1,10 @@
+{
+  "slug": "service-web-app",
+  "title": "Service: Web app & SaaS",
+  "group": "services",
+  "tags": "service,web-app",
+  "body_en": "For businesses run on scattered spreadsheets and chats, or a first SaaS version. Delivered: scope with acceptance criteria per milestone, user panels, dashboard, roles, reports, documented API, automated backups. Cost: modules, roles, integrations, data migration; figure only in the written proposal. Example: /{lang}/work/restaurant. /{lang}/services/web-app",
+  "body_fa": "برای کسب‌وکاری که با Excel و پیام‌رسان پراکنده اداره می‌شود یا نسخهٔ اول یک SaaS. تحویل: محدودهٔ کار با معیار پذیرش هر مرحله، پنل کاربری، داشبورد، نقش‌ها، گزارش، API مستند و پشتیبان‌گیری خودکار. هزینه بر اساس ماژول‌ها، نقش‌ها، اتصال‌ها و انتقال داده؛ رقم فقط در پیشنهاد کتبی. نمونه: /{lang}/work/restaurant. /{lang}/services/web-app",
+  "enabled": true,
+  "sort": 23
+}

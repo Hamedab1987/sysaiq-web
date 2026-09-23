@@ -1,0 +1,10 @@
+{
+  "slug": "pitch-lawyers-law-firms",
+  "title": "Pitch: Lawyers & Law Firms",
+  "group": "pitch",
+  "tags": "pitch,lawyers,law-firm,legal",
+  "body_en": "For a law office the website is the first test of credibility, and most are dated templates. Common pains: consultation requests die in an unanswered form; staff repeat the same intake questions all day; and the office is invisible in local search. SysaiQ built a restrained law-office page: practice areas in plain language, attorney profiles, and a booking form that records the matter type and alerts the office by SMS, plus an assistant that gives general information from the office's own content, never legal advice (/{lang}/work/law-landing). Services: /{lang}/services/profession-landing, /{lang}/services/ai-agent. Leave your name and phone number for a free consultation.",
+  "body_fa": "برای دفتر وکالت، وب‌سایت اولین محک اعتبار است و بیشتر سایت‌ها قالب‌های قدیمی‌اند. دردهای رایج: درخواست مشاوره در فرم بی‌پاسخ گم می‌شود؛ کارکنان هر روز همان پرسش‌های اولیه را تکرار می‌کنند؛ و دفتر در جست‌وجوی محلی دیده نمی‌شود. SysaiQ لندینگ سنجیدهٔ دفتر وکالت را ساخته: حوزه‌های کاری به زبان ساده، معرفی وکلا و فرم رزروی که نوع پرونده را می‌گیرد و با پیامک به دفتر خبر می‌دهد؛ به‌علاوهٔ دستیاری که از محتوای خود دفتر اطلاعات عمومی می‌دهد، نه مشاورهٔ حقوقی (/{lang}/work/law-landing). خدمات: /{lang}/services/profession-landing و /{lang}/services/ai-agent. نام و شماره‌تان را بگذارید تا مشاورهٔ رایگان هماهنگ شود.",
+  "enabled": true,
+  "sort": 208
+}

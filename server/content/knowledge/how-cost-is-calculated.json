@@ -1,0 +1,10 @@
+{
+  "slug": "how-cost-is-calculated",
+  "title": "How cost is calculated",
+  "group": "commercial",
+  "tags": "pricing,cost,commercial",
+  "body_en": "No fixed price list and no \"from\" figure. After discovery, the written proposal prices: scope (pages, modules, roles, reports), design, integrations (gateway, SMS, APIs), AI parts, bilingual content, data migration, support level and schedule pressure. Included: analysis through deployment, documentation, training and the bug-fix warranty. Separate and in your name: domain, hosting, SMS, gateway fees, AI API usage and licences. /{lang}/pricing",
+  "body_fa": "فهرست قیمت ثابت و «قیمت از فلان مبلغ» نداریم. پس از نیازسنجی، پیشنهاد کتبی هزینه را از این‌ها محاسبه می‌کند: محدودهٔ کار (صفحه، ماژول، نقش، گزارش)، طراحی، اتصال‌ها (درگاه، پیامک، API)، بخش‌های AI، دوزبانگی، انتقال داده، سطح پشتیبانی و فشردگی زمان. شامل: تحلیل تا استقرار، مستندات، آموزش و گارانتی رفع اشکال. جدا و به نام شما: دامنه، هاست، پیامک، کارمزد درگاه، مصرف API هوش مصنوعی و لایسنس‌ها. /{lang}/pricing",
+  "enabled": true,
+  "sort": 50
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "pitch-hotels-guesthouses",
+  "title": "Pitch: Hotels & Guesthouses",
+  "group": "pitch",
+  "tags": "pitch,hotels,guesthouse,hospitality",
+  "body_en": "Hotels and guesthouses lose money three ways: double bookings when direct and channel reservations live in separate books; mornings spent guessing which rooms to clean first; and nightly rates set by feel. SysaiQ built a hotel system on one live room-night inventory: a conflicting booking is blocked when attempted, the housekeeping board reorders around today's arrivals, a rate coach suggests tonight's rate with its reasoning while staff decide, and returning guests are recognised (/{lang}/work/hotel). A direct-booking site reduces reliance on channels: /{lang}/services/custom-website. Leave your name and phone number for a free consultation.",
+  "body_fa": "هتل و اقامتگاه از سه جا ضرر می‌کند: رزرو تکراری وقتی رزرو مستقیم و رزرو سایت‌های واسط در دو دفتر جدا ثبت می‌شود؛ صبح‌هایی که با حدس می‌گذرد کدام اتاق اول تمیز شود؛ و نرخ شبانه‌ای که با حس تعیین می‌شود. SysaiQ سیستم هتلی روی یک موجودی زندهٔ اتاق ساخته: رزرو متداخل همان لحظه مسدود می‌شود، برد خانه‌داری بر اساس ورودی‌های امروز مرتب می‌شود، راهنمای نرخ، نرخ امشب را با دلیلش پیشنهاد می‌دهد و تصمیم با کارکنان است، و مهمان بازگشتی شناخته می‌شود (/{lang}/work/hotel). سایت رزرو مستقیم هم وابستگی به واسطه‌ها را کم می‌کند: /{lang}/services/custom-website. نام و شماره‌تان را بگذارید تا مشاورهٔ رایگان هماهنگ شود.",
+  "enabled": true,
+  "sort": 210
+}

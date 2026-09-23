@@ -1,0 +1,10 @@
+{
+  "slug": "ai-trading-terminal",
+  "title": "Trading Analysis Terminal",
+  "group": "projects",
+  "tags": "project,trading",
+  "body_en": "Crypto and forex analysis terminal, strictly software engineering: live charts, order-book depth and positions from several venues in one book, reproducible backtesting with fees and slippage, and the trader's own risk limits enforced in the order ticket. No trade recommendations, no asset management. /{lang}/work/trading",
+  "body_fa": "ترمینال تحلیل crypto و forex، صرفاً مهندسی نرم‌افزار: نمودار زنده، عمق order book و positionهای چند صرافی در یک دفتر، Backtesting تکرارپذیر با کارمزد و لغزش و سقف ریسک خود معامله‌گر در order ticket. توصیهٔ معاملاتی نمی‌دهد و سرمایه مدیریت نمی‌کند. /{lang}/work/trading",
+  "enabled": true,
+  "sort": 103
+}

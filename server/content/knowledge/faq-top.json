@@ -1,0 +1,10 @@
+{
+  "slug": "faq-top",
+  "title": "Top FAQs",
+  "group": "company",
+  "tags": "faq,process,pricing",
+  "body_en": "- Starting? A request via /{lang}/contact, phone or this chat; then free discovery and a written proposal.\n- Cost? There is no price list; the figure comes in the written proposal (/{lang}/pricing).\n- Duration? It depends on scope and is written into the proposal.\n- Outside Qazvin? Yes, across Iran and abroad, fully remote.\n- Code ownership? The client's after full settlement, with credentials and documents.\n- Payment? In stages, by invoice with an online pay link, or bank transfer.",
+  "body_fa": "- شروع؟ درخواست از /{lang}/contact، تلفن یا همین گفت‌وگو؛ بعد نیازسنجی رایگان و پیشنهاد کتبی.\n- هزینه؟ فهرست قیمت نداریم؛ رقم در پیشنهاد کتبی می‌آید (/{lang}/pricing).\n- مدت؟ به محدودهٔ کار بستگی دارد و در پیشنهاد کتبی نوشته می‌شود.\n- خارج از قزوین؟ بله، سراسر ایران و خارج از کشور، کاملاً از راه دور.\n- مالکیت کد؟ پس از تسویهٔ کامل با کارفرماست، همراه دسترسی‌ها و مستندات.\n- پرداخت؟ مرحله‌ای، با فاکتور و لینک پرداخت آنلاین یا انتقال بانکی.",
+  "enabled": true,
+  "sort": 13
+}

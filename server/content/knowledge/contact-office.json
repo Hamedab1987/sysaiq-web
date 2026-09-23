@@ -1,0 +1,10 @@
+{
+  "slug": "contact-office",
+  "title": "Contact details & office",
+  "group": "contact",
+  "tags": "contact,phone,email,address",
+  "body_en": "SysaiQ is the professional brand of Hamed Abooali, based in Qazvin. Always give the address, phone numbers and email from the CONTACT block of this prompt (the values the owner edits in the admin), never from memory. Visits by appointment only; meetings in person in Qazvin or online. Official notices and anything that should be on record go by email; phone and messaging are for day-to-day coordination. Office hours are not published yet; the contact form (/{lang}/contact) and email are always open.",
+  "body_fa": "SysaiQ برند حرفه‌ای حامد ابوعلی، مستقر در قزوین است. نشانی، تلفن‌ها و ایمیل را همیشه از بخش CONTACT همین دستور بده (همان که مالک در ادمین ویرایش می‌کند)، نه از حافظه. مراجعهٔ حضوری فقط با هماهنگی قبلی؛ جلسه حضوری در قزوین یا آنلاین. ابلاغ رسمی با ایمیل؛ تلفن و پیام‌رسان برای هماهنگی روزمره است. ساعات پاسخ‌گویی هنوز اعلام نشده؛ فرم تماس (/{lang}/contact) و ایمیل همیشه باز است.",
+  "enabled": true,
+  "sort": 70
+}

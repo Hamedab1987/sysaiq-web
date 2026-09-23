@@ -1,0 +1,10 @@
+{
+  "slug": "service-mobile-app",
+  "title": "Service: Mobile app (PWA)",
+  "group": "services",
+  "tags": "service,mobile-app",
+  "body_en": "PWA-first: installed from the browser on Android and iOS without an app store, offline where agreed; for bookings, ordering or field teams. Delivered: installable app, offline sync, back end or link to your system, admin panel. Cost: screens, offline mode, back end; figure only in the written proposal. Example: /{lang}/work/salon. /{lang}/services/mobile-app",
+  "body_fa": "PWA بدون استور از مرورگر روی Android و iOS نصب می‌شود و در بخش‌های توافق‌شده آفلاین کار می‌کند؛ برای نوبت‌دهی، سفارش یا تیم میدانی. تحویل: اپ قابل نصب، همگام‌سازی آفلاین، بک‌اند یا اتصال به سامانهٔ فعلی و پنل مدیریت. هزینه بر اساس صفحه‌ها، حالت آفلاین و بک‌اند؛ رقم فقط در پیشنهاد کتبی. نمونه: /{lang}/work/salon. /{lang}/services/mobile-app",
+  "enabled": true,
+  "sort": 25
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "architecture-studio-website",
+  "title": "Architecture Studio Website",
+  "group": "projects",
+  "tags": "project,architect-landing",
+  "body_en": "Minimal, image-first architecture studio page: one full-bleed signature project up front, works filterable by residential, commercial or interior with short visual stories, and a consultation form that alerts the studio by SMS. /{lang}/work/architect-landing",
+  "body_fa": "لندینگ مینیمال و تصویرمحور استودیوی معماری: ورودی با یک پروژهٔ شاخص تمام‌عرض، آثار قابل فیلتر (مسکونی، تجاری، داخلی) با روایت تصویری کوتاه، و فرم مشاوره‌ای که به استودیو پیامک می‌دهد. /{lang}/work/architect-landing",
+  "enabled": true,
+  "sort": 113
+}

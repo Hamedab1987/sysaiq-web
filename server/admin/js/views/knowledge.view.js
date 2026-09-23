@@ -1,6 +1,10 @@
 // Knowledge base (feeds the AI assistant): list + drawer editor.
 //   GET /knowledge · POST /knowledge · PUT /knowledge/:id · DELETE /knowledge/:id
-import { h, icon, pageHeader, dataTable, filterBar, matchesQuery, statusBadge, confirm, toast, createForm, submitButton, drawer, field, tagsField, bilingualField, switchField, truncate, formatJalali, badge } from '../ui.js';
+// Rows carry slug (read-only here: it is the key content/knowledge/<slug>.json
+// is applied by, generated from the title on create), grp and sort — the
+// assistant sends entries group by group in `sort` order and treats the
+// «pitch» group as industry pitches.
+import { h, icon, pageHeader, dataTable, filterBar, matchesQuery, statusBadge, confirm, toast, createForm, submitButton, drawer, field, selectField, numberField, tagsField, bilingualField, switchField, truncate, formatJalali, badge } from '../ui.js';
 import { STR } from '../strings.js';
 import { api } from '../api.js';
 
@@ -11,7 +15,28 @@ const T = {
   titleF: 'عنوان (داخلی)', tagsF: 'برچسب‌ها', bodyF: 'متن', enabledF: 'فعال',
   bodyHint: 'کوتاه و دقیق بنویسید؛ دستیار فقط از همین متن‌ها پاسخ می‌سازد. هیچ قیمت یا عدد تأییدنشده‌ای ننویسید.',
   saved: 'مدخل ذخیره شد',
+  colGroup: 'گروه', allGroups: 'همهٔ گروه‌ها', groupF: 'گروه', noGroup: 'بدون گروه',
+  groupHint: 'دستیار مدخل‌ها را گروه به گروه می‌خواند؛ از گروه «Pitch صنفی» فقط Pitch صنفی که بازدیدکننده به آن اشاره کند فرستاده می‌شود.',
+  slugF: 'شناسه (slug)', slugHint: 'فقط‌خواندنی؛ هنگام ساخت از روی عنوان ساخته می‌شود و فایل‌های محتوا با همین شناسه به‌روز می‌شوند.',
+  slugNew: 'پس از ذخیره ساخته می‌شود', sortF: 'ترتیب در گروه', sortHint: 'عدد کوچک‌تر زودتر می‌آید.',
 };
+
+// same order as KNOWLEDGE_GROUPS (server/src/db/migrations/014_knowledge_slug.js)
+const GROUPS = [
+  { value: 'company', label: 'دربارهٔ SysaiQ' },
+  { value: 'services', label: 'خدمات' },
+  { value: 'process', label: 'فرایند کار' },
+  { value: 'commercial', label: 'شرایط مالی و تجاری' },
+  { value: 'legal', label: 'حقوقی و قرارداد' },
+  { value: 'contact', label: 'تماس' },
+  { value: 'projects', label: 'نمونه‌کارها' },
+  { value: 'pitch', label: 'Pitch صنفی' },
+  { value: 'playbook', label: 'شیوه‌نامهٔ فروش' },
+  { value: 'news', label: 'اخبار' },
+];
+const groupLabel = g => GROUPS.find(x => x.value === g)?.label || T.noGroup;
+const groupRank = g => { const i = GROUPS.findIndex(x => x.value === g); return i < 0 ? GROUPS.length : i; };
+const byGroup = (a, b) => groupRank(a.grp) - groupRank(b.grp) || (a.sort || 0) - (b.sort || 0) || a.id - b.id;
 
 export default {
   title: T.title,
@@ -22,6 +47,7 @@ export default {
     const table = dataTable({
       columns: [
         { key: 'title', label: T.colTitle, render: r => h('div', h('div.a-table__primary', { dir: 'auto' }, r.title || '—'), h('div.a-table__secondary', truncate(r.body_fa || r.body_en || '', 90))) },
+        { key: 'grp', label: T.colGroup, render: r => badge(groupLabel(r.grp)) },
         { key: 'tags', label: T.colTags, render: r => h('div.a-row', { style: null }, String(r.tags || '').split(',').map(s => s.trim()).filter(Boolean).slice(0, 4).map(t => badge(t, { ltr: /^[\x00-\x7f]+$/.test(t) }))) },
         { key: 'enabled', label: T.colStatus, render: r => statusBadge(r.enabled ? 'enabled' : 'disabled') },
         { key: 'updated_at', label: T.colUpdated, render: r => formatJalali(r.updated_at, { style: 'relative' }) },
@@ -34,9 +60,13 @@ export default {
       empty: { icon: 'book-open', title: STR.states.empty, hint: STR.states.emptyHint, action: { label: T.add, icon: 'plus', onClick: () => edit(null) } },
       pageSize: 50,
     });
-    const filters = filterBar({ search: { placeholder: T.search }, filters: [{ name: 'status', label: T.all, options: [{ value: 'on', label: STR.states.enabled }, { value: 'off', label: STR.states.disabled }] }], onChange: apply });
+    const filters = filterBar({ search: { placeholder: T.search }, filters: [
+      { name: 'grp', label: T.allGroups, options: [...GROUPS, { value: '-', label: T.noGroup }] },
+      { name: 'status', label: T.all, options: [{ value: 'on', label: STR.states.enabled }, { value: 'off', label: STR.states.disabled }] },
+    ], onChange: apply });
     function apply(v = filters.values) {
-      const rows = all.filter(r => matchesQuery(r, v.q, ['title', 'tags', 'body_fa', 'body_en']) && (!v.status || (v.status === 'on') === !!r.enabled));
+      const inGroup = r => !v.grp || (v.grp === '-' ? !GROUPS.some(g => g.value === r.grp) : r.grp === v.grp);
+      const rows = all.filter(r => matchesQuery(r, v.q, ['title', 'slug', 'tags', 'body_fa', 'body_en']) && inGroup(r) && (!v.status || (v.status === 'on') === !!r.enabled)).sort(byGroup);
       table.setRows(rows); filters.setCount(rows.length, all.length);
     }
     const load = async () => { try { all = await api.get('/knowledge'); if (!Array.isArray(all)) all = []; if (root.isConnected) apply(); } catch (e) { table.setError(e, load); } };
@@ -47,14 +77,19 @@ export default {
     function edit(row) {
       const isNew = !row;
       const title = field({ name: 'title', label: T.titleF, required: true, maxLength: 300 });
+      const slug = field({ name: 'slug', label: T.slugF, hint: T.slugHint, dir: 'ltr', mono: true, disabled: true, placeholder: T.slugNew });
+      const grp = selectField({ name: 'grp', label: T.groupF, hint: T.groupHint, placeholder: T.noGroup, options: GROUPS });
+      const sort = numberField({ name: 'sort', label: T.sortF, hint: T.sortHint, min: -100000, max: 100000 });
       const tags = tagsField({ name: 'tags', label: T.tagsF, join: ',', maxLength: 40, suggestions: [...new Set(all.flatMap(k => String(k.tags || '').split(',').map(s => s.trim()).filter(Boolean)))] });
       const body = bilingualField({ name: 'body', label: T.bodyF, flat: true, type: 'textarea', rows: 8, requiredFa: true, maxLength: 50000, hint: T.bodyHint });
       const enabled = switchField({ name: 'enabled', label: T.enabledF, onText: STR.states.enabled, offText: STR.states.disabled });
       const form = createForm({
-        fields: [title, tags, body, enabled], dirtyToken: `kb-${row?.id || 'new'}`,
-        values: row ? { ...row } : { title: '', tags: '', body_fa: '', body_en: '', enabled: 1 },
+        fields: [title, slug, grp, sort, tags, body, enabled], dirtyToken: `kb-${row?.id || 'new'}`,
+        values: row ? { ...row, grp: row.grp || '', sort: row.sort ?? 0 } : { title: '', slug: '', grp: '', sort: 0, tags: '', body_fa: '', body_en: '', enabled: 1 },
         async onSubmit(values) {
-          const payload = { ...values, enabled: values.enabled ? 1 : 0 };
+          // the slug is never sent: the server generates it and keeps it
+          const { slug: _slug, ...rest } = values;
+          const payload = { ...rest, grp: rest.grp || '', sort: Number.isInteger(rest.sort) ? rest.sort : 0, enabled: values.enabled ? 1 : 0 };
           if (isNew) await api.post('/knowledge', payload); else await api.put(`/knowledge/${row.id}`, payload);
           toast(T.saved); await load(); d.close('saved'); return true;
         },

@@ -1,0 +1,10 @@
+{
+  "slug": "pitch-traders-investors-crypto-forex",
+  "title": "Pitch: Traders & Investors (Crypto/Forex)",
+  "group": "pitch",
+  "tags": "pitch,traders,investors,crypto,forex",
+  "body_en": "Active traders juggle several tabs for one decision, judge ideas by eye instead of on history, and break their own risk limits in a fast session. SysaiQ builds trading-analysis software as pure engineering: its terminal brings charts, order-book depth and positions from several venues into one book, replays your rules on historical data with fees and slippage in a reproducible backtest, and blocks or warns on orders beyond your own leverage, size or daily-drawdown limits (/{lang}/work/trading). No signals, investment advice or fund management; strategy and risk stay yours. Service: /{lang}/services/trading-systems. Leave your name and phone number for a free consultation.",
+  "body_fa": "معامله‌گر فعال برای یک تصمیم بین چند تب می‌چرخد، ایده را با چشم می‌سنجد نه روی دادهٔ تاریخی، و در بازار پرنوسان سقف ریسک خودش را می‌شکند. SysaiQ نرم‌افزار تحلیل معاملات را صرفاً به‌عنوان مهندسی نرم‌افزار می‌سازد: ترمینالش نمودار، عمق order book و positionهای چند صرافی را در یک دفتر جمع می‌کند، قواعد شما را با کارمزد و لغزش روی دادهٔ تاریخی تکرارپذیر Backtest می‌کند و سفارش فراتر از سقف leverage، حجم یا drawdown روزانهٔ خودتان را مسدود می‌کند یا هشدار می‌دهد (/{lang}/work/trading). سیگنال، توصیهٔ سرمایه‌گذاری یا مدیریت سرمایه در کار نیست؛ استراتژی و ریسک با خود شماست. خدمت: /{lang}/services/trading-systems. نام و شماره‌تان را بگذارید تا مشاورهٔ رایگان هماهنگ شود.",
+  "enabled": true,
+  "sort": 214
+}

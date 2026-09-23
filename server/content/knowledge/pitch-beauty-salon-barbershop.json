@@ -1,0 +1,10 @@
+{
+  "slug": "pitch-beauty-salon-barbershop",
+  "title": "Pitch: Beauty Salon & Barbershop",
+  "group": "pitch",
+  "tags": "pitch,salon-barbershop",
+  "body_en": "Salons and barbershops run on a phone and a notebook, and it costs them daily: no-shows eat revenue; a last-minute cancellation leaves a chair empty all afternoon; and month-end commission turns into spreadsheet arguments. SysaiQ built a booking platform that replaces that front desk: clients pick a service, stylist and slot online; only high-risk bookings are asked for a small prepayment via the gateway; cancelled slots go to the waitlist by SMS; and each person's commission is calculated automatically (/{lang}/work/salon). Services: /{lang}/services/web-app, /{lang}/services/mobile-app. Leave your name and phone number for a free consultation.",
+  "body_fa": "سالن زیبایی و آرایشگاه با تلفن و دفترچه اداره می‌شود و این هر روز هزینه دارد: نوبت‌های سوخته درآمد را می‌خورد؛ کنسلی لحظهٔ آخر یعنی صندلی خالی تا عصر؛ و حساب پورسانت آخر ماه به بحث سر Excel می‌کشد. SysaiQ پلتفرم نوبت‌دهی‌ای ساخته که جای این میز پذیرش را می‌گیرد: مشتری خدمت، آرایشگر و ساعت را آنلاین انتخاب می‌کند؛ فقط از نوبت‌های پرریسک پیش‌پرداخت کوچکی از درگاه گرفته می‌شود؛ نوبت کنسل‌شده با پیامک به لیست انتظار می‌رود؛ و پورسانت هر نفر خودکار حساب می‌شود (/{lang}/work/salon). خدمات: /{lang}/services/web-app و /{lang}/services/mobile-app. نام و شماره‌تان را بگذارید تا مشاورهٔ رایگان هماهنگ شود.",
+  "enabled": true,
+  "sort": 206
+}

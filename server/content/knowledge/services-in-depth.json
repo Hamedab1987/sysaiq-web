@@ -1,0 +1,10 @@
+{
+  "slug": "services-in-depth",
+  "title": "Services in depth",
+  "group": "company",
+  "tags": "services",
+  "body_en": "The ten services form five connected pillars: presence, sites and landing pages (/{lang}/services/custom-website); business software, web apps, stores and PWAs (/{lang}/services/web-app); AI and automation (/{lang}/services/ai-agent); finance, accounting and trading-analysis software (/{lang}/services/accounting-systems); care and support (/{lang}/services/support-maintenance). Built together, they connect: a POS posts into accounting, a site assistant logs leads. All services: /{lang}/services",
+  "body_fa": "ده خدمت در پنج ستون به‌هم‌پیوسته: حضور آنلاین، سایت و لندینگ (/{lang}/services/custom-website)؛ نرم‌افزار کسب‌وکار، وب‌اپلیکیشن، فروشگاه و PWA (/{lang}/services/web-app)؛ AI و اتوماسیون (/{lang}/services/ai-agent)؛ مالی، حسابداری و تحلیل معاملات (/{lang}/services/accounting-systems)؛ نگهداری و پشتیبانی (/{lang}/services/support-maintenance). چون یک‌جا ساخته می‌شوند به هم وصل‌اند: POS در حسابداری سند می‌زند و دستیار سایت سرنخ ثبت می‌کند. همهٔ خدمات: /{lang}/services",
+  "enabled": true,
+  "sort": 12
+}

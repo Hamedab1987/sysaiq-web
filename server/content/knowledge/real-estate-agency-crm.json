@@ -1,0 +1,10 @@
+{
+  "slug": "real-estate-agency-crm",
+  "title": "Real-Estate Agency CRM",
+  "group": "projects",
+  "tags": "project,realestate",
+  "body_en": "Real-estate CRM linking every property, buyer and deal. New listings are matched to active buyers by budget, location and preferences, the pipeline shows deal value with a live forecast, and properties sit on a map with neighbourhood prices. /{lang}/work/realestate",
+  "body_fa": "CRM آژانس املاک که ملک، خریدار و معامله را به هم وصل می‌کند. ملک تازه با بودجه، محله و سلیقهٔ خریداران فعال تطبیق داده می‌شود، pipeline ارزش معامله و پیش‌بینی زنده دارد و ملک‌ها روی نقشه با قیمت محله‌اند. /{lang}/work/realestate",
+  "enabled": true,
+  "sort": 101
+}

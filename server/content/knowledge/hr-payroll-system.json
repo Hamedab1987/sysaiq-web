@@ -1,0 +1,10 @@
+{
+  "slug": "hr-payroll-system",
+  "title": "HR & Payroll System",
+  "group": "projects",
+  "tags": "project,hr",
+  "body_en": "HR and payroll for shift work across sites or companies: geofenced, face-checked mobile clock-in that also works offline, a full-month payroll simulation before payment, and insurance and payroll-tax files in official formats. /{lang}/work/hr",
+  "body_fa": "پلتفرم منابع انسانی و حقوق برای کار شیفتی در چند سایت یا شرکت: ثبت تردد موبایلی با محدودهٔ جغرافیایی و تأیید چهره که آفلاین هم کار می‌کند، شبیه‌سازی کل ماه پیش از پرداخت و فایل بیمه و مالیات حقوق در قالب رسمی. /{lang}/work/hr",
+  "enabled": true,
+  "sort": 116
+}

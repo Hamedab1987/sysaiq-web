@@ -1,0 +1,10 @@
+{
+  "slug": "payment-methods",
+  "title": "Payment methods",
+  "group": "commercial",
+  "tags": "payment,invoice,pay-link",
+  "body_en": "Staged: a deposit at signature and the rest per milestone, as the written proposal sets out. Each stage has an invoice with a secure online pay link, paid on an Iranian bank gateway's own page (Zarinpal or PayPing); bank transfer with a receipt also works. SysaiQ never sees or stores card details, and nothing is charged outside the written proposal and approved changes. The deposit share is stated in the written proposal. Payment problems: /{lang}/complaints",
+  "body_fa": "مرحله‌ای: پیش‌پرداخت هنگام امضا و مابقی طبق مراحل پیشنهاد کتبی. هر مرحله فاکتوری با لینک پرداخت امن دارد که در صفحهٔ درگاه بانکی ایرانی پرداخت می‌شود (زرین‌پال یا پی‌پینگ)؛ انتقال بانکی با رسید هم ممکن است. اطلاعات کارت نزد SysaiQ نیست و مبلغی خارج از پیشنهاد کتبی و تغییرات تأییدشده گرفته نمی‌شود. سهم پیش‌پرداخت در پیشنهاد کتبی می‌آید. مشکل پرداخت: /{lang}/complaints",
+  "enabled": true,
+  "sort": 51
+}

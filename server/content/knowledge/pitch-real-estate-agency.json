@@ -1,0 +1,10 @@
+{
+  "slug": "pitch-real-estate-agency",
+  "title": "Pitch: Real-Estate Agency",
+  "group": "pitch",
+  "tags": "pitch,real-estate",
+  "body_en": "Real-estate agencies struggle with three things: listings live in spreadsheets and chats, so nobody knows which are still active; buyers go cold because follow-ups have no owner or date; and when an agent leaves, the client history leaves too. SysaiQ built a real-estate CRM that links every property, buyer and deal: new listings are matched to active buyers by budget, location and preferences, the pipeline shows deal value by stage, properties sit on a map with neighbourhood prices, and viewings are booked from the listing (/{lang}/work/realestate). Services: /{lang}/services/web-app, /{lang}/services/ai-agent. Leave your name and phone number for a free consultation.",
+  "body_fa": "دفتر املاک با سه مشکل روبه‌روست: فایل‌ها در Excel و چت‌ها پخش‌اند و کسی نمی‌داند کدام هنوز فعال است؛ خریدار سرد می‌شود چون پیگیری‌ها صاحب و تاریخ ندارند؛ و با رفتن یک مشاور، سابقهٔ مشتری‌ها هم می‌رود. SysaiQ یک CRM املاک ساخته که ملک، خریدار و معامله را به هم وصل می‌کند: ملک تازه بر اساس بودجه، محله و سلیقه با خریداران فعال تطبیق داده می‌شود، pipeline ارزش معامله‌ها را به تفکیک مرحله نشان می‌دهد، ملک‌ها روی نقشه با قیمت محله‌اند و بازدید از روی خود فایل رزرو می‌شود (/{lang}/work/realestate). خدمات: /{lang}/services/web-app و /{lang}/services/ai-agent. نام و شماره‌تان را بگذارید تا مشاورهٔ رایگان هماهنگ شود.",
+  "enabled": true,
+  "sort": 203
+}

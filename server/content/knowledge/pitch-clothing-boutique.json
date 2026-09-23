@@ -1,0 +1,10 @@
+{
+  "slug": "pitch-clothing-boutique",
+  "title": "Pitch: Clothing & Boutique",
+  "group": "pitch",
+  "tags": "pitch,clothing-boutique",
+  "body_en": "Clothing shops and boutiques bleed in three places: size-and-colour stock is guesswork, so popular sizes sell out while dead stock piles up; sales run through Instagram messages with no order system; and after season-end sales nobody knows the true margin. SysaiQ built a fashion store admin with stock per size and colour on a heatmap, revenue net of discounts, returns and shipping, and customer segments described in plain language (/{lang}/work/ecommerce); for the physical shop, a POS with barcode checkout, multi-branch stock and instalment sales (/{lang}/work/pos). Service: /{lang}/services/ecommerce. Leave your name and phone number for a free consultation.",
+  "body_fa": "بوتیک و فروشگاه پوشاک از سه جا ضرر می‌کند: موجودی سایز و رنگ حدسی است، پس سایزهای پرفروش تمام می‌شود و جنس مرده می‌ماند؛ فروش در دایرکت Instagram می‌چرخد بدون سیستم سفارش؛ و بعد از حراج آخر فصل کسی سود واقعی را نمی‌داند. SysaiQ پنل فروشگاه پوشاکی ساخته که موجودی هر سایز و رنگ را روی هیت‌مپ نشان می‌دهد، درآمد را پس از کسر تخفیف، مرجوعی و ارسال حساب می‌کند و گروه مشتری را از یک توصیف ساده می‌سازد (/{lang}/work/ecommerce)؛ برای فروشگاه حضوری هم POS با بارکد، موجودی چندشعبه‌ای و فروش اقساطی (/{lang}/work/pos). خدمت: /{lang}/services/ecommerce. نام و شماره‌تان را بگذارید تا مشاورهٔ رایگان هماهنگ شود.",
+  "enabled": true,
+  "sort": 202
+}

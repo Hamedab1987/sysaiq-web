@@ -1,0 +1,10 @@
+{
+  "slug": "institute-management-system",
+  "title": "Institute Management System",
+  "group": "projects",
+  "tags": "project,school",
+  "body_en": "School and institute management: the timetable builder refuses double bookings, each family can have its own tuition plan with reminders, and an at-risk list ranks students who need a follow-up; with a parent portal. /{lang}/work/school",
+  "body_fa": "سیستم مدیریت آموزشگاه: برنامه‌ساز کلاس رزرو تکراری را نمی‌پذیرد، هر خانواده برنامهٔ پرداخت شهریهٔ خودش را با یادآوری دارد و فهرست دانش‌آموزان در معرض خطر، نیازمندان پیگیری را اولویت‌بندی می‌کند؛ همراه پورتال والدین. /{lang}/work/school",
+  "enabled": true,
+  "sort": 115
+}

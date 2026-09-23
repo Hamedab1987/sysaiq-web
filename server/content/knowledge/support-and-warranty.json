@@ -1,0 +1,10 @@
+{
+  "slug": "support-and-warranty",
+  "title": "Support & warranty",
+  "group": "commercial",
+  "tags": "support,warranty,sla",
+  "body_en": "After final delivery, defects from SysaiQ's work (against the approved acceptance criteria) are fixed free during the bug-fix warranty, whose length is stated in the written proposal. Not covered: new requirements, third-party changes, code changed by others, hosting failures. After the warranty, support runs under a separate agreement; response times and the fee are in the written proposal (/{lang}/services/support-maintenance). No specific business result is promised.",
+  "body_fa": "پس از تحویل نهایی، اشکال ناشی از کار SysaiQ (مغایر معیار پذیرش) در دورهٔ گارانتی رایگان رفع می‌شود؛ مدتش در پیشنهاد کتبی می‌آید. شامل نیست: نیازمندی جدید، تغییر سرویس‌های شخص ثالث، تغییر کد توسط دیگران و خرابی هاست. پس از گارانتی، پشتیبانی با قرارداد جداگانه است و زمان پاسخ و هزینه‌اش در پیشنهاد کتبی می‌آید (/{lang}/services/support-maintenance). نتیجهٔ تجاری خاصی وعده داده نمی‌شود.",
+  "enabled": true,
+  "sort": 52
+}

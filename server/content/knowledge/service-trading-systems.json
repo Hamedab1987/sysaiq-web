@@ -1,0 +1,10 @@
+{
+  "slug": "service-trading-systems",
+  "title": "Service: Trading analysis software",
+  "group": "services",
+  "tags": "service,trading-systems",
+  "body_en": "Software engineering for traders who define their own strategies. Delivered: data pipeline, reproducible backtesting with fees and slippage, your rules as documented Python code, dashboard, alerts and a disclaimer document. No signals, advice or fund management. Cost depends on data sources and strategies, never on trading results; figure only in the written proposal. Example: /{lang}/work/trading. /{lang}/services/trading-systems",
+  "body_fa": "مهندسی نرم‌افزار برای معامله‌گری که استراتژی را خودش تعریف می‌کند. تحویل: جریان داده، Backtesting تکرارپذیر با کارمزد و لغزش، قواعد شما به‌صورت کد Python مستند، داشبورد، هشدار و سند سلب مسئولیت. سیگنال، توصیه یا مدیریت سرمایه در کار نیست. هزینه بر اساس منابع داده و استراتژی‌ها و بی‌ارتباط با نتیجهٔ معاملات؛ رقم فقط در پیشنهاد کتبی. نمونه: /{lang}/work/trading. /{lang}/services/trading-systems",
+  "enabled": true,
+  "sort": 29
+}

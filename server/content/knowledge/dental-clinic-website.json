@@ -1,0 +1,10 @@
+{
+  "slug": "dental-clinic-website",
+  "title": "Dental Clinic Website",
+  "group": "projects",
+  "tags": "project,dental-landing",
+  "body_en": "Bilingual dental or aesthetic clinic page: treatments with booking shortcuts, a consent-based before-and-after slider, booking requests sent to the clinic by SMS at once, and an assistant that answers about services and never diagnoses. /{lang}/work/dental-landing",
+  "body_fa": "لندینگ دوزبانهٔ کلینیک دندان‌پزشکی یا زیبایی: خدمات با میان‌بر رزرو، اسلایدر قبل و بعد با رضایت بیمار، رزروی که همان لحظه به کلینیک پیامک می‌شود و دستیاری که دربارهٔ خدمات پاسخ می‌دهد و تشخیص نمی‌دهد. /{lang}/work/dental-landing",
+  "enabled": true,
+  "sort": 110
+}

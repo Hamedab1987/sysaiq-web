@@ -1,0 +1,10 @@
+{
+  "slug": "retail-pos-inventory",
+  "title": "Retail POS & Inventory",
+  "group": "projects",
+  "tags": "project,pos",
+  "body_en": "Touch-first POS and inventory for retail: sales continue offline and sync without double counting, a per-branch demand forecast (Nowruz peaks included) drafts purchase orders, and the end-of-day Z report posts straight into accounting. /{lang}/work/pos",
+  "body_fa": "POS لمسی و انبار برای خرده‌فروشی: فروش بدون اینترنت ادامه می‌یابد و بدون ثبت تکراری همگام می‌شود، پیش‌بینی تقاضای هر شعبه (حتی پیک شب عید) پیش‌نویس سفارش خرید می‌سازد و گزارش Z پایان روز مستقیم در حسابداری ثبت می‌شود. /{lang}/work/pos",
+  "enabled": true,
+  "sort": 106
+}

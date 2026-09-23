@@ -86,4 +86,4 @@ trading-page framing). `trading-systems` is framed strictly as software engineer
 Same keys, same heading/clause counts, same links in both languages · every service has
 audience, deliverables, cost-calculation note (no figures), how-to-order CTA, valid related
 project slugs · one H1 per page · unique title + meta description per page per language ·
-KB entries ≤ 450 chars per language with `{lang}` links.
+KB entries (server/content/knowledge/*.json) ≤ 700 chars per language for pitch/project/service entries and ≤ 900 for company/legal/playbook, `{lang}` links, and NO literal phone/email/address — the assistant gets those from the live CONTACT block.

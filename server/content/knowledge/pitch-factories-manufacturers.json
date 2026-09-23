@@ -1,0 +1,10 @@
+{
+  "slug": "pitch-factories-manufacturers",
+  "title": "Pitch: Factories & Manufacturers",
+  "group": "pitch",
+  "tags": "pitch,factories,manufacturing",
+  "body_en": "Factories with shift workers share the same pains: clocking in for each other at the gate, a month-end payroll that takes days of manual reconciliation, and paper invoices piling up unposted. SysaiQ built an HR and payroll system with mobile clock-in checked against the site's geofence and a face check, working offline on the shop floor, a full payroll simulation before payment, and insurance and payroll-tax files in the official formats (/{lang}/work/hr); plus accounting where AI agents draft postings from invoice photos and a reviewer agent checks them (/{lang}/work/accounting). Service: /{lang}/services/automation. Leave your name and phone number for a free consultation.",
+  "body_fa": "کارخانه‌ای با نیروی شیفتی دردهای آشنایی دارد: کارت‌زدن به‌جای همدیگر دم در، حقوق آخر ماه که روزها مغایرت‌گیری دستی می‌خواهد و فاکتورهای کاغذی که ثبت‌نشده روی هم جمع می‌شوند. SysaiQ سیستم منابع انسانی و حقوقی ساخته که ثبت تردد موبایلی را با محدودهٔ جغرافیایی سایت و تأیید چهره کنترل می‌کند و در سالن تولید بدون اینترنت هم کار می‌کند، کل ماه حقوق را پیش از پرداخت شبیه‌سازی می‌کند و لیست بیمه و فایل مالیات حقوق را در قالب رسمی می‌سازد (/{lang}/work/hr)؛ کنارش حسابداری‌ای که Agentهای AI از عکس فاکتور سند پیش‌نویس می‌کنند و یک Agent ناظر کنترلش می‌کند (/{lang}/work/accounting). خدمت: /{lang}/services/automation. نام و شماره‌تان را بگذارید تا مشاورهٔ رایگان هماهنگ شود.",
+  "enabled": true,
+  "sort": 213
+}

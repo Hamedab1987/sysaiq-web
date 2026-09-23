@@ -1,0 +1,10 @@
+{
+  "slug": "e-commerce-store-admin",
+  "title": "E-commerce Store Admin",
+  "group": "projects",
+  "tags": "project,ecommerce",
+  "body_en": "Admin platform for an online fashion store: catalogue, orders, stock, campaigns and customers on one screen. A size-and-colour stock heatmap flags fast sellers before they run out, revenue is net of discounts and returns, and a plain-language request becomes a customer segment. /{lang}/work/ecommerce",
+  "body_fa": "پنل فروشگاه اینترنتی پوشاک: کاتالوگ، سفارش، موجودی، کمپین و مشتری در یک صفحه. هیت‌مپ موجودی سایز و رنگ، کالای پرفروش را پیش از اتمام نشان می‌دهد، درآمد پس از کسر تخفیف و مرجوعی حساب می‌شود و یک درخواست ساده گروه مشتری می‌سازد. /{lang}/work/ecommerce",
+  "enabled": true,
+  "sort": 104
+}

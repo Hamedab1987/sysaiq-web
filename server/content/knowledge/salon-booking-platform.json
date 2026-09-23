@@ -1,0 +1,10 @@
+{
+  "slug": "salon-booking-platform",
+  "title": "Salon & Booking Platform",
+  "group": "projects",
+  "tags": "project,salon",
+  "body_en": "Booking platform for appointment businesses, replacing phone and notebook: online booking without collisions, a small prepayment only for high-risk bookings, cancelled slots offered to the waitlist by SMS, and automatic commission. /{lang}/work/salon",
+  "body_fa": "پلتفرم نوبت‌دهی برای کسب‌وکارهای نوبتی به‌جای تلفن و دفترچه: رزرو آنلاین بدون تداخل، پیش‌پرداخت کوچک فقط برای نوبت‌های پرریسک، پیشنهاد پیامکی نوبت کنسل‌شده به لیست انتظار و محاسبهٔ خودکار پورسانت. /{lang}/work/salon",
+  "enabled": true,
+  "sort": 107
+}

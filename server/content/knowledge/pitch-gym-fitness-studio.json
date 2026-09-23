@@ -1,0 +1,10 @@
+{
+  "slug": "pitch-gym-fitness-studio",
+  "title": "Pitch: Gym & Fitness Studio",
+  "group": "pitch",
+  "tags": "pitch,gym-fitness",
+  "body_en": "Gyms and studios lose members before they walk in: people searching for a gym nearby find the one down the street because yours is only an Instagram page; trial requests get buried in messages; and timetables are redrawn as images every week. SysaiQ built a fast gym page where the live timetable, trainer profiles and plans all lead to a trial request that reaches the owner by SMS while the visitor is keen, with local search prepared from day one (/{lang}/work/fitness-landing). For bookings and staff schedules: /{lang}/work/salon. Service: /{lang}/services/profession-landing. Leave your name and phone number for a free consultation.",
+  "body_fa": "باشگاه ورزشی عضو را پیش از آمدنش از دست می‌دهد: کسی که دنبال باشگاه نزدیک است به باشگاه سر خیابان می‌رسد، چون حضور آنلاین شما فقط یک صفحهٔ Instagram است؛ درخواست جلسهٔ آزمایشی زیر پیام‌ها گم می‌شود؛ و برنامهٔ کلاس هر هفته دوباره عکس می‌شود. SysaiQ لندینگ سریعی ساخته که برنامهٔ زندهٔ کلاس‌ها، معرفی مربیان و پلن‌ها همه به درخواست جلسهٔ آزمایشی می‌رسند و پیامکش تا بازدیدکننده مشتاق است به مدیر می‌رسد؛ با آمادگی جست‌وجوی محلی از روز اول (/{lang}/work/fitness-landing). برای نوبت و شیفت پرسنل: /{lang}/work/salon. خدمت: /{lang}/services/profession-landing. نام و شماره‌تان را بگذارید تا مشاورهٔ رایگان هماهنگ شود.",
+  "enabled": true,
+  "sort": 207
+}

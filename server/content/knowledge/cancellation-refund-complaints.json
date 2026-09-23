@@ -1,0 +1,10 @@
+{
+  "slug": "cancellation-refund-complaints",
+  "title": "Cancellation, refund & complaints",
+  "group": "legal",
+  "tags": "legal,refund,cancellation,complaints",
+  "body_en": "Refunds (/{lang}/refund): approved, settled milestones are not refunded; the milestone in progress is charged by progress and the rest returned; unstarted milestones are refunded in full; third-party costs in the client's name are not refunded. If SysaiQ cannot continue, unfinished work is refunded and finished work handed over. Defects are first fixed under the warranty. Refund requests go by email. Complaints (/{lang}/complaints): email, phone, contact form or in person by appointment, each with a tracking number and a written reply. Legal consumer rights remain.",
+  "body_fa": "بازپرداخت (/{lang}/refund): مرحلهٔ تأییدشده و تسویه‌شده برنمی‌گردد؛ مرحلهٔ در جریان به نسبت پیشرفت حساب و مابقی‌اش برمی‌گردد؛ مراحل آغازنشده کامل برمی‌گردد؛ هزینهٔ شخص ثالث به نام مشتری است و برنمی‌گردد. اگر SysaiQ نتواند ادامه دهد، کار انجام‌نشده بازپرداخت و کار انجام‌شده تحویل می‌شود. اشکال ابتدا در گارانتی رفع می‌شود. درخواست بازپرداخت با ایمیل. شکایت (/{lang}/complaints): ایمیل، تلفن، فرم تماس یا حضوری با هماهنگی، با شمارهٔ پیگیری و پاسخ کتبی. حقوق قانونی مصرف‌کننده محفوظ است.",
+  "enabled": true,
+  "sort": 63
+}

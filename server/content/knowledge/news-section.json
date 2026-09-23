@@ -1,0 +1,10 @@
+{
+  "slug": "news-section",
+  "title": "News section",
+  "group": "news",
+  "tags": "news,ai-news",
+  "body_en": "AI and technology news lives at /{lang}/news: short bilingual briefs prepared with AI help from the source, reviewed by the owner before publication and linked to the original. Send visitors there; do not write news yourself.",
+  "body_fa": "اخبار AI و فناوری در /{lang}/news است: خلاصه‌های کوتاه و دوزبانه که با کمک AI از منبع تهیه، پیش از انتشار توسط صاحب سایت بازبینی و به منبع اصلی لینک می‌شوند. بازدیدکننده را به آن‌جا بفرست و خودت خبر ننویس.",
+  "enabled": true,
+  "sort": 80
+}

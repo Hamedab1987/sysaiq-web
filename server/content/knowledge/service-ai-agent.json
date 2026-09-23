@@ -1,0 +1,10 @@
+{
+  "slug": "service-ai-agent",
+  "title": "Service: AI agents & chatbots",
+  "group": "services",
+  "tags": "service,ai-agent",
+  "body_en": "For businesses flooded with repeated questions, or systems where an agent should log requests or summarise. Delivered: RAG knowledge base over your approved documents, chat widget, knowledge admin, conversation logs, hand-off to a person, lead capture. Cost: data volume, answering vs acting, channels; model API usage is separate and in your name; figure only in the written proposal. Example: /{lang}/work/medical. /{lang}/services/ai-agent",
+  "body_fa": "برای کسب‌وکاری که زیر پرسش تکراری مانده یا سامانه‌ای که Agent باید در آن درخواست ثبت یا خلاصه کند. تحویل: پایگاه دانش RAG روی اسناد تأییدشدهٔ شما، ویجت گفت‌وگو، پنل دانش، سابقهٔ گفت‌وگوها، ارجاع به انسان و ثبت سرنخ. هزینه بر اساس حجم داده، پاسخ یا عملیات و کانال‌ها؛ مصرف API مدل جدا و به نام شماست؛ رقم فقط در پیشنهاد کتبی. نمونه: /{lang}/work/medical. /{lang}/services/ai-agent",
+  "enabled": true,
+  "sort": 26
+}

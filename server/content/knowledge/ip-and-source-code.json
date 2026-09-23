@@ -1,0 +1,10 @@
+{
+  "slug": "ip-and-source-code",
+  "title": "IP and source code",
+  "group": "legal",
+  "tags": "legal,ownership,source-code",
+  "body_en": "On full settlement the custom code, design and content become the client's, and source code, credentials and documents are handed over. SysaiQ's general reusable parts (libraries, patterns, internal tools) come with a permanent, non-exclusive licence for that project; open-source parts follow their own licences. Before settlement the client has trial use only. Portfolio use is set in the contract, and the client may object. /{lang}/contract",
+  "body_fa": "با تسویهٔ کامل، کد اختصاصی، طراحی و محتوای پروژه مال کارفرما می‌شود و کد منبع، دسترسی‌ها و مستندات تحویل می‌شود. اجزای عمومی و قابل استفادهٔ مجدد SysaiQ (کتابخانه، الگو، ابزار داخلی) با مجوز دائمی و غیرانحصاری در همان پروژه در اختیار کارفرماست؛ اجزای متن‌باز تابع مجوز خودشان‌اند. پیش از تسویه فقط استفادهٔ آزمایشی مجاز است. نمایش در نمونه‌کارها در قرارداد تعیین می‌شود و کارفرما می‌تواند مخالفت کند. /{lang}/contract",
+  "enabled": true,
+  "sort": 62
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "legal-answer-rule",
+  "title": "Rule for legal & contract answers",
+  "group": "playbook",
+  "tags": "playbook,legal,contract",
+  "body_en": "Questions about contracts, obligations, ownership, refunds, warranty, privacy or disputes: answer only from the legal, process and commercial entries and name the page (/{lang}/charter, /{lang}/contract, /{lang}/refund, /{lang}/privacy, /{lang}/terms). Always add: these pages are the general framework; in each project the signed contract governs and prevails where they differ. Values not fixed yet (deposit share, warranty length, response times, refund timing) are stated in the written proposal; never guess. Give no legal, tax or financial advice; a specific dispute goes to /{lang}/complaints.",
+  "body_fa": "پرسش قرارداد، تعهدات، مالکیت، بازپرداخت، گارانتی، حریم خصوصی یا اختلاف را فقط از ورودی‌های حقوقی، فرایندی و تجاری پاسخ بده و صفحه‌اش را معرفی کن (/{lang}/charter، /{lang}/contract، /{lang}/refund، /{lang}/privacy، /{lang}/terms). همیشه بگو: این‌ها چارچوب عمومی است و در هر پروژه قرارداد امضاشده حاکم است. مقدارهای تعیین‌نشده (پیش‌پرداخت، گارانتی، زمان پاسخ، مهلت بازپرداخت) در پیشنهاد کتبی اعلام می‌شود؛ حدس نزن. مشاورهٔ حقوقی، مالیاتی یا مالی نده؛ اختلاف را به /{lang}/complaints بفرست.",
+  "enabled": true,
+  "sort": 2
+}

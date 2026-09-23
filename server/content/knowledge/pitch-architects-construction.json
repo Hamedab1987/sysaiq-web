@@ -1,0 +1,10 @@
+{
+  "slug": "pitch-architects-construction",
+  "title": "Pitch: Architects & Construction",
+  "group": "pitch",
+  "tags": "pitch,architects,construction",
+  "body_en": "Architecture studios often show careful work on generic templates with slow galleries, and construction firms drown in site-crew attendance and paper invoices. For studios, SysaiQ built an image-first page with filterable project stories and an SMS-alert consultation form (/{lang}/work/architect-landing). For construction: HR and payroll with geofenced, face-checked clock-in that works offline and a payroll simulation before payment (/{lang}/work/hr), and accounting that turns an invoice photo into a draft posting (/{lang}/work/accounting). Services: /{lang}/services/profession-landing, /{lang}/services/automation. Leave your name and phone number for a free consultation.",
+  "body_fa": "استودیوهای معماری اغلب کار دقیقشان را روی قالب تکراری با گالری کند نشان می‌دهند و شرکت‌های ساختمانی زیر حضور و غیاب نیروهای کارگاه و فاکتور کاغذی مانده‌اند. برای استودیو، SysaiQ لندینگ تصویرمحوری با روایت پروژه‌ها و فرم مشاورهٔ پیامکی ساخته (/{lang}/work/architect-landing). برای بخش اجرایی: منابع انسانی و حقوق با ثبت تردد در محدودهٔ کارگاه و تأیید چهره که بدون اینترنت هم کار می‌کند و شبیه‌سازی حقوق پیش از پرداخت (/{lang}/work/hr)، و حسابداری‌ای که عکس فاکتور را به پیش‌نویس سند تبدیل می‌کند (/{lang}/work/accounting). خدمات: /{lang}/services/profession-landing و /{lang}/services/automation. نام و شماره‌تان را بگذارید تا مشاورهٔ رایگان هماهنگ شود.",
+  "enabled": true,
+  "sort": 209
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "pitch-supermarket-retail-shops",
+  "title": "Pitch: Supermarket & Retail Shops",
+  "group": "pitch",
+  "tags": "pitch,supermarket-retail",
+  "body_en": "Supermarkets and shops lose money quietly: stock runs out unnoticed until a customer leaves empty-handed; the end-of-day close takes an hour of counting and retyping; and sales reach the books late. SysaiQ built a touch-first POS and inventory platform that keeps selling offline, keeps every branch's stock live, drafts purchase orders from each store's sales rhythm and posts the Z report straight into accounting (/{lang}/work/pos), plus accounting that starts from a photo of the invoice (/{lang}/work/accounting). Services: /{lang}/services/ecommerce, /{lang}/services/accounting-systems. Leave your name and phone number for a free consultation.",
+  "body_fa": "سوپرمارکت و فروشگاه بی‌صدا ضرر می‌کند: کالا تمام می‌شود و کسی نمی‌فهمد تا مشتری دست‌خالی برگردد؛ بستن حساب آخر شب یک ساعت شمارش و تایپ دوباره می‌برد؛ و فروش دیر به دفاتر می‌رسد. SysaiQ پلتفرم POS و انبار لمسی ساخته که با قطع اینترنت هم می‌فروشد، موجودی همهٔ شعبه‌ها را زنده نگه می‌دارد، از روی الگوی فروش هر شعبه پیش‌نویس سفارش خرید می‌سازد و گزارش Z را مستقیم در حسابداری ثبت می‌کند (/{lang}/work/pos)؛ کنارش حسابداری‌ای که از عکس فاکتور شروع می‌کند (/{lang}/work/accounting). خدمات: /{lang}/services/ecommerce و /{lang}/services/accounting-systems. نام و شماره‌تان را بگذارید تا مشاورهٔ رایگان هماهنگ شود.",
+  "enabled": true,
+  "sort": 201
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "client-obligations",
+  "title": "Client obligations",
+  "group": "legal",
+  "tags": "legal,contract,obligations",
+  "body_en": "The client commits to (contract framework, clause 7): content, images, access (domain, hosting, third-party accounts) and decisions on time; one decision-maker for approvals; written feedback within the agreed window; paying each milestone invoice on time; owning or licensing supplied content and data; following the rules of their own business (licences, trust seals, online-sales rules). Client delays shift the schedule by the same amount. /{lang}/contract",
+  "body_fa": "تعهدات کارفرما (بند ۷ قرارداد): محتوا، تصاویر، دسترسی‌ها (دامنه، هاست، حساب‌های شخص ثالث) و تصمیم‌ها به‌موقع؛ یک نمایندهٔ تصمیم‌گیرنده برای تأییدها؛ بازخورد کتبی در مهلت توافق‌شده؛ پرداخت به‌موقع فاکتور هر مرحله؛ مالکیت یا مجوز محتوای ارائه‌شده؛ رعایت قوانین کسب‌وکار خودش (مجوزها، نمادها، فروش آنلاین). تأخیر کارفرما زمان‌بندی را به همان اندازه جابه‌جا می‌کند. /{lang}/contract",
+  "enabled": true,
+  "sort": 61
+}

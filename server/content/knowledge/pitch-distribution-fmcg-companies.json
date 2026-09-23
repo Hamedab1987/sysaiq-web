@@ -1,0 +1,10 @@
+{
+  "slug": "pitch-distribution-fmcg-companies",
+  "title": "Pitch: Distribution & FMCG Companies",
+  "group": "pitch",
+  "tags": "pitch,distribution,fmcg,field-sales",
+  "body_en": "Distribution and van-sales companies bleed in three places: reps go blind when the signal drops, morning routes no longer match reality by noon, and credit goes to shops whose cheques bounce. SysaiQ built a field-sales platform: the rep's order screen shows live stock and customer pricing and works offline, remaining stops are re-sequenced when a van breaks down or an order is cancelled, each customer's credit risk is scored from payment and cheque history, and van stock is reconciled per vehicle (/{lang}/work/distribution). Services: /{lang}/services/automation, /{lang}/services/mobile-app. Leave your name and phone number for a free consultation.",
+  "body_fa": "شرکت پخش مویرگی از سه جا ضرر می‌کند: ویزیتور با قطع آنتن کور می‌شود، مسیری که صبح چیده شده تا ظهر با واقعیت جور نیست و اعتبار به مغازه‌ای داده می‌شود که چکش برگشت می‌خورد. SysaiQ پلتفرم فروش میدانی ساخته: صفحهٔ سفارش ویزیتور موجودی زنده و قیمت مخصوص مشتری را نشان می‌دهد و بدون اینترنت هم کار می‌کند، با خرابی ماشین یا لغو سفارش ترتیب توقف‌ها از نو چیده می‌شود، ریسک اعتباری هر مشتری از سابقهٔ پرداخت و چک سنجیده می‌شود و موجودی هر ماشین جدا مغایرت‌گیری می‌شود (/{lang}/work/distribution). خدمات: /{lang}/services/automation و /{lang}/services/mobile-app. نام و شماره‌تان را بگذارید تا مشاورهٔ رایگان هماهنگ شود.",
+  "enabled": true,
+  "sort": 212
+}

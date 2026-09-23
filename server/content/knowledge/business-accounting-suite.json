@@ -1,0 +1,10 @@
+{
+  "slug": "business-accounting-suite",
+  "title": "Business Accounting Suite",
+  "group": "projects",
+  "tags": "project,accounting",
+  "body_en": "Accounting that starts from the document: a master agent routes each invoice photo to a specialist AI agent that drafts the double-entry posting, an independent reviewer agent re-checks every posting, and all reports come from the same ledger. /{lang}/work/accounting",
+  "body_fa": "حسابداری‌ای که از خود مدرک شروع می‌کند: Master Agent عکس فاکتور را به Agent متخصص می‌سپارد تا سند دوطرفه پیش‌نویس شود، Agent ناظر هر ثبت را مستقل کنترل می‌کند و همهٔ گزارش‌ها از همان دفتر کل ساخته می‌شوند. /{lang}/work/accounting",
+  "enabled": true,
+  "sort": 105
+}

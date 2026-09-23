@@ -1,0 +1,10 @@
+{
+  "slug": "privacy-summary",
+  "title": "Privacy summary",
+  "group": "legal",
+  "tags": "legal,privacy,data",
+  "body_en": "Privacy in short (/{lang}/privacy): the controller is Hamed Abooali (SysaiQ). The contact form stores name, mobile, email, business type, message and IP. Chat text is sent to OpenAI to generate answers, so no personal or confidential data in chat. Payments record only the transaction id, amount, status and time; card data stays with the gateway. SMS goes through the SMS provider. No advertising or tracking cookies. Data is never sold; ask by email to see, correct or delete it.",
+  "body_fa": "خلاصهٔ حریم خصوصی (/{lang}/privacy): مسئول پردازش حامد ابوعلی (SysaiQ) است. فرم تماس نام، موبایل، ایمیل، نوع کسب‌وکار، پیام و IP را ثبت می‌کند. متن گفت‌وگو برای پاسخ به OpenAI می‌رود؛ اطلاعات شخصی یا محرمانه ننویسید. در پرداخت فقط شناسه، مبلغ، وضعیت و زمان تراکنش ثبت می‌شود و کارت نزد درگاه است. پیامک از سرویس پیامک ارسال می‌شود. کوکی تبلیغاتی یا ردیاب نداریم. داده فروخته نمی‌شود و دیدن، اصلاح یا حذفش با ایمیل ممکن است.",
+  "enabled": true,
+  "sort": 64
+}

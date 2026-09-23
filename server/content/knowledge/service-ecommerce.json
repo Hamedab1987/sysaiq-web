@@ -1,0 +1,10 @@
+{
+  "slug": "service-ecommerce",
+  "title": "Service: E-commerce",
+  "group": "services",
+  "tags": "service,ecommerce",
+  "body_en": "For sellers moving from Instagram or a rented platform to their own store. Delivered: catalogue with sizes and colours, cart and an Iranian payment gateway in your name, orders with SMS updates, stock, discount codes and a customer panel. Cost: catalogue, pricing and shipping rules, integrations; figure only in the written proposal. Example: /{lang}/work/ecommerce. /{lang}/services/ecommerce",
+  "body_fa": "برای فروشنده‌ای که از Instagram یا پلتفرم اجاره‌ای به فروشگاه خودش می‌آید. تحویل: کاتالوگ با سایز و رنگ، سبد خرید و درگاه پرداخت ایرانی به نام شما، سفارش با پیامک، موجودی، کد تخفیف و پنل مشتری. هزینه بر اساس کاتالوگ، قواعد قیمت و ارسال و اتصال‌ها؛ رقم فقط در پیشنهاد کتبی. نمونه: /{lang}/work/ecommerce. /{lang}/services/ecommerce",
+  "enabled": true,
+  "sort": 24
+}

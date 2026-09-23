@@ -1,0 +1,10 @@
+{
+  "slug": "clinic-patient-management",
+  "title": "Clinic Patient Management",
+  "group": "projects",
+  "tags": "project,medical",
+  "body_en": "Patient-management platform with one record per patient: appointments, notes, online visits, prescriptions and billing. Visit notes are drafted for the clinician to review and sign, prescriptions are checked against medications and allergies, and freed slots are refilled from a waitlist. /{lang}/work/medical",
+  "body_fa": "پلتفرم مدیریت بیمار با یک پرونده برای هر بیمار: نوبت، یادداشت، ویزیت آنلاین، نسخه و صورتحساب. یادداشت ویزیت برای امضای پزشک پیش‌نویس می‌شود، نسخه با داروها و حساسیت‌ها کنترل می‌شود و نوبت خالی از لیست انتظار پر می‌شود. /{lang}/work/medical",
+  "enabled": true,
+  "sort": 102
+}

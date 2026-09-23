@@ -1,0 +1,10 @@
+{
+  "slug": "service-support-maintenance",
+  "title": "Service: Support & maintenance",
+  "group": "services",
+  "tags": "service,support-maintenance",
+  "body_en": "For SysaiQ clients after the warranty, owners whose developer is gone, and critical systems. Delivered: uptime monitoring, backups with restore tests, security updates, bug fixes and small changes within an agreed allowance, periodic report. Cost: systems covered, response level, monthly allowance; response times and the periodic fee are in the written proposal. /{lang}/services/support-maintenance",
+  "body_fa": "برای مشتریان SysaiQ پس از گارانتی، سامانه‌ای که توسعه‌دهنده‌اش در دسترس نیست و سامانه‌های حساس. تحویل: پایش، پشتیبان‌گیری با آزمون بازیابی، به‌روزرسانی امنیتی، رفع اشکال و تغییرات کوچک در سقف توافق‌شده و گزارش دوره‌ای. هزینه بر اساس سامانه‌ها، سطح پاسخ‌گویی و سقف ماهانه؛ زمان پاسخ و هزینهٔ دوره‌ای در پیشنهاد کتبی. /{lang}/services/support-maintenance",
+  "enabled": true,
+  "sort": 30
+}

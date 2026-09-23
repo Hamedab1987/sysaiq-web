@@ -1,0 +1,10 @@
+{
+  "slug": "pitch-restaurant-cafe",
+  "title": "Pitch: Restaurant & Cafe",
+  "group": "pitch",
+  "tags": "pitch,restaurant-cafe",
+  "body_en": "Restaurants and cafés fight three problems: nobody sees the kitchen and the branches until the end-of-day report; orders are scattered across delivery apps, phone calls and paper; and the online face is a PDF menu plus unanswered messages. SysaiQ has built both fixes: a multi-branch platform with a live order map, kitchen ticket queue and sales by branch (/{lang}/work/restaurant), and a café site with an editable photo menu and reservations that reach the owner's phone at once (/{lang}/work/cafe-landing). Services: /{lang}/services/web-app, /{lang}/services/profession-landing. Leave your name and phone number for a free consultation.",
+  "body_fa": "رستوران و کافه با سه مشکل درگیرند: تا گزارش آخر شب کسی نمی‌داند در آشپزخانه و شعبه‌ها چه می‌گذرد؛ سفارش‌ها بین اپ‌های پیک، تلفن و کاغذ پخش است؛ و ویترین آنلاین یک منوی PDF است با پیام‌هایی که جواب نمی‌گیرند. SysaiQ برای هر دو راه‌حل ساخته: پلتفرم چندشعبه‌ای با نقشهٔ زندهٔ سفارش‌ها، صف تیکت آشپزخانه و فروش هر شعبه (/{lang}/work/restaurant) و سایت کافه با منوی عکس‌دار قابل‌ویرایش و رزروی که همان لحظه به گوشی مدیر می‌رسد (/{lang}/work/cafe-landing). خدمات: /{lang}/services/web-app و /{lang}/services/profession-landing. نام و شماره‌تان را بگذارید تا مشاورهٔ رایگان هماهنگ شود.",
+  "enabled": true,
+  "sort": 200
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "pitch-schools-training-institutes",
+  "title": "Pitch: Schools & Training Institutes",
+  "group": "pitch",
+  "tags": "pitch,schools,training-institutes,education",
+  "body_en": "Most institutes run on spreadsheets, paper registers and group chats: instalments are chased by hand, timetable clashes appear on the first day, and dropouts surprise everyone. SysaiQ built an institute system connecting enrolment, timetable, attendance, grades and tuition: the timetable builder refuses double bookings, each family can have its own payment plan with reminders, an at-risk list ranks students who need a call, and a parent portal shows grades, schedule and online payment (/{lang}/work/school). Service: /{lang}/services/web-app. Leave your name and phone number for a free consultation.",
+  "body_fa": "بیشتر آموزشگاه‌ها با Excel، دفتر حضور و غیاب کاغذی و گروه‌های پیام‌رسان اداره می‌شوند: اقساط شهریه دستی پیگیری می‌شود، تداخل کلاس‌ها روز اول ترم معلوم می‌شود و انصراف دانش‌آموز همه را غافلگیر می‌کند. SysaiQ سیستم آموزشگاهی ساخته که ثبت‌نام، برنامهٔ کلاس، حضور و غیاب، نمره و شهریه را به هم وصل می‌کند: برنامه‌ساز رزرو تکراری را نمی‌پذیرد، هر خانواده برنامهٔ پرداخت خودش را با یادآوری دارد، فهرست در معرض خطر دانش‌آموزان نیازمند تماس را اولویت‌بندی می‌کند و پورتال والدین نمره، برنامه و پرداخت آنلاین را نشان می‌دهد (/{lang}/work/school). خدمت: /{lang}/services/web-app. نام و شماره‌تان را بگذارید تا مشاورهٔ رایگان هماهنگ شود.",
+  "enabled": true,
+  "sort": 211
+}

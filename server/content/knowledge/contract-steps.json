@@ -1,0 +1,10 @@
+{
+  "slug": "contract-steps",
+  "title": "Contract steps",
+  "group": "process",
+  "tags": "process,contract",
+  "body_en": "1) Request via /{lang}/contact, phone, email or chat. 2) Free discovery in Qazvin or online. 3) Written proposal: scope, milestones, schedule, amounts, payment terms. 4) The final proposal is attached to the contract. 5) Signature in person in Qazvin or electronically. 6) Deposit invoice with an online pay link, or bank transfer; the contract takes effect when it is received. 7) Work starts the next working day, once access is in. Nothing is owed before signature and deposit. /{lang}/contract",
+  "body_fa": "۱) درخواست از /{lang}/contact، تلفن، ایمیل یا گفت‌وگو. ۲) نیازسنجی رایگان در قزوین یا آنلاین. ۳) پیشنهاد کتبی: محدودهٔ کار، مراحل، زمان‌بندی، مبالغ و شرایط پرداخت. ۴) پیشنهاد نهایی پیوست قرارداد. ۵) امضای حضوری در قزوین یا الکترونیکی. ۶) فاکتور پیش‌پرداخت با لینک پرداخت یا انتقال بانکی؛ با وصول آن قرارداد لازم‌الاجراست. ۷) شروع از روز کاری بعد، با دریافت دسترسی‌ها. پیش از امضا و پیش‌پرداخت تعهدی نیست. /{lang}/contract",
+  "enabled": true,
+  "sort": 41
+}

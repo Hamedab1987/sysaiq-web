@@ -1,0 +1,10 @@
+{
+  "slug": "pitch-e-commerce-instagram-shops",
+  "title": "Pitch: E-commerce & Instagram Shops",
+  "group": "pitch",
+  "tags": "pitch,ecommerce,online-sellers,instagram-shop",
+  "body_en": "Online sellers know the pain: orders scattered between messages and spreadsheets, a single stock number hiding that a shirt is gone in every size but one, and revenue figures that ignore discounts, returns and shipping. SysaiQ built a store admin that shows stock per size, colour and location on a heatmap, computes revenue net of discounts, returns and shipping, turns a plain-language request into a customer segment, and scores each order for fraud and delay risk (/{lang}/work/ecommerce). Selling in person too? The POS keeps working through outages (/{lang}/work/pos). Service: /{lang}/services/ecommerce. Leave your name and phone number for a free consultation.",
+  "body_fa": "فروشندهٔ آنلاین این دردها را می‌شناسد: سفارش‌هایی که بین دایرکت و Excel پخش‌اند، یک عدد موجودی که پنهان می‌کند فلان پیراهن جز یک سایز تمام شده، و عدد فروشی که تخفیف و مرجوعی و ارسال را نمی‌بیند. SysaiQ پنل فروشگاهی ساخته که موجودی را به تفکیک سایز، رنگ و انبار روی هیت‌مپ نشان می‌دهد، درآمد را پس از کسر تخفیف، مرجوعی و ارسال حساب می‌کند، درخواست ساده را به گروه مشتری تبدیل می‌کند و ریسک تقلب و تأخیر هر سفارش را می‌سنجد (/{lang}/work/ecommerce). فروش حضوری هم دارید؟ POS با قطع اینترنت هم کار می‌کند (/{lang}/work/pos). خدمت: /{lang}/services/ecommerce. نام و شماره‌تان را بگذارید تا مشاورهٔ رایگان هماهنگ شود.",
+  "enabled": true,
+  "sort": 215
+}

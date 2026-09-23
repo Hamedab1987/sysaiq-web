@@ -1,0 +1,10 @@
+{
+  "slug": "service-automation",
+  "title": "Service: Business process automation",
+  "group": "services",
+  "tags": "service,automation",
+  "body_en": "For teams that retype data between systems or build reports by copy and paste. Delivered: process map, automated flows, links to SMS, email, gateway, Excel or any API, scheduled reports and alerts, monitoring panel. Cost: processes and steps, systems to connect, exceptions; figure only in the written proposal. Example: /{lang}/work/distribution. /{lang}/services/automation",
+  "body_fa": "برای تیمی که داده را بین نرم‌افزارها دوباره تایپ می‌کند یا گزارش را با کپی می‌سازد. تحویل: نقشهٔ فرایند، جریان‌های خودکار، اتصال به پیامک، ایمیل، درگاه، Excel یا هر API، گزارش و هشدار زمان‌بندی‌شده و پنل پایش. هزینه بر اساس فرایندها و مراحل، سامانه‌های متصل و استثناها؛ رقم فقط در پیشنهاد کتبی. نمونه: /{lang}/work/distribution. /{lang}/services/automation",
+  "enabled": true,
+  "sort": 27
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "gym-fitness-website",
+  "title": "Gym & Fitness Website",
+  "group": "projects",
+  "tags": "project,fitness-landing",
+  "body_en": "Fast gym landing page that turns visitors into trial members: a live, filterable class timetable, side-by-side plans, and a short trial form that texts the owner at once; prepared for local search. /{lang}/work/fitness-landing",
+  "body_fa": "لندینگ سریع باشگاه ورزشی که بازدیدکننده را عضو آزمایشی می‌کند: برنامهٔ زنده و قابل فیلتر کلاس‌ها، مقایسهٔ پلن‌ها و فرم کوتاه جلسهٔ آزمایشی که همان لحظه به مدیر پیامک می‌دهد؛ آماده برای جست‌وجوی محلی. /{lang}/work/fitness-landing",
+  "enabled": true,
+  "sort": 111
+}

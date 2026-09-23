@@ -1,0 +1,10 @@
+{
+  "slug": "distribution-field-sales",
+  "title": "Distribution & Field Sales",
+  "group": "projects",
+  "tags": "project,distribution",
+  "body_en": "Distribution and van-sales platform: reps take orders with live stock and customer pricing even offline, fleet routes are re-sequenced when plans change, and customer credit risk is scored from payment and cheque history. /{lang}/work/distribution",
+  "body_fa": "پلتفرم پخش مویرگی و فروش ماشینی: ویزیتور حتی بدون اینترنت با موجودی زنده و قیمت مخصوص مشتری سفارش می‌گیرد، مسیر ناوگان با تغییر شرایط از نو چیده می‌شود و ریسک اعتباری مشتری از سابقهٔ پرداخت و چک سنجیده می‌شود. /{lang}/work/distribution",
+  "enabled": true,
+  "sort": 108
+}

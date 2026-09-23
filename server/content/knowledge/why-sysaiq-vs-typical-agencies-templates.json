@@ -1,0 +1,10 @@
+{
+  "slug": "why-sysaiq-vs-typical-agencies-templates",
+  "title": "Why SysaiQ vs typical agencies/templates",
+  "group": "company",
+  "tags": "why,comparison",
+  "body_en": "Templates bend a business to their shape; SysaiQ builds around the real process: native Persian and English with correct RTL, AI only where it earns its place, direct work with the builder and no middlemen, scope and cost in writing before any payment, and code and credentials owned by the client after settlement. The systems connect too: a POS posts sales into accounting (/{lang}/work/pos, /{lang}/work/accounting).",
+  "body_fa": "قالب آماده کسب‌وکار را به شکل خودش درمی‌آورد؛ SysaiQ دور فرایند واقعی شما می‌سازد: فارسی و انگلیسی بومی با RTL درست، AI فقط جایی که به کار می‌آید، ارتباط مستقیم با سازنده بدون واسطه، محدودهٔ کار و هزینهٔ مکتوب پیش از هر پرداخت و مالکیت کد و دسترسی‌ها پس از تسویه. سامانه‌ها هم به هم وصل‌اند: POS فروش را در حسابداری ثبت می‌کند (/{lang}/work/pos و /{lang}/work/accounting).",
+  "enabled": true,
+  "sort": 11
+}

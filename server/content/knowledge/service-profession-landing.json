@@ -1,0 +1,10 @@
+{
+  "slug": "service-profession-landing",
+  "title": "Service: Profession landing page",
+  "group": "services",
+  "tags": "service,profession-landing",
+  "body_en": "One focused page for a clinic, law office, gym, café or studio that turns visitors into calls or bookings. Delivered: services and gallery, call and directions buttons, booking form with SMS alert, admin panel. Cost: sections, booking and SMS, languages; figure only in the written proposal. Example: /{lang}/work/law-landing. /{lang}/services/profession-landing",
+  "body_fa": "یک صفحهٔ متمرکز برای مطب، دفتر وکالت، باشگاه، کافه یا استودیو که بازدیدکننده را به تماس یا رزرو می‌رساند. تحویل: خدمات و گالری، دکمهٔ تماس و مسیریابی، فرم رزرو با هشدار پیامکی و پنل مدیریت. هزینه بر اساس بخش‌ها، رزرو و پیامک و زبان‌ها؛ رقم فقط در پیشنهاد کتبی. نمونه: /{lang}/work/law-landing. /{lang}/services/profession-landing",
+  "enabled": true,
+  "sort": 22
+}
