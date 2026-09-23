@@ -1,5 +1,5 @@
 {
-  "template_sha": "2126e81eed9ab5d81c74f3e2e9000d851c793794b612bf94e4607934e4e6a8eb",
+  "template_sha": "5c6512167b2eb7826a63aea79a2d60d64b1faac1f1ebe377489c6fea8480b4ca",
   "generated_from": "build.py",
   "tokens": [
     "TITLE",
@@ -43,6 +43,7 @@
     "SECTIONS_AFTER_ABOUT",
     "WORK",
     "SECTIONS_AFTER_WORK",
+    "NEWS",
     "FAQ",
     "SECTIONS_AFTER_FAQ",
     "CONTACT",

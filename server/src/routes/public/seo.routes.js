@@ -32,6 +32,10 @@ export function sitemapPaths() {
   // pages flagged noindex stay out; /contact is ours (the pages row is only its draft twin)
   const noindex = hasColumn('pages', 'noindex') ? ' AND noindex=0' : '';
   for (const s of safeSlugs('pages', `SELECT slug FROM pages WHERE published=1${noindex} ORDER BY id`)) if (s !== 'contact') paths.push(`/${s}`);
+  // news (news workstream): published items exist in both languages
+  const news = safeSlugs('news_items', "SELECT slug FROM news_items WHERE status='published' AND slug IS NOT NULL ORDER BY published_at DESC, id DESC LIMIT 5000");
+  if (news.length) paths.push('/news');
+  for (const s of news) paths.push(`/news/${s}`);
   return [...new Set(paths)];
 }
 

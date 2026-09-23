@@ -15,8 +15,8 @@ const LANGS = ['en', 'fa'];
 export const otherLang = lang => (lang === 'fa' ? 'en' : 'fa');
 
 const L = {
-  fa: { home: 'خانه', services: 'خدمات', work: 'نمونه‌کارها', contact: 'تماس' },
-  en: { home: 'Home', services: 'Services', work: 'Work', contact: 'Contact' },
+  fa: { home: 'خانه', services: 'خدمات', work: 'نمونه‌کارها', news: 'اخبار', contact: 'تماس' },
+  en: { home: 'Home', services: 'Services', work: 'Work', news: 'News', contact: 'Contact' },
 };
 
 // ---- site info ---------------------------------------------------------------
@@ -77,6 +77,11 @@ function publishedServices(lang) {
     .map(s => ({ href: `/${lang}/services/${s.slug}`, label: (lang === 'fa' ? s.title_fa : s.title_en) || s.title_en || s.slug }));
 }
 
+// the news section only gets a header link once something is published
+function hasPublishedNews() {
+  try { return !!db.prepare("SELECT 1 FROM news_items WHERE status='published' LIMIT 1").get(); } catch { return false; }
+}
+
 function build(lang) {
   const t = L[lang];
   const services = publishedServices(lang);
@@ -86,6 +91,7 @@ function build(lang) {
     ...(services.length ? [{ href: `/${lang}/services`, label: t.services }] : []),
     ...navPages(lang),
     ...navSections(lang),
+    ...(hasPublishedNews() ? [{ href: `/${lang}/news`, label: t.news }] : []),
   ];
   const nav = [
     { href: `/${lang}/`, label: t.home },
