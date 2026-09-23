@@ -1,0 +1,6 @@
+/* «پروژه‌ها» — loaded by views/projects.view.js. `views` layer; logical
+   properties only; prefix pj-. */
+@layer views {
+  .pj-cat { white-space: nowrap; }
+  .pj-intro { margin: 0 0 4px; padding: 10px 14px; border-inline-start: 2px solid var(--violet); background: var(--violet-soft); border-radius: var(--r-input); color: var(--dim); font-size: 13.5px; }
+}

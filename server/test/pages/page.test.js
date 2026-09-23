@@ -37,7 +37,7 @@ test('layout: lang/dir, canonical, hreflang en/fa/x-default, nav, language switc
   const styles = html.match(/<style/g) || [];
   assert.equal(styles.length, 1);
   const scripts = html.match(/<script[^>]*>/g) || [];
-  assert.ok(scripts.every(s => /src="\/assets\/site\/pages\.js/.test(s) || /type="application\/ld\+json"/.test(s)), scripts.join('\n'));
+  assert.ok(scripts.every(s => /src="\/assets\/site\/(pages|work)\.js/.test(s) || /type="application\/ld\+json"/.test(s)), scripts.join('\n'));
   assert.ok(!/\son[a-z]+=/i.test(html), 'no inline handlers');
 
   const en = await get('/en/work');

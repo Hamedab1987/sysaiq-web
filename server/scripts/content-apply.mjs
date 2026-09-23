@@ -3,12 +3,17 @@
 //
 //   node scripts/content-apply.mjs services [--publish] [--dry-run]
 //   node scripts/content-apply.mjs pages    [--publish] [--dry-run]
+//   node scripts/content-apply.mjs projects [--publish] [--dry-run]
 //
 // Reads content/<kind>/*.json, INSERTs missing rows and UPDATEs existing ones
 // (the id never changes). Idempotent: a row whose stored values already match
 // the file is left untouched (updated_at included). `published` is set to 1
 // only with --publish; without it an existing row keeps its flag and a new
 // row is created unpublished (the owner publishes from the admin panel).
+// A column the file sets but the table lacks (a migration not yet deployed)
+// is skipped with a warning instead of failing the whole run; `projects`
+// never touches image/cover_*/sort/published/show_on_home — those stay the
+// owner's (seed's) decision.
 // Goes through ./src/db/index.js, so DATA_DIR / .env decide which database
 // is touched and migrations run first — safe to run on the production server:
 //   DATA_DIR=/var/lib/sysaiq node scripts/content-apply.mjs services --publish
@@ -38,6 +43,15 @@ export const KINDS = {
       'show_in_footer', 'show_in_nav', 'noindex', 'version', 'effective_at', 'sort'],
     json: [],
     bool: ['show_in_footer', 'show_in_nav', 'noindex'],
+  },
+  projects: {
+    table: 'projects',
+    columns: ['title_en', 'title_fa', 'tagline_en', 'tagline_fa', 'desc_en', 'desc_fa',
+      'overview_en', 'overview_fa', 'problem_en', 'problem_fa', 'solution_en', 'solution_fa',
+      'outcome_en', 'outcome_fa', 'tech_en', 'tech_fa', 'industries', 'features', 'pages', 'gallery',
+      'category', 'service_slug', 'seo_title_en', 'seo_title_fa', 'seo_desc_en', 'seo_desc_fa', 'tags'],
+    json: ['industries', 'features', 'pages', 'gallery'],
+    bool: [],
   },
 };
 
@@ -81,22 +95,31 @@ function toRow(kind, raw) {
 
 const same = (a, b) => (a === null || a === undefined ? '' : String(a)) === (b === null || b === undefined ? '' : String(b));
 
-// returns {created, updated, unchanged, published} counts; `db` is a
-// better-sqlite3 handle so tests can point it at a scratch database
-export function applyKind(db, kind, { publish = false, dryRun = false, dir, log = () => {} } = {}) {
+// returns {created, updated, unchanged, published} counts (+ `skipped`: the
+// file columns the table does not have yet, only when there are any); `db`
+// is a better-sqlite3 handle so tests can point it at a scratch database
+export function applyKind(db, kind, { publish = false, dryRun = false, dir, log = () => {}, warn = log } = {}) {
   const spec = KINDS[kind];
   if (!spec) throw new Error(`unknown kind "${kind}" — use one of: ${Object.keys(KINDS).join(', ')}`);
   const entries = loadFiles(kind, dir);
   const stats = { created: 0, updated: 0, unchanged: 0, published: 0 };
   const select = db.prepare(`SELECT * FROM ${spec.table} WHERE slug=?`);
+  // columns the live table really has — a migration written in parallel may
+  // not be deployed yet, so a missing column is skipped (loudly), not fatal
+  const present = new Set(db.pragma(`table_info(${spec.table})`).map(c => c.name));
+  const skipped = spec.columns.filter(c => !present.has(c));
+  for (const c of skipped) warn(`! ${spec.table}.${c} does not exist yet — skipped (run migrations, then re-apply)`);
+  if (skipped.length) stats.skipped = skipped;
+  const stamp = present.has('updated_by');
 
   const run = db.transaction(() => {
     for (const { file, slug, raw } of entries) {
       const row = toRow(kind, raw);
+      for (const c of skipped) delete row[c];
       const existing = select.get(slug);
       if (!existing) {
-        const cols = ['slug', ...Object.keys(row), 'published', 'updated_by'];
-        const vals = [slug, ...Object.values(row), publish ? 1 : 0, 'content-apply'];
+        const cols = ['slug', ...Object.keys(row), 'published', ...(stamp ? ['updated_by'] : [])];
+        const vals = [slug, ...Object.values(row), publish ? 1 : 0, ...(stamp ? ['content-apply'] : [])];
         if (!dryRun) db.prepare(`INSERT INTO ${spec.table} (${cols.join(',')}) VALUES (${cols.map(() => '?').join(',')})`).run(...vals);
         stats.created++;
         if (publish) stats.published++;
@@ -109,8 +132,9 @@ export function applyKind(db, kind, { publish = false, dryRun = false, dir, log 
       const sets = changed.map(k => `${k}=?`);
       const vals = changed.map(k => row[k]);
       if (flip) { sets.push('published=1'); stats.published++; }
-      sets.push("updated_at=datetime('now')", 'updated_by=?');
-      vals.push('content-apply', existing.id);
+      sets.push("updated_at=datetime('now')");
+      if (stamp) { sets.push('updated_by=?'); vals.push('content-apply'); }
+      vals.push(existing.id);
       if (!dryRun) db.prepare(`UPDATE ${spec.table} SET ${sets.join(', ')} WHERE id=?`).run(...vals);
       stats.updated++;
       log(`~ ${slug}  (${changed.length ? changed.join(', ') : ''}${changed.length && flip ? ', ' : ''}${flip ? 'published' : ''})`);
@@ -134,8 +158,9 @@ if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const { config } = await import('../src/config.js');
   console.log(`[content-apply] ${kind} → ${join(config.dataDir, 'sysaiq.db')}${dryRun ? '  (dry run)' : ''}`);
   try {
-    const s = applyKind(db, kind, { publish, dryRun, log: m => console.log('  ' + m) });
+    const s = applyKind(db, kind, { publish, dryRun, log: m => console.log('  ' + m), warn: m => console.warn('  ' + m) });
     console.log(`[content-apply] ${s.total} files: ${s.created} created, ${s.updated} updated, ${s.unchanged} unchanged, ${s.published} newly published${dryRun ? ' (nothing written)' : ''}`);
+    if (s.skipped) console.warn(`[content-apply] ${s.skipped.length} column(s) skipped because the table lacks them: ${s.skipped.join(', ')}`);
     if (!dryRun && (s.created || s.updated)) console.log('[content-apply] restart the sysaiq service (or save anything in the admin) so the render cache picks the changes up');
   } catch (e) {
     console.error(`[content-apply] failed: ${e.message}`);

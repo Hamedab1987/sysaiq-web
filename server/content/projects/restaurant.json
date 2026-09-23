@@ -1,0 +1,50 @@
+{
+  "slug": "restaurant",
+  "category": "business-systems",
+  "service_slug": "web-app",
+  "tags": "OPERATIONS · REAL-TIME · MULTI-BRANCH",
+  "title_en": "Restaurant Operations Platform",
+  "title_fa": "پلتفرم مدیریت رستوران",
+  "tagline_en": "Every branch, every order, on one live screen.",
+  "tagline_fa": "همهٔ شعبه‌ها، همهٔ سفارش‌ها، روی یک صفحهٔ زنده.",
+  "desc_en": "A multi-branch control room: live order map, kitchen ticket queue, branch analytics, staff and inventory in one system.",
+  "desc_fa": "اتاق کنترل چندشعبه‌ای: نقشهٔ زندهٔ سفارش‌ها، صف تیکت آشپزخانه، آنالیز شعبه‌ها، پرسنل و انبار در یک سیستم.",
+  "overview_en": "A multi-branch operations platform that puts live orders on a map, the kitchen ticket queue, sales by branch, staff and inventory into a single control room. It closes the gap between what is happening on the floor and what management sees, so a delayed order, a thinning stock item or an underperforming branch surfaces while it can still be fixed.",
+  "overview_fa": "یک پلتفرم عملیاتی چندشعبه‌ای که سفارش‌های زنده روی نقشه، صف تیکت آشپزخانه، فروش به تفکیک شعبه، پرسنل و انبار را در یک اتاق کنترل واحد جمع می‌کند. فاصلهٔ میان آنچه در سالن و آشپزخانه می‌گذرد و آنچه مدیریت می‌بیند از بین می‌رود؛ سفارش عقب‌افتاده، موجودی رو به اتمام یا شعبهٔ کم‌فروش همان لحظه دیده می‌شود، نه در گزارش پایان روز.",
+  "problem_en": "A chain that runs several branches usually runs several disconnected tools with them: one app for delivery, a printer queue in each kitchen, a spreadsheet for stock and a group chat for everything else. Management sees the day only after it is over.\n\n- Delayed orders are discovered by the customer, not the kitchen.\n- Stock runs out in one branch while another has plenty.\n- Branch comparisons take hours of manual report work.",
+  "problem_fa": "زنجیره‌ای که چند شعبه دارد معمولاً چند ابزار جدا از هم را هم با خود می‌کشد: یک اپ برای پیک، یک صف پرینتر در هر آشپزخانه، یک فایل Excel برای انبار و یک گروه پیام‌رسان برای بقیهٔ کار‌ها. مدیریت روز را وقتی می‌بیند که تمام شده است.\n\n- سفارش عقب‌افتاده را مشتری کشف می‌کند، نه آشپزخانه.\n- موجودی در یک شعبه تمام می‌شود در حالی که شعبهٔ دیگر اضافه دارد.\n- مقایسهٔ شعبه‌ها ساعت‌ها کار دستی روی گزارش می‌خواهد.",
+  "solution_en": "SysaiQ built one platform on a single order model. Every order, ticket, driver and stock movement writes to the same database and is pushed live to every screen that needs it: the map, the kitchen display, the analytics view.\n\n- Each ticket receives an estimated prep time from its item mix and the current kitchen load, and is flagged early when it is likely to run late.\n- Inventory is tracked per branch and per ingredient; low stock in one location suggests a transfer from the nearest branch that has it.\n- An assistant answers plain-language questions about the live data and returns the chart and the rows behind it.",
+  "solution_fa": "SysaiQ یک پلتفرم واحد روی یک مدل سفارش یکپارچه ساخت. هر سفارش، تیکت، پیک و جابه‌جایی موجودی در همان پایگاه داده ثبت می‌شود و زنده به هر صفحه‌ای که لازمش دارد می‌رسد: نقشه، نمایشگر آشپزخانه و نمای آنالیز.\n\n- هر تیکت از روی ترکیب آیتم‌ها و بار فعلی آشپزخانه یک زمان آماده‌سازی تخمینی می‌گیرد و اگر احتمال تأخیر داشته باشد، زود علامت می‌خورد.\n- موجودی به تفکیک شعبه و مادهٔ اولیه دنبال می‌شود؛ کمبود در یک شعبه، انتقال از نزدیک‌ترین شعبهٔ دارای موجودی را پیشنهاد می‌دهد.\n- یک دستیار به پرسش‌های زبان طبیعی دربارهٔ دادهٔ زنده پاسخ می‌دهد و نمودار را همراه با ردیف‌های پشت آن برمی‌گرداند.",
+  "outcome_en": "The business can now see every branch as one operation. A late ticket, a stock gap or a weak branch is visible while the shift is still running, so the response happens on the floor instead of in next week's meeting. Management questions are answered from live data rather than from a report someone has to build.",
+  "outcome_fa": "کسب‌وکار حالا همهٔ شعبه‌ها را به‌عنوان یک عملیات واحد می‌بیند. تیکت دیرشده، کمبود موجودی یا شعبهٔ ضعیف در همان شیفت دیده می‌شود و واکنش در سالن اتفاق می‌افتد، نه در جلسهٔ هفتهٔ بعد. پرسش‌های مدیریتی از دادهٔ زنده پاسخ می‌گیرند، نه از گزارشی که کسی باید بسازد.",
+  "tech_en": "- **Node.js / Express** API with a single order and ticket model; live updates are pushed to every open screen.\n- **SQLite** schema per branch, ticket, driver and stock movement, with indexes tuned for the live views.\n- **Vanilla JavaScript** control room: the map layer, the kitchen display and the analytics view share one data feed.\n- **OpenAI API** behind the ask-your-data assistant, grounded only in the business's own rows (RAG) and limited to read-only queries.\n- Role-based access so branch managers see their branch and head office sees all of them.",
+  "tech_fa": "- API روی **Node.js / Express** با یک مدل واحد برای سفارش و تیکت؛ به‌روزرسانی‌ها زنده به هر صفحهٔ باز ارسال می‌شوند.\n- طرح دادهٔ **SQLite** برای شعبه، تیکت، پیک و جابه‌جایی موجودی، با ایندکس‌های تنظیم‌شده برای نما‌های زنده.\n- اتاق کنترل با **JavaScript خالص**: لایهٔ نقشه، نمایشگر آشپزخانه و نمای آنالیز از یک جریان دادهٔ مشترک تغذیه می‌شوند.\n- **OpenAI API** پشت دستیار پرسش از داده، فقط بر پایهٔ ردیف‌های خود کسب‌وکار (RAG) و محدود به پرس‌وجوی فقط‌خواندنی.\n- سطح دسترسی نقش‌محور: مدیر شعبه فقط شعبهٔ خودش را می‌بیند و دفتر مرکزی همه را.",
+  "industries": [
+    { "en": "Multi-branch restaurant chains and franchises", "fa": "زنجیره‌ها و فرنچایز‌های رستورانی چندشعبه" },
+    { "en": "Cloud and ghost kitchens running several virtual brands", "fa": "آشپزخانه‌های ابری با چند برند مجازی" },
+    { "en": "Cafe and quick-service groups", "fa": "مجموعه‌های کافه و فست‌فود" },
+    { "en": "Central-kitchen catering and food production", "fa": "کترینگ و تولید غذا با آشپزخانهٔ مرکزی" }
+  ],
+  "features": [
+    { "title_en": "Estimated prep time per ticket", "title_fa": "زمان آماده‌سازی تخمینی برای هر تیکت", "desc_en": "Each incoming ticket gets an estimate from its item mix and the current kitchen load, and is flagged before it runs late, not after a timer has counted up.", "desc_fa": "هر تیکت ورودی از روی ترکیب آیتم‌ها و بار فعلی آشپزخانه یک تخمین می‌گیرد و پیش از دیر شدن علامت می‌خورد، نه بعد از آن‌که تایمر بالا رفته باشد." },
+    { "title_en": "Cross-branch stock balancing", "title_fa": "توازن موجودی بین شعبه‌ها", "desc_en": "Stock is visible across every location in real time; a shortage in one branch suggests a transfer from the nearest branch that has it, or reroutes new orders.", "desc_fa": "موجودی همهٔ شعبه‌ها به‌صورت real-time دیده می‌شود؛ کمبود در یک شعبه، انتقال از نزدیک‌ترین شعبهٔ دارای موجودی را پیشنهاد می‌دهد یا سفارش‌های جدید را بازمسیردهی می‌کند." },
+    { "title_en": "Ask-your-data assistant", "title_fa": "دستیار پرسش از داده", "desc_en": "A built-in assistant answers plain-language questions such as which branch had the most refunds this week, and returns the chart and the underlying rows.", "desc_fa": "یک دستیار داخلی به پرسش‌هایی مثل «این هفته کدام شعبه بیشترین مرجوعی را داشت؟» پاسخ می‌دهد و نمودار را همراه با ردیف‌های داده برمی‌گرداند." },
+    { "title_en": "A live map you can act on", "title_fa": "نقشهٔ زنده‌ای که از روی آن کار می‌کنید", "desc_en": "Hold, reassign or reroute a driver and rebalance kitchen load directly from the map; every change reaches all branches instantly.", "desc_fa": "نگه‌داشتن سفارش، جابه‌جایی یا بازمسیردهی پیک و متوازن‌کردن بار آشپزخانه مستقیماً از روی نقشه انجام می‌شود و هر تغییر بلافاصله به همهٔ شعبه‌ها می‌رسد." },
+    { "title_en": "Staff cost against live volume", "title_fa": "هزینهٔ پرسنل در برابر حجم زندهٔ سفارش", "desc_en": "Roster, clock-in status and per-shift labour cost are mapped against order volume for each branch, so over- and under-staffing show up on the same screen.", "desc_fa": "برنامهٔ کاری، وضعیت حضور و هزینهٔ نیروی کار هر شیفت در برابر حجم سفارش هر شعبه قرار می‌گیرد تا کمبود یا اضافهٔ نیرو روی همان صفحه دیده شود." }
+  ],
+  "pages": [
+    { "name_en": "Live Orders Map", "name_fa": "نقشهٔ سفارش‌های زنده", "desc_en": "Every active order and driver across all branches, with hold and reroute controls.", "desc_fa": "همهٔ سفارش‌ها و پیک‌های فعال در همهٔ شعبه‌ها، با کنترل نگه‌داشتن و بازمسیردهی." },
+    { "name_en": "Kitchen Ticket Queue", "name_fa": "صف تیکت آشپزخانه", "desc_en": "A station-by-station display with the estimated prep time and late-risk warning on each ticket.", "desc_fa": "نمایشگر به تفکیک ایستگاه که زمان آماده‌سازی تخمینی و هشدار تأخیر را روی هر تیکت نشان می‌دهد." },
+    { "name_en": "Sales by Branch", "name_fa": "فروش به تفکیک شعبه", "desc_en": "Side-by-side branch performance on revenue, average ticket, refunds and peak hours, down to any single order.", "desc_fa": "مقایسهٔ کنار هم شعبه‌ها روی درآمد، میانگین سفارش، مرجوعی و ساعت‌های اوج، تا سطح هر سفارش." },
+    { "name_en": "Inventory and Central Kitchen", "name_fa": "انبار و آشپزخانهٔ مرکزی", "desc_en": "Live stock per branch with low-stock alerts and one-click transfer suggestions.", "desc_fa": "موجودی زندهٔ هر شعبه با هشدار اتمام و پیشنهاد انتقال یک‌کلیکی." },
+    { "name_en": "Staff and Shifts", "name_fa": "پرسنل و شیفت‌ها", "desc_en": "Roster, clock-in status and per-shift labour cost against live order volume.", "desc_fa": "برنامهٔ کاری، وضعیت حضور و هزینهٔ نیروی کار هر شیفت در برابر حجم زندهٔ سفارش." }
+  ],
+  "gallery": [
+    { "image": "/assets/projects/restaurant-full.jpg", "caption_en": "Control room with the live orders map and kitchen queue (English UI)", "caption_fa": "اتاق کنترل با نقشهٔ سفارش‌های زنده و صف آشپزخانه (رابط انگلیسی)" },
+    { "image": "/assets/projects/restaurant-fa-full.jpg", "caption_en": "The same control room in the Persian UI", "caption_fa": "همان اتاق کنترل در رابط فارسی" }
+  ],
+  "seo_title_en": "Restaurant Operations Platform — SysaiQ",
+  "seo_title_fa": "پلتفرم مدیریت رستوران چندشعبه‌ای — SysaiQ",
+  "seo_desc_en": "A multi-branch restaurant operations platform built by SysaiQ: live order map, kitchen ticket queue, branch analytics, staff and inventory in one control room.",
+  "seo_desc_fa": "پلتفرم مدیریت رستوران چندشعبه‌ای ساختهٔ SysaiQ: نقشهٔ زندهٔ سفارش‌ها، صف تیکت آشپزخانه، آنالیز شعبه‌ها، پرسنل و انبار در یک اتاق کنترل."
+}

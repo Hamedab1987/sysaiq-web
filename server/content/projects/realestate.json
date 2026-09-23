@@ -1,0 +1,49 @@
+{
+  "slug": "realestate",
+  "category": "ai-automation",
+  "service_slug": "ai-agent",
+  "tags": "CRM · AI MATCHING · MAP",
+  "title_en": "Real-Estate Agency CRM",
+  "title_fa": "CRM آژانس املاک",
+  "tagline_en": "Every listing, buyer and deal in one intelligent workspace.",
+  "tagline_fa": "همهٔ ملک‌ها، خریدار‌ها و معامله‌ها در یک فضای کاری هوشمند.",
+  "desc_en": "A CRM for agencies: listings on a map, a buyer pipeline, AI buyer-to-property matching and a viewing scheduler in one system.",
+  "desc_fa": "CRM اختصاصی آژانس املاک: ملک‌ها روی نقشه، pipeline خریداران، matching هوشمند خریدار و ملک و تقویم بازدید در یک سیستم.",
+  "overview_en": "A purpose-built CRM for real-estate agencies that unifies property listings, buyer pipelines and deal analytics in a single system. It replaces scattered spreadsheets and messaging threads with a shared source of truth, so every agent knows which client fits which property and where every deal stands.",
+  "overview_fa": "یک CRM اختصاصی برای آژانس‌های املاک که فهرست ملک‌ها، pipeline خریداران و آنالیز معامله‌ها را در یک سیستم واحد کنار هم می‌آورد. به‌جای فایل‌های Excel پراکنده و گفت‌وگو‌های جدا، یک منبع مشترک و قابل اعتماد می‌سازد تا هر مشاور بداند کدام مشتری به کدام ملک می‌خورد و هر معامله در چه مرحله‌ای است.",
+  "problem_en": "In most agencies the listings live in one place, the buyers in another and the deals in an agent's head. A good match is found by memory, a viewing is booked by phone and the pipeline value is a guess at the end of the month.\n\n- New listings are not compared against active buyers in time.\n- Leads go cold because no one owns the follow-up.\n- Managers cannot see which deals are genuinely likely to close.",
+  "problem_fa": "در بیشتر آژانس‌ها فهرست ملک‌ها یک‌جاست، خریدار‌ها جای دیگر و معامله‌ها در ذهن مشاور. تطبیق خوب از حافظه پیدا می‌شود، بازدید با تلفن هماهنگ می‌شود و ارزش pipeline در پایان ماه یک حدس است.\n\n- ملک‌های جدید به‌موقع با خریداران فعال مقایسه نمی‌شوند.\n- سرنخ‌ها سرد می‌شوند چون پیگیری صاحب مشخصی ندارد.\n- مدیر نمی‌داند کدام معامله‌ها واقعاً احتمال بسته‌شدن دارند.",
+  "solution_en": "SysaiQ built the CRM around one record per property, one per buyer and one per deal, all linked. A matching engine scores every new listing against the active buyers by budget, location and stated preferences and surfaces the top candidates the moment a property goes live.\n\n- The buyer pipeline is a kanban with deal value on every card; stage changes update the forecast immediately.\n- Each property sits on an interactive map with neighbourhood price context, so agents pitch with data.\n- Viewings are booked from the listing itself and appear on the buyer timeline, the agent calendar and the deal record.",
+  "solution_fa": "SysaiQ این CRM را حول یک رکورد برای هر ملک، یک رکورد برای هر خریدار و یک رکورد برای هر معامله ساخت که همه به هم متصل‌اند. یک موتور matching هر ملک جدید را بر اساس بودجه، موقعیت و ترجیحات اعلام‌شدهٔ خریداران فعال امتیازدهی می‌کند و لحظهٔ ثبت ملک، مناسب‌ترین گزینه‌ها را جلوی مشاور می‌آورد.\n\n- pipeline خریداران یک برد kanban است با ارزش معامله روی هر کارت؛ تغییر مرحله، پیش‌بینی را همان لحظه به‌روز می‌کند.\n- هر ملک روی نقشهٔ تعاملی با روند قیمت محله قرار می‌گیرد تا مشاور با داده صحبت کند، نه حدس.\n- بازدید از روی خود ملک رزرو می‌شود و در timeline خریدار، تقویم مشاور و پروندهٔ معامله ثبت می‌شود.",
+  "outcome_en": "The agency can now introduce the right property to the right buyer as soon as it is listed, instead of relying on whoever remembers. Follow-ups have an owner and a date, viewings no longer collide, and management reads pipeline value from live stages rather than from a monthly estimate.",
+  "outcome_fa": "آژانس حالا می‌تواند ملک درست را به خریدار درست، همان لحظهٔ ثبت معرفی کند، نه به اتکای حافظهٔ یک نفر. هر پیگیری مسئول و تاریخ دارد، بازدید‌ها با هم تداخل نمی‌کنند و مدیریت ارزش pipeline را از مرحله‌های زنده می‌خواند، نه از برآورد ماهانه.",
+  "tech_en": "- **Node.js / Express** API with linked property, buyer and deal records and an audit trail on stage changes.\n- **SQLite** with spatial and price indexes for the map view and the comparable-sales lookups.\n- **Vanilla JavaScript** front end: the map, the kanban pipeline and the calendar are one application sharing a live feed.\n- **OpenAI API** in the matching engine: structured filters (budget, area, rooms) run in SQL first; preference text is compared through embeddings to rank the remaining candidates.\n- Automated client reminders sent through the configured SMS provider.",
+  "tech_fa": "- API روی **Node.js / Express** با رکورد‌های به‌هم‌متصل ملک، خریدار و معامله و ثبت تاریخچهٔ تغییر مرحله.\n- **SQLite** با ایندکس‌های مکانی و قیمتی برای نمای نقشه و جست‌وجوی فروش‌های مشابه.\n- رابط کاربری با **JavaScript خالص**: نقشه، برد kanban و تقویم یک برنامهٔ واحد با یک جریان دادهٔ زنده‌اند.\n- **OpenAI API** در موتور matching: فیلتر‌های ساخت‌یافته (بودجه، منطقه، تعداد اتاق) اول در SQL اجرا می‌شوند؛ متن ترجیحات از طریق embedding با گزینه‌های باقی‌مانده مقایسه و رتبه‌بندی می‌شود.\n- یادآوری خودکار به مشتری از طریق سرویس SMS پیکربندی‌شده.",
+  "industries": [
+    { "en": "Residential real-estate brokerages", "fa": "آژانس‌های املاک مسکونی" },
+    { "en": "Commercial property agencies", "fa": "آژانس‌های املاک تجاری و اداری" },
+    { "en": "High-end estate firms", "fa": "دفاتر املاک لوکس" },
+    { "en": "Developers with an in-house sales team", "fa": "سازنده‌ها و انبوه‌سازان با تیم فروش داخلی" }
+  ],
+  "features": [
+    { "title_en": "Buyer-to-property matching", "title_fa": "matching خریدار و ملک", "desc_en": "Each new listing is scored against active buyers by budget, location and preferences; the top matches reach the agent the moment the property goes live.", "desc_fa": "هر ملک جدید بر اساس بودجه، موقعیت و ترجیحات خریداران فعال امتیاز می‌گیرد و مناسب‌ترین گزینه‌ها همان لحظهٔ ثبت ملک به مشاور می‌رسند." },
+    { "title_en": "Live deal-value forecast", "title_fa": "پیش‌بینی زندهٔ ارزش معامله‌ها", "desc_en": "Pipeline analytics weight each deal by stage and the agency's own close history to project expected commission for the month and quarter.", "desc_fa": "آنالیز pipeline هر معامله را بر اساس مرحله و سابقهٔ بسته‌شدن معامله‌های خود آژانس وزن می‌دهد و کمیسیون مورد انتظار ماه و فصل را تخمین می‌زند." },
+    { "title_en": "Map-first listings", "title_fa": "ملک‌ها روی نقشه", "desc_en": "Every property sits on an interactive map layered with neighbourhood price trends and comparable sales in the same view.", "desc_fa": "هر ملک روی نقشهٔ تعاملی قرار می‌گیرد و روند قیمت محله و فروش‌های مشابه در همان نما دیده می‌شود." },
+    { "title_en": "Integrated viewing scheduler", "title_fa": "تقویم بازدید یکپارچه", "desc_en": "Bookings, agent availability and automated client reminders live inside the CRM, so a viewing updates the buyer timeline and the deal record at once.", "desc_fa": "رزرو، در دسترس‌بودن مشاور و یادآوری خودکار مشتری داخل خود CRM است؛ یک بازدید، timeline خریدار و پروندهٔ معامله را هم‌زمان به‌روز می‌کند." }
+  ],
+  "pages": [
+    { "name_en": "Listings Gallery", "name_fa": "گالری ملک‌ها", "desc_en": "Browse and filter every property with photos, price and status, as a grid or on the map.", "desc_fa": "مرور و فیلتر همهٔ ملک‌ها با عکس، قیمت و وضعیت، به‌صورت گرید یا روی نقشه." },
+    { "name_en": "Buyer Pipeline", "name_fa": "pipeline خریداران", "desc_en": "A drag-and-drop board from lead to closed, with deal value on every card.", "desc_fa": "برد drag-and-drop از سرنخ تا بسته‌شدن، با ارزش معامله روی هر کارت." },
+    { "name_en": "Property Detail", "name_fa": "جزئیات ملک", "desc_en": "Full listing with photo gallery, map location, area price trend and matched buyers side by side.", "desc_fa": "صفحهٔ کامل ملک با گالری عکس، موقعیت روی نقشه، روند قیمت منطقه و خریداران match‌شده کنار هم." },
+    { "name_en": "Analytics Dashboard", "name_fa": "داشبورد آنالیز", "desc_en": "Deal-value forecasts, conversion by stage and agent performance for the month and quarter.", "desc_fa": "پیش‌بینی ارزش معامله‌ها، نرخ تبدیل به تفکیک مرحله و عملکرد مشاوران برای ماه و فصل." },
+    { "name_en": "Viewing Scheduler", "name_fa": "تقویم بازدید", "desc_en": "Booked viewings tied to listings and agents, with automated reminders sent to clients.", "desc_fa": "بازدید‌های رزروشده متصل به ملک و مشاور، با یادآوری خودکار برای مشتری." }
+  ],
+  "gallery": [
+    { "image": "/assets/projects/realestate-full.jpg", "caption_en": "Listings on the map beside the buyer pipeline (English UI)", "caption_fa": "ملک‌ها روی نقشه در کنار pipeline خریداران (رابط انگلیسی)" },
+    { "image": "/assets/projects/realestate-fa-full.jpg", "caption_en": "The same workspace in the Persian UI", "caption_fa": "همان فضای کاری در رابط فارسی" }
+  ],
+  "seo_title_en": "Real-Estate Agency CRM with AI Matching — SysaiQ",
+  "seo_title_fa": "CRM آژانس املاک با matching هوشمند — SysaiQ",
+  "seo_desc_en": "A real-estate CRM built by SysaiQ: listings on a map, a buyer pipeline, AI buyer-to-property matching, deal forecasting and an integrated viewing scheduler.",
+  "seo_desc_fa": "CRM آژانس املاک ساختهٔ SysaiQ: ملک‌ها روی نقشه، pipeline خریداران، matching هوشمند خریدار و ملک، پیش‌بینی معامله‌ها و تقویم بازدید یکپارچه."
+}
