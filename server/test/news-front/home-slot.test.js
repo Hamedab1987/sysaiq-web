@@ -82,7 +82,8 @@ test('home page: #news sits right after the work showcase, once, no script in th
     const [work, news, next] = ['id="work"', 'id="news"', 'id="contact"'].map(s => html.indexOf(s));
     assert.ok(work > 0 && work < news && news < next, `${lang}: order work → news → contact`);
     // the slot adds no executable inline script (the home CSP hashes the template's own)
-    const section = html.slice(html.indexOf('<link rel="stylesheet" href="/assets/site/news.css'), next);
+    // (up to the end of #news: the NEWS_FEED carousel under the FAQ loads its own external script)
+    const section = html.slice(html.indexOf('<link rel="stylesheet" href="/assets/site/news.css'), html.indexOf('</section>', news));
     assert.ok(!/<script\b/.test(section) && !/<[^>]+\son[a-z]+=/i.test(section), `${lang}: no script/handler in the block`);
   }
 });

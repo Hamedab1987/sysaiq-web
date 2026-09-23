@@ -8,7 +8,7 @@
 // A review card puts the source text next to the editable fa/en draft;
 // «انتشار» saves unsaved edits first. Every form feeds the dirty guard
 // (createForm dirtyToken → topbar counter + router leave prompt).
-import { h, icon, clear, pageHeader, card, tabs, badge, dataTable, filterBar, confirm, toast, modal, drawer, createForm, makeField, field, selectField, switchField, numberField, tagsField, bilingualField, skeleton, errorState, emptyState, extLink, toFaDigits, formatJalali, parseServerDate, truncate } from '../ui.js';
+import { h, icon, clear, pageHeader, card, tabs, badge, dataTable, filterBar, confirm, toast, modal, drawer, createForm, makeField, field, selectField, switchField, numberField, tagsField, bilingualField, imageField, skeleton, errorState, emptyState, extLink, toFaDigits, formatJalali, parseServerDate, truncate } from '../ui.js';
 import { STR } from '../strings.js';
 import { api } from '../api.js';
 
@@ -33,6 +33,8 @@ const T = {
     title: 'عنوان', summary: 'خلاصه', why: 'چرا مهم است؟', category: 'دسته', importance: 'اهمیت',
     tags: 'برچسب‌ها (لاتین)', tagsHint: 'کلیدواژه‌های کوتاه انگلیسی، مثل gpt یا robotics — حداکثر ۸ مورد.',
     tagsBad: 'فقط حروف لاتین، رقم، فاصله و . + -', stars: n => `اهمیت ${fa(n)} از ۵`, noStars: 'تعیین نشده',
+    image: 'تصویر نمایشی (اختیاری)',
+    imageHint: 'روی کارت خبر در صفحهٔ اصلی و بالای صفحهٔ خبر نمایش داده می‌شود؛ نسبت ۱۶:۹ پیشنهاد می‌شود. بدون تصویر، طرح اختصاصی SysaiQ نمایش داده می‌شود. فقط تصویری بگذارید که حق انتشارش را دارید.',
   },
   srcLabel: 'متن منبع', draftLabel: 'پیش‌نویس برای انتشار', readSource: 'خبر در منبع اصلی', more: 'نمایش کامل', less: 'نمایش کوتاه',
   noExcerpt: 'منبع متنی جز عنوان نداده است.', select: t => `انتخاب «${t}»`,
@@ -206,7 +208,7 @@ let formSeq = 0;
 const liveForms = new Set();
 const valuesOf = it => ({
   title_fa: it.title_fa, title_en: it.title_en, summary_fa: it.summary_fa, summary_en: it.summary_en, why_fa: it.why_fa, why_en: it.why_en,
-  category: it.category, importance: it.importance, tags: Array.isArray(it.tags) ? it.tags : [],
+  category: it.category, importance: it.importance, tags: Array.isArray(it.tags) ? it.tags : [], image: it.image || '',
 });
 
 // opts: { selectable, selected, onSelect(id, bool), onGone(item, kind), onUpdated(item), aiEnabled: () => bool }
@@ -220,6 +222,7 @@ function reviewCard(item, opts = {}) {
   const importance = starsField({ name: 'importance', label: T.f.importance });
   const tags = tagsField({ name: 'tags', label: T.f.tags, ltr: true, max: LIMITS.tags, maxLength: LIMITS.tag, hint: T.f.tagsHint,
     rules: [v => (Array.isArray(v) && v.some(t => !TAG_RE.test(t)) ? T.f.tagsBad : null)] });
+  const image = imageField({ name: 'image', label: T.f.image, hint: T.f.imageHint });
 
   const check = h('input.nv-check__box', { type: 'checkbox', checked: !!opts.selected });
   check.addEventListener('change', () => { el.classList.toggle('is-selected', check.checked); opts.onSelect?.(cur.id, check.checked); });
@@ -229,9 +232,9 @@ function reviewCard(item, opts = {}) {
   const el = h('article.nv-item', { dataset: { id: item.id }, tabindex: '-1', 'aria-label': titleOf(item) });
 
   const form = createForm({
-    fields: [title, summary, why, category, importance, tags],
+    fields: [title, summary, why, category, importance, tags, image],
     dirtyToken: `news-item-${item.id}-${++formSeq}`,
-    render: () => h('div.nv-form', title.el, summary.el, why.el, h('div.nv-form__row', category.el, importance.el), tags.el),
+    render: () => h('div.nv-form', title.el, summary.el, why.el, h('div.nv-form__row', category.el, importance.el), tags.el, image.el),
     values: valuesOf(item),
     onDirty: d => { el.classList.toggle('is-dirty', d); renderFoot(); },
     onSubmit: async () => {
@@ -306,7 +309,7 @@ function reviewCard(item, opts = {}) {
 
   async function save() {
     const v = form.getValues();
-    const body = { title_fa: v.title_fa, title_en: v.title_en, summary_fa: v.summary_fa, summary_en: v.summary_en, why_fa: v.why_fa, why_en: v.why_en, category: v.category, tags: v.tags };
+    const body = { title_fa: v.title_fa, title_en: v.title_en, summary_fa: v.summary_fa, summary_en: v.summary_en, why_fa: v.why_fa, why_en: v.why_en, category: v.category, tags: v.tags, image: v.image || '' };
     if (v.importance) body.importance = v.importance;
     const r = await api.put(`/news/items/${cur.id}`, body);
     update(r.item);

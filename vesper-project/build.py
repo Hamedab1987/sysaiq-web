@@ -50,8 +50,8 @@ RUNTIME_BANNER = "<!-- sysaiq runtime template; do not edit -->\n"
 # slot names in template order; the renderer fills {{SLOT_<name>}}
 SLOTS = [
     "HEAD_META", "JSONLD", "NAV_EXTRA", "SECTIONS_AFTER_ABOUT", "WORK",
-    "SECTIONS_AFTER_WORK", "NEWS", "FAQ", "SECTIONS_AFTER_FAQ", "CONTACT",
-    "FOOTER_LINKS", "FOOTER_TRUST", "SITE_DATA",
+    "SECTIONS_AFTER_WORK", "NEWS", "FAQ", "NEWS_FEED", "SECTIONS_AFTER_FAQ",
+    "CONTACT", "FOOTER_LINKS", "FOOTER_TRUST", "SITE_DATA",
 ]
 # tokens that are not copy: resolved by this script in both flavours
 PLUMBING = [

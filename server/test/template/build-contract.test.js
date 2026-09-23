@@ -21,7 +21,7 @@ const VESPER = join(REPO, 'vesper-project');
 const TEMPLATES = join(REPO, 'server', 'templates');
 
 const SLOTS = ['HEAD_META', 'JSONLD', 'NAV_EXTRA', 'SECTIONS_AFTER_ABOUT', 'WORK', 'SECTIONS_AFTER_WORK', 'NEWS',
-  'FAQ', 'SECTIONS_AFTER_FAQ', 'CONTACT', 'FOOTER_LINKS', 'FOOTER_TRUST', 'SITE_DATA'];
+  'FAQ', 'NEWS_FEED', 'SECTIONS_AFTER_FAQ', 'CONTACT', 'FOOTER_LINKS', 'FOOTER_TRUST', 'SITE_DATA'];
 const SOURCES = ['token', 'slot:WORK', 'slot:FAQ', 'slot:CONTACT', 'slot:SITE_DATA'];
 const GROUPS = ['سئو و متا', 'منو و سربرگ', 'هیرو', 'توانمندی‌ها', 'گستره', 'ذهن', 'چه می‌سازم', 'نمونه‌کارها',
   'سؤالات متداول', 'تماس', 'پانویس', 'دستیار گفت‌وگو'];

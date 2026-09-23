@@ -70,6 +70,18 @@ router.get('/items/:id', (req, res) => {
   res.json({ item: formatItem(it), source: source ? { id: source.id, name: source.name, url: source.url } : null, missing: Object.keys(missingForPublish(it)) });
 });
 
+// optional display image: '' clears it; otherwise a site path (not
+// protocol-relative, no backslash — "/\host" is "//host" to a browser) or
+// an https URL without quotes/brackets/spaces — the same rule as project covers
+const IMAGE_RE = /^\/(?![/\\])[^\s"'<>\\]*$/;
+function image(x, key) {
+  const s = v.str({ max: 2048 })(x, key);
+  if (!s || IMAGE_RE.test(s)) return s;
+  const u = v.url({ https: true, max: 2048 })(s, key);
+  if (/["'<>\\\s]/.test(u)) throw new HttpError(422, 'validation', 'Validation failed', { [key]: `${key} must be a site path or an https URL` });
+  return u;
+}
+
 const EDIT = {
   title_en: v.str({ max: LIMITS.title }), title_fa: v.str({ max: LIMITS.title }),
   summary_en: v.str({ max: LIMITS.summary }), summary_fa: v.str({ max: LIMITS.summary }),
@@ -78,6 +90,7 @@ const EDIT = {
   importance: v.int({ min: 1, max: 5 }),
   tags: v.array(v.str({ max: LIMITS.tag, pattern: /^[a-z0-9.+ -]*$/i }), { max: 8 }),
   slug: v.slug({ max: 64 }),
+  image,
 };
 
 router.put('/items/:id', (req, res) => {

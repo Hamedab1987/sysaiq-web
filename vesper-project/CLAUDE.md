@@ -94,8 +94,10 @@ Also written next to the templates:
 ### Slots (template order)
 `HEAD_META`, `JSONLD` (end of `<head>`) · `NAV_EXTRA` (inside the header
 `<nav>`, after the fixed links) · `SECTIONS_AFTER_ABOUT` (after `#living`) ·
-`WORK` (wraps the whole `#work` section) · `SECTIONS_AFTER_WORK` · `FAQ`
-(wraps the whole `#faq` section) · `SECTIONS_AFTER_FAQ` · `CONTACT` (only the
+`WORK` (wraps the whole `#work` section) · `SECTIONS_AFTER_WORK` · `NEWS`
+(the compact news block, empty until something is published) · `FAQ`
+(wraps the whole `#faq` section) · `NEWS_FEED` (the newsroom carousel under
+the FAQ, empty until something is published) · `SECTIONS_AFTER_FAQ` · `CONTACT` (only the
 button row under the contact h2; eyebrow + h2 stay in the template) ·
 `FOOTER_LINKS`, `FOOTER_TRUST` (between `.foot-main` and `.foot-base`) ·
 `SITE_DATA` (just before the three.js tag; its default content is the

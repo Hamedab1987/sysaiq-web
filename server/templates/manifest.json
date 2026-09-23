@@ -1,5 +1,5 @@
 {
-  "template_sha": "5c6512167b2eb7826a63aea79a2d60d64b1faac1f1ebe377489c6fea8480b4ca",
+  "template_sha": "ecf1e70717f6276c794c5c292b165fae74d85ee361a49cd13ecef921db331849",
   "generated_from": "build.py",
   "tokens": [
     "TITLE",
@@ -45,6 +45,7 @@
     "SECTIONS_AFTER_WORK",
     "NEWS",
     "FAQ",
+    "NEWS_FEED",
     "SECTIONS_AFTER_FAQ",
     "CONTACT",
     "FOOTER_LINKS",
