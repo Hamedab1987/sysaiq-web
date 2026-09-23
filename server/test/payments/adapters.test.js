@@ -152,12 +152,12 @@ test('mock: verify answers from the bank decision, never from the callback statu
   assert.equal((await mock.verify({}, { authority: 'Mnope' })).code, 'unknown_authority');
 });
 
-test('registry: four gateways in dev, mock refused in production (fresh process with NODE_ENV=production)', () => {
-  assert.deepEqual(gateways().map(g => g.id), ['zarinpal', 'payping', 'zibal', 'mock']);
+test('registry: five gateways in dev, mock refused in production (fresh process with NODE_ENV=production)', () => {
+  assert.deepEqual(gateways().map(g => g.id), ['zarinpal', 'payping', 'zibal', 'sep', 'mock']);
   assert.equal(hasGateway('mock'), true);
   assert.equal(getGateway('mock').id, 'mock');
   assert.throws(() => getGateway('nope'), /unknown gateway/);
-  assert.deepEqual(gateways({ env: 'production' }).map(g => g.id), ['zarinpal', 'payping', 'zibal']);
+  assert.deepEqual(gateways({ env: 'production' }).map(g => g.id), ['zarinpal', 'payping', 'zibal', 'sep']);
   assert.throws(() => getGateway('mock', { env: 'production' }), /not available in production/);
   const code = `import('./src/payments/registry.js').then(m => { console.log(JSON.stringify({ ids: m.gatewayIds(), has: m.hasGateway('mock') })); try { m.getGateway('mock'); console.log('NOT-REFUSED'); } catch (e) { console.log('refused:' + e.code); } })`;
   const r = spawnSync(process.execPath, ['--input-type=module', '-e', code], {
@@ -165,6 +165,6 @@ test('registry: four gateways in dev, mock refused in production (fresh process 
     env: { ...process.env, NODE_ENV: 'production', JWT_SECRET: 'x'.repeat(32), SECRETS_KEY: Buffer.from(Array.from({ length: 32 }, (_, i) => i + 1)).toString('base64'), ADMIN_PASS: 'strong-enough-pass-123', DATA_DIR: '/tmp/sysaiq-registry-test' },
   });
   assert.equal(r.status, 0, r.stderr);
-  assert.match(r.stdout, /"ids":\["zarinpal","payping","zibal"\],"has":false/);
+  assert.match(r.stdout, /"ids":\["zarinpal","payping","zibal","sep"\],"has":false/);
   assert.match(r.stdout, /refused:mock_refused/);
 });

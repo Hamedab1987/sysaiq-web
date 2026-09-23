@@ -18,6 +18,7 @@ const SECRETS = {
   'gw.zarinpal.merchant_id': ['شناسهٔ پذیرندهٔ زرین‌پال', 'Zarinpal merchant id'],
   'gw.payping.token': ['توکن API پی‌پینگ', 'PayPing API token'],
   'gw.zibal.merchant': ['کد مرچنت زیبال', 'Zibal merchant'],
+  'gw.sep.terminal_id': ['شمارهٔ ترمینال سپ (سامان)', 'SEP (Saman) terminal id'],
   [RELAY_SECRET]: ['کلید رلهٔ (relay) درگاه', 'Gateway relay key'],
 };
 for (const [name, [label_fa, label_en]] of Object.entries(SECRETS)) {

@@ -365,7 +365,7 @@ test('gateways admin: masked secrets, default must be enabled, test connection r
   let r = await t.fetchAdmin('/gateways');
   assert.equal(r.status, 200);
   let g = await r.json();
-  assert.deepEqual(g.gateways.map(x => x.id), ['zarinpal', 'payping', 'zibal', 'mock']);
+  assert.deepEqual(g.gateways.map(x => x.id), ['zarinpal', 'payping', 'zibal', 'sep', 'mock']);
   assert.ok(g.gateways[0].callback_url.endsWith('/api/pay/callback/zarinpal'));
   assert.equal(g.gateways[0].secret.configured, false);
   r = await t.fetchAdmin('/gateways', { method: 'PUT', body: { gateways: { zarinpal: { enabled: true, sandbox: true, secret: '12345678-1234-1234-1234-123456789abc' } }, pay: { due_days: 7, tax_percent: 9, offline_fa: 'شبا …', show_enamad: false }, relay_base: 'https://relay.example.ir/', relay_key: 'k'.repeat(20) } });

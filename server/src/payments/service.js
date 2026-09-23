@@ -39,6 +39,8 @@ const q = () => stmts ||= {
   succeed: db.prepare(`UPDATE payments SET status='succeeded', ref_id=?, card_pan=?, card_hash=?, fee_toman=COALESCE(?, fee_toman), already_verified=?, error_code='', error_message='',
     raw_verify=?, verified_at=datetime('now'), updated_at=datetime('now') WHERE id=?`),
   invoicePaid: db.prepare(`UPDATE invoices SET status='paid', paid_at=datetime('now'), paid_method=?, paid_ref=?, updated_at=datetime('now') WHERE id=? AND status <> 'paid'`),
+  dupRef: db.prepare(`SELECT id FROM payments WHERE gateway=? AND ref_id=? AND id<>? LIMIT 1`),
+  setRef: db.prepare(`UPDATE payments SET ref_id=?, updated_at=datetime('now') WHERE id=?`),
 };
 
 const ipHash = ip => (ip ? createHash('sha256').update(String(ip)).digest('hex').slice(0, 16) : '');
@@ -118,8 +120,14 @@ export async function handleCallback({ gatewayId, pid, query = {}, body = {} }) 
   let gw;
   try { gw = getGateway(gatewayId); } catch { return { payment, invoice, outcome: 'mismatch' }; }
   const cb = gw.parseCallback({ query, body });
-  q().callback.run(rawJson({ outcome: cb.outcome, extra: cb.extra, authority_ok: cb.authority === payment.authority }), id);
-  if (!cb.authority || cb.authority !== payment.authority) return { payment, invoice, outcome: 'mismatch' };
+  // only a callback carrying the right token may record gateway data: reconcile
+  // and admin reverify re-send the stored extra (SEP's RefNum, PayPing's
+  // paymentRefId), so a forged POST with a guessed pid must never replace it.
+  // A wrong-token callback leaves a trail without extra, and never over a good one.
+  const authOk = Boolean(cb.authority) && cb.authority === payment.authority;
+  if (authOk) q().callback.run(rawJson({ outcome: cb.outcome, extra: cb.extra, authority_ok: true }), id);
+  else if (!storedCallback(payment)) q().callback.run(rawJson({ outcome: cb.outcome, authority_ok: false }), id);
+  if (!authOk) return { payment, invoice, outcome: 'mismatch' };
   if (payment.status === 'succeeded') return { payment, invoice, outcome: 'replayed' };
   if (['failed', 'cancelled', 'expired', 'orphaned'].includes(payment.status)) return { payment, invoice, outcome: payment.status };
   // atomic claim: exactly one caller proceeds; a stale 'verifying' (crash) may be re-claimed after 60 s
@@ -158,6 +166,16 @@ async function verifyClaimed(id, extra = {}) {
     const p = getPayment(id);
     emit('payment.failed', { payment: p, invoice });
     return { payment: p, invoice, outcome: 'failed' };
+  }
+  // one gateway reference pays one payment: SEP re-confirms a receipt (RefNum) on
+  // every verify and echoes no order id, so a receipt replayed against another
+  // same-amount invoice must not pay it. The ref is recorded before the checks so
+  // an orphaned attempt also burns it. No await between here and markPaid.
+  const ref = cap(v.refId, 64);
+  if (ref) {
+    const dup = q().dupRef.get(payment.gateway, ref, id);
+    q().setRef.run(ref, id);
+    if (dup) return orphan(id, invoice, 'duplicate_ref', `این رسید درگاه قبلاً برای پرداخت #${dup.id} ثبت شده است — پرداخت تأیید نشد (احتمال سوءاستفاده)`, raw);
   }
   // the gateway echoed what it charged: it must equal our snapshot (rule 6)
   const amountMismatch = v.amountToman !== null && v.amountToman !== undefined && Number(v.amountToman) !== payment.amount_toman;
@@ -208,9 +226,15 @@ export async function verifyPayment(id, { force = false } = {}) {
     ? db.prepare(`UPDATE payments SET status='verifying', claimed_at=datetime('now'), updated_at=datetime('now') WHERE id=? AND status <> 'succeeded'`).run(id)
     : q().claim.run(id, `-${CLAIM_STALE_SECONDS} seconds`);
   if (claim.changes !== 1) return { payment: getPayment(id), invoice: getInvoice(payment.invoice_id), outcome: 'pending' };
-  let extra = {};
-  try { extra = JSON.parse(payment.raw_callback || '{}').extra || {}; } catch { /* ignore */ }
-  return verifyClaimed(id, extra);
+  return verifyClaimed(id, storedCallback(payment)?.extra || {});
+}
+
+// the stored callback, only when it came with the right token (see handleCallback)
+function storedCallback(payment) {
+  try {
+    const rc = JSON.parse(payment.raw_callback || '{}');
+    return rc && rc.authority_ok === true ? rc : null;
+  } catch { return null; }
 }
 
 // admin list of payments across invoices

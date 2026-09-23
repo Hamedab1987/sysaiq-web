@@ -6,11 +6,12 @@ import { GatewayError } from './gateways/common.js';
 import zarinpal from './gateways/zarinpal.js';
 import payping from './gateways/payping.js';
 import zibal from './gateways/zibal.js';
+import sep from './gateways/sep.js';
 import mock from './gateways/mock.js';
 
 export const MOCK_ID = 'mock';
 const registry = new Map();
-for (const g of [zarinpal, payping, zibal, mock]) registry.set(g.id, g);
+for (const g of [zarinpal, payping, zibal, sep, mock]) registry.set(g.id, g);
 
 const isProdEnv = env => (env ?? config.env) === 'production';
 

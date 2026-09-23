@@ -1,6 +1,6 @@
 ---
 name: iran-payment-gateways
-description: Verified API contracts and safety rules for Iranian payment gateways (Zarinpal v4, PayPing v3, Zibal v1, Vandar v3) used by SysaiQ's invoice + pay-link flow. Read before writing or reviewing anything under server/src/payments.
+description: Verified API contracts and safety rules for Iranian payment gateways (Zarinpal v4, PayPing v3, Zibal v1, SEP/Saman OnlinePG, Vandar v3) used by SysaiQ's invoice + pay-link flow. Read before writing or reviewing anything under server/src/payments.
 ---
 
 # Iranian payment gateways — contracts (verified 2026-09-22 from official docs/SDKs)
@@ -31,6 +31,45 @@ provider's live docs/sandbox before relying on it, and keep the mark in code com
 
 Excluded: **IDPay** (Central Bank revoked its licence in 2024; merchants' funds were frozen),
 **Sizpay** (SOAP). **NextPay**: docs unreachable — contract unverified, optional phase 2.
+
+## SEP — Saman Electronic Payment (sep.ir), direct Shaparak bank IPG (verified 2026-09-23)
+Adapter `server/src/payments/gateways/sep.js` (id `sep`, «سامان (سپ)», secret `gw.sep.terminal_id`).
+Source: SEP «راهنمای استفاده از درگاه پرداخت اینترنتی» **v3.3 (Esfand 1402)** — official merchant PDF
+(mirror: wp-master.ir/wp-content/uploads/2024/07/SEP_OnlinePG_Merchant-Document_Minimal_Current-3.3.pdf);
+cross-checked with shetabit/multipay `src/Drivers/SEP/SEP.php` and farayaz/larapay `src/Gateways/Sep.php`.
+
+| Step | Contract |
+|---|---|
+| Auth | **TerminalId only** + caller **IP registered with SEP** (token and verify are IP-checked; `8`/`-106` = IP not allowed). Register the IP that actually calls SEP: the server (104.237.232.226) or the Iranian relay. |
+| Token | `POST https://sep.shaparak.ir/onlinepg/onlinepg` JSON `{action:"token", TerminalId, Amount (Rial, integer), ResNum (ours, unique), RedirectUrl, CellNumber?}` (+ optional `TokenExpiryInMin`, `Wage`, `ResNum1-4`, `HashedCardNumber`; doc says send nothing else, names are case-sensitive) → `{status:1, token}` or `{status:-1, errorCode, errorDesc}` |
+| Redirect | **GET `https://sep.shaparak.ir/OnlinePG/SendToken?token=…`** (doc v2+; we use it — fits fetch→location.assign and the no-JS 303). Alternative: POST form to `…/OnlinePG/OnlinePG` with `Token` (+`GetMethod`) — not used, would need a JS/button page. |
+| Callback | **POST form-urlencoded** to RedirectUrl (GET only with `GetMethod=true`, impossible via SendToken): `Token, MID, TerminalId, State, Status, RRN/Rrn, RefNum, ResNum, TraceNo, Amount, Wage, AffectiveAmount?, SecurePan (masked), HashedCardNumber (SHA256)` |
+| Status | `2 OK` success · `1 CanceledByUser` · `3 Failed` · `4 SessionIsNull` · `5 InvalidParameters` · `8 MerchantIpAddressIsInvalid` · `10 TokenNotFound` · `11 TokenRequired` · `12 TerminalNotFound` · `21 MultisettlePolicyErrors` (same codes as token `errorCode`). Empty RefNum = failed. We require `Status=2` AND `State` OK/empty AND a RefNum. |
+| Verify | `POST https://sep.shaparak.ir/verifyTxnRandomSessionkey/ipg/VerifyTransaction` JSON `{RefNum, TerminalNumber (Int64)}` → `{ResultCode, ResultDescription, Success, TransactionDetail:{RRN, RefNum, MaskedPan, HashedPan, TerminalNumber, OrginalAmount, AffectiveAmount, StraceDate, StraceNo}}` (sic `OrginalAmount`) |
+| ResultCode | `0` ok · **`2` duplicate request = already verified** · `5` reversed · `-2` not found · `-6` > 30 min (auto-reversed) · `-104` terminal disabled · `-105` terminal unknown · `-106` IP not allowed |
+| Window | **Verify within 30 minutes** or SEP reverses the payment to the card. No answer ⇒ retry within the 30 min (reconcile does). |
+| Reverse | `POST …/ipg/ReverseTransaction {RefNum, TerminalNumber}`, same response/codes; only after verify, short window (**VERIFY**: digit garbled in PDF, ~50 min). Implemented as `reverse()`, not wired to UI. |
+| Inquiry / test | No inquiry endpoint in the doc (reconcile verifies with the stored RefNum; no RefNum ⇒ stays pending until the 45-min expiry). `test()` = read-only verify of an impossible RefNum: `-2` ⇒ terminal + IP accepted; `-104/-105/-106` ⇒ explained. Never a token request. |
+| Sandbox | **None.** Full test = one real 1,000-Toman payment. Reports: report.sep.ir (MID + password from SEP support). |
+
+**SEP-specific safety (why the adapter/service look like this):**
+- Verify takes **no amount** and echoes **no ResNum**, and SEP **re-confirms the same RefNum on every call**
+  (the doc puts double-spend prevention on the merchant). So: `TransactionDetail.OrginalAmount` (and
+  `AffectiveAmount`) are **mandatory** and compared exactly in Rial — missing ⇒ not ok; mismatch ⇒ orphaned.
+  And the service records `ref_id` right after any successful verify and refuses a ref already held by another
+  payment of the same gateway ⇒ `orphaned / duplicate_ref` (otherwise a receipt from a paid invoice could pay
+  another same-amount invoice).
+- Callback `ResNum`, `Amount`, `TerminalId` that disagree with our payment ⇒ we do **not** call verify, so SEP
+  auto-reverses within 30 min (no manual refund).
+- `refId` = RefNum (unique digital receipt). RRN / StraceNo stay in `raw_verify` for support; PAN/hash go only
+  to `card_pan` / `card_hash`.
+
+**VERIFY AT IMPLEMENTATION** (not settled by the doc): token / RefNum formats and lengths (regexes in sep.js);
+whether code `2` carries `TransactionDetail` (if not, the payment is reported failed «check the SEP panel»);
+`CellNumber` format (doc sample `9120000000`, we send `09…`); no documented min amount (we use 1,000 Toman);
+Shaparak per-transaction caps; whether the site **domain** must also be registered (doc only requires the IP);
+Node TLS to sep.shaparak.ir — PHP clients set `DEFAULT@SECLEVEL=1`, so `lib/http.js` (Foundation) may need a
+cipher option if the handshake fails; shaparak hosts may refuse non-Iranian IPs ⇒ use the relay.
 
 ## Adapter interface (`server/src/payments/gateways/<id>.js`)
 ```js
